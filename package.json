@@ -2,7 +2,11 @@
   "name": "viviui",
   "version": "1.0.8",
   "description": "",
-  "main": "index.js",
+  "main": "build.js",
+  "scripts": {
+    "build": "babel index.js > build.js",
+    "prepublish": "npm run build"
+  },
   "keywords": [
     "chakra-ui"
   ],
@@ -12,9 +16,16 @@
     "@chakra-ui/core": "^1.0.0-next.1",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
+    "babel": "^6.23.0",
     "emotion-theming": "^10.0.27"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.10.3",
+    "@babel/core": "^7.10.3",
+    "@babel/plugin-transform-arrow-functions": "^7.10.1",
+    "@babel/preset-env": "^7.10.3",
+    "babel-cli": "^6.26.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/vivi-shiwei/viviui.git "
