@@ -1,0 +1,17 @@
+{
+  "name": "viviui",
+  "version": "1.0.5",
+  "description": "",
+  "main": "index.js",
+  "keywords": [
+    "chakra-ui"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@chakra-ui/core": "^1.0.0-next.1",
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "emotion-theming": "^10.0.27"
+  }
+}
