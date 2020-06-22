@@ -1,305 +1,50 @@
-import {
-    Box,
-    theme,
-    Button,
-    ThemeProvider,
-    CSSReset,
-    Accordion,
-    AccordionItem,
-    AccordionHeader,
-    AccordionPanel,
-    AccordionIcon,
-    Alert,
-    AlertIcon,
-    AlertTitle,
-    AlertDescription,
-    AlertDialog,
-    AlertDialogBody,
-    AlertDialogFooter,
-    AlertDialogHeader,
-    AlertDialogContent,
-    AlertDialogOverlay,
-    AspectRatioBox,
-    Avatar,
-    AvatarBadge,
-    Badge,
-    Breadcrumb,
-    BreadcrumbItem,
-    BreadcrumbLink,
-    BreadcrumbSeparator,
-    Checkbox,
-    CheckboxGroup,
-    CircularProgress,
-    CircularProgressLabel,
-    CloseButton,
-    Code,
-    Collapse,
-    ControlBox,
-    VisuallyHidden,
-    Divider,
-    Drawer,
-    DrawerBody,
-    DrawerFooter,
-    DrawerHeader,
-    DrawerOverlay,
-    DrawerContent,
-    DrawerCloseButton,
-    Editable,
-    EditableInput,
-    EditablePreview,
-    Flex,
-    FormControl,
-    FormLabel,
-    FormErrorMessage,
-    FormHelperText,
-    Grid,
-    Heading,
-    Icon,
-    IconButton,
-    Image,
-    Input,
-    Link,
-    List,
-    ListItem,
-    ListIcon,
-    Menu,
-    MenuButton,
-    MenuList,
-    MenuItem,
-    MenuGroup,
-    MenuDivider,
-    MenuOptionGroup,
-    MenuItemOption,
-    Modal,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalFooter,
-    ModalBody,
-    ModalCloseButton,
-    NumberInput,
-    NumberInputField,
-    NumberInputStepper,
-    NumberIncrementStepper,
-    NumberDecrementStepper,
-    Popover,
-    PopoverTrigger,
-    PopoverContent,
-    PopoverHeader,
-    PopoverBody,
-    PopoverFooter,
-    PopoverArrow,
-    PopoverCloseButton,
-    Progress,
-    PseudoBox,
-    Radio,
-    RadioGroup,
-    SimpleGrid,
-    Select,
-    Skeleton,
-    Slider,
-    SliderTrack,
-    SliderFilledTrack,
-    SliderThumb,
-    Spinner,
-    Stat,
-    StatLabel,
-    StatNumber,
-    StatHelpText,
-    StatArrow,
-    StatGroup,
-    Stack,
-    Switch,
-    Tabs,
-    TabList,
-    TabPanels,
-    Tab,
-    TabPanel,
-    Tag,
-    TagIcon,
-    TagLabel,
-    TagCloseButton,
-    Text,
-    Textarea,
-    useToast,
-    Tooltip,
-    useClipboard,
-    useDisclosure,
-    useTheme
-} from '@chakra-ui/core'
+"use strict";
 
-export {
-    Box,
-    theme,
-    Button,
-    ThemeProvider,
-    CSSReset,
-    Accordion,
-    AccordionItem,
-    AccordionHeader,
-    AccordionPanel,
-    AccordionIcon,
-    Alert,
-    AlertIcon,
-    AlertTitle,
-    AlertDescription,
-    AlertDialog,
-    AlertDialogBody,
-    AlertDialogFooter,
-    AlertDialogHeader,
-    AlertDialogContent,
-    AlertDialogOverlay,
-    AspectRatioBox,
-    Avatar,
-    AvatarBadge,
-    Badge,
-    Breadcrumb,
-    BreadcrumbItem,
-    BreadcrumbLink,
-    BreadcrumbSeparator,
-    Checkbox,
-    CheckboxGroup,
-    CircularProgress,
-    CircularProgressLabel,
-    CloseButton,
-    Code,
-    Collapse,
-    ControlBox,
-    VisuallyHidden,
-    Divider,
-    Drawer,
-    DrawerBody,
-    DrawerFooter,
-    DrawerHeader,
-    DrawerOverlay,
-    DrawerContent,
-    DrawerCloseButton,
-    Editable,
-    EditableInput,
-    EditablePreview,
-    Flex,
-    FormControl,
-    FormLabel,
-    FormErrorMessage,
-    FormHelperText,
-    Grid,
-    Heading,
-    Icon,
-    IconButton,
-    Image,
-    Input,
-    Link,
-    List,
-    ListItem,
-    ListIcon,
-    Menu,
-    MenuButton,
-    MenuList,
-    MenuItem,
-    MenuGroup,
-    MenuDivider,
-    MenuOptionGroup,
-    MenuItemOption,
-    Modal,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalFooter,
-    ModalBody,
-    ModalCloseButton,
-    NumberInput,
-    NumberInputField,
-    NumberInputStepper,
-    NumberIncrementStepper,
-    NumberDecrementStepper,
-    Popover,
-    PopoverTrigger,
-    PopoverContent,
-    PopoverHeader,
-    PopoverBody,
-    PopoverFooter,
-    PopoverArrow,
-    PopoverCloseButton,
-    Progress,
-    PseudoBox,
-    Radio,
-    RadioGroup,
-    SimpleGrid,
-    Select,
-    Skeleton,
-    Slider,
-    SliderTrack,
-    SliderFilledTrack,
-    SliderThumb,
-    Spinner,
-    Stat,
-    StatLabel,
-    StatNumber,
-    StatHelpText,
-    StatArrow,
-    StatGroup,
-    Stack,
-    Switch,
-    Tabs,
-    TabList,
-    TabPanels,
-    Tab,
-    TabPanel,
-    Tag,
-    TagIcon,
-    TagLabel,
-    TagCloseButton,
-    Text,
-    Textarea,
-    useToast,
-    Tooltip,
-    useClipboard,
-    useDisclosure,
-    useTheme
-}
+var _core = require("@chakra-ui/core");
 
-// module.exports.Box = Box
-// module.exports.theme = theme
-// module.exports.Button = Button
-// module.exports.ThemeProvider = ThemeProvider
-// module.exports.CSSReset = CSSReset
-// module.exports.Accordion = Accordion
-// module.exports.AccordionItem = AccordionItem
-// module.exports.AccordionHeader = AccordionHeader
-// module.exports.AccordionPanel = AccordionPanel
-// module.exports.AccordionIcon = AccordionIcon
-// module.exports.Alert = Alert
-// module.exports.AlertIcon = AlertIcon
-// module.exports.AlertTitle = AlertTitle
-// module.exports.AlertDescription = AlertDescription
-// module.exports.AlertDialog = AlertDialog
-// module.exports.AlertDialogBody = AlertDialogBody
-// module.exports.AlertDialogFooter = AlertDialogFooter
-// module.exports.AlertDialogHeader = AlertDialogHeader
-// module.exports.AlertDialogContent = AlertDialogContent
-// module.exports.AlertDialogOverlay = AlertDialogOverlay
-// module.exports.AspectRatioBox = AspectRatioBox
-// module.exports.Avatar = Avatar
-// module.exports.AvatarBadge = AvatarBadge
-// module.exports.Badge = Badge
-// module.exports.Breadcrumb = Breadcrumb
-// module.exports.BreadcrumbItem = BreadcrumbItem
-// module.exports.BreadcrumbLink = BreadcrumbLink
-// module.exports.BreadcrumbSeparator = BreadcrumbSeparator
-// module.exports.Checkbox = Checkbox
-// module.exports.CheckboxGroup = CheckboxGroup
-// module.exports.CircularProgress = CircularProgress
-// module.exports.CircularProgressLabel = CircularProgressLabel
-// module.exports.CloseButton = CloseButton
-// module.exports.Code = Code
-// module.exports.Collapse = Collapse
-// module.exports.ControlBox = ControlBox
-// module.exports.VisuallyHidden = VisuallyHidden
-// module.exports.Divider = Divider
-// module.exports.Drawer = Drawer
-// module.exports.DrawerBody = DrawerBody
-// module.exports.DrawerFooter = DrawerFooter
-// module.exports.DrawerHeader = DrawerHeader
-// module.exports.DrawerOverlay = DrawerOverlay
-// module.exports.DrawerContent = DrawerContent
-// module.exports.DrawerCloseButton = DrawerCloseButton    
+module.exports.Box = _core.Box;
+module.exports.theme = _core.theme;
+module.exports.Button = _core.Button;
+module.exports.ThemeProvider = _core.ThemeProvider;
+module.exports.CSSReset = _core.CSSReset;
+module.exports.Accordion = _core.Accordion;
+module.exports.AccordionItem = _core.AccordionItem;
+module.exports.AccordionHeader = _core.AccordionHeader;
+module.exports.AccordionPanel = _core.AccordionPanel;
+module.exports.AccordionIcon = _core.AccordionIcon;
+module.exports.Alert = _core.Alert;
+module.exports.AlertIcon = _core.AlertIcon;
+module.exports.AlertTitle = _core.AlertTitle;
+module.exports.AlertDescription = _core.AlertDescription;
+module.exports.AlertDialog = _core.AlertDialog;
+module.exports.AlertDialogBody = _core.AlertDialogBody;
+module.exports.AlertDialogFooter = _core.AlertDialogFooter;
+module.exports.AlertDialogHeader = _core.AlertDialogHeader;
+module.exports.AlertDialogContent = _core.AlertDialogContent;
+module.exports.AlertDialogOverlay = _core.AlertDialogOverlay;
+module.exports.AspectRatioBox = _core.AspectRatioBox;
+module.exports.Avatar = _core.Avatar;
+module.exports.AvatarBadge = _core.AvatarBadge;
+module.exports.Badge = _core.Badge;
+module.exports.Breadcrumb = _core.Breadcrumb;
+module.exports.BreadcrumbItem = _core.BreadcrumbItem;
+module.exports.BreadcrumbLink = _core.BreadcrumbLink;
+module.exports.BreadcrumbSeparator = _core.BreadcrumbSeparator;
+module.exports.Checkbox = _core.Checkbox;
+module.exports.CheckboxGroup = _core.CheckboxGroup;
+module.exports.CircularProgress = _core.CircularProgress;
+module.exports.CircularProgressLabel = _core.CircularProgressLabel;
+module.exports.CloseButton = _core.CloseButton;
+module.exports.Code = _core.Code;
+module.exports.Collapse = _core.Collapse;
+module.exports.ControlBox = _core.ControlBox;
+module.exports.VisuallyHidden = _core.VisuallyHidden;
+module.exports.Divider = _core.Divider;
+module.exports.Drawer = _core.Drawer;
+module.exports.DrawerBody = _core.DrawerBody;
+module.exports.DrawerFooter = _core.DrawerFooter;
+module.exports.DrawerHeader = _core.DrawerHeader;
+module.exports.DrawerOverlay = _core.DrawerOverlay;
+module.exports.DrawerContent = _core.DrawerContent;
+module.exports.DrawerCloseButton = _core.DrawerCloseButton;
+module.exports.Editable = _core.Editable, module.exports.EditableInput = _core.EditableInput, module.exports.EditablePreview = _core.EditablePreview, module.exports.Flex = _core.Flex, module.exports.FormControl = _core.FormControl, module.exports.FormLabel = _core.FormLabel, module.exports.FormErrorMessage = _core.FormErrorMessage, module.exports.FormHelperText = _core.FormHelperText, module.exports.Grid = _core.Grid, module.exports.Heading = _core.Heading, module.exports.Icon = _core.Icon, module.exports.IconButton = _core.IconButton, module.exports.Image = _core.Image, module.exports.Input = _core.Input, module.exports.Link = _core.Link, module.exports.List = _core.List, module.exports.ListItem = _core.ListItem, module.exports.ListIcon = _core.ListIcon, module.exports.Menu = _core.Menu, module.exports.MenuButton = _core.MenuButton, module.exports.MenuList = _core.MenuList, module.exports.MenuItem = _core.MenuItem, module.exports.MenuGroup = _core.MenuGroup, module.exports.BoMenuDividerx = _core.MenuDivider, module.exports.MenuOptionGroup = _core.MenuOptionGroup, module.exports.MenuItemOption = _core.MenuItemOption, module.exports.Modal = _core.Modal, module.exports.ModalOverlay = _core.ModalOverlay, module.exports.ModalContent = _core.ModalContent, module.exports.ModalHeader = _core.ModalHeader, module.exports.ModalFooter = _core.ModalFooter, module.exports.ModalBody = _core.ModalBody, module.exports.ModalCloseButton = _core.ModalCloseButton, module.exports.NumberInput = _core.NumberInput, module.exports.NumberInputField = _core.NumberInputField, module.exports.NumberInputStepper = _core.NumberInputStepper, module.exports.NumberIncrementStepper = _core.NumberIncrementStepper, module.exports.NumberDecrementStepper = _core.NumberDecrementStepper, module.exports.Popover = _core.Popover, module.exports.PopoverTrigger = _core.PopoverTrigger, module.exports.PopoverContent = _core.PopoverContent, module.exports.PopoverHeader = _core.PopoverHeader, module.exports.PopoverBody = _core.PopoverBody, module.exports.PopoverFooter = _core.PopoverFooter, module.exports.PopoverArrow = _core.PopoverArrow, module.exports.PopoverCloseButton = _core.PopoverCloseButton, module.exports.Progress = _core.Progress, module.exports.PseudoBox = _core.PseudoBox, module.exports.Radio = _core.Radio, module.exports.RadioGroup = _core.RadioGroup, module.exports.SimpleGrid = _core.SimpleGrid, module.exports.Select = _core.Select, module.exports.Skeleton = _core.Skeleton, module.exports.Slider = _core.Slider, module.exports.SliderTrack = _core.SliderTrack, module.exports.SliderFilledTrack = _core.SliderFilledTrack, module.exports.SliderThumb = _core.SliderThumb, module.exports.Spinner = _core.Spinner, module.exports.Stat = _core.Stat, module.exports.StatLabel = _core.StatLabel, module.exports.StatNumber = _core.StatNumber, module.exports.StatHelpText = _core.StatHelpText, module.exports.StatArrow = _core.StatArrow, module.exports.StatGroup = _core.StatGroup, module.exports.Stack = _core.Stack, module.exports.Switch = _core.Switch, module.exports.Tabs = _core.Tabs, module.exports.TabList = _core.TabList, module.exports.TabPanels = _core.TabPanels, module.exports.Tab = _core.Tab, module.exports.TabPanel = _core.TabPanel, module.exports.Tag = _core.Tag, module.exports.TagIcon = _core.TagIcon, module.exports.TagLabel = _core.TagLabel, module.exports.TagCloseButton = _core.TagCloseButton, module.exports.Text = _core.Text, module.exports.Textarea = _core.Textarea, module.exports.useToast = _core.useToast, module.exports.Tooltip = _core.Tooltip, module.exports.useClipboard = _core.useClipboard, module.exports.useDisclosure = _core.useDisclosure, module.exports.useTheme = _core.useTheme;
