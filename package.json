@@ -1,6 +1,6 @@
 {
   "name": "viviui",
-  "version": "1.0.5",
+  "version": "1.0.8",
   "description": "",
   "main": "index.js",
   "keywords": [
@@ -13,5 +13,10 @@
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
     "emotion-theming": "^10.0.27"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vivi-shiwei/viviui.git "
   }
 }
