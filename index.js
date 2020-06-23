@@ -255,3 +255,7 @@ export {
     useDisclosure,
     useTheme
 }
+
+import Header from "./components/Header"
+
+export { Header }
