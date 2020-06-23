@@ -1,5 +1,4 @@
 import React from "react"
-import { get, startsWith } from "lodash/fp"
 import {
     Input,
     useEventListener,
@@ -9,10 +8,6 @@ import {
 } from "@chakra-ui/core"
 import { SearchIcon } from "@chakra-ui/icons"
 import "../styles/algolia.css"
-import { navigate } from "@reach/router"
-
-const getLvl1 = get("hierarchy.lvl1")
-const startsWithCss = startsWith("css-")
 
 let link
 
@@ -20,10 +15,6 @@ if (typeof window !== "undefined") {
     link = document.createElement("a")
 }
 
-function getHash(url) {
-    link.href = url
-    return link.hash
-}
 
 function Search(props) {
 
