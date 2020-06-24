@@ -1,5 +1,5 @@
 // Dear maintainers, please arrange components alphabetically. Thanks :)
-
+import React from 'react'
 const components = [
   'Accordion',
   'Alert',

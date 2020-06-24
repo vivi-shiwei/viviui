@@ -1,4 +1,4 @@
-/** @jsx jsx */
+import React from 'react'
 import { Box } from '@chakra-ui/core'
 import { jsx } from '@emotion/core'
 

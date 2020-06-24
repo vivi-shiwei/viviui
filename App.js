@@ -13,9 +13,7 @@ const ColorModeSwitch = () => {
 
   const label = 'Switch color mode'
   const handler = () => toggleColorMode()
-
   button(label, handler)
-
   return null
 }
 
