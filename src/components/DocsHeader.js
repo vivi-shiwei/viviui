@@ -1,4 +1,3 @@
-/** @jsx jsx */
 import {
   Box,
   Flex,
@@ -9,13 +8,13 @@ import {
   IconButton,
   useColorMode,
   PseudoBox
-} from '@chakra-ui/core';
-import { jsx, css } from '@emotion/core';
-import { DiGithubBadge } from 'react-icons/di';
-import Logo from './Logo';
-import MobileNav from './MobileNav';
-import SponsorButton from './SponsorButton';
-import { StorybookIcon } from './Storybook-icon';
+} from '@chakra-ui/core'
+import { css } from '@emotion/core'
+import { DiGithubBadge } from 'react-icons/di'
+import Logo from './Logo'
+import MobileNav from './MobileNav'
+import SponsorButton from './SponsorButton'
+import { StorybookIcon } from './Storybook-icon'
 
 const styles = css`
   .algolia-autocomplete {
@@ -137,6 +136,6 @@ const DocsHeader = props => {
       </Flex>
     </Header>
   )
-};
+}
 
 export default DocsHeader

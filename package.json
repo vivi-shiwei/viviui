@@ -7,11 +7,6 @@
     "build": "babel src -d build",
     "storybook": "start-storybook"
   },
-  "keywords": [
-    "chakra-ui"
-  ],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@chakra-ui/core": "0.8.0",
     "@emotion/core": "10.0.28",
@@ -34,9 +29,5 @@
   },
   "standard": {
     "parser": "babel-eslint"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/vivi-shiwei/viviui.git "
   }
 }

@@ -1,16 +1,12 @@
-/** @jsx jsx */
 import {
   Box,
   Flex,
   IconButton,
   useColorMode,
-  Link,
   Stack
 } from '@chakra-ui/core'
-import { jsx } from '@emotion/core'
 import Logo from './Logo'
 import GitHubButton from './GitHubButton'
-import { StorybookIcon } from './Storybook-icon'
 import {
   Header as HeaderContainer,
   GithubLink,

@@ -1,54 +1,135 @@
 import React from 'react'
 import Hero from '../src/components/hero'
-import { DiGithubBadge } from 'react-icons/di'
 import {
   Box,
   Heading,
-  Text,
-  Button,
-  Grid,
-  Divider,
-  Flex,
-  Stack,
-  Link,
-  useColorMode,
-  IconButton
+  Button
 } from '@chakra-ui/core'
-import NextLink from 'next/link'
-import { withKnobs, text, boolean, number } from '@storybook/addon-knobs'
 
 export default {
   title: 'Hero'
 }
 
-export const withAButton = () => (
-  <button disabled={boolean('Disabled', false)}>
-    {text('Label', 'Hello Storybook')}
-  </button>
-)
-
-export const withHero = () => {
+export const hero = () => {
   return (
     <Hero
-      title='Build accessible React apps & websites'
-      emphasis='with speed'
-      subtitle='Chakra UI is a simple, modular and accessible component library that gives you all the building blocks you need to build your React applications.'
+      title='大標題'
+      subtitle='小標題'
     >
-      <NextLink href='/getting-started' passHref>
-        <Button size='lg' as='a' variantColor='teal' m={2}>
-          Get Started
-        </Button>
-      </NextLink>
-      <Button
-        as='a'
-        size='lg'
-        m={2}
-        href='https://github.com/chakra-ui/chakra-ui/'
-        target='__blank'
-        leftIcon={props => <DiGithubBadge size='1.5em' {...props} />}
-      >
+      內容
+    </Hero>
+  )
+}
+
+export const heroWithoutTitle = () => {
+  return (
+    <Hero
+      subtitle='小標題'
+    >
+      內容
+    </Hero>
+  )
+}
+
+export const heroWithoutSubtitle = () => {
+  return (
+    <Hero
+      title='大標題'
+    >
+      內容
+    </Hero>
+  )
+}
+
+export const heroWithContentOnly = () => {
+  return (
+    <Hero>
+      內容
+    </Hero>
+  )
+}
+
+export const heroWithoutBorder = () => {
+  return (
+    <Hero noBottomBorder>
+      內容
+    </Hero>
+  )
+}
+
+export const heroWithCustomStyles = () => {
+  return (
+    <Hero background='red' p={4}>
+      內容
+    </Hero>
+  )
+}
+
+export const heroWithCustomTitle = () => {
+  const title = (
+    <Box background='blue'>
+      這是自定義的 Title component
+    </Box>
+  )
+
+  return (
+    <Hero
+      title={title}
+    />
+  )
+}
+
+export const heroWithCustomSubtitle = () => {
+  const subtitle = (
+    <Box background='blue'>
+      這是自定義的 subtitle component
+    </Box>
+  )
+
+  return (
+    <Hero
+      subtitle={subtitle}
+    />
+  )
+}
+
+export const heroWithCustomContent = () => {
+  return (
+    <Hero>
+      <Heading as='h1' size='lg'>
+        haha
+      </Heading>
+    </Hero>
+  )
+}
+
+export const heroWithCustomContent2 = () => {
+  return (
+    <Hero>
+      <Button size='lg' as='a' variantColor='teal' m={2}>
+        Get Started
+      </Button>
+      <Button as='a' size='lg' m={2}>
         GitHub
       </Button>
     </Hero>
+  )
+}
+
+export const heroWithButtons = () => {
+  return (
+    <Hero
+      title='buttons'
+      leftButton={
+        <Button size='lg' as='a' variantColor='teal' m={2}>
+          Get Started
+        </Button>
+      }
+      rightButton={
+        <Button as='a' size='lg' m={2}>
+          GitHub
+        </Button>
+      }
+    />
   )
 }
