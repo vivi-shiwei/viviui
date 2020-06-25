@@ -6,7 +6,7 @@ import {
   useColorMode,
   Stack
 } from '@chakra-ui/core'
-import Logo from './Logo'
+import Logo from './logo'
 import GitHubButton from './GitHubButton'
 import {
   Header as HeaderContainer,
@@ -15,6 +15,7 @@ import {
 } from './DocsHeader'
 import SponsorButton from './SponsorButton'
 import { Container } from './container'
+import { MdAccessibility, MdPalette, MdGrain } from 'react-icons/md'
 
 const Header = props => {
   const { colorMode, toggleColorMode } = useColorMode()
@@ -29,7 +30,7 @@ const Header = props => {
           justify='space-between'
         >
           <Box display='flex' alignItems='center'>
-            <Logo />
+            <Logo text='dffewf' icon={MdPalette}/>
             <Box ml='5' mb='-8px' display={['none', 'flex']}>
               <GitHubButton />
             </Box>
