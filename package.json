@@ -8,10 +8,10 @@
     "storybook": "start-storybook"
   },
   "dependencies": {
-    "@chakra-ui/core": "0.8.0",
-    "@emotion/core": "10.0.28",
-    "@emotion/styled": "10.0.27",
-    "emotion-theming": "10.0.27"
+    "@chakra-ui/core": "^0.8.0",
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "emotion-theming": "^10.0.27"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.3",
