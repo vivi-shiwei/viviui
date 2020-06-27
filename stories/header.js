@@ -14,12 +14,34 @@ import { StorybookIcon } from '../src/components/storybook-icon'
 
 export default { title: 'Header' }
 
-export const withHeader = () => <Header />
-
-export const heroWithoutTitle = () => {
+export const withHeader = () => {
   return (
     <Header>
       <LeftButton gitHubButton logo />
+      <RightButton githubLink={DiGithubBadge} storybookLink={StorybookIcon} sponsorButton />
+      {/* <GitHubButton name='Star'>
+        <Logo icon={MdAccessibility} text='chakra' />
+      </GitHubButton>
+      <SponsorButton /> */}
+    </Header>
+  )
+}
+
+export const nogithubButton = () => {
+  return (
+    <Header>
+      <LeftButton logo />
+      <RightButton githubLink={DiGithubBadge} storybookLink={StorybookIcon} sponsorButton />
+      {/* <GitHubButton name='Star'>
+        <Logo icon={MdAccessibility} text='chakra' />
+      </GitHubButton>
+      <SponsorButton /> */}
+    </Header>
+  )
+}
+export const noleftButton = () => {
+  return (
+    <Header>
       <RightButton githubLink={DiGithubBadge} storybookLink={StorybookIcon} sponsorButton />
       {/* <GitHubButton name='Star'>
         <Logo icon={MdAccessibility} text='chakra' />
