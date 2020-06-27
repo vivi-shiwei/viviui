@@ -2,7 +2,7 @@ import React from 'react'
 import { Box } from '@chakra-ui/core'
 import { jsx } from '@emotion/core'
 
-const GitHubButton = () => (
+const GitHubButton = ({ name }) => (
   <Box
     as='a'
     className='github-button'
@@ -12,7 +12,7 @@ const GitHubButton = () => (
     data-show-count='true'
     aria-label='Star Chakra UI on GitHub'
   >
-    Star
+    {name}
   </Box>
 )
 

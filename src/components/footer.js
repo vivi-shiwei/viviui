@@ -36,7 +36,7 @@ export const OddFeature = ({ title, icon, subtitle, ...props }) => {
   )
 }
 
-export const GridFooter = ({ num, children, ...props }) => {
+export const GridFooter = ({ children, ...props }) => {
   return (
     <>
       <Container {...props}>
