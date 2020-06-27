@@ -58,7 +58,7 @@ export const Header = props => (
   />
 )
 
-export const GithubLink = props => (
+export const GithubLink = ({ icon, ...props }) => (
   <PseudoBox
     as='a'
     href='https://github.com/chakra-ui/chakra-ui'
@@ -73,7 +73,7 @@ export const GithubLink = props => (
     }}
     {...props}
   >
-    <Box as={DiGithubBadge} size='8' color='current' />
+    <Box as={icon} size='8' color='current' />
   </PseudoBox>
 )
 
@@ -87,7 +87,7 @@ const ThemeSwitch = props => (
   />
 )
 
-export const StorybookLink = props => (
+export const StorybookLink = ({ icon, ...props }) => (
   <PseudoBox
     as='a'
     href='https://chakra-ui.netlify.com'
@@ -101,7 +101,7 @@ export const StorybookLink = props => (
     isExternal
     {...props}
   >
-    <Box as={StorybookIcon} size='6' color='current' />
+    <Box as={icon} size='6' color='current' />
   </PseudoBox>
 )
 

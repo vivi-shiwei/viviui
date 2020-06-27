@@ -19,8 +19,8 @@ export const withHeader = () => <Header />
 export const heroWithoutTitle = () => {
   return (
     <Header>
-      <RightButton githubLin={DiGithubBadge} storybookLin={StorybookIcon} sponsorBut />
-      <LeftButton gitHubButton logi />
+      <LeftButton gitHubButton logo />
+      <RightButton githubLink={DiGithubBadge} storybookLink={StorybookIcon} sponsorButton />
       {/* <GitHubButton name='Star'>
         <Logo icon={MdAccessibility} text='chakra' />
       </GitHubButton>

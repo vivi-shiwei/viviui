@@ -19,9 +19,8 @@ import { Container } from './container'
 import { StorybookIcon } from './storybook-icon'
 import { MdAccessibility, MdPalette, MdGrain } from 'react-icons/md'
 
-const { colorMode, toggleColorMode } = useColorMode()
-
-export const RightButton = ({ sponsorBut, githubLin, storybookLin, nocolorMode = false }) => {
+export const RightButton = ({ sponsorButton, githubLink, storybookLink, nocolorMode = false }) => {
+  const { colorMode, toggleColorMode } = useColorMode()
   return (
     <Flex
       flex={{ sm: '1', md: 'none' }}
@@ -30,10 +29,10 @@ export const RightButton = ({ sponsorBut, githubLin, storybookLin, nocolorMode =
       color='gray.500'
       justify='flex-end'
     >
-      {!!sponsorBut && (<SponsorButton mr='4' />)}
+      {!!sponsorButton && (<SponsorButton mr='4' />)}
       <Stack align='center' isInline spacing='3'>
-        {!!githubLin && <GithubLink />}
-        {!!storybookLin && <StorybookLink />}
+        {!!githubLink && <GithubLink icon={githubLink} />}
+        {!!storybookLink && <StorybookLink icon={storybookLink} />}
       </Stack>
       {!nocolorMode && (
         <IconButton
@@ -51,10 +50,10 @@ export const RightButton = ({ sponsorBut, githubLin, storybookLin, nocolorMode =
   )
 }
 
-export const LeftButton = ({ gitHubButton, logi }) => {
+export const LeftButton = ({ gitHubButton, logo }) => {
   return (
     <Box display='flex' alignItems='center'>
-      {!!logi && <Logo ico={MdAccessibility} text='chakra' />}
+      {!!logo && <Logo ico={MdAccessibility} text='chakra' />}
       <Box ml='5' mb='-8px' display={['none', 'flex']}>
         {!!gitHubButton && <GitHubButton name='Star' />}
       </Box>
@@ -63,6 +62,7 @@ export const LeftButton = ({ gitHubButton, logi }) => {
 }
 
 export const Header = ({ children, ...props }) => {
+  const { colorMode, toggleColorMode } = useColorMode()
   const bg = { light: 'white', dark: 'gray.800' }
   return (
     <HeaderContainer bg={bg[colorMode]} {...props}>
