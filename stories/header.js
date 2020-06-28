@@ -4,6 +4,7 @@ import { MdAccessibility, MdPalette, MdGrain } from 'react-icons/md'
 import SponsorButton from '../src/components/SponsorButton'
 import Logo from '../src/components/logo'
 import GitHubButton from '../src/components/GitHubButton'
+import { FaHeart } from 'react-icons/fa'
 import {
   Header as HeaderContainer,
   GithubLink,
@@ -17,12 +18,8 @@ export default { title: 'Header' }
 export const withHeader = () => {
   return (
     <Header>
-      <LeftButton gitHubButton logo />
-      <RightButton githubLink={DiGithubBadge} storybookLink={StorybookIcon} sponsorButton />
-      {/* <GitHubButton name='Star'>
-        <Logo icon={MdAccessibility} text='chakra' />
-      </GitHubButton>
-      <SponsorButton /> */}
+      <LeftButton gitHubButton />
+      <RightButton githubLink={DiGithubBadge} storybookLink={StorybookIcon} />
     </Header>
   )
 }
@@ -30,23 +27,34 @@ export const withHeader = () => {
 export const nogithubButton = () => {
   return (
     <Header>
-      <LeftButton logo />
-      <RightButton githubLink={DiGithubBadge} storybookLink={StorybookIcon} sponsorButton />
-      {/* <GitHubButton name='Star'>
-        <Logo icon={MdAccessibility} text='chakra' />
-      </GitHubButton>
-      <SponsorButton /> */}
+      <LeftButton />
+      <RightButton githubLink={DiGithubBadge} storybookLink={StorybookIcon} />
     </Header>
   )
 }
+export const nogihubButton = () => {
+  return (
+    <Header>
+      <LeftButton>
+        <Logo icon={MdPalette} text='fewfgtret' />
+      </LeftButton>
+      <RightButton>
+        <StorybookLink icon={StorybookIcon} />
+      </RightButton>
+    </Header>
+  )
+}
+
 export const noleftButton = () => {
   return (
     <Header>
-      <RightButton githubLink={DiGithubBadge} storybookLink={StorybookIcon} sponsorButton />
-      {/* <GitHubButton name='Star'>
-        <Logo icon={MdAccessibility} text='chakra' />
-      </GitHubButton>
-      <SponsorButton /> */}
+      <LeftButton>
+        <Logo icon={MdPalette} text='fewfgtret' />
+      </LeftButton>
+      <RightButton>
+        <SponsorButton name='dfd' icon={FaHeart} />
+        <StorybookLink icon={StorybookIcon} />
+      </RightButton>
     </Header>
   )
 }

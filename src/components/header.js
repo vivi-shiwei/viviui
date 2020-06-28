@@ -16,10 +16,9 @@ import {
 import SponsorButton from './SponsorButton'
 import { DiGithubBadge } from 'react-icons/di'
 import { Container } from './container'
-import { StorybookIcon } from './storybook-icon'
 import { MdAccessibility, MdPalette, MdGrain } from 'react-icons/md'
 
-export const RightButton = ({ sponsorButton, githubLink, storybookLink, nocolorMode = false }) => {
+export const RightButton = ({ sponsorButton, githubLink, storybookLink, nocolorMode = false, children }) => {
   const { colorMode, toggleColorMode } = useColorMode()
   return (
     <Flex
@@ -29,16 +28,19 @@ export const RightButton = ({ sponsorButton, githubLink, storybookLink, nocolorM
       color='gray.500'
       justify='flex-end'
     >
+      {children}
       {!!sponsorButton && (<SponsorButton mr='4' />)}
-      <Stack align='center' isInline spacing='3'>
-        {!!githubLink && <GithubLink icon={githubLink} />}
-        {!!storybookLink && <StorybookLink icon={storybookLink} />}
-      </Stack>
+      {(!!githubLink || !!storybookLink) && (
+        <Stack align='center' isInline spacing='3'>
+          <GithubLink icon={githubLink} />
+          <StorybookLink icon={storybookLink} />
+        </Stack>
+      )}
       {!nocolorMode && (
         <IconButton
           aria-label={`Switch to ${
-                colorMode === 'light' ? 'dark' : 'light'
-          } mode`}
+            colorMode === 'light' ? 'dark' : 'light'
+            } mode`}
           variant='ghost'
           color='current'
           ml='2'
@@ -50,13 +52,15 @@ export const RightButton = ({ sponsorButton, githubLink, storybookLink, nocolorM
   )
 }
 
-export const LeftButton = ({ gitHubButton, logo }) => {
+export const LeftButton = ({ gitHubButton, children }) => {
   return (
     <Box display='flex' alignItems='center'>
-      {!!logo && <Logo ico={MdAccessibility} text='chakra' />}
-      <Box ml='5' mb='-8px' display={['none', 'flex']}>
-        {!!gitHubButton && <GitHubButton name='Star' />}
-      </Box>
+      {children}
+      {!!gitHubButton && (
+        <Box ml='5' mb='-8px' display={['none', 'flex']}>
+          <GitHubButton name='Star' />
+        </Box>
+      )}
     </Box>
   )
 }

@@ -38,8 +38,8 @@ function SponsorButton (props) {
       }}
       {...props}
     >
-      <Box as={FaHeart} size='4' color='red.500' mr='2' />
-      <strong>{props.name}Sponsor</strong>
+      <Box as={props.icon} size='4' color='red.500' mr='2' />
+      <strong>{props.name}</strong>
     </PseudoBox>
   )
 }

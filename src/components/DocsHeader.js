@@ -87,10 +87,10 @@ const ThemeSwitch = props => (
   />
 )
 
-export const StorybookLink = ({ icon, ...props }) => (
+export const StorybookLink = ({ href, icon, ...props }) => (
   <PseudoBox
     as='a'
-    href='https://chakra-ui.netlify.com'
+    href={href}
     rel='noopener noreferrer'
     target='_blank'
     size='32px'
