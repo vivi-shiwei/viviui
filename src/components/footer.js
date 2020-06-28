@@ -36,7 +36,7 @@ export const OddFeature = ({ title, icon, subtitle, ...props }) => {
   )
 }
 
-export const GridFooter = ({ children, ...props }) => {
+export const GridFooter = ({ children, noBottomBorder = false, ...props }) => {
   return (
     <>
       <Container {...props}>
@@ -59,7 +59,9 @@ export const GridFooter = ({ children, ...props }) => {
 
       </Container>
 
-      <Divider my={16} />
+      {!noBottomBorder && (
+        <Divider my={16} />
+      )}
     </>
   )
 }

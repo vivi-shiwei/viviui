@@ -30,7 +30,7 @@ export const withHeader = () => {
 
     <Flex
       rounded='full'
-      size={10}
+      size={{ base: 8, sm: 10 }}
       bg='teal.500'
       align='center'
       justify='center'
@@ -42,7 +42,12 @@ export const withHeader = () => {
     <Stack align='center' isInline spacing='2'>
       <Menu placement='bottom-end'>
         <MenuButton as='div'>
-          <Avatar src={MyImage} size='md' cursor='pointer' />
+          <Avatar
+            src={MyImage}
+            w={{ base: '40px', md: '50px' }}
+            h={{ base: '40px', md: '50px' }}
+            cursor='pointer'
+          />
         </MenuButton>
         <MenuList w='280px'>
           <NextLink href='/' passHref>
@@ -63,7 +68,7 @@ export const withHeader = () => {
 
   )
   return (
-    <Header logo={Lo} left='CHAKRA' right={Right}>
+    <Header logo={Lo} left='CHAKRA' right={Right} Disclosure>
 
       <ButtonGroup>
         <NextLink
@@ -152,6 +157,34 @@ export const nologo = () => {
     <Header left='CHAKRA' right={Right} />
   )
 }
+
+export const withchlidren = () => {
+  return (
+    <Header>
+      <Stack align='center' isInline spacing='1'>
+        <MenuDivider />
+        <Box>
+          <NextLink href='/' passHref>
+            <Button as='a' bg='transparent' border='1px' px={2}>
+              登入
+            </Button>
+          </NextLink>
+        </Box>
+        <Heading as='h1' fontSize={{ base: '20px', md: '24px' }} letterSpacing='-.1rem' my='auto'>
+          <Box as='span' ml='34px'>
+            有一個姑娘
+          </Box>
+        </Heading>
+        <Heading as='h1' fontSize={{ base: '20px', md: '24px' }} letterSpacing='-.1rem' my='auto'>
+          <Box as='span' ml='35px'>
+            有一個姑娘
+          </Box>
+        </Heading>
+      </Stack>
+    </Header>
+  )
+}
+
 // export const nogithubButton = () => {
 //   return (
 //     <Header>

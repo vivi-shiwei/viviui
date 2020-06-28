@@ -13,7 +13,8 @@ import {
   Menu,
   MenuList,
   MenuItem,
-  Link
+  Link,
+  Text
 } from '@chakra-ui/core'
 import { AiOutlineLogout } from 'react-icons/ai'
 import { IoMdPerson, IoMdHome } from 'react-icons/io'
@@ -40,7 +41,15 @@ export const school = () => {
     <Stack align='center' isInline spacing='2'>
       <Menu placement='bottom-end'>
         <MenuButton as='div'>
-          <Avatar src={MyImage} size='md' cursor='pointer' />
+          <Avatar
+            src={MyImage}
+            size='md'
+            cursor='pointer'
+            display={{ base: 'none', sm: 'block' }}
+            w={{ base: '40px', md: '50px' }}
+            h={{ base: '40px', md: '50px' }}
+          />
+          <Text fontSize='sm' display={{ base: 'block', sm: 'none' }} color='teal.500' mr='3px'>vivi</Text>
         </MenuButton>
         <MenuList w='280px'>
           <NextLink href='/' passHref>
@@ -72,12 +81,12 @@ export const school = () => {
               align='center'
               variant='link'
               fontSize={{ base: 'xs', md: 'lg' }}
-              px={{ base: 1, sm: 4 }}
+              px={{ base: 0, sm: 4 }}
             >
-              <Box m={0} color='currentColor' ml={{ base: 0, md: -1 }} mr={{ base: 0, md: 1 }}>
+              <Box m={0} color='currentColor' ml={{ base: 0, md: -1 }} mr={{ base: 0, md: 1 }} display={{ base: 'none', sm: 'block' }}>
                 <IoMdPerson size='1.5em' />
               </Box>
-        首頁
+              首頁
             </Button>
           </NextLink>
           <NextLink passHref href='#'>
@@ -88,9 +97,9 @@ export const school = () => {
               align='center'
               variant='link'
               fontSize={{ base: 'xs', md: 'lg' }}
-              px={{ base: 1, sm: 4 }}
+              px={{ base: 0, sm: 4 }}
             >
-              <Box m={0} color='currentColor' ml={{ base: 0, md: -1 }} mr={{ base: 0, md: 1 }}>
+              <Box m={0} color='currentColor' ml={{ base: 0, md: -1 }} mr={{ base: 0, md: 1 }} display={{ base: 'none', sm: 'block' }}>
                 <MdDashboard size='1.5em' />
               </Box>
               學校專頁
