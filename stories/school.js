@@ -40,7 +40,7 @@ export const school = () => {
     <Stack align='center' isInline spacing='2'>
       <Menu placement='bottom-end'>
         <MenuButton as='div'>
-          <Avatar src={MyImage} size='base' cursor='pointer' />
+          <Avatar src={MyImage} size='md' cursor='pointer' />
         </MenuButton>
         <MenuList w='280px'>
           <NextLink href='/' passHref>
