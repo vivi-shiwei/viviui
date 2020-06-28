@@ -41,7 +41,7 @@ export const GridFooter = ({ children, ...props }) => {
     <>
       <Container {...props}>
         <Grid
-          templateColumns={{ sm: 'repeat(1, 1fr)', md: `repeat(${children.length}, 1fr)` }}
+          templateColumns={{ sm: 'repeat(1, 1fr)', md: 'repeat(4, 1fr)' }}
           gap={10}
           px={{ md: 12 }}
         >
