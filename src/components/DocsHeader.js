@@ -53,7 +53,6 @@ export const Header = props => (
     right='0'
     borderBottomWidth='1px'
     width='full'
-    height='4rem'
     {...props}
   />
 )
@@ -127,7 +126,7 @@ const DocsHeader = props => {
           <ThemeSwitch
             aria-label={`Switch to ${
               colorMode === 'light' ? 'dark' : 'light'
-            } mode`}
+              } mode`}
             onClick={toggleColorMode}
             icon={colorMode === 'light' ? 'moon' : 'sun'}
           />

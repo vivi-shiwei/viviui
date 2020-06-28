@@ -1,60 +1,189 @@
 import React from 'react'
-import { Header, RightButton, LeftButton } from '../src/components/header'
-import { MdAccessibility, MdPalette, MdGrain } from 'react-icons/md'
-import SponsorButton from '../src/components/SponsorButton'
-import Logo from '../src/components/logo'
-import GitHubButton from '../src/components/GitHubButton'
-import { FaHeart } from 'react-icons/fa'
+
 import {
-  Header as HeaderContainer,
-  GithubLink,
-  StorybookLink
-} from '../src/components/DocsHeader'
-import { DiGithubBadge } from 'react-icons/di'
-import { StorybookIcon } from '../src/components/storybook-icon'
+  ButtonGroup,
+  Button,
+  Stack,
+  Menu,
+  Avatar,
+  MenuButton,
+  MenuItem,
+  Box,
+  MenuList,
+  Link,
+  MenuDivider,
+  Heading,
+  Flex
+} from '@chakra-ui/core'
+import NextLink from 'next/link'
+import Header from '../src/components/header'
+import { MdAccessibility, MdPalette, MdGrain, MdEmail } from 'react-icons/md'
+import { IoMdHome } from 'react-icons/io'
+import { AiOutlineLogout } from 'react-icons/ai'
+
+import MyImage from '../static/QQ20200518181405.jpg'
 
 export default { title: 'Header' }
 
 export const withHeader = () => {
+  const Lo = (
+
+    <Flex
+      rounded='full'
+      size={10}
+      bg='teal.500'
+      align='center'
+      justify='center'
+    >
+      <Box size={6} color='white' as={MdPalette} />
+    </Flex>
+  )
+  const Right = (
+    <Stack align='center' isInline spacing='2'>
+      <Menu placement='bottom-end'>
+        <MenuButton as='div'>
+          <Avatar src={MyImage} size='md' cursor='pointer' />
+        </MenuButton>
+        <MenuList w='280px'>
+          <NextLink href='/' passHref>
+            <MenuItem as='a'>
+              <Box as={IoMdHome} mr='4px' />
+              <span>返回 Macau School</span>
+            </MenuItem>
+          </NextLink>
+          <Link href='/api/auth/logout'>
+            <MenuItem>
+              <Box as={AiOutlineLogout} mr='4px' />
+              <span>登出</span>
+            </MenuItem>
+          </Link>
+        </MenuList>
+      </Menu>
+    </Stack>
+
+  )
   return (
-    <Header>
-      <LeftButton gitHubButton />
-      <RightButton githubLink={DiGithubBadge} storybookLink={StorybookIcon} />
+    <Header logo={Lo} left='CHAKRA' right={Right}>
+
+      <ButtonGroup>
+        <NextLink
+          passHref
+          href='#'
+        >
+          <Button
+            ref='#'
+            as='a'
+            flexDirection={{ base: 'column', md: 'row' }}
+            align='center'
+            variant='link'
+            fontSize={{ base: 'xs', md: 'lg' }}
+            px={{ base: 1, sm: 4 }}
+          >
+            首頁
+          </Button>
+        </NextLink>
+        <NextLink
+          passHref
+          href='#'
+        >
+          <Button
+            ref='#'
+            as='a'
+            flexDirection={{ base: 'column', md: 'row' }}
+            align='center'
+            variant='link'
+            fontSize={{ base: 'xs', md: 'lg' }}
+            px={{ base: 1, sm: 4 }}
+          >
+            學校專頁
+          </Button>
+        </NextLink>
+      </ButtonGroup>
     </Header>
+  )
+}
+export const nogitchidren = () => {
+  const Right = (
+    <Stack align='center' isInline spacing='1'>
+      <MenuDivider />
+      <Box>
+        <NextLink href='/' passHref>
+          <Button as='a' bg='transparent' border='1px' px={2}>
+            登入
+          </Button>
+        </NextLink>
+      </Box>
+    </Stack>
+
+  )
+  const Lo = (
+
+    <Flex
+      rounded='full'
+      size={10}
+      bg='teal.500'
+      align='center'
+      justify='center'
+    >
+      <Box size={6} color='white' as={MdAccessibility} />
+    </Flex>
+  )
+  return (
+    <Header logo={Lo} left='CHAKRA' right={Right} />
   )
 }
 
-export const nogithubButton = () => {
-  return (
-    <Header>
-      <LeftButton />
-      <RightButton githubLink={DiGithubBadge} storybookLink={StorybookIcon} />
-    </Header>
-  )
-}
-export const nogihubButton = () => {
-  return (
-    <Header>
-      <LeftButton>
-        <Logo icon={MdPalette} text='fewfgtret' />
-      </LeftButton>
-      <RightButton>
-        <StorybookLink icon={StorybookIcon} />
-      </RightButton>
-    </Header>
-  )
-}
+export const nologo = () => {
+  const Right = (
+    <Stack align='center' isInline spacing='1'>
+      <MenuDivider />
+      <Box>
+        <NextLink href='/' passHref>
+          <Button as='a' bg='transparent' border='1px' px={2}>
+            登入
+          </Button>
+        </NextLink>
+      </Box>
+    </Stack>
 
-export const noleftButton = () => {
+  )
+
   return (
-    <Header>
-      <LeftButton>
-        <Logo icon={MdPalette} text='fewfgtret' />
-      </LeftButton>
-      <RightButton>
-        <SponsorButton name='dfd' icon={FaHeart} />
-        <StorybookLink icon={StorybookIcon} />
-      </RightButton>
-    </Header>
+    <Header left='CHAKRA' right={Right} />
   )
 }
+// export const nogithubButton = () => {
+//   return (
+//     <Header>
+//       <LeftButton />
+//       <RightButton githubLink={DiGithubBadge} storybookLink={StorybookIcon} />
+//     </Header>
+//   )
+// }
+
+// export const nogihubButton = () => {
+//   return (
+//     <Header>
+//       <LeftButton>
+//         <Logo icon={MdPalette} text='fewfgtret' />
+//       </LeftButton>
+//       <RightButton>
+//         <StorybookLink icon={StorybookIcon} />
+//       </RightButton>
+//     </Header>
+//   )
+// }
+
+// export const noleftButton = () => {
+//   return (
+//     <Header>
+//       <LeftButton>
+//         <Logo icon={MdPalette} text='fewfgtret' />
+//       </LeftButton>
+//       <RightButton>
+//         <SponsorButton name='dfd' icon={FaHeart} />
+//         <StorybookLink icon={StorybookIcon} />
+//       </RightButton>
+//     </Header>
+//   )
+// }
