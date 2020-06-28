@@ -1,6 +1,5 @@
 import React from 'react'
 import { PseudoBox, Box } from '@chakra-ui/core'
-import { FaHeart } from 'react-icons/fa'
 
 function SponsorButton (props) {
   return (

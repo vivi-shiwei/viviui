@@ -1,12 +1,6 @@
 import React from 'react'
 import { OddFeature, GridFooter } from '../src/components/footer'
-import { MdAccessibility, MdPalette, MdGrain } from 'react-icons/md'
-import {
-  Box,
-  Heading,
-  Flex,
-  Text
-} from '@chakra-ui/core'
+import { MdPalette, MdGrain } from 'react-icons/md'
 
 export default { title: 'Footer' }
 

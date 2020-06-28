@@ -4,28 +4,17 @@ import {
   Flex,
   IconButton,
   useColorMode,
-  Stack,
-  ButtonGroup,
-  Menu,
-  MenuButton,
-  Avatar,
-  MenuList,
   Heading,
   Drawer,
   DrawerBody,
-  DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
   DrawerContent,
-  DrawerCloseButton,
   Button,
   useDisclosure
 } from '@chakra-ui/core'
-import GitHubButton from './GitHubButton'
 import {
-  Header as HeaderContainer,
-  GithubLink,
-  StorybookLink
+  Header as HeaderContainer
 } from './DocsHeader'
 import { Container } from './container'
 import { FiAlignJustify } from 'react-icons/fi'
@@ -35,7 +24,7 @@ const Logo = (props) => (
     {props.icon}
   </Box>
 )
-const Header = ({ left, right, text, logo, children, Disclosure, ...props }) => {
+const Header = ({ left, right, text, logo, noColormode = false, children, Disclosure, ...props }) => {
   const { colorMode, toggleColorMode } = useColorMode()
   const { isOpen, onOpen, onClose } = useDisclosure()
   const bg = { light: 'white', dark: 'gray.800' }
@@ -68,19 +57,22 @@ const Header = ({ left, right, text, logo, children, Disclosure, ...props }) => 
             >
 
               {right}
-              <IconButton
-                aria-label={`Switch to ${
-                  colorMode === 'light' ? 'dark' : 'light'
-                } mode`}
-                variant='ghost'
-                color='current'
-                fontSize={{ base: '18px', sm: '24px', md: '34px' }}
-                onClick={toggleColorMode}
-                icon={colorMode === 'light' ? 'moon' : 'sun'}
-                size='xs'
-              />
+              {!noColormode && (
+                <IconButton
+                  aria-label={`Switch to ${
+                    colorMode === 'light' ? 'dark' : 'light'
+                  }mode`}
+                  variant='ghost'
+                  color='current'
+                  fontSize={{ base: '20px', sm: '24px', md: '34px' }}
+                  onClick={toggleColorMode}
+                  icon={colorMode === 'light' ? 'moon' : 'sun'}
+                  size='xs'
+                />
+              )}
+
               <Button variantColor='none' onClick={onOpen} display={{ sm: 'block', md: 'none' }} size='xs'>
-                <Box fontSize={{ base: '20px', sm: '28px' }} color={colorMode === 'light' ? 'black' : 'white'} as={FiAlignJustify} />
+                <Box fontSize={{ base: '22px', sm: '28px' }} color={colorMode === 'light' ? 'black' : 'white'} as={FiAlignJustify} />
               </Button>
               <Drawer placement='left' onClose={onClose} isOpen={isOpen}>
                 <DrawerOverlay />

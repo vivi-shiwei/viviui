@@ -1,6 +1,5 @@
 import React from 'react'
 import { Box, Link, Flex, Text } from '@chakra-ui/core'
-import { jsx } from '@emotion/core'
 import NextLink from 'next/link'
 
 const Logo = ({ text, icon, ...props }) => (

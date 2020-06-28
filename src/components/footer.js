@@ -1,5 +1,4 @@
 import React from 'react'
-import { jsx } from '@emotion/core'
 import {
   Box,
   Heading,
@@ -49,13 +48,13 @@ export const GridFooter = ({ children, noBottomBorder = false, ...props }) => {
             {children}
           </Grid>
         ) : (
-          <Grid
-            templateColumns={{ sm: 'repeat(1, 1fr)', md: `repeat(${(children.length)}, 1fr)` }}
-            gap={10}
-            px={{ md: 12 }}
-          >
-            {children}
-          </Grid>)}
+            <Grid
+              templateColumns={{ sm: 'repeat(1, 1fr)', md: `repeat(${(children.length)}, 1fr)` }}
+              gap={10}
+              px={{ md: 12 }}
+            >
+              {children}
+            </Grid>)}
 
       </Container>
 

@@ -17,7 +17,7 @@ import {
 } from '@chakra-ui/core'
 import NextLink from 'next/link'
 import Header from '../src/components/header'
-import { MdAccessibility, MdPalette, MdGrain, MdEmail } from 'react-icons/md'
+import { MdAccessibility, MdPalette } from 'react-icons/md'
 import { IoMdHome } from 'react-icons/io'
 import { AiOutlineLogout } from 'react-icons/ai'
 

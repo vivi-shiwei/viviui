@@ -11,11 +11,9 @@ import {
   PseudoBox
 } from '@chakra-ui/core'
 import { css } from '@emotion/core'
-import { DiGithubBadge } from 'react-icons/di'
 import Logo from './logo'
 import MobileNav from './MobileNav'
 import SponsorButton from './SponsorButton'
-import { StorybookIcon } from './storybook-icon'
 
 const styles = css`
   .algolia-autocomplete {
