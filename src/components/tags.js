@@ -19,7 +19,7 @@ import { Container } from './container'
 const PostContent = ({ content }) => {
   return content.split('\n').map((line, i) => {
     return (
-      <Text key={i} fontSize='2xl'>
+      <Text key={i} fontSize={{ base: 'xl', sm: '2xl' }}>
         {line}
       </Text>
     )
@@ -70,12 +70,12 @@ export const PostCard = ({ editModel, profilePhoto, creatorName, createTime, tit
           {!!talentName && (
             <Box>
               <Tag rounded='full' variant='outline' variantColor='blue' style={{ whiteSpace: 'nowrap' }}>
-                <TagLabel>{talentName}</TagLabel>
+                <TagLabel fontSize={{ base: 'sm', sm: 'lg' }}>{talentName}</TagLabel>
               </Tag>
             </Box>
           )}
           <Box mt={2}>
-            <Text fontWeight='bold' textAlign='left' minH='50px' wordBreak='break-word' fontSize='3xl'>
+            <Text fontWeight='bold' textAlign='left' minH={{ base: '30px', sm: '50px' }} wordBreak='break-word' fontSize={{ base: '2xl', sm: '3xl' }}>
               {(title && title !== ' ') ? title : '無標題'}
             </Text>
           </Box>
@@ -86,7 +86,7 @@ export const PostCard = ({ editModel, profilePhoto, creatorName, createTime, tit
       <Box as='article'>
         {/* 內文的文字 */}
         {!!content && (
-          <Box as='div' textAlign='left' wordBreak='break-word' p={5}>
+          <Box as='div' textAlign='left' wordBreak='break-word' p={{ base: 3, sm: 5 }}>
             <PostContent content={content} />
           </Box>
         )}
@@ -96,7 +96,9 @@ export const PostCard = ({ editModel, profilePhoto, creatorName, createTime, tit
         </Text>
 
         {/* 照片列表 */}
-        {postPhotos}
+        <Box mt={2}>
+          {postPhotos}
+        </Box>
       </Box>
       {children}
     </Box>
@@ -116,12 +118,15 @@ const tags = ({ title, subtitle, children, ...props }) => {
             </Flex>
           </Container>
         )}
-        <Container mb={10}>
-          <Box d='flex' justifyContent='center'>
-            {subtitle}
-          </Box>
-        </Container>
+        {!!subtitle && (
 
+          <Container mb={10}>
+            <Box d='flex' justifyContent='center'>
+              {subtitle}
+            </Box>
+          </Container>
+
+        )}
         {children}
       </Box>
     </>
