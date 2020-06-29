@@ -1,7 +1,6 @@
 import React from 'react'
-import Hero from '../src/components/hero'
-import Header from '../src/components/header'
 import { GridFooter, OddFeature } from '../src/components/footer'
+import Header from '../src/components/header'
 import {
   Box,
   Heading,
@@ -15,6 +14,11 @@ import {
   MenuItem,
   Link,
   Text,
+  Icon,
+  Image,
+  Tag,
+  TagLabel,
+  AspectRatioBox,
   Drawer,
   useDisclosure,
   DrawerOverlay,
@@ -23,18 +27,20 @@ import {
   DrawerHeader,
   useColorMode
 } from '@chakra-ui/core'
-import { AiOutlineLogout } from 'react-icons/ai'
+import Tags, { PostCard } from '../src/components/tags'
+import { FcLikePlaceholder, FcLike } from 'react-icons/fc'
 import { IoMdPerson, IoMdHome } from 'react-icons/io'
 import NextLink from 'next/link'
 import { MdDashboard, MdAccessibility, MdPhoto, MdShowChart } from 'react-icons/md'
+import { AiOutlineLogout } from 'react-icons/ai'
 import { FiAlignJustify } from 'react-icons/fi'
 
 import MyImage from '../static/QQ20200518181405.jpg'
 export default {
-  title: 'School'
+  title: 'Schoolpost'
 }
 
-export const school = () => {
+export const Schoolpost = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const { colorMode, toggleColorMode } = useColorMode()
   const Logo = (
@@ -95,11 +101,39 @@ export const school = () => {
         </MenuList>
       </Menu>
     </Stack>
-
+  )
+  const subtitle = (
+    <>
+      <Button
+        variantColor='blue'
+        mx={2}
+      >
+        建立新貼文
+      </Button>
+      <Button
+        variantColor='green'
+        mx={2}
+      >
+        記錄優秀學生
+      </Button>
+    </>
+  )
+  const editModel = (
+    <Menu>
+      <MenuButton as={Icon} size='30px' name='chevron-down' fontSize='20px' />
+      <MenuList>
+        <MenuItem minH='20px'>
+          <Text>編輯</Text>
+        </MenuItem>
+        <MenuItem minH='20px' onClick={() => alert('確認刪除')}>
+          <Text>刪除</Text>
+        </MenuItem>
+      </MenuList>
+    </Menu>
   )
   return (
-    <>
-      <Header logo={Logo} right={Right} Disclosure={Disclosure}>
+    <Box>
+      <Header logo={Logo} right={Right} Disclosure={Disclosure} noColormode>
         <ButtonGroup>
           <NextLink passHref href='#'>
             <Button
@@ -135,41 +169,46 @@ export const school = () => {
           </NextLink>
         </ButtonGroup>
       </Header>
-      <Hero
-        title='我的學校'
-        subtitle='SCHOOL 是一個簡單的、可連結很多模組的、線上的學校系統。可透過 SCHOOL 進行日常校園管理，了解學生學習生活，促進發掘學生閃光點等等。專為澳門中小幼學校而設。'
-        leftButton={
-          <Box mt='6' d='flex' flexWrap='wrap' justifyContent='center'>
-            <NextLink
-              href='/'
-              passHref
-            >
-              <Button size='lg' as='a' variantColor='blue' w={{ base: '100%', sm: 'auto' }}>
-                登入到我的學校
-              </Button>
-            </NextLink>
-          </Box>
-        }
-      />
-
-      <GridFooter>
-        <OddFeature
-          title='學生成長檔案'
-          subtitle='SCHOOL 替每個學生都建立一個成長檔案，老師能記錄學生的學習生活，如學生的擅好，長處等。
-                        使老師更能發現學生的閃光點。同學也能充分了解校園生活所帶給他的歷程。'
-          icon={MdAccessibility}
+      <Tags title='聖若瑟教區中學第六校' subtitle={subtitle} mt={16}>
+        <PostCard
+          mb={5}
+          editModel={editModel}
+          profilePhoto={
+            <Avatar size='md' name='Ryan Florence' src={MyImage} cursor='pointer' />
+          }
+          creatorName='vivi'
+          createTime='2010-9'
+          talentName='有責任心'
+          content='今天是聖若瑟開學第一天，歡迎學生們回歸學校，下面有請校長上臺講話'
+          // tagNames={
+          //   <Tag rounded='full' variant='solid' variantColor='cyan' fontSize={{ base: '13px', md: '16px' }} style={{ whiteSpace: 'nowrap' }}>
+          //     聖若瑟第六校
+          //   </Tag>
+          // }
+          postPhotos={
+            <AspectRatioBox maxW='100%' ratio={4 / 4}>
+              <Image src={MyImage} alt='naruto' objectFit='cover' />
+            </AspectRatioBox>
+          }
         />
-        <OddFeature
-          title='學生相冊'
-          subtitle='每個小朋友成長的瞬間都值得紀念。SCHOOL 提供的學生相冊除了能作為記錄學生活動相片外，也能和學生成長檔案、學生活動事件相連結。讓系統能客觀地分析學生的智能發展方向。'
-          icon={MdPhoto}
+        <PostCard
+          mb={5}
+          profilePhoto={
+            <Avatar size='md' name='Ryan Florence' src={MyImage} cursor='pointer' />
+          }
+          creatorName='vivi'
+          createTime='2010-9'
+          tagNames='vivi'
         />
-        <OddFeature
-          title='與基力掛勾的學生評估表'
-          subtitle='每個小朋友成長的瞬間都值得紀念。SCHOOL 提供的學生相冊除了能作為記錄學生活動相片外，也能和學生成長檔案、學生活動事件相連結。讓系統能客觀地分析學生的智能發展方向。'
-          icon={MdShowChart}
+        <PostCard
+          mb={5}
+          profilePhoto={
+            <Avatar size='md' name='Ryan Florence' src={MyImage} cursor='pointer' />
+          }
+          creatorName='vivi'
+          createTime='2010-9'
         />
-      </GridFooter>
-    </>
+      </Tags>
+    </Box>
   )
 }

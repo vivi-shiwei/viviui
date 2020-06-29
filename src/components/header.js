@@ -17,7 +17,6 @@ import {
   Header as HeaderContainer
 } from './DocsHeader'
 import { Container } from './container'
-import { FiAlignJustify } from 'react-icons/fi'
 
 const Logo = (props) => (
   <Box as='a' href='#'>
@@ -26,7 +25,6 @@ const Logo = (props) => (
 )
 const Header = ({ left, right, text, logo, noColormode = false, children, Disclosure, ...props }) => {
   const { colorMode, toggleColorMode } = useColorMode()
-  const { isOpen, onOpen, onClose } = useDisclosure()
   const bg = { light: 'white', dark: 'gray.800' }
 
   return (
@@ -61,7 +59,7 @@ const Header = ({ left, right, text, logo, noColormode = false, children, Disclo
                 <IconButton
                   aria-label={`Switch to ${
                     colorMode === 'light' ? 'dark' : 'light'
-                  }mode`}
+                    }mode`}
                   variant='ghost'
                   color='current'
                   fontSize={{ base: '20px', sm: '24px', md: '34px' }}
@@ -70,21 +68,7 @@ const Header = ({ left, right, text, logo, noColormode = false, children, Disclo
                   size='xs'
                 />
               )}
-
-              <Button variantColor='none' onClick={onOpen} display={{ sm: 'block', md: 'none' }} size='xs'>
-                <Box fontSize={{ base: '22px', sm: '28px' }} color={colorMode === 'light' ? 'black' : 'white'} as={FiAlignJustify} />
-              </Button>
-              <Drawer placement='left' onClose={onClose} isOpen={isOpen}>
-                <DrawerOverlay />
-                <DrawerContent>
-                  <DrawerHeader borderBottomWidth='1px'>選項</DrawerHeader>
-                  <DrawerBody>
-                    <p>1</p>
-                    <p>2</p>
-                    <p>3</p>
-                  </DrawerBody>
-                </DrawerContent>
-              </Drawer>
+              {Disclosure}
             </Flex>
           )}
         </Flex>
