@@ -1,26 +1,19 @@
 import React from 'react'
-import { GridFooter, OddFeature } from '../src/components/footer'
 import {
   Box,
-  Heading,
   Button,
-  ButtonGroup,
-  Stack,
   MenuButton,
   Avatar,
   Menu,
   MenuList,
   MenuItem,
-  Link,
   Text,
   Icon,
   Image,
-  Tag,
-  TagLabel,
   AspectRatioBox,
   Flex
 } from '@chakra-ui/core'
-import Tags, { PostCard } from '../src/components/tags'
+import Tags, { PostCard } from '../src/components/feed'
 import { FcLikePlaceholder, FcLike } from 'react-icons/fc'
 
 import MyImage from '../static/QQ20200518181405.jpg'
@@ -46,7 +39,6 @@ export const noTitle = () => {
         mb={5}
         creatorName='vivi'
         createTime='2010-9'
-        tagNames='vivi'
         title='沒有貼文板塊以上的字'
       />
     </Tags>
@@ -292,7 +284,7 @@ export const tagNames = () => {
             <Image src={MyImage} alt='naruto' objectFit='cover' />
           </AspectRatioBox>
         }
-        tagNames='tag到的人'
+        tagNames={<Text cursor='pointer' as='ins' color='Blue' style={{ whiteSpace: 'nowrap' }}>tag到的人</Text>}
       />
     </Tags>
   )
@@ -330,7 +322,7 @@ export const PostCardchlidrens = () => {
             <Image src={MyImage} alt='naruto' objectFit='cover' />
           </AspectRatioBox>
         }
-        tagNames='tag到的人'
+        tagNames={<Text cursor='pointer' as='ins' color='Blue' style={{ whiteSpace: 'nowrap' }}>tag到的人</Text>}
       >
         <Flex>
           <Box as={FcLikePlaceholder} fontSize='30px' />
@@ -401,7 +393,7 @@ export const Tagpost = () => {
         }
         creatorName='vivi'
         createTime='2010-9'
-        tagNames='vivi'
+        tagNames={<Text cursor='pointer' as='ins' color='Blue' style={{ whiteSpace: 'nowrap' }}>vivi</Text>}
       />
       <PostCard
         mb={5}

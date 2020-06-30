@@ -49,20 +49,9 @@ export const school = () => {
   )
   const Disclosure = (
     <>
-      <Button variantColor='none' onClick={onOpen} display={{ sm: 'block', md: 'none' }} size='xs'>
-        <Box fontSize={{ base: '22px', sm: '28px' }} color={colorMode === 'light' ? 'black' : 'white'} as={FiAlignJustify} />
-      </Button>
-      <Drawer placement='left' onClose={onClose} isOpen={isOpen}>
-        <DrawerOverlay />
-        <DrawerContent>
-          <DrawerHeader borderBottomWidth='1px'>選項</DrawerHeader>
-          <DrawerBody>
-            <p>1</p>
-            <p>2</p>
-            <p>3</p>
-          </DrawerBody>
-        </DrawerContent>
-      </Drawer>
+      <p>1</p>
+      <p>2</p>
+      <p>3</p>
     </>
   )
   const Right = (

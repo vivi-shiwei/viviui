@@ -68,7 +68,7 @@ export const withHeader = () => {
 
   )
   return (
-    <Header logo={Lo} left='CHAKRA' right={Right} Disclosure>
+    <Header logo={Lo} left='CHAKRA' right={Right} Disclosure='shfdodh'>
 
       <ButtonGroup>
         <NextLink

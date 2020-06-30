@@ -3,17 +3,11 @@ import {
   Box,
   Heading,
   Text,
-  Divider,
   Flex,
-  Image,
   Stack,
   Tag,
-  Avatar,
-  TagLabel,
-  Badge,
-  Tooltip
+  TagLabel
 } from '@chakra-ui/core'
-import NextLink from 'next/link'
 import { Container } from './container'
 
 const PostContent = ({ content }) => {
@@ -91,9 +85,8 @@ export const PostCard = ({ editModel, profilePhoto, creatorName, createTime, tit
           </Box>
         )}
         {/* 學生的tag */}
-        <Text cursor='pointer' as='ins' color='Blue' style={{ whiteSpace: 'nowrap' }}>
-          {tagNames}
-        </Text>
+
+        {tagNames}
 
         {/* 照片列表 */}
         <Box mt={2}>

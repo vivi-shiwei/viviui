@@ -17,6 +17,7 @@ import {
   Header as HeaderContainer
 } from './DocsHeader'
 import { Container } from './container'
+import { FiAlignJustify } from 'react-icons/fi'
 
 const Logo = (props) => (
   <Box as='a' href='#'>
@@ -26,6 +27,7 @@ const Logo = (props) => (
 const Header = ({ left, right, text, logo, noColormode = false, children, Disclosure, ...props }) => {
   const { colorMode, toggleColorMode } = useColorMode()
   const bg = { light: 'white', dark: 'gray.800' }
+  const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
     <HeaderContainer bg={bg[colorMode]} {...props}>
@@ -68,7 +70,22 @@ const Header = ({ left, right, text, logo, noColormode = false, children, Disclo
                   size='xs'
                 />
               )}
-              {Disclosure}
+              {!!Disclosure && (
+                <>
+                  <Button variantColor='none' onClick={onOpen} display={{ sm: 'block', md: 'none' }} size='xs'>
+                    <Box fontSize={{ base: '22px', sm: '28px' }} color={colorMode === 'light' ? 'black' : 'white'} as={FiAlignJustify} />
+                  </Button>
+                  <Drawer placement='left' onClose={onClose} isOpen={isOpen}>
+                    <DrawerOverlay />
+                    <DrawerContent>
+                      <DrawerHeader borderBottomWidth='1px'>選項</DrawerHeader>
+                      <DrawerBody>
+                        {Disclosure}
+                      </DrawerBody>
+                    </DrawerContent>
+                  </Drawer>
+                </>
+              )}
             </Flex>
           )}
         </Flex>

@@ -16,8 +16,6 @@ import {
   Text,
   Icon,
   Image,
-  Tag,
-  TagLabel,
   AspectRatioBox,
   Drawer,
   useDisclosure,
@@ -25,13 +23,13 @@ import {
   DrawerBody,
   DrawerContent,
   DrawerHeader,
+  Tag,
   useColorMode
 } from '@chakra-ui/core'
-import Tags, { PostCard } from '../src/components/tags'
-import { FcLikePlaceholder, FcLike } from 'react-icons/fc'
+import Tags, { PostCard } from '../src/components/feed'
 import { IoMdPerson, IoMdHome } from 'react-icons/io'
 import NextLink from 'next/link'
-import { MdDashboard, MdAccessibility, MdPhoto, MdShowChart } from 'react-icons/md'
+import { MdDashboard } from 'react-icons/md'
 import { AiOutlineLogout } from 'react-icons/ai'
 import { FiAlignJustify } from 'react-icons/fi'
 
@@ -180,11 +178,11 @@ export const Schoolpost = () => {
           createTime='2010-9'
           talentName='有責任心'
           content='今天是聖若瑟開學第一天，歡迎學生們回歸學校，下面有請校長上臺講話'
-          // tagNames={
-          //   <Tag rounded='full' variant='solid' variantColor='cyan' fontSize={{ base: '13px', md: '16px' }} style={{ whiteSpace: 'nowrap' }}>
-          //     聖若瑟第六校
-          //   </Tag>
-          // }
+          tagNames={
+            <Tag rounded='full' variant='solid' variantColor='cyan' fontSize={{ base: '13px', md: '16px' }} style={{ whiteSpace: 'nowrap' }}>
+              聖若瑟第六校
+            </Tag>
+          }
           postPhotos={
             <AspectRatioBox maxW='100%' ratio={4 / 4}>
               <Image src={MyImage} alt='naruto' objectFit='cover' />

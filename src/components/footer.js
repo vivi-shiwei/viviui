@@ -35,22 +35,22 @@ export const OddFeature = ({ title, icon, subtitle, ...props }) => {
   )
 }
 
-export const GridFooter = ({ children, noBottomBorder = false, ...props }) => {
+export const GridFooter = ({ children, isBottomBorder, gap, ...props }) => {
   return (
     <>
       <Container {...props}>
         {children.length > 4 ? (
           <Grid
-            templateColumns={{ sm: 'repeat(1, 1fr)', md: 'repeat(4, 1fr)' }}
-            gap={10}
+            templateColumns={['repeat(1, 1fr)', 'repeat(2, 1fr)', 'repeat(3, 1fr)', 'repeat(4, 1fr)']}
+            gap={gap}
             px={{ md: 12 }}
           >
             {children}
           </Grid>
         ) : (
           <Grid
-            templateColumns={{ sm: 'repeat(1, 1fr)', md: `repeat(${(children.length)}, 1fr)` }}
-            gap={10}
+            templateColumns={{ base: 'repeat(1, 1fr)', sm: 'repeat(2, 1fr)', md: `repeat(${(children.length)}, 1fr)` }}
+            gap={gap}
             px={{ md: 12 }}
           >
             {children}
@@ -58,7 +58,7 @@ export const GridFooter = ({ children, noBottomBorder = false, ...props }) => {
 
       </Container>
 
-      {!noBottomBorder && (
+      {!!isBottomBorder && (
         <Divider my={16} />
       )}
     </>

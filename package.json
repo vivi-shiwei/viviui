@@ -25,7 +25,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^3.10.0",
-    "standard": "^14.3.4"
+    "standard": "^14.3.4",
+    "style-it": "^2.1.4"
   },
   "standard": {
     "parser": "babel-eslint"
