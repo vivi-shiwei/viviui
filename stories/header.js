@@ -184,39 +184,3 @@ export const withchlidren = () => {
     </Header>
   )
 }
-
-// export const nogithubButton = () => {
-//   return (
-//     <Header>
-//       <LeftButton />
-//       <RightButton githubLink={DiGithubBadge} storybookLink={StorybookIcon} />
-//     </Header>
-//   )
-// }
-
-// export const nogihubButton = () => {
-//   return (
-//     <Header>
-//       <LeftButton>
-//         <Logo icon={MdPalette} text='fewfgtret' />
-//       </LeftButton>
-//       <RightButton>
-//         <StorybookLink icon={StorybookIcon} />
-//       </RightButton>
-//     </Header>
-//   )
-// }
-
-// export const noleftButton = () => {
-//   return (
-//     <Header>
-//       <LeftButton>
-//         <Logo icon={MdPalette} text='fewfgtret' />
-//       </LeftButton>
-//       <RightButton>
-//         <SponsorButton name='dfd' icon={FaHeart} />
-//         <StorybookLink icon={StorybookIcon} />
-//       </RightButton>
-//     </Header>
-//   )
-// }
