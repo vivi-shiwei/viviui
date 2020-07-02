@@ -4,8 +4,8 @@
   "description": "",
   "main": "build.js",
   "scripts": {
-    "build": "babel src -d build",
-    "storybook": "start-storybook"
+    "storybook": "start-storybook",
+    "build": "build-storybook -c .storybook -o build"
   },
   "dependencies": {
     "@chakra-ui/core": "^0.8.0",
