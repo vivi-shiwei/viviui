@@ -5,7 +5,7 @@ import {
   Text,
   Divider
 } from '@chakra-ui/core'
-import { Container } from './container'
+import { Container } from './containerPage'
 
 const Hero = ({ title, subtitle, children, noBottomBorder = false, leftButton = null, rightButton = null, ...rest }) => {
   return (

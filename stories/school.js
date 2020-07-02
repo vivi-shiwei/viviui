@@ -1,7 +1,7 @@
 import React from 'react'
-import Hero from '../src/components/hero'
-import Header from '../src/components/header'
-import { GridFooter, OddFeature } from '../src/components/footer'
+import Hero from '../src/components/heroPage'
+import Header from '../src/components/headerPage'
+import { GridFooter, OddFeature } from '../src/components/footerPage'
 import {
   Box,
   Heading,
@@ -14,20 +14,12 @@ import {
   MenuList,
   MenuItem,
   Link,
-  Text,
-  Drawer,
-  useDisclosure,
-  DrawerOverlay,
-  DrawerBody,
-  DrawerContent,
-  DrawerHeader,
-  useColorMode
+  Text
 } from '@chakra-ui/core'
 import { AiOutlineLogout } from 'react-icons/ai'
 import { IoMdPerson, IoMdHome } from 'react-icons/io'
 import NextLink from 'next/link'
 import { MdDashboard, MdAccessibility, MdPhoto, MdShowChart } from 'react-icons/md'
-import { FiAlignJustify } from 'react-icons/fi'
 
 import MyImage from '../static/QQ20200518181405.jpg'
 export default {
@@ -35,8 +27,6 @@ export default {
 }
 
 export const school = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const { colorMode, toggleColorMode } = useColorMode()
   const Logo = (
     <Heading as='h1' size='lg' letterSpacing='-.1rem'>
       <Box as='span' d={{ base: 'none', sm: 'inline' }}>

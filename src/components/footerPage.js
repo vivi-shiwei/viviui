@@ -7,7 +7,7 @@ import {
   Divider,
   Flex
 } from '@chakra-ui/core'
-import { Container } from './container'
+import { Container } from './containerPage'
 
 export const OddFeature = ({ title, icon, subtitle, ...props }) => {
   return (

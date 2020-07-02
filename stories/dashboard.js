@@ -2,27 +2,14 @@ import React from 'react'
 import {
   Box,
   Button,
-  MenuButton,
-  Avatar,
-  Menu,
-  MenuList,
-  MenuItem,
-  Text,
-  Icon,
-  Image,
-  AspectRatioBox,
-  Flex,
   Link,
   IconButton,
-  Select,
-  Divider
+  Select
 } from '@chakra-ui/core'
-import Dashboards, { Card } from '../src/components/dashboard'
-import { FcLikePlaceholder, FcLike } from 'react-icons/fc'
+import Dashboards, { Card } from '../src/components/dashboardPage'
 import { GrUserAdmin } from 'react-icons/gr'
 import NextLink from 'next/link'
 
-import MyImage from '../static/QQ20200518181405.jpg'
 export default {
   title: 'DashboardPages'
 }

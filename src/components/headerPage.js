@@ -15,8 +15,8 @@ import {
 } from '@chakra-ui/core'
 import {
   Header as HeaderContainer
-} from './DocsHeader'
-import { Container } from './container'
+} from './DocsHeaderPage'
+import { Container } from './containerPage'
 import { FiAlignJustify } from 'react-icons/fi'
 
 const Logo = (props) => (
@@ -61,7 +61,7 @@ const Header = ({ left, right, text, logo, noColormode = false, children, Disclo
                 <IconButton
                   aria-label={`Switch to ${
                     colorMode === 'light' ? 'dark' : 'light'
-                    }mode`}
+                  }mode`}
                   variant='ghost'
                   color='current'
                   fontSize={{ base: '20px', sm: '24px', md: '34px' }}

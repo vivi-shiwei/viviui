@@ -1,5 +1,5 @@
 import React from 'react'
-import Hero from '../src/components/hero'
+import Hero from '../src/components/heroPage'
 import {
   Box,
   Heading,

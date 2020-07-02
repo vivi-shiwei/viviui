@@ -1,15 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
   Box,
   Button,
   Link,
-  IconButton,
-  Select,
   Divider,
   FormControl,
   FormLabel,
   FormErrorMessage,
-  FormHelperText,
   Input,
   Heading,
   Menu,
@@ -17,27 +14,15 @@ import {
   MenuList,
   MenuItem,
   Tabs, TabList, TabPanels, Tab, TabPanel,
-  useDisclosure,
-  Popover,
-  PopoverContent,
-  PopoverHeader,
-  PopoverBody,
-  PopoverFooter,
-  PopoverArrow,
-  PopoverCloseButton,
-  Badge,
-  DarkMode,
-  Text,
-  LightMode,
   List,
   ListItem,
   ListIcon
 } from '@chakra-ui/core'
 import { Formik, Field, Form } from 'formik'
-import Admin from '../src/components/admin'
+import Admin from '../src/components/adminPage'
 import NextLink from 'next/link'
-import SchooluserList from '../src/components/schooluserList'
-import AdminList from '../src/components/adminList'
+import SchooluserList from '../src/components/schooluserListPage'
+import AdminList from '../src/components/adminListPage'
 import { FaSchool, FaUserEdit } from 'react-icons/fa'
 import { AiTwotoneSetting } from 'react-icons/ai'
 

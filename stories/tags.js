@@ -13,7 +13,7 @@ import {
   AspectRatioBox,
   Flex
 } from '@chakra-ui/core'
-import Tags, { PostCard } from '../src/components/feed'
+import Tags, { PostCard } from '../src/components/feedPage'
 import { FcLikePlaceholder, FcLike } from 'react-icons/fc'
 
 import MyImage from '../static/QQ20200518181405.jpg'
@@ -27,7 +27,7 @@ export const noProfilePhoto = () => {
         mb={5}
         creatorName='vivi'
         createTime='2010-9'
-        title='schoolName 下沒有按鈕的時候 和頭像圖片不給'
+        Posttitle='schoolName 下沒有按鈕的時候 和頭像圖片不給'
       />
     </Tags>
   )
@@ -39,7 +39,7 @@ export const noTitle = () => {
         mb={5}
         creatorName='vivi'
         createTime='2010-9'
-        title='沒有貼文板塊以上的字'
+        Posttitle='沒有貼文板塊以上的字'
       />
     </Tags>
   )
@@ -114,7 +114,7 @@ export const iseditModel = () => {
           <Avatar size='md' name='Ryan Florence' src={MyImage} cursor='pointer' />
         }
         createTime='2010-9'
-        title='編輯按鈕可以給，可以不給'
+        Posttitle='編輯按鈕可以給，可以不給'
       />
     </Tags>
   )

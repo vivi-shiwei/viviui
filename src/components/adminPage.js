@@ -10,8 +10,8 @@ import {
   Spinner,
   Divider
 } from '@chakra-ui/core'
-import { Container } from './container'
-const NewBgLayout = ({ backurl, children, noDivider = false, title, ...props }) => {
+import { Container } from './containerPage'
+const Admin = ({ backurl, children, noDivider = false, title, ...props }) => {
   return (
     <>
       <Box as='main' {...props}>
@@ -25,7 +25,6 @@ const NewBgLayout = ({ backurl, children, noDivider = false, title, ...props }) 
             justifyContent='center'
             roundedTopLeft='4px'
             roundedTopRight='4px'
-            className='nav-prev'
           >
             {backurl}
           </Box>
@@ -69,37 +68,6 @@ const NewBgLayout = ({ backurl, children, noDivider = false, title, ...props }) 
                   >
                     {title}
                   </Heading>
-
-                  {/* <Heading
-                  textAlign='center'
-                  fontSize={{ base: '17px', md: '25px' }}
-                  mt={5}
-                  overflow='hidden'
-                  textOverflow='ellipsis'
-                  whiteSpace='nowrap'
-                >
-                  {props.schoolname}
-                  <Box
-                    as='span'
-                    display={{ base: 'none', sm: 'none', md: 'inline-block' }}
-                  >
-                    {props.dashboradname}
-                  </Box>
-                </Heading>
-                <Heading
-                  as='h5'
-                  size='sm'
-                  textAlign='center'
-                  mt={4}
-
-                  overflow='hidden'
-                  textOverflow='ellipsis'
-                  whiteSpace='nowrap'
-
-                  display={{ base: 'block', sm: 'block', md: 'none' }}
-                >
-                  {props.dashboradname}
-                </Heading> */}
                 </Box>
                 {!noDivider && <Divider my={6} d={{ base: 'none', md: 'flex' }} />}
                 {children}
@@ -107,14 +75,14 @@ const NewBgLayout = ({ backurl, children, noDivider = false, title, ...props }) 
             </Box>
           </Box>
         ) : (
-          <Container>
-            <Box pb={4}>
-              {children}
-            </Box>
-          </Container>
-        )}
+            <Container>
+              <Box pb={4}>
+                {children}
+              </Box>
+            </Container>
+          )}
       </Box>
     </>
   )
 }
-export default NewBgLayout
+export default Admin

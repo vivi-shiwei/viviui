@@ -11,7 +11,7 @@ import {
   Button,
   Divider
 } from '@chakra-ui/core'
-import { Container } from './container'
+import { Container } from './containerPage'
 
 export const Card = ({ left, right, title, plate, noDivider = false, children, ...props }) => {
   return (
@@ -61,21 +61,27 @@ export const Card = ({ left, right, title, plate, noDivider = false, children, .
   )
 }
 
-const Dashboard = ({ isAdmin, children, dashboards, ...props }) => {
+const Dashboard = ({ isAdmin, backurl, children, dashboards, ...props }) => {
   return (
-    <Box {...props}>
+    <Box as='main' {...props}>
       <Container>
-        <Box d={{ base: 'none', sm: 'none', md: 'flex' }} justifyContent='flex-end'>
-          {isAdmin}
-        </Box>
-        <Box pb={4} textAlign='center'>
-          {dashboards}
-        </Box>
+        {!!isAdmin && (
+          <Box d={{ base: 'none', sm: 'none', md: 'flex' }} justifyContent='flex-end'>
+            {isAdmin}
+          </Box>
+        )}
+        {!!dashboards && (
+          <Box pb={4} textAlign='center'>
+            {dashboards}
+          </Box>
+        )}
         {children}
 
-        <Box d={{ base: 'flex', sm: 'flex', md: 'none' }} justifyContent='center'>
-          {isAdmin}
-        </Box>
+        {!!isAdmin && (
+          <Box d={{ base: 'flex', sm: 'flex', md: 'none' }} justifyContent='center'>
+            {isAdmin}
+          </Box>
+        )}
       </Container>
     </Box>
   )
