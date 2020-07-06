@@ -164,6 +164,47 @@ export const NoTitle = () => {
     </ClsPage>
   )
 }
+
+export const NoPostCard = () => {
+  return (
+    <ClsPage
+      clsImage={
+        <Box as='section' maxW='94%' mt='20px' d='inline-block'>
+          <Box as='div' float='none' position='relative' className='add-users-btn'>
+            <Box
+              as='a'
+              border='1px solid #718096'
+              p={{ base: '5px 16px', md: '7px 20px' }}
+              borderRadius='30px'
+              fontSize='13px'
+              d='block'
+              cursor='pointer'
+              position='relative'
+              zIndex='2'
+              color='#718096'
+              background='#ebf8ff'
+            >
+              <span>編輯成員</span>
+            </Box>
+          </Box>
+        </Box>
+      }
+    />
+  )
+}
+export const button = () => {
+  return (
+    <ClsPage
+      clsImage='kfgpojg'
+    >
+      <PostCard
+        mb={5}
+        creatorName='vivi'
+        createTime='2010-9'
+      />
+    </ClsPage>
+  )
+}
 export const PostCards = () => {
   return (
     <ClsPage title='Form 1A'>
