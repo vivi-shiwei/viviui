@@ -16,7 +16,7 @@ import {
   Flex
 } from '@chakra-ui/core'
 import NextLink from 'next/link'
-import Header from '../src/components/headerPage'
+import Header from '../src/components/home/headerPage'
 import { MdAccessibility, MdPalette } from 'react-icons/md'
 import { IoMdHome } from 'react-icons/io'
 import { AiOutlineLogout } from 'react-icons/ai'

@@ -6,7 +6,7 @@ import {
   IconButton,
   Select
 } from '@chakra-ui/core'
-import Dashboards, { Card } from '../src/components/dashboardPage'
+import Dashboards, { Card } from '../src/components/school/dashboardPage'
 import { GrUserAdmin } from 'react-icons/gr'
 import NextLink from 'next/link'
 

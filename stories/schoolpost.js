@@ -1,6 +1,5 @@
 import React from 'react'
-import { GridFooter, OddFeature } from '../src/components/footerPage'
-import Header from '../src/components/headerPage'
+import Header from '../src/components/home/headerPage'
 import {
   Box,
   Heading,
@@ -26,7 +25,7 @@ import {
   Tag,
   useColorMode
 } from '@chakra-ui/core'
-import Tags, { PostCard } from '../src/components/feedPage'
+import Tags, { PostCard } from '../src/components/post'
 import { IoMdPerson, IoMdHome } from 'react-icons/io'
 import NextLink from 'next/link'
 import { MdDashboard } from 'react-icons/md'

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Box,
   Button,
@@ -16,13 +16,21 @@ import {
   Tabs, TabList, TabPanels, Tab, TabPanel,
   List,
   ListItem,
-  ListIcon
+  ListIcon,
+  IconButton,
+  Image,
+  Tag,
+  Editable,
+  EditablePreview,
+  EditableInput,
+  Select,
+  Stack,
+  PseudoBox
 } from '@chakra-ui/core'
 import { Formik, Field, Form } from 'formik'
-import Admin from '../src/components/adminPage'
+import Admin from '../src/components/admin/adminPage'
 import NextLink from 'next/link'
-import SchooluserList from '../src/components/schooluserListPage'
-import AdminList from '../src/components/adminListPage'
+import AdminList from '../src/components/admin/adminListPage'
 import { FaSchool, FaUserEdit } from 'react-icons/fa'
 import { AiTwotoneSetting } from 'react-icons/ai'
 
@@ -44,7 +52,7 @@ export const editSchool = () => {
     slug: '黑鷹' // 學校代号
   }
   return (
-    <Admin backurl='sjdoijoijd' title='編輯學校'>
+    <Admin backurl='sjdoijoijd' title='編輯學校' noDivider>
       <Box as='article' px={{ base: 8, sm: 8, md: 16 }} pb={16}>
         <Formik
           initialValues={initialValues}
@@ -148,7 +156,7 @@ export const editSchool = () => {
 }
 export const noFormik = () => {
   return (
-    <Admin backurl='sjdoijoijd' title='編輯學校' />
+    <Admin backurl='sjdoijoijd' title='編輯學校' noDivider />
   )
 }
 
@@ -159,6 +167,74 @@ export const noTitle = () => {
 }
 
 export const Users = () => {
+  const SchooluserList = ({ deleteButton = false, editButton = false, profilePhoto, isTeacher, isAdmin, isDirector, noDivider = false, currentClsMember, isStudent, name, clsName, currentClsMemberNum, children, ...props }) => {
+    return (
+      <Box>
+        <Box d='flex' justifyContent='space-between' px={{ base: '1.25rem', sm: '1.25rem', md: '1.25rem', lg: 0 }} {...props}>
+          <Box d='flex'>
+            {!!profilePhoto && (
+              <Box
+                width='40px'
+                height='40px'
+                borderRadius='50%'
+                overflow=' hidden'
+                rounded='full'
+                background='#6893d1'
+                mr={4}
+                lineHeight='40px'
+                fontSize='15px'
+                fontWeight='500'
+                textAlign='center'
+              >
+                <Image
+                  src={profilePhoto}
+                  size='100%'
+                  objectFit='cover'
+                />
+              </Box>
+            )}
+            {(!!name || !!isTeacher || !!isAdmin || !!isDirector || !!isTeacher || !!currentClsMember || !!clsName || !!currentClsMemberNum) && (
+              <Box as='div' lineHeight='40px'>
+                <Box as='div' d={{ base: 'block', sm: 'flex' }}>
+                  姓名：{name}
+                  <Box as='div'>
+                    {isTeacher ? '（老師）' : (isAdmin ? '（管理員）' : (isDirector ? '（學校負責人）' : (isTeacher ? '（老師）' : '')))}
+                    {/* {isAdmin ? '（管理員）' : (isDirector ? '（學校負責人）' : (isTeacher ? '（老師）' : ''))} */}
+                    {isStudent ? (currentClsMember ? (<Box as='span' d={{ base: 'none', md: 'block' }}>（學生）</Box>) : (<Box as='span'>（學生）</Box>)) : ''}
+                  </Box>
+                </Box>
+                {!isTeacher && (
+                  <Box as='div' alignItems='center'>
+                    <Box as='div'>{`班級：${clsName}`}</Box>
+                    <Box as='div'>學號：{currentClsMemberNum}</Box>
+                    <Box as='div' d={{ base: 'block', md: 'none' }}>（學生）</Box>
+                  </Box>)}
+
+              </Box>
+            )}
+          </Box>
+          <Box d='flex'>
+            {!editButton && (
+              <IconButton
+                icon='edit'
+                variantColor='blue'
+                mr={3}
+              />
+            )}
+            {!deleteButton && (
+              <IconButton
+                variantColor='red'
+                icon='delete'
+              />
+            )}
+          </Box>
+        </Box>
+        {children}
+        {!noDivider && <Divider my={6} />}
+
+      </Box>
+    )
+  }
   const schoolusers = [
     {
       profilePhoto: MyImage,
@@ -358,7 +434,7 @@ export const Users = () => {
   ]
 
   return (
-    <Admin backurl='sjdoijoijd' title='學校用戶' noDivider>
+    <Admin backurl='sjdoijoijd' title='學校用戶'>
       <Box
         py={4}
         flex='1'
@@ -626,18 +702,18 @@ export const isAdmin = () => {
       icon: FaSchool
     },
     {
-      title: '新增/刪除學校用戶',
+      title: '學校用戶',
       href: '#',
       icon: FaUserEdit
     },
     {
-      title: '新增/修改專長設定',
+      title: '專長設定',
       href: '#',
       icon: AiTwotoneSetting
     }
   ]
   return (
-    <Admin backurl='sjdoijoijd' title='管理員' noDivider>
+    <Admin backurl='sjdoijoijd' title='管理員'>
       <AdminList title='你是一個管理員, 可以擁有以下操作…'>
         <List spacing={3}>
           {
@@ -669,6 +745,384 @@ export const isAdmin = () => {
           }
         </List>
       </AdminList>
+    </Admin>
+  )
+}
+
+export const Specialty = () => {
+  const [tabIndex, setTabIndex] = useState(0)
+  const talents = ['efeiohf', 'efeff', 'efef']
+  const tabNames = [
+    '所有專長', '未選擇智能',
+    '個人内省', '視覺空間',
+    '數學邏輯', '自然探索',
+    '人際溝通', '語言能力',
+    '肢體動覺', '音樂旋律',
+    '存在思考', '不分類'
+  ]
+  const intelligences = [
+    '個人内省', '視覺空間',
+    '數學邏輯', '自然探索',
+    '人際溝通', '語言能力',
+    '肢體動覺', '音樂旋律',
+    '存在思考'
+  ]
+  const TalentCard = ({ talent, intelligences }) => {
+    const [selectValue, setSelectValue] = useState(talent || '')
+    const [talentName, setTalentName] = useState(talent)
+
+    return (
+      <>
+        <PseudoBox
+          d='flex'
+          p={4}
+          justifyContent='space-between'
+          _hover={{ bg: 'blue.100', color: 'black' }}
+        >
+          <Editable
+            ml={20}
+            fontSize='2xl'
+            value={talentName}
+            isPreviewFocusable={false}
+            submitOnBlur={false}
+          >
+            {({ isEditing, onRequestEdit, onSubmit }) => (
+              <>
+                <EditablePreview />
+                <EditableInput w='auto' onChange={(e) => { setTalentName(e.target.value) }} />
+                {!isEditing && (
+                  <IconButton
+                    variantColor='cyan' variant='outline'
+                    ml={5} size='sm' icon='edit' onClick={onRequestEdit}
+                  />
+                )}
+              </>
+            )}
+          </Editable>
+
+          <Stack isInline>
+            <Select value={selectValue} placeholder='未選擇智能' onChange={(e) => { setSelectValue(e.currentTarget.value) }}>
+              {intelligences.map((intelligence, i) => (
+                <option value={i} key={i}>
+                  {intelligence}
+                </option>
+              ))}
+              <option value='non' key='non'>
+                不分類
+              </option>
+            </Select>
+
+            <Button
+              w='35%'
+              variantColor='teal'
+              ml={5}
+              visibility={
+                ((talent !== selectValue && selectValue !== '') || talentName !== talent)
+                  ? 'visible'
+                  : 'hidden'
+              }
+              onClick={() => {
+                console.log('haha')
+              }}
+            >
+              確認修改
+            </Button>
+
+            <Button
+              variantColor='blue'
+              ml={3}
+              visibility={
+                ((talent !== selectValue && selectValue !== '') || talentName !== talent)
+                  ? 'visible'
+                  : 'hidden'
+              }
+              onClick={() => {
+                setSelectValue(talent.intelligenceId || '')
+                setTalentName(talent.name)
+              }}
+            >
+              還原
+            </Button>
+          </Stack>
+
+        </PseudoBox>
+      </>
+    )
+  }
+  return (
+    <Admin
+      backurl='sjdoijoijd'
+      button={
+        <Box d='flex' justifyContent='center' p={4}>
+          <Button
+            variant='outline'
+            variantColor='green'
+          >
+            新增特長
+          </Button>
+        </Box>
+      }
+      tabNames={
+        tabNames.map((tabName, i) => (
+          <Tag
+            key={i}
+            cursor='pointer'
+            onClick={() => { setTabIndex(i) }}
+            rounded='full'
+            variant={i === tabIndex ? 'solid' : 'outline'}
+            variantColor={i === tabIndex ? 'green' : 'cyan'}
+            m={2}
+          >
+            {tabName}
+          </Tag>
+        ))
+      }
+    >
+      <Box mt={3}>
+        {talents.map((talent, i) => (
+          <Box key={i}>
+            <TalentCard
+              talent={talent}
+              intelligences={intelligences}
+            />
+          </Box>
+        ))}
+      </Box>
+    </Admin>
+  )
+}
+export const Nobutton = () => {
+  return (
+    <Admin
+      backurl='這裏放返回鏈接'
+      tabNames='沒有title中的樣式時'
+    />
+  )
+}
+export const NoTabNames = () => {
+  const talents = ['efeiohf', 'efeff', 'efef']
+  const intelligences = [
+    '個人内省', '視覺空間',
+    '數學邏輯', '自然探索',
+    '人際溝通', '語言能力',
+    '肢體動覺', '音樂旋律',
+    '存在思考'
+  ]
+  const TalentCard = ({ talent, intelligences }) => {
+    const [selectValue, setSelectValue] = useState(talent || '')
+    const [talentName, setTalentName] = useState(talent)
+
+    return (
+      <>
+        <PseudoBox
+          d='flex'
+          p={4}
+          justifyContent='space-between'
+          _hover={{ bg: 'blue.100', color: 'black' }}
+        >
+          <Editable
+            ml={20}
+            fontSize='2xl'
+            value={talentName}
+            isPreviewFocusable={false}
+            submitOnBlur={false}
+          >
+            {({ isEditing, onRequestEdit, onSubmit }) => (
+              <>
+                <EditablePreview />
+                <EditableInput w='auto' onChange={(e) => { setTalentName(e.target.value) }} />
+                {!isEditing && (
+                  <IconButton
+                    variantColor='cyan' variant='outline'
+                    ml={5} size='sm' icon='edit' onClick={onRequestEdit}
+                  />
+                )}
+              </>
+            )}
+          </Editable>
+
+          <Stack isInline>
+            <Select value={selectValue} placeholder='未選擇智能' onChange={(e) => { setSelectValue(e.currentTarget.value) }}>
+              {intelligences.map((intelligence, i) => (
+                <option value={i} key={i}>
+                  {intelligence}
+                </option>
+              ))}
+              <option value='non' key='non'>
+                不分類
+              </option>
+            </Select>
+
+            <Button
+              w='35%'
+              variantColor='teal'
+              ml={5}
+              visibility={
+                ((talent !== selectValue && selectValue !== '') || talentName !== talent)
+                  ? 'visible'
+                  : 'hidden'
+              }
+              onClick={() => {
+                console.log('haha')
+              }}
+            >
+              確認修改
+            </Button>
+
+            <Button
+              variantColor='blue'
+              ml={3}
+              visibility={
+                ((talent !== selectValue && selectValue !== '') || talentName !== talent)
+                  ? 'visible'
+                  : 'hidden'
+              }
+              onClick={() => {
+                setSelectValue(talent.intelligenceId || '')
+                setTalentName(talent.name)
+              }}
+            >
+              還原
+            </Button>
+          </Stack>
+
+        </PseudoBox>
+      </>
+    )
+  }
+  return (
+    <Admin
+      backurl='這裏放返回鏈接'
+      button={
+        <Box d='flex' justifyContent='center' p={4}>
+          <Button
+            variant='outline'
+            variantColor='green'
+          >
+            這裏可以放title和按鈕
+          </Button>
+        </Box>
+      }
+    >
+      <Box mt={3}>
+        {talents.map((talent, i) => (
+          <Box key={i}>
+            <TalentCard
+              talent={talent}
+              intelligences={intelligences}
+            />
+          </Box>
+        ))}
+      </Box>
+    </Admin>
+  )
+}
+
+export const Chhirder = () => {
+  const talents = ['efeiohf', 'efeff', 'efef']
+  const intelligences = [
+    '個人内省', '視覺空間',
+    '數學邏輯', '自然探索',
+    '人際溝通', '語言能力',
+    '肢體動覺', '音樂旋律',
+    '存在思考'
+  ]
+  const TalentCard = ({ talent, intelligences }) => {
+    const [selectValue, setSelectValue] = useState(talent || '')
+    const [talentName, setTalentName] = useState(talent)
+
+    return (
+      <>
+        <PseudoBox
+          d='flex'
+          p={4}
+          justifyContent='space-between'
+          _hover={{ bg: 'blue.100', color: 'black' }}
+        >
+          <Editable
+            ml={20}
+            fontSize='2xl'
+            value={talentName}
+            isPreviewFocusable={false}
+            submitOnBlur={false}
+          >
+            {({ isEditing, onRequestEdit, onSubmit }) => (
+              <>
+                <EditablePreview />
+                <EditableInput w='auto' onChange={(e) => { setTalentName(e.target.value) }} />
+                {!isEditing && (
+                  <IconButton
+                    variantColor='cyan' variant='outline'
+                    ml={5} size='sm' icon='edit' onClick={onRequestEdit}
+                  />
+                )}
+              </>
+            )}
+          </Editable>
+
+          <Stack isInline>
+            <Select value={selectValue} placeholder='未選擇智能' onChange={(e) => { setSelectValue(e.currentTarget.value) }}>
+              {intelligences.map((intelligence, i) => (
+                <option value={i} key={i}>
+                  {intelligence}
+                </option>
+              ))}
+              <option value='non' key='non'>
+                不分類
+              </option>
+            </Select>
+
+            <Button
+              w='35%'
+              variantColor='teal'
+              ml={5}
+              visibility={
+                ((talent !== selectValue && selectValue !== '') || talentName !== talent)
+                  ? 'visible'
+                  : 'hidden'
+              }
+              onClick={() => {
+                console.log('haha')
+              }}
+            >
+              確認修改
+            </Button>
+
+            <Button
+              variantColor='blue'
+              ml={3}
+              visibility={
+                ((talent !== selectValue && selectValue !== '') || talentName !== talent)
+                  ? 'visible'
+                  : 'hidden'
+              }
+              onClick={() => {
+                setSelectValue(talent.intelligenceId || '')
+                setTalentName(talent.name)
+              }}
+            >
+              還原
+            </Button>
+          </Stack>
+
+        </PseudoBox>
+      </>
+    )
+  }
+  return (
+    <Admin
+      backurl='這裏放返回鏈接'
+    >
+      <Box mt={3}>
+        {talents.map((talent, i) => (
+          <Box key={i}>
+            <TalentCard
+              talent={talent}
+              intelligences={intelligences}
+            />
+          </Box>
+        ))}
+      </Box>
     </Admin>
   )
 }

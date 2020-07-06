@@ -1,16 +1,9 @@
 import React from 'react'
 import {
   Box,
-  Heading,
-  List,
-  ListItem,
-  Stack,
-  Tag,
-  TagLabel,
-  Spinner,
-  Divider
+  Heading
 } from '@chakra-ui/core'
-const adminList = ({ backurl, children, noDivider = false, title, ...props }) => {
+const adminList = ({ children, title, ...props }) => {
   return (
     <>
       <Box as='article' px='5%' {...props}>

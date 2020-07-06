@@ -1,7 +1,7 @@
 import React from 'react'
-import Hero from '../src/components/heroPage'
-import Header from '../src/components/headerPage'
-import { GridFooter, OddFeature } from '../src/components/footerPage'
+import Hero from '../src/components/home/heroPage'
+import Header from '../src/components/home/headerPage'
+import { GridFooter, OddFeature } from '../src/components/home/footerPage'
 import {
   Box,
   Heading,

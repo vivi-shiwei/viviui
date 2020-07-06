@@ -2,16 +2,9 @@ import React from 'react'
 import {
   Box,
   Heading,
-  Text,
-  Flex,
-  Stack,
-  Tag,
-  TagLabel,
-  Link,
-  Button,
-  Divider
+  Flex
 } from '@chakra-ui/core'
-import { Container } from './containerPage'
+import { Container } from '../containerPage'
 
 export const Card = ({ left, right, title, plate, noDivider = false, children, ...props }) => {
   return (

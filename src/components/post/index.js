@@ -6,9 +6,10 @@ import {
   Flex,
   Stack,
   Tag,
-  TagLabel
+  TagLabel,
+  Avatar
 } from '@chakra-ui/core'
-import { Container } from './containerPage'
+import { Container } from '../containerPage'
 
 const PostContent = ({ content }) => {
   return content.split('\n').map((line, i) => {
@@ -62,10 +63,12 @@ export const PostCard = ({ left, right, noDivider = false, editModel, profilePho
 
         <Box rounded={{ base: 0, md: 6 }} mx='auto' border='1px solid #b7b7b7' bg='White' width={{ base: '100%', md: '655px' }} p={4}>
           <Box as='header' position='relative'>
-            <Box position='absolute' right='0px' top='0px'>
-              {/* 編輯與刪除的按鈕 */}
-              {editModel}
-            </Box>
+            {!!editModel && (
+              <Box position='absolute' right='0px' top='0px'>
+                {/* 編輯與刪除的按鈕 */}
+                {editModel}
+              </Box>
+            )}
             {(!!profilePhoto || !!creatorName || !!createTime) && (
               <Box d='flex' justifyContent='space-between'>
                 <Stack isInline>
@@ -80,7 +83,7 @@ export const PostCard = ({ left, right, noDivider = false, editModel, profilePho
                       justifyContent='center'
                       overflow='hidden'
                     >
-                      {profilePhoto}
+                      <Avatar name='Dan Abrahmov' src={profilePhoto} />
                     </Box>
                   )}
                   {(!!creatorName || !!createTime) && (
@@ -152,7 +155,6 @@ const tags = ({ title, subtitle, children, ...props }) => {
           </Container>
         )}
         {!!subtitle && (
-
           <Container mb={10}>
             <Box d='flex' justifyContent='center'>
               {subtitle}

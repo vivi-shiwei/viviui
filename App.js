@@ -4,7 +4,8 @@ import {
   CSSReset,
   theme,
   ColorModeProvider,
-  useColorMode
+  useColorMode,
+  IconButton
 } from '@chakra-ui/core'
 import { button } from '@storybook/addon-knobs'
 

@@ -7,7 +7,7 @@ import {
   Divider,
   Flex
 } from '@chakra-ui/core'
-import { Container } from './containerPage'
+import { Container } from '../containerPage'
 
 export const OddFeature = ({ title, icon, subtitle, ...props }) => {
   return (
@@ -48,13 +48,13 @@ export const GridFooter = ({ children, isBottomBorder, gap, ...props }) => {
             {children}
           </Grid>
         ) : (
-          <Grid
-            templateColumns={{ base: 'repeat(1, 1fr)', sm: 'repeat(2, 1fr)', md: `repeat(${(children.length)}, 1fr)` }}
-            gap={gap}
-            px={{ md: 12 }}
-          >
-            {children}
-          </Grid>)}
+            <Grid
+              templateColumns={{ base: 'repeat(1, 1fr)', sm: 'repeat(2, 1fr)', md: `repeat(${(children.length)}, 1fr)` }}
+              gap={gap}
+              px={{ md: 12 }}
+            >
+              {children}
+            </Grid>)}
 
       </Container>
 

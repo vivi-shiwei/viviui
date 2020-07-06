@@ -15,8 +15,8 @@ import {
 } from '@chakra-ui/core'
 import {
   Header as HeaderContainer
-} from './DocsHeaderPage'
-import { Container } from './containerPage'
+} from '../DocsHeaderPage'
+import { Container } from '../containerPage'
 import { FiAlignJustify } from 'react-icons/fi'
 
 const Logo = (props) => (

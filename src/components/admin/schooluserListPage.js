@@ -1,17 +1,10 @@
 import React from 'react'
 import {
   Box,
-  Heading,
-  Text,
-  Flex,
-  Stack,
-  Tag,
-  TagLabel,
   Divider,
   IconButton,
   Image
 } from '@chakra-ui/core'
-import { Container } from './containerPage'
 
 const SchooluserList = ({ deleteButton = false, editButton = false, profilePhoto, isTeacher, isAdmin, isDirector, noDivider = false, currentClsMember, isStudent, name, clsName, currentClsMemberNum, children, ...props }) => {
   return (

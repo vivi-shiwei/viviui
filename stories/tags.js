@@ -13,7 +13,7 @@ import {
   AspectRatioBox,
   Flex
 } from '@chakra-ui/core'
-import Tags, { PostCard } from '../src/components/feedPage'
+import Tags, { PostCard } from '../src/components/post'
 import { FcLikePlaceholder, FcLike } from 'react-icons/fc'
 
 import MyImage from '../static/QQ20200518181405.jpg'
@@ -110,9 +110,7 @@ export const iseditModel = () => {
         mb={5}
         creatorName='vivi'
         editModel={editModel}
-        profilePhoto={
-          <Avatar size='md' name='Ryan Florence' src={MyImage} cursor='pointer' />
-        }
+        profilePhoto={MyImage}
         createTime='2010-9'
         Posttitle='編輯按鈕可以給，可以不給'
       />
@@ -140,9 +138,7 @@ export const noPostCardTitle = () => {
   return (
     <Tags title='沒有給標題顯示的樣子' subtitle={subtitle}>
       <PostCard
-        profilePhoto={
-          <Avatar size='md' name='Ryan Florence' src={MyImage} cursor='pointer' />
-        }
+        profilePhoto={MyImage}
         mb={5}
         creatorName='vivi'
         createTime='2010-9'
@@ -170,9 +166,7 @@ export const talentName = () => {
   return (
     <Tags title='聖若瑟教區中學第六校' subtitle={subtitle}>
       <PostCard
-        profilePhoto={
-          <Avatar size='md' name='Ryan Florence' src={MyImage} cursor='pointer' />
-        }
+        profilePhoto={MyImage}
         mb={5}
         creatorName='vivi'
         createTime='2010-9'
@@ -201,9 +195,7 @@ export const content = () => {
   return (
     <Tags title='聖若瑟教區中學第六校' subtitle={subtitle}>
       <PostCard
-        profilePhoto={
-          <Avatar size='md' name='Ryan Florence' src={MyImage} cursor='pointer' />
-        }
+        profilePhoto={MyImage}
         mb={5}
         creatorName='vivi'
         createTime='2010-9'
@@ -233,9 +225,7 @@ export const imag = () => {
   return (
     <Tags title='聖若瑟教區中學第六校' subtitle={subtitle}>
       <PostCard
-        profilePhoto={
-          <Avatar size='md' name='Ryan Florence' src={MyImage} cursor='pointer' />
-        }
+        profilePhoto={MyImage}
         mb={5}
         creatorName='vivi'
         createTime='2010-9'
@@ -271,9 +261,7 @@ export const tagNames = () => {
   return (
     <Tags title='聖若瑟教區中學第六校' subtitle={subtitle}>
       <PostCard
-        profilePhoto={
-          <Avatar size='md' name='Ryan Florence' src={MyImage} cursor='pointer' />
-        }
+        profilePhoto={MyImage}
         mb={5}
         creatorName='vivi'
         createTime='2010-9'
@@ -309,9 +297,7 @@ export const PostCardchlidrens = () => {
   return (
     <Tags title='聖若瑟教區中學第六校' subtitle={subtitle}>
       <PostCard
-        profilePhoto={
-          <Avatar size='md' name='Ryan Florence' src={MyImage} cursor='pointer' />
-        }
+        profilePhoto={MyImage}
         mb={5}
         creatorName='vivi'
         createTime='2010-9'
@@ -368,9 +354,7 @@ export const Tagpost = () => {
       <PostCard
         mb={5}
         editModel={editModel}
-        profilePhoto={
-          <Avatar size='md' name='Ryan Florence' src={MyImage} cursor='pointer' />
-        }
+        profilePhoto={MyImage}
         creatorName='vivi'
         createTime='2010-9'
         talentName='有責任心'
@@ -388,18 +372,14 @@ export const Tagpost = () => {
       />
       <PostCard
         mb={5}
-        profilePhoto={
-          <Avatar size='md' name='Ryan Florence' src={MyImage} cursor='pointer' />
-        }
+        profilePhoto={MyImage}
         creatorName='vivi'
         createTime='2010-9'
         tagNames={<Text cursor='pointer' as='ins' color='Blue' style={{ whiteSpace: 'nowrap' }}>vivi</Text>}
       />
       <PostCard
         mb={5}
-        profilePhoto={
-          <Avatar size='md' name='Ryan Florence' src={MyImage} cursor='pointer' />
-        }
+        profilePhoto={MyImage}
         creatorName='vivi'
         createTime='2010-9'
       />

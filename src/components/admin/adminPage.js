@@ -10,8 +10,8 @@ import {
   Spinner,
   Divider
 } from '@chakra-ui/core'
-import { Container } from './containerPage'
-const Admin = ({ backurl, children, noDivider = false, title, ...props }) => {
+import { Container } from '../containerPage'
+const Admin = ({ backurl, button = null, tabNames, children, noDivider, title, ...props }) => {
   return (
     <>
       <Box as='main' {...props}>
@@ -29,7 +29,7 @@ const Admin = ({ backurl, children, noDivider = false, title, ...props }) => {
             {backurl}
           </Box>
         )}
-        {title ? (
+        {(title || button || tabNames) ? (
           <Box
             as='div'
             w={{ base: '100%', md: '90%' }}
@@ -56,31 +56,40 @@ const Admin = ({ backurl, children, noDivider = false, title, ...props }) => {
                 rounded={8}
                 transition='0.3s'
               >
-                <Box as='header' pt={4} px={16}>
-                  <Heading
-                    as='h2'
-                    textAlign='center'
-                    size='lg'
-
-                    overflow='hidden'
-                    textOverflow='ellipsis'
-                    whiteSpace='nowrap'
-                  >
-                    {title}
-                  </Heading>
-                </Box>
-                {!noDivider && <Divider my={6} d={{ base: 'none', md: 'flex' }} />}
+                {(title || button) && (
+                  <Box as='header' pt={4} px={16}>
+                    {!!title && (
+                      <Heading
+                        as='h2'
+                        textAlign='center'
+                        size='lg'
+                        overflow='hidden'
+                        textOverflow='ellipsis'
+                        whiteSpace='nowrap'
+                      >
+                        {title}
+                      </Heading>
+                    )}
+                    {button}
+                  </Box>
+                )}
+                {!!tabNames && (
+                  <Box overflowX='auto'>
+                    {tabNames}
+                  </Box>
+                )}
+                {!!noDivider && <Divider my={6} d={{ base: 'none', md: 'flex' }} />}
                 {children}
               </Box>
             </Box>
           </Box>
         ) : (
-            <Container>
-              <Box pb={4}>
-                {children}
-              </Box>
-            </Container>
-          )}
+          <Container>
+            <Box mt={4}>
+              {children}
+            </Box>
+          </Container>
+        )}
       </Box>
     </>
   )
