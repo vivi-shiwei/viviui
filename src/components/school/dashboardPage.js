@@ -6,9 +6,9 @@ import {
 } from '@chakra-ui/core'
 import { Container } from '../containerPage'
 
-export const Card = ({ left, right, title, plate, noDivider = false, children, ...props }) => {
+export const Card = ({ left, right, title, plate, noDivider = false, moreButton, children, ...props }) => {
   return (
-    <Container {...props} pd={4}>
+    <Container {...props} pd={4} maxWidth='960px'>
       {(!!title || !!left || !!right) && (
         <Box position='relative' mx='auto' px={2}>
           <Flex justify='center' align='center'>
@@ -49,12 +49,13 @@ export const Card = ({ left, right, title, plate, noDivider = false, children, .
           {plate}
         </Box>
       )}
+      {moreButton}
       {children}
     </Container>
   )
 }
 
-const Dashboard = ({ isAdmin, backurl, children, dashboards, ...props }) => {
+const Dashboard = ({ isAdmin, backurl, left, right, children, dashboards, ...props }) => {
   return (
     <Box as='main' {...props}>
       <Container>
@@ -63,9 +64,11 @@ const Dashboard = ({ isAdmin, backurl, children, dashboards, ...props }) => {
             {isAdmin}
           </Box>
         )}
-        {!!dashboards && (
-          <Box pb={4} textAlign='center'>
+        {(!!dashboards || !!left || !!right) && (
+          <Box display='flex' justifyContent='center' m='auto'>
+            {left}
             {dashboards}
+            {right}
           </Box>
         )}
         {children}

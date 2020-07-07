@@ -25,42 +25,6 @@ export const PostCard = ({ left, right, noDivider = false, editModel, profilePho
   return (
     <>
       <Container {...props}>
-        {(!!title || !!left || !!right) && (
-          <Box position='relative' mx='auto' px={2}>
-            <Flex justify='center' align='center'>
-              {!!left && (
-                <Flex
-                  bg='white'
-                  zIndex='1'
-                  position='absolute'
-                  top='50%'
-                  left=' 0'
-                  transform=' translate(0, -50%)'
-                >
-                  {left}
-                </Flex>
-              )}
-              {!noDivider && <Box borderBottom='1px solid #aaa6a6' w='100%' position='absolute' zIndex='0' />}
-              {!!title &&
-                <Heading fontSize={{ base: '2xl', sm: '3xl', md: '4xl' }} position='relative' textAlign='center' bg='white'>
-                  {title}
-                </Heading>}
-              {!!right && (
-                <Box
-                  bg='white'
-                  zIndex='1'
-                  position='absolute'
-                  top='50%'
-                  right=' 0'
-                  transform=' translate(0, -50%)'
-                >
-                  {right}
-                </Box>
-              )}
-            </Flex>
-          </Box>
-        )}
-
         <Box rounded={{ base: 0, md: 6 }} mx='auto' border='1px solid #b7b7b7' bg='White' width={{ base: '100%', md: '655px' }} p={4}>
           <Box as='header' position='relative'>
             {!!editModel && (

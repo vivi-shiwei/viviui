@@ -25,14 +25,16 @@ import {
   EditableInput,
   Select,
   Stack,
+  useDisclosure,
   PseudoBox
 } from '@chakra-ui/core'
-import { Formik, Field, Form } from 'formik'
 import Admin from '../src/components/admin/adminPage'
+import NewModal from '../src/components/newModal'
 import NextLink from 'next/link'
 import AdminList from '../src/components/admin/adminListPage'
 import { FaSchool, FaUserEdit } from 'react-icons/fa'
 import { AiTwotoneSetting } from 'react-icons/ai'
+import { Formik, Field, Form } from 'formik'
 
 import MyImage from '../static/QQ20200518181405.jpg'
 import MyImage6 from '../static/timg.jpg'
@@ -1018,7 +1020,7 @@ export const NoTabNames = () => {
   )
 }
 
-export const Chhirder = () => {
+export const Children = () => {
   const talents = ['efeiohf', 'efeff', 'efef']
   const intelligences = [
     '個人内省', '視覺空間',
@@ -1123,6 +1125,108 @@ export const Chhirder = () => {
           </Box>
         ))}
       </Box>
+    </Admin>
+  )
+}
+
+export const Chhirder = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  return (
+    <Admin
+      title='編輯 Dashborad'
+      schoolname='聖若瑟教區中學第六校'
+      dashboradname='cdj2013-2018'
+      noDivider
+    >
+      {isOpen && (
+        <NewModal
+          isOpen={isOpen}
+          onClose={onClose}
+        >
+          <Formik
+            initialValues={{
+              name: '',
+              englishName: '',
+              slug: ''
+            }}
+            onSubmit={(values, { setSubmitting, setFieldError }) => {
+              const { name, englishName, slug } = values
+              console.log(name, englishName, slug)
+              setSubmitting(false)
+            }}
+          >
+            {({ props, isSubmitting }) => (
+              <Form>
+                <Field name='name' validate={(name) => { return (!name) ? '該選項不可為空！' : ((name.length < 3) ? '長度不可短於三個字符！' : '') }}>
+                  {({
+                    field, // 包含field的onChange ， onBlur ， name和value的对象
+                    form: { touched, errors }, // Formik袋
+                    meta // 包含有关字段的元数据（即value ， touched ， error和initialValue ）的initialValue
+                  }) =>
+                    (
+                      <FormControl pt={5} isInvalid={errors.name && touched.name}>
+                        <FormLabel>班級名稱</FormLabel>
+                        <Input maxWidth='98%' {...field} />
+                        <FormErrorMessage>{errors.name}</FormErrorMessage>
+                      </FormControl>
+                    )}
+                </Field>
+                <Field name='englishName'>
+                  {({
+                    field,
+                    form: { touched, errors },
+                    meta
+                  }) =>
+                    (
+                      <FormControl pt={5}>
+                        <FormLabel>班級英文名稱</FormLabel>
+                        <Input maxWidth='98%' {...field} />
+                      </FormControl>
+                    )}
+                </Field>
+                <Field name='slug'>
+                  {({
+                    field,
+                    form: { touched, errors },
+                    meta
+                  }) =>
+                    (
+                      <FormControl pt={5}>
+                        <FormLabel>班級代號</FormLabel>
+                        <Input maxWidth='98%' {...field} />
+                      </FormControl>
+                    )}
+                </Field>
+                <Box textAlign='center'>
+                  <Button
+                    variantColor='blue'
+                    minW={{ base: '100%', sm: '200px', md: '200px' }}
+                    mr={3}
+                    mt={8}
+                    type='submit'
+                    isLoading={isSubmitting}
+                  >
+                    添加
+                  </Button>
+                </Box>
+              </Form>
+            )}
+          </Formik>
+        </NewModal>
+      )}
+      <Button
+        // variantColor='blue'
+        borderWidth='1px'
+        position=' absolute'
+        borderRadius='9999px'
+        top='50%'
+        left=' 0'
+        transform=' translate(0, -50%)'
+        minW={{ base: '80px', sm: '110px' }}
+        onClick={onOpen}
+      >
+        新增
+      </Button>
     </Admin>
   )
 }

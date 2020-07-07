@@ -112,7 +112,7 @@ export const iseditModel = () => {
         editModel={editModel}
         profilePhoto={MyImage}
         createTime='2010-9'
-        Posttitle='編輯按鈕可以給，可以不給'
+        Posttitle='編輯按鈕需自己添加，位置在貼文的左上角'
       />
     </Tags>
   )

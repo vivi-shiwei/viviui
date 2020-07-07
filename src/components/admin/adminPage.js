@@ -11,7 +11,7 @@ import {
   Divider
 } from '@chakra-ui/core'
 import { Container } from '../containerPage'
-const Admin = ({ backurl, button = null, tabNames, children, noDivider, title, ...props }) => {
+const Admin = ({ backurl, button = null, schoolname, dashboradname, tabNames, children, noDivider, title, ...props }) => {
   return (
     <>
       <Box as='main' {...props}>
@@ -29,7 +29,7 @@ const Admin = ({ backurl, button = null, tabNames, children, noDivider, title, .
             {backurl}
           </Box>
         )}
-        {(title || button || tabNames) ? (
+        {(title || button || tabNames || schoolname) ? (
           <Box
             as='div'
             w={{ base: '100%', md: '90%' }}
@@ -56,7 +56,7 @@ const Admin = ({ backurl, button = null, tabNames, children, noDivider, title, .
                 rounded={8}
                 transition='0.3s'
               >
-                {(title || button) && (
+                {(title || button || schoolname) && (
                   <Box as='header' pt={4} px={16}>
                     {!!title && (
                       <Heading
@@ -68,6 +68,27 @@ const Admin = ({ backurl, button = null, tabNames, children, noDivider, title, .
                         whiteSpace='nowrap'
                       >
                         {title}
+                      </Heading>
+                    )}
+                    {!!schoolname && (
+                      <Heading
+                        textAlign='center'
+                        fontSize={{ base: '17px', md: '25px' }}
+                        mt={5}
+
+                        overflow='hidden'
+                        textOverflow='ellipsis'
+                        whiteSpace='nowrap'
+                      >
+                        {schoolname}
+                        {!!dashboradname && (
+                          <Box
+                            as='span'
+                            display={{ base: 'none', sm: 'none', md: 'inline-block' }}
+                          >
+                            （{dashboradname}）
+                          </Box>
+                        )}
                       </Heading>
                     )}
                     {button}
