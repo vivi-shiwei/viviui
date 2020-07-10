@@ -11,7 +11,7 @@ import {
   Divider
 } from '@chakra-ui/core'
 import { Container } from '../containerPage'
-const Admin = ({ backurl, button = null, schoolname, dashboradname, tabNames, children, noDivider, title, ...props }) => {
+const Admin = ({ backurl, button = null, schoolname, dashboradname, tabNames, children, divider, title, ...props }) => {
   return (
     <>
       <Box as='main' {...props}>
@@ -99,18 +99,18 @@ const Admin = ({ backurl, button = null, schoolname, dashboradname, tabNames, ch
                     {tabNames}
                   </Box>
                 )}
-                {!!noDivider && <Divider my={6} d={{ base: 'none', md: 'flex' }} />}
+                {!!divider && <Divider my={6} d={{ base: 'none', md: 'flex' }} />}
                 {children}
               </Box>
             </Box>
           </Box>
         ) : (
-          <Container>
-            <Box mt={4}>
-              {children}
-            </Box>
-          </Container>
-        )}
+            <Container>
+              <Box mt={4}>
+                {children}
+              </Box>
+            </Container>
+          )}
       </Box>
     </>
   )

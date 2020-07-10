@@ -7,8 +7,9 @@ import {
 import ClsPage from '../src/components/clsPage'
 import { PostCard } from '../src/components/post'
 import ChartBar from '../src/components/chart/bar'
+import MingChar from '../src/components/chart/ming'
 import { Container } from '../src/components/containerPage'
-
+import { ResponsiveBar } from '@nivo/bar'
 import MyImage from '../static/QQ20200518181405.jpg'
 import MyImage6 from '../static/timg.jpg'
 
@@ -415,5 +416,138 @@ export const intelligence = () => {
         <ChartBar barkeys={barkeys} users={users} max={Math.max(...students.map(student => student.sum), 5)} />
       </Container>
     </ClsPage>
+  )
+}
+
+// 測試
+export const testCart = () => {
+  return (
+    <ClsPage classes='Form Card Post'>
+      <PostCard
+        mb={5}
+        profilePhoto={MyImage}
+        creatorName='vivi姐无敌'
+        createTime='2010-9'
+        Posttitle='发表内容'
+        content='今天天氣不錯  一起曬太陽'
+      />
+    </ClsPage>
+  )
+}
+// 測試
+export const testNivoCartBar = () => {
+  var dataArray = [
+    {
+      country: 'AD',
+      'hot dog': 187,
+      'hot dogColor': 'hsl(268, 70%, 50%)',
+      burger: 127,
+      burgerColor: 'hsl(154, 70%, 50%)',
+      sandwich: 45,
+      sandwichColor: 'hsl(12, 70%, 50%)',
+      kebab: 3,
+      kebabColor: 'hsl(64, 70%, 50%)',
+      fries: 78,
+      friesColor: 'hsl(156, 70%, 50%)',
+      donut: 17,
+      donutColor: 'hsl(134, 70%, 50%)'
+    },
+    {
+      country: 'AE',
+      'hot dog': 159,
+      'hot dogColor': 'hsl(265, 70%, 50%)',
+      burger: 168,
+      burgerColor: 'hsl(250, 70%, 50%)',
+      sandwich: 145,
+      sandwichColor: 'hsl(227, 70%, 50%)',
+      kebab: 93,
+      kebabColor: 'hsl(196, 70%, 50%)',
+      fries: 172,
+      friesColor: 'hsl(2, 70%, 50%)',
+      donut: 102,
+      donutColor: 'hsl(155, 70%, 50%)'
+    },
+    {
+      country: 'AF',
+      'hot dog': 7,
+      'hot dogColor': 'hsl(0, 70%, 50%)',
+      burger: 34,
+      burgerColor: 'hsl(38, 70%, 50%)',
+      sandwich: 96,
+      sandwichColor: 'hsl(280, 70%, 50%)',
+      kebab: 53,
+      kebabColor: 'hsl(128, 70%, 50%)',
+      fries: 133,
+      friesColor: 'hsl(255, 70%, 50%)',
+      donut: 49,
+      donutColor: 'hsl(62, 70%, 50%)'
+    },
+    {
+      country: 'AG',
+      'hot dog': 187,
+      'hot dogColor': 'hsl(56, 70%, 50%)',
+      burger: 72,
+      burgerColor: 'hsl(259, 70%, 50%)',
+      sandwich: 89,
+      sandwichColor: 'hsl(324, 70%, 50%)',
+      kebab: 101,
+      kebabColor: 'hsl(193, 70%, 50%)',
+      fries: 5,
+      friesColor: 'hsl(310, 70%, 50%)',
+      donut: 88,
+      donutColor: 'hsl(135, 70%, 50%)'
+    },
+    {
+      country: 'AI',
+      'hot dog': 17,
+      'hot dogColor': 'hsl(292, 70%, 50%)',
+      burger: 10,
+      burgerColor: 'hsl(221, 70%, 50%)',
+      sandwich: 174,
+      sandwichColor: 'hsl(208, 70%, 50%)',
+      kebab: 66,
+      kebabColor: 'hsl(203, 70%, 50%)',
+      fries: 36,
+      friesColor: 'hsl(55, 70%, 50%)',
+      donut: 87,
+      donutColor: 'hsl(55, 70%, 50%)'
+    },
+    {
+      country: 'AL',
+      'hot dog': 19,
+      'hot dogColor': 'hsl(38, 70%, 50%)',
+      burger: 56,
+      burgerColor: 'hsl(215, 70%, 50%)',
+      sandwich: 176,
+      sandwichColor: 'hsl(314, 70%, 50%)',
+      kebab: 102,
+      kebabColor: 'hsl(318, 70%, 50%)',
+      fries: 13,
+      friesColor: 'hsl(124, 70%, 50%)',
+      donut: 81,
+      donutColor: 'hsl(246, 70%, 50%)'
+    },
+    {
+      country: 'AM',
+      'hot dog': 195,
+      'hot dogColor': 'hsl(203, 70%, 50%)',
+      burger: 110,
+      burgerColor: 'hsl(208, 70%, 50%)',
+      sandwich: 140,
+      sandwichColor: 'hsl(45, 70%, 50%)',
+      kebab: 21,
+      kebabColor: 'hsl(315, 70%, 50%)',
+      fries: 42,
+      friesColor: 'hsl(203, 70%, 50%)',
+      donut: 96,
+      donutColor: 'hsl(52, 70%, 50%)'
+    }
+  ]
+  return (
+    <>
+      <Container>
+        <MingChar data={dataArray} />
+      </Container>
+    </>
   )
 }
