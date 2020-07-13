@@ -1,0 +1,17 @@
+import React from 'react'
+import {
+  Flex
+} from '@chakra-ui/core'
+const HeaderLogo = ({ icon, profilePhoto, MenuTest, noColormode = false, disclosure, children, ...props }) => {
+  return (
+    <Flex
+      justify='flex-start'
+      flex='-1'
+      {...props}
+    >
+      {icon}
+      {children}
+    </Flex>
+  )
+}
+export default HeaderLogo

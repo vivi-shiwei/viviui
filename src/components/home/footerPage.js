@@ -16,7 +16,7 @@ export const OddFeature = ({ title, icon, subtitle, children, ...props }) => {
         <Flex
           rounded='full'
           size={12}
-          bg='teal.500'
+          bg='blue.500'
           align='center'
           justify='center'
         >
@@ -42,16 +42,16 @@ export const GridFooter = ({ children, isBottomBorder, gap, ...props }) => {
       <Container {...props}>
         {children.length > 4 ? (
           <Grid
-            templateColumns={['repeat(1, 1fr)', 'repeat(2, 1fr)', 'repeat(3, 1fr)', 'repeat(4, 1fr)']}
-            gap={gap}
+            templateColumns={['repeat(1, 1fr)', 'repeat(1, 1fr)', 'repeat(2, 1fr)', 'repeat(4, 1fr)']}
+            gap={gap || 8}
             px={{ md: 12 }}
           >
             {children}
           </Grid>
         ) : (
           <Grid
-            templateColumns={{ base: 'repeat(1, 1fr)', sm: 'repeat(2, 1fr)', md: `repeat(${(children.length)}, 1fr)` }}
-            gap={gap}
+            templateColumns={{ sm: 'repeat(1, 1fr)', md: `repeat(${(children.length)}, 1fr)` }}
+            gap={gap || 8}
             px={{ md: 12 }}
           >
             {children}
