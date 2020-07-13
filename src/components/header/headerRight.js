@@ -8,7 +8,7 @@ const Right = ({ logo, profilePhoto, MenuTest, noColormode = false, disclosure, 
       <Flex
         align='center'
         justify='flex-end'
-        // flex='2'
+        flex='2'
         mr='0'
         {...props}
       >

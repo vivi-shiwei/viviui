@@ -11,9 +11,7 @@ const HeaderCenter = ({ children, ...props }) => {
       flex='10'
       {...props}
     >
-      <ButtonGroup d='flex'>
-        {children}
-      </ButtonGroup>
+      {children}
     </Flex>
   )
 }

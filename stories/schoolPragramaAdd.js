@@ -36,11 +36,10 @@ import {
   ViviProgramaOne
 } from '../src/components/selectSearch/programa'
 import Admin from '../src/components/admin/adminPage'
-import FomikLayout from '../src/components/fomikLayout'
 
 export default { title: 'SchoolPrograma' }
 
-export const OnePrograma = () => {
+export const ProgramaOnes = () => {
   return (
     <>
       <Box width='300px'> <ProgramaOne color='#90EE90' /></Box>
@@ -48,7 +47,7 @@ export const OnePrograma = () => {
   )
 }
 
-export const GroupProgramaOne = () => {
+export const ProgramaGroups = () => {
   return (
     <>
       <ProgramaGroup deleteColor='#696969' title='阿道夫我发的' content='沙发哦为己任' />

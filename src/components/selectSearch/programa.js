@@ -62,17 +62,24 @@ export const ProgramaOne = ({ title, icon, content, color, fontSize, children, .
           />
         </>
       )}
-      <ProgramaGroup
-        visibilit={
-          ((finish !== begin && begin !== '') || finish !== begin)
-            ? 'visible'
-            : 'hidden'
-        }
-      />
+
     </Editable>
   )
 }
-// Programa
+
+// Programa Left
+export const ProgramaLeftButton = () => {
+  return (
+    <Stack
+      isInline
+      visibility='' display='block'
+    >
+      <Button bg='#9370DB' color='white' _hover='color:black'>確認修改</Button>
+      <Button bg='#00B2EE' color='white' _hover='color:black'>還原</Button>
+    </Stack>
+  )
+}
+// Programa right
 export const ProgramaRightButton = () => {
   return (
     <Stack
@@ -219,14 +226,7 @@ export const ProgramaOneData = ({ title, icon, content, color, fontSize, childre
 // vivi组件更改
 export const ViviProgramaOne = () => {
   const talents = ['efeiohf']
-  const intelligences = [
-    '個人内省', '視覺空間',
-    '數學邏輯', '自然探索',
-    '人際溝通', '語言能力',
-    '肢體動覺', '音樂旋律',
-    '存在思考'
-  ]
-  const TalentCard = ({ talent, intelligences }) => {
+  const TalentCard = ({ talent }) => {
     const [selectValue, setSelectValue] = useState(talent || '')
     const [talentName, setTalentName] = useState(talent)
 
@@ -297,7 +297,7 @@ export const ViviProgramaOne = () => {
         <Box key={i}>
           <TalentCard
             talent={talent}
-            intelligences={intelligences}
+
           />
         </Box>
       ))}

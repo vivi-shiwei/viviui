@@ -7,8 +7,9 @@ import {
 const HeaderLeft = ({ logo, text, children, ...props }) => {
   return (
     <Flex
-      justify='flex-start'
-      // flex='0'
+      left='0'
+      justifyContent='flex-start'
+      flex='0'
       ml='0'
       {...props}
     >
