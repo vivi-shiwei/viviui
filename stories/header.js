@@ -33,21 +33,7 @@ export default { title: 'Header' }
 export const header = () => {
   return (
     <Header>
-      {/* <HeaderLogo icon={<Box as={IoMdHome} size={6} />
-        <Heading as='h1' size='lg' letterSpacing='-.1rem'>
-          <Box as='span' d={{ base: 'none', sm: 'inline' }}>
-            SCHOOL
-          </Box>
-          <Box as='span' d={{ base: 'inline', sm: 'none' }}>
-            SCH
-          </Box>
-        </Heading>
-      }
-      /> */}
-
-      {/* <HeaderLeft>
-        <HeaderButton icon={MdAccessibility} title='左邊按鈕' href='https://www.baidu.com' />
-      </HeaderLeft> */}
+      <HeaderLogo icon={<Box as={IoMdHome} size={6} />} />
 
       <HeaderCenter>
         <HeaderButton icon={MdAccessibility} title='中間按鈕' href='https://www.baidu.com' />
@@ -55,10 +41,13 @@ export const header = () => {
         <HeaderButton icon={MdAccessibility} title='中間按鈕' href='https://www.baidu.com' />
       </HeaderCenter>
 
-      {/* <HeaderRight>
+      <HeaderLeft>
+        <HeaderButton icon={MdAccessibility} title='左邊按鈕' href='https://www.baidu.com' />
+      </HeaderLeft>
+      <HeaderRight>
         <HeaderButton title='右邊按鈕' icon={MdAccessibility} href='https://www.baidu.com' />
         <Menu>
-          <MenuButton as={Button} rightIcon='chevron-down' d={{ base: 'none', sm: 'none', md: 'block' }}>
+          <MenuButton as={Button} rightIcon='chevron-down'>
             Actions
           </MenuButton>
           <MenuList>
@@ -71,7 +60,7 @@ export const header = () => {
             </MenuItem>
           </MenuList>
         </Menu>
-      </HeaderRight> */}
+      </HeaderRight>
     </Header>
   )
 }

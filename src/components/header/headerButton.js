@@ -21,7 +21,6 @@ const HeaderButton = ({ title, icon, href, children, ...props }) => {
             px={{ base: 1, sm: 4 }}
             variantColor='gray'
             variant='ghost'
-            display={{ base: 'none', sm: 'none', md: 'flex' }}
             color='gray.500'
           >
             {!!icon && (

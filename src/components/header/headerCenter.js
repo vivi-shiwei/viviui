@@ -7,8 +7,13 @@ import {
 const HeaderCenter = ({ children, ...props }) => {
   return (
     <Flex
-      justify='center'
-      flex='10'
+      // justifyContent='center'
+      position='absolute'
+      top='50%'
+      left='50%'
+      transform='translate(-50%, -50%)'
+      display={{ base: 'none', sm: 'none', md: 'flex' }}
+      // flex='10'
       {...props}
     >
       {children}

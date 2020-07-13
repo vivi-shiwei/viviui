@@ -7,10 +7,12 @@ import {
 const HeaderLeft = ({ logo, text, children, ...props }) => {
   return (
     <Flex
-      left='0'
-      justifyContent='flex-start'
-      flex='0'
-      ml='0'
+      // position='absolute'
+      // top='50%'
+      // left='0'
+      // transform='translate(0, -50%)'
+      float='left'
+      display={{ base: 'none', sm: 'none', md: 'flex' }}
       {...props}
     >
       <Box alignItems='center'>

@@ -32,9 +32,9 @@ const Header = ({ left, right, text, logo, profilePhoto, noColormode = false, Me
         h='100%'
         height='4rem'
       >
-        <Flex size='100%' px={{ base: 0, sm: 2, md: 4 }} align='center' width='full' maxWidth='1280px'>
+        <Flex size='100%' px={{ base: 0, sm: 2, md: 4 }} align='center' width='full' maxWidth='1280px' position='relative'>
           {children}
-          <Button variantColor='none' onClick={onOpen} display={{ sm: 'block', md: 'none' }} size='xs'>
+          <Button variantColor='none' onClick={onOpen} display={{ sm: 'block', md: 'none' }} size='xs' position='absolute' right='0px'>
             <Box fontSize={{ base: '22px', sm: '28px' }} color={colorMode === 'light' ? 'black' : 'white'} as={FiAlignJustify} />
           </Button>
           <Drawer placement='left' onClose={onClose} isOpen={isOpen}>
