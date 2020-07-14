@@ -20,6 +20,7 @@ import { FiAlignJustify } from 'react-icons/fi'
 import HeaderLeft from './headerLeft'
 import HeaderRight from './headerRight'
 import HeaderCenter from './headerCenter'
+import Drawers from './drawers'
 
 const Header = ({ left, right, text, logo, profilePhoto, noColormode = false, MenuTest, children, disclosure, ...props }) => {
   const { colorMode, toggleColorMode } = useColorMode()
@@ -43,7 +44,7 @@ const Header = ({ left, right, text, logo, profilePhoto, noColormode = false, Me
               <DrawerCloseButton />
               <DrawerHeader borderBottomWidth='1px'>選項</DrawerHeader>
               <DrawerBody fontSize={{ sm: 'xs', md: 'sm' }}>
-                <HeaderCenter />
+                <Drawers />
                 <p>1</p>
                 <p>2</p>
                 <p>3</p>

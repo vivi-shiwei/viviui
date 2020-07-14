@@ -4,10 +4,10 @@ import {
   Flex
 } from '@chakra-ui/core'
 
-const HeaderLeft = ({ HeaderCenter, text, children, ...props }) => {
+const HeaderLeft = ({ headerCenter, text, children, ...props }) => {
   return (
     <Box alignItems='center'>
-      {HeaderCenter}
+      {headerCenter}
     </Box>
   )
 }
