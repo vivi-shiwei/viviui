@@ -32,7 +32,6 @@ import {
   Noopsyche,
   NoopsycheAdd,
   OpenDrawers,
-  ProgramaOneData,
   ViviProgramaOne
 } from '../src/components/selectSearch/programa'
 import Admin from '../src/components/admin/adminPage'
@@ -48,9 +47,11 @@ export const ProgramaOnes = () => {
 }
 
 export const ProgramaGroups = () => {
+  const talentOne = { title: '打发二', content: '哦哦附件为非' }
+
   return (
     <>
-      <ProgramaGroup deleteColor='#696969' title='阿道夫我发的' content='沙发哦为己任' />
+      <ProgramaGroup deleteColor='#696969' talent={talentOne} />
     </>
   )
 }
@@ -60,24 +61,31 @@ export const editDashboardList = () => {
   { title: '及基督教發射東風五', content: '打發發打飛' },
   { title: '大沙發惡法而無法', content: '德法俄法違法' },
   { title: '士大夫文人收到', content: '蘇打粉微軟分爲' }]
+  const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
       <Admin
         backurl='教義中學第六校>管理員'
         button={
-          <Box d='flex' justifyContent='center' p={4}>
+          <Box d='flex' justifyContent='center' p={4} with='100%'>
             <Button
               variant='outline'
               variantColor='green'
+              onClick={onOpen}
+              display={isOpen ? 'none' : 'block'}
+              mb='100px'
             >
               新增智能
             </Button>
+            {isOpen && (
+              <Noopsyche onClose={onClose} isOpen={isOpen} ming={onClose} />
+            )}
           </Box>
         }
       >
         {
           talents.map((item, index) => {
-            return (<><ProgramaGroup deleteColor='#696969' title={item.title} content={item.content} /></>)
+            return (<><ProgramaGroup deleteColor='green' talent={item} /></>)
           })
         }
       </Admin>
@@ -106,13 +114,7 @@ export const OpenDrawersa = () => {
     </>
   )
 }
-export const ProgramaOneDataTest = () => {
-  return (
-    <>
-      <ProgramaOneData />
-    </>
-  )
-}
+
 export const ViViTest = () => {
   return (
     <>

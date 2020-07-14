@@ -57,7 +57,7 @@ const Admin = ({ backurl, button = null, schoolname, dashboradname, tabNames, ch
                 transition='0.3s'
               >
                 {(title || button || schoolname) && (
-                  <Box as='header' pt={4} px={16}>
+                  <Box as='header' m='auto' mt={children ? 8 : 0}>
                     {!!title && (
                       <Heading
                         as='h2'
@@ -105,12 +105,12 @@ const Admin = ({ backurl, button = null, schoolname, dashboradname, tabNames, ch
             </Box>
           </Box>
         ) : (
-            <Container>
-              <Box mt={4}>
-                {children}
-              </Box>
-            </Container>
-          )}
+          <Container>
+            <Box mt={4}>
+              {children}
+            </Box>
+          </Container>
+        )}
       </Box>
     </>
   )

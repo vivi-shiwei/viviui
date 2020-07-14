@@ -13,10 +13,10 @@ export default {
 export const hero = () => {
   return (
     <Hero
-      title='大標題'
-      subtitle='小標題'
+      title='這是大標題（title）'
+      subtitle='這是小標題（subtitle）'
     >
-      內容
+      這是內容，（children）
     </Hero>
   )
 }
@@ -52,7 +52,7 @@ export const heroWithContentOnly = () => {
 export const heroWithoutBorder = () => {
   return (
     <Hero noBottomBorder>
-      內容
+      內容(children),自定義内容。在窗口中居中
     </Hero>
   )
 }
@@ -119,7 +119,8 @@ export const heroWithCustomContent2 = () => {
 export const heroWithButtons = () => {
   return (
     <Hero
-      title='buttons'
+      title='這是大標題（title）'
+      subtitle='這是小標題（subtitle）'
       leftButton={
         <Button size='lg' as='a' variantColor='teal' m={2}>
           Get Started

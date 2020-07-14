@@ -34,10 +34,9 @@ import { Container } from '../containerPage'
 import Admin from '../admin/adminPage'
 
 // Editable单个
-export const ProgramaOne = ({ title, icon, content, color, fontSize, children, ...props }) => {
-  const obj = { title: title, content: content }
-  const [begin, setBegin] = useState(obj || '')
-  const [finish, setFinish] = useState(obj)
+export const ProgramaOne = ({ title, content, color, fontSize, children, ...props }) => {
+  const [begin, setBegin] = useState(title || '')
+  const [finish, setFinish] = useState(title)
 
   return (
     <Editable
@@ -54,60 +53,103 @@ export const ProgramaOne = ({ title, icon, content, color, fontSize, children, .
       {({ isEditing, onSubmit, onRequestEdit, onChange }) => (
         <>
           <EditablePreview />
-          <EditableInput onChange={(e) => { }} />
+          <EditableInput onChange={(e) => { setFinish(e.target.value) }} />
           <IconButton
-            // position='relative' top='0px' right='-150px'
             variantColor='green.600' variant='outline'
             ml={5} size='xs' icon='edit' onClick={onRequestEdit}
           />
         </>
       )}
-
     </Editable>
   )
 }
 
 // Programa Left
-export const ProgramaLeftButton = () => {
+export const ProgramaLeftButton = ({ title, content }) => {
   return (
-    <Stack
-      isInline
-      visibility='' display='block'
-    >
-      <Button bg='#9370DB' color='white' _hover='color:black'>確認修改</Button>
-      <Button bg='#00B2EE' color='white' _hover='color:black'>還原</Button>
-    </Stack>
+    <>
+      <Grid templateColumns='repeat(1, 1fr)' gap={0} m='10px' width='40%'>
+        <ProgramaOne title={title} c color='#1E90FF' fontSize='24px' />
+        <ProgramaOne content={content} color='#8B814C' fontSize='18px' />
+      </Grid>
+    </>
   )
 }
 // Programa right
-export const ProgramaRightButton = () => {
+export const ProgramaRightButton = (visibility) => {
   return (
-    <Stack
-      isInline
-      visibility='' display='block'
-    >
-      <Button bg='#9370DB' color='white' _hover='color:black'>確認修改</Button>
-      <Button bg='#00B2EE' color='white' _hover='color:black'>還原</Button>
-    </Stack>
+    <>
+      <Button bg='#9370DB' color='white' _hover='color:black' visibility={visibility}>確認修改</Button>
+      <Button bg='#00B2EE' color='white' _hover='color:black' visibility={visibility}>還原</Button>
+    </>
   )
 }
 
-// Editable組
-export const ProgramaGroup = ({ title, visibilit, content, contentColor, children, deleteColor, deleteButtonTop = true, isBottomBorder, gap, ...props }) => {
+// Editable单个組
+export const ProgramaGroup = ({ talent, deleteColor, deleteButtonTop = true, children, ...props }) => {
+  const [selectValue, setSelectValue] = useState(talent || '')
+  const [talentName, setTalentName] = useState(talent)
   return (
     <>
       <Box mx='auto'>
         <Flex alignItems='center' justifyContent='space-between'>
           <Grid templateColumns='repeat(1, 1fr)' gap={0} m='10px' width='40%'>
-            <ProgramaOne title={title} c color='#1E90FF' fontSize='24px' />
-            <ProgramaOne content={content} color='#8B814C' fontSize='18px' />
+            <Editable
+              textAlign='left'
+              fontSize='24px'
+              color='#2f98ff'
+              whiteSpace='nowrap'
+              value={talent.title}
+              overflow='hidden'
+              textOverflow='ellipsis'
+              p='5px 10px'
+              isPreviewFocusable={false}
+            >
+              {({ isEditing, onSubmit, onRequestEdit, onChange }) => (
+                <>
+                  <EditablePreview />
+                  <EditableInput onChange={(e) => { setTalentName({ title: e.target.value }) }} />
+                  <IconButton
+                    variantColor='green.600' variant='outline'
+                    ml={5} size='xs' icon='edit' onClick={onRequestEdit}
+                  />
+                </>
+              )}
+            </Editable>
+            <Editable
+              textAlign='left'
+              fontSize='24px'
+              value={talent.content}
+              color='#8b814c'
+              whiteSpace='nowrap'
+              overflow='hidden'
+              textOverflow='ellipsis'
+              p='5px 10px'
+              isPreviewFocusable={false}
+            >
+              {({ isEditing, onSubmit, onRequestEdit, onChange }) => (
+                <>
+                  <EditablePreview />
+                  <EditableInput onChange={(e) => { setTalentName({ content: e.target.value }) }} />
+                  <IconButton
+                    variantColor='green.600' variant='outline'
+                    ml={5} size='xs' icon='edit' onClick={onRequestEdit}
+                  />
+                </>
+              )}
+            </Editable>
           </Grid>
           <Grid templateColumns='repeat(3, 1fr)' gap={6} width='30%'>
             <Box display='flex' alignItems='center'>
-              <Icon name='delete' size='24px' color={deleteColor} cursor='pointer' />
+              <Icon name='delete' size='24px' color='#696969' cursor='pointer' />
             </Box>
-            <Button bg='#9370DB' color='white' _hover='color:black'>確認修改</Button>
-            <Button bg='#00B2EE' color='white' _hover='color:black'>還原</Button>
+            <ProgramaRightButton
+              visibility={
+                ((talent !== selectValue && selectValue !== '') || talentName !== talent)
+                  ? 'visible'
+                  : 'hidden'
+              }
+            />
           </Grid>
         </Flex>
       </Box>
@@ -121,18 +163,18 @@ export const Noopsyche = ({ ming }) => {
   const ref2 = useRef()
   const obj = { title: null, content: null }
   return (
-    <Box mx='auto' bg='#ceedff'>
+    <PseudoBox mx='auto' _hover={{ bg: 'blue.100' }} cursor='pointer'>
       <Flex alignItems='center' justifyContent='space-between'>
-        <Grid templateColumns='repeat(1, 1fr)' gap={0} m='10px' width='30%'>
-          <Input variant='outline' placeholder='新增智能名稱' mb='5px' ref={ref1} value={obj.title} />
-          <Input variant='outline' placeholder='新增英文智能名稱' ref={ref2} value={obj.content} />
+        <Grid templateColumns='repeat(1, 1fr)' gap={0} m='10px' width='60%'>
+          <Input variant='outline' type='text' placeholder='新增智能名稱' mb='5px' ref={ref1} value={obj.title} />
+          <Input variant='outline' type='text' placeholder='新增英文智能名稱' ref={ref2} value={obj.content} />
         </Grid>
-        <Grid templateColumns='repeat(3, 1fr)' gap={6} width='30%'>
+        <Grid templateColumns='repeat(3, 1fr)' gap={6} width='20%' justifyContent='space-around'>
           <Button bg='#9370DB' color='white' _hover='color:black' p='0px 50px' onClick={() => { obj.title = ref1.current.value; obj.content = ref2.current.value; console.log(obj) }}>送出資料</Button>
           <Button bg='#00B2EE' color='white' _hover='color:black' p='0px 20px' onClick={() => { ming() }}>取消</Button>
         </Grid>
       </Flex>
-    </Box>
+    </PseudoBox>
   )
 }
 
@@ -151,6 +193,7 @@ export const NoopsycheAdd = () => {
         transform=' translate(0, -50%)'
         minW={{ base: '80px', sm: '110px' }}
         onClick={onOpen}
+        display={isOpen ? 'none' : 'block'}
       >
         新增
       </Button>
@@ -182,125 +225,110 @@ export const OpenDrawers = () => {
   )
 }
 
-// Editable單個 数据测试
-export const ProgramaOneData = ({ title, icon, content, color, fontSize, children, ...props }) => {
-  const arr = ['啊打发士大夫的', '啊手动阀第三方', '士大夫撒旦']
-  const string = '为繁荣发达'
-  const [s, sets] = useState(string || '')
-  const [ming, setMing] = useState(string)
-  return (
-    <PseudoBox>
-      <Editable
-        textAlign='left'
-        fontSize={fontSize}
-        color={color}
-        whiteSpace='nowrap'
-        overflow='hidden'
-        value={ming}
-        textOverflow='ellipsis'
-        p='5px 10px'
-        isPreviewFocusable={false}
-      >
-        {({ isEditing, onSubmit, onRequestEdit, onChange }) => (
-          <>
-            <EditablePreview />
-            <EditableInput onChange={(e) => { setMing(e.target.value); console.log(ming) }} />
-            <IconButton
-              // position='relative' top='0px' right='-150px'
-              variantColor='green.600' variant='outline'
-              ml={5} size='xs' icon='edit' onClick={onRequestEdit}
-            />
-          </>
-        )}
-      </Editable>
-      <ProgramaGroup
-        visibilit={
-          ((ming !== s && s !== '') || ming !== string)
-            ? 'visible'
-            : 'hidden'
-        }
-      />
-    </PseudoBox>
-  )
-}
-// vivi组件更改
+// vivi单组件数据渲染
 export const ViviProgramaOne = () => {
-  const talents = ['efeiohf']
-  const TalentCard = ({ talent }) => {
-    const [selectValue, setSelectValue] = useState(talent || '')
-    const [talentName, setTalentName] = useState(talent)
-
-    return (
-      <>
-        <PseudoBox
-          d='flex'
-          p={4}
-          justifyContent='space-between'
-          _hover={{ bg: 'blue.100', color: 'black' }}
-        >
-          <Editable
-            ml={20}
-            fontSize='2xl'
-            value={talentName}
-            isPreviewFocusable={false}
-            whiteSpace='nowrap'
-            overflow='hidden'
-            textOverflow='ellipsis'
-            maxWidth='300px'
-            p='5px 10px'
-          >
-            {({ isEditing, onRequestEdit, onSubmit }) => (
-              <>
-                <EditablePreview />
-                <EditableInput w='auto' onChange={(e) => { setTalentName(e.target.value) }} />
-                {!isEditing && (
-                  <IconButton
-                    variantColor='cyan' variant='outline'
-                    ml={5} size='sm' icon='edit' onClick={onRequestEdit}
-                  />
-                )}
-              </>
-            )}
-          </Editable>
-          <Grid templateColumns='repeat(3, 1fr)' gap={6} width='30%'>
-            <Box display='flex' alignItems='center'>
-              <Icon name='delete' size='24px' cursor='pointer' />
-            </Box>
-            <Stack isInline>
-              <Button
-                visibility={
-                  ((talent !== selectValue && selectValue !== '') || talentName !== talent)
-                    ? 'visible'
-                    : 'hidden'
-                } bg='#9370DB' color='white' _hover='color:black'
-
-              >確認修改
-              </Button>
-              <Button
-                visibility={
-                  ((talent !== selectValue && selectValue !== '') || talentName !== talent)
-                    ? 'visible'
-                    : 'hidden'
-                }
-                bg='#00B2EE' color='white' _hover='color:black'
-              > 還原
-              </Button>
-            </Stack>
-          </Grid>
-        </PseudoBox>
-      </>
-    )
-  }
+  const talents = ['efeiohf', '建瓯我就二分', '哦奥列克都发了']
+  const arry = [{ title: '啊打发二', content: '发为' }, { title: '啊打发二', content: '发为' }]
   return (
     <Box mt={3}>
-      {talents.map((talent, i) => (
+      {arry.map((talent, i) => (
         <Box key={i}>
           <TalentCard
             talent={talent}
-
           />
         </Box>
       ))}
     </Box>
+  )
+}
+
+// vivi 单组件
+export const TalentCard = ({ talent }) => {
+  const [selectValue, setSelectValue] = useState(talent || '')
+  const [talentName, setTalentName] = useState(talent)
+
+  return (
+    <>
+      <PseudoBox
+        d='flex'
+        p={4}
+        justifyContent='space-between'
+        _hover={{ bg: 'blue.100', color: 'black' }}
+      >
+        <Editable
+          ml={20}
+          fontSize='2xl'
+          value={talent.title}
+          isPreviewFocusable={false}
+          whiteSpace='nowrap'
+          overflow='hidden'
+          textOverflow='ellipsis'
+          maxWidth='300px'
+          p='5px 10px'
+        >
+          {({ isEditing, onRequestEdit, onSubmit }) => (
+            <>
+              <EditablePreview />
+              <EditableInput w='auto' onChange={(e) => { setTalentName({ title: e.target.value }) }} />
+              {!isEditing && (
+                <IconButton
+                  variantColor='cyan' variant='outline'
+                  ml={5} size='sm' icon='edit' onClick={onRequestEdit}
+                />
+              )}
+            </>
+          )}
+        </Editable>
+        <Editable
+          ml={20}
+          fontSize='2xl'
+          value={talent.content}
+          isPreviewFocusable={false}
+          whiteSpace='nowrap'
+          overflow='hidden'
+          textOverflow='ellipsis'
+          maxWidth='300px'
+          p='5px 10px'
+        >
+          {({ isEditing, onRequestEdit, onSubmit }) => (
+            <>
+              <EditablePreview />
+              <EditableInput w='auto' onChange={(e) => { setTalentName({ content: e.target.value }) }} />
+              {!isEditing && (
+                <IconButton
+                  variantColor='cyan' variant='outline'
+                  ml={5} size='sm' icon='edit' onClick={onRequestEdit}
+                />
+              )}
+            </>
+          )}
+        </Editable>
+        <Grid templateColumns='repeat(3, 1fr)' gap={6} width='30%'>
+          <Box display='flex' alignItems='center'>
+            <Icon name='delete' size='24px' cursor='pointer' />
+          </Box>
+          <Stack isInline>
+            <Button
+              visibility={
+                ((talent !== selectValue && selectValue !== '') || talentName !== talent)
+                  ? 'visible'
+                  : 'hidden'
+              } bg='#9370DB' color='white' _hover='color:black'
+
+            >確認修改
+            </Button>
+            <Button
+              visibility={
+                ((talent !== selectValue && selectValue !== '') || talentName !== talent)
+                  ? 'visible'
+                  : 'hidden'
+              }
+              bg='#00B2EE' color='white' _hover='color:black'
+            > 還原
+            </Button>
+          </Stack>
+        </Grid>
+      </PseudoBox>
+    </>
   )
 }

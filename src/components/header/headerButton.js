@@ -24,7 +24,7 @@ const HeaderButton = ({ title, icon, href, children, ...props }) => {
             color='gray.500'
           >
             {!!icon && (
-              <Box m={0} color='currentColor' ml={{ base: 0, md: -1 }} mr={{ base: 0, md: 1 }}>
+              <Box m={0} ml={{ base: 0, md: -1 }} mr={{ base: 0, md: 1 }}>
                 <Box as={icon} size='1.5em' />
               </Box>
             )}
