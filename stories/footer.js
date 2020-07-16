@@ -1,58 +1,8 @@
 import React from 'react'
-import { OddFeature, GridFooter } from '../src/components/footer'
-import { MdAccessibility, MdPalette, MdGrain } from 'react-icons/md'
-import {
-  Box,
-  Heading,
-  Flex,
-  Text
-} from '@chakra-ui/core'
+import { OddFeature, GridFooter } from '../src/components/home/footerPage'
+import { MdPalette, MdGrain } from 'react-icons/md'
 
 export default { title: 'Footer' }
-
-export const Foot = () => {
-  return (
-    <OddFeature
-      title='大標題'
-      subtitle='小標題'
-      icon={MdAccessibility}
-    >
-      內容
-    </OddFeature>
-  )
-}
-
-export const Footnoicon = () => {
-  return (
-    <OddFeature
-      title='大標題'
-      subtitle='小標題'
-    >
-      內容
-    </OddFeature>
-  )
-}
-
-export const Footnotitle = () => {
-  return (
-    <OddFeature
-      subtitle='小標題'
-      icon={MdAccessibility}
-    >
-      內容
-    </OddFeature>
-  )
-}
-export const Footnosubtitle = () => {
-  return (
-    <OddFeature
-      title='大標題'
-      icon={MdAccessibility}
-    >
-      內容
-    </OddFeature>
-  )
-}
 
 export const Footer = () => {
   return (
