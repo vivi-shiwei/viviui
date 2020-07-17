@@ -4,7 +4,7 @@ import {
   Button,
   Icon
 } from '@chakra-ui/core'
-import NextLink from 'next/link'
+
 const DrawerItemButton = ({ title, icon, href, children, ...props }) => {
   return (
     <Button
