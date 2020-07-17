@@ -32,35 +32,64 @@ export default { title: 'Header' }
 
 export const header = () => {
   return (
-    <Header>
-      <HeaderLogo icon={<Box as={IoMdHome} size={6} />} />
+    <Header
+      left={
+        <>
+          <HeaderButton icon={MdAccessibility} title='左邊按鈕' href='https://www.baidu.com' />
+          <HeaderButton icon={MdAccessibility} title='左邊按鈕' href='https://www.baidu.com' />
+          <HeaderButton icon={MdAccessibility} title='左邊按鈕' href='https://www.baidu.com' />
+        </>
+      }
+      logo={<HeaderLogo icon={<Box as={IoMdHome} size={6} />} />}
+      right={
+        <>
+          <HeaderButton title='右邊按鈕' icon={MdAccessibility} href='https://www.baidu.com' />
+          <Menu>
+            <MenuButton as={Button} rightIcon='chevron-down'>
+              Actions
+            </MenuButton>
+            <MenuList>
+              <MenuItem>Download</MenuItem>
+              <MenuItem>Create a Copy</MenuItem>
+              <MenuItem>Mark as Draft</MenuItem>
+              <MenuItem>Delete</MenuItem>
+              <MenuItem as='a' href='#'>
+                Attend a Workshop
+              </MenuItem>
+            </MenuList>
+          </Menu>
+        </>
+      }
+      center={<HeaderButton icon={MdAccessibility} title='中间按鈕' href='https://www.baidu.com' />}
+    />
+    // <HeaderLogo icon={<Box as={IoMdHome} size={6} />} />
 
-      <HeaderCenter>
-        <HeaderButton icon={MdAccessibility} title='中間按鈕' href='https://www.baidu.com' />
-        <HeaderButton title='中間按鈕' href='https://www.baidu.com' />
-        <HeaderButton icon={MdAccessibility} title='中間按鈕' href='https://www.baidu.com' />
-      </HeaderCenter>
+  // <HeaderLeft>
+  //   <HeaderButton icon={MdAccessibility} title='左邊按鈕' href='https://www.baidu.com' />
+  // </HeaderLeft>
+  // <HeaderCenter>
+  //   <HeaderButton icon={MdAccessibility} title='中間按鈕' href='https://www.baidu.com' />
+  //   <HeaderButton title='中間按鈕' href='https://www.baidu.com' />
+  //   <HeaderButton icon={MdAccessibility} title='中間按鈕' href='https://www.baidu.com' />
+  // </HeaderCenter>
 
-      <HeaderLeft>
-        <HeaderButton icon={MdAccessibility} title='左邊按鈕' href='https://www.baidu.com' />
-      </HeaderLeft>
-      <HeaderRight>
-        <HeaderButton title='右邊按鈕' icon={MdAccessibility} href='https://www.baidu.com' />
-        <Menu>
-          <MenuButton as={Button} rightIcon='chevron-down'>
-            Actions
-          </MenuButton>
-          <MenuList>
-            <MenuItem>Download</MenuItem>
-            <MenuItem>Create a Copy</MenuItem>
-            <MenuItem>Mark as Draft</MenuItem>
-            <MenuItem>Delete</MenuItem>
-            <MenuItem as='a' href='#'>
-              Attend a Workshop
-            </MenuItem>
-          </MenuList>
-        </Menu>
-      </HeaderRight>
-    </Header>
+  // <HeaderRight>
+  //   <HeaderButton title='右邊按鈕' icon={MdAccessibility} href='https://www.baidu.com' />
+  //   <Menu>
+  //     <MenuButton as={Button} rightIcon='chevron-down'>
+  //       Actions
+  //     </MenuButton>
+  //     <MenuList>
+  //       <MenuItem>Download</MenuItem>
+  //       <MenuItem>Create a Copy</MenuItem>
+  //       <MenuItem>Mark as Draft</MenuItem>
+  //       <MenuItem>Delete</MenuItem>
+  //       <MenuItem as='a' href='#'>
+  //         Attend a Workshop
+  //       </MenuItem>
+  //     </MenuList>
+  //   </Menu>
+  // </HeaderRight>
+
   )
 }

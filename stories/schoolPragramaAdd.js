@@ -46,7 +46,7 @@ export const ProgramaOnes = () => {
   )
 }
 
-export const ProgramaGroups = () => {
+export const PopGroup = () => {
   const talentOne = { title: '打发二', content: '哦哦附件为非' }
 
   return (
@@ -58,9 +58,9 @@ export const ProgramaGroups = () => {
 
 export const editDashboardList = () => {
   const talents = [{ title: '自己啊就睏了就', content: '加哦就發欸違法' },
-  { title: '及基督教發射東風五', content: '打發發打飛' },
-  { title: '大沙發惡法而無法', content: '德法俄法違法' },
-  { title: '士大夫文人收到', content: '蘇打粉微軟分爲' }]
+    { title: '及基督教發射東風五', content: '打發發打飛' },
+    { title: '大沙發惡法而無法', content: '德法俄法違法' },
+    { title: '士大夫文人收到', content: '蘇打粉微軟分爲' }]
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>

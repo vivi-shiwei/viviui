@@ -7,10 +7,8 @@ const Right = ({ logo, profilePhoto, MenuTest, noColormode = false, disclosure, 
     <>
       <Flex
         align='center'
-        position='absolute'
-        top='50%'
-        right='0'
-        transform='translate(0, -50%)'
+        justify='flex-end'
+        mr={0}
         display={{ base: 'none', sm: 'none', md: 'flex' }}
         {...props}
       >

@@ -7,11 +7,8 @@ import {
 const HeaderLeft = ({ logo, text, children, ...props }) => {
   return (
     <Flex
-      // position='absolute'
-      // top='50%'
-      // left='0'
-      // transform='translate(0, -50%)'
-      float='left'
+      justify='flex-start'
+      ml='0'
       display={{ base: 'none', sm: 'none', md: 'flex' }}
       {...props}
     >

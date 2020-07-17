@@ -1,18 +1,25 @@
 import React from 'react'
 import {
-  Flex
+  Flex,
+  Box
 } from '@chakra-ui/core'
-const HeaderLogo = ({ icon, profilePhoto, MenuTest, noColormode = false, disclosure, children, ...props }) => {
+import NextLink from 'next/link'
+const HeaderLogo = ({ icon, href, children, ...props }) => {
   return (
     <Flex
-      // position='absolute'
       justify='flex-start'
-      // flex='-1'
-      float='left'
+      flex='-1'
       {...props}
     >
-      {icon}
-      {children}
+      <NextLink href={href || '/'} passHref>
+        <Box
+          as='a'
+          d='block'
+        >
+          {icon}
+          {children}
+        </Box>
+      </NextLink>
     </Flex>
   )
 }

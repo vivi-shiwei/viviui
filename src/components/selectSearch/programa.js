@@ -15,11 +15,9 @@ import {
   Button,
   useDisclosure,
   FormControl,
-  FormLabel,
-  Field,
+
   FormErrorMessage,
-  Form,
-  Formik,
+
   NewModal,
   Drawer,
   DrawerBody,
@@ -32,6 +30,7 @@ import {
 } from '@chakra-ui/core'
 import { Container } from '../containerPage'
 import Admin from '../admin/adminPage'
+import { Formik, Field, Form } from 'formik'
 
 // Editable单个
 export const ProgramaOne = ({ title, content, color, fontSize, children, ...props }) => {
@@ -158,22 +157,34 @@ export const ProgramaGroup = ({ talent, deleteColor, deleteButtonTop = true, chi
 }
 
 // 智能添加
-export const Noopsyche = ({ ming }) => {
+export const Noopsyche = ({ ming, ...props }) => {
   const ref1 = useRef()
   const ref2 = useRef()
   const obj = { title: null, content: null }
+
+  function validateName (value) {
+    let error
+    if (!value) {
+      error = '内容不能为空'
+    } else if (value.length < 3) {
+      error = '长度不能少于2个'
+    }
+    return error
+  }
   return (
     <PseudoBox mx='auto' _hover={{ bg: 'blue.100' }} cursor='pointer'>
-      <Flex alignItems='center' justifyContent='space-between'>
-        <Grid templateColumns='repeat(1, 1fr)' gap={0} m='10px' width='60%'>
-          <Input variant='outline' type='text' placeholder='新增智能名稱' mb='5px' ref={ref1} value={obj.title} />
-          <Input variant='outline' type='text' placeholder='新增英文智能名稱' ref={ref2} value={obj.content} />
-        </Grid>
-        <Grid templateColumns='repeat(3, 1fr)' gap={6} width='20%' justifyContent='space-around'>
-          <Button bg='#9370DB' color='white' _hover='color:black' p='0px 50px' onClick={() => { obj.title = ref1.current.value; obj.content = ref2.current.value; console.log(obj) }}>送出資料</Button>
-          <Button bg='#00B2EE' color='white' _hover='color:black' p='0px 20px' onClick={() => { ming() }}>取消</Button>
-        </Grid>
-      </Flex>
+      <Formik>
+        <Flex direction='' alignItems='center' justifyContent='space-between' border='none' p='20px'>
+          <Grid templateColumns='repeat(1, 1fr)' gap={0} m='10px' width='60%'>
+            <Input variant='outline' type='text' placeholder='新增智能名稱' mb='5px' ref={ref1} value={obj.title} />
+            <Input variant='outline' type='text' placeholder='新增英文智能名稱' ref={ref2} value={obj.content} />
+          </Grid>
+          <Grid templateColumns='repeat(3, 1fr)' gap={6} width='20%'>
+            <Button bg='#9370DB' color='white' _hover='color:black' p='0px 50px' onClick={() => { obj.title = ref1.current.value; obj.content = ref2.current.value; console.log(obj) }}>送出資料</Button>
+            <Button bg='#00B2EE' color='white' _hover='color:black' p='0px 20px' onClick={() => { props.onClose() }}>取消</Button>
+          </Grid>
+        </Flex>
+      </Formik>
     </PseudoBox>
   )
 }
