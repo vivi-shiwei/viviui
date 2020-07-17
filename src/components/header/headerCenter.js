@@ -1,7 +1,6 @@
 import React from 'react'
 import {
-  Flex,
-  Box
+  Flex
 } from '@chakra-ui/core'
 
 const HeaderCenter = ({ center, children, ...props }) => {

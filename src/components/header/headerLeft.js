@@ -9,10 +9,9 @@ const HeaderLeft = ({ logo, text, children, ...props }) => {
     <Flex
       justify='flex-start'
       ml='0'
-      display={{ base: 'none', sm: 'none', md: 'flex' }}
       {...props}
     >
-      <Box alignItems='center'>
+      <Box alignItems='center' d='flex'>
         {children}
       </Box>
     </Flex>

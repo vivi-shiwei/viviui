@@ -3,29 +3,23 @@ import {
   Box,
   Flex,
   useColorMode,
-  Drawer,
-  DrawerBody,
-  DrawerHeader,
-  DrawerOverlay,
-  DrawerContent,
   Button,
-  useDisclosure,
-  DrawerCloseButton
+  useDisclosure
 } from '@chakra-ui/core'
 import {
   Header as HeaderContainer
 } from '../DocsHeaderPage'
 import { Container } from '../containerPage'
-import NextLink from 'next/link'
-import { FiAlignJustify } from 'react-icons/fi'
+import { AiOutlineMenu } from 'react-icons/ai'
+
 import HeaderLeft from './headerLeft'
 import HeaderRight from './headerRight'
 import HeaderLogo from './headerLogo'
 import HeaderCenter from './headerCenter'
-import Drawers from './drawers'
+import DrawerWithBody from './drawerWithBody'
 
-const Header = ({ left, center, right, text, logo, logoHref, profilePhoto, noColormode = false, MenuTest, children, disclosure, ...props }) => {
-  const { colorMode, toggleColorMode } = useColorMode()
+const Header = ({ left, center, right, text, logo, logoHref, profilePhoto, drawerBody, MenuTest, children, disclosure, ...props }) => {
+  const { colorMode } = useColorMode()
   const bg = { light: 'white', dark: 'gray.800' }
   const { isOpen, onOpen, onClose } = useDisclosure()
 
@@ -36,37 +30,40 @@ const Header = ({ left, center, right, text, logo, logoHref, profilePhoto, noCol
         height='4rem'
         {...props}
       >
-        <Flex size='100%' px={{ base: 0, sm: 2, md: 4 }} align='center' w='full'>
+        <Flex size='100%' px={{ base: 0, sm: 2, md: 4 }} align='center' w='full' justify='space-between'>
 
           <HeaderLogo href={logoHref}>
             {logo}
           </HeaderLogo>
+
           <HeaderLeft>
             {left}
           </HeaderLeft>
+
           <HeaderCenter>
             {center}
           </HeaderCenter>
+
           <HeaderRight>
             {right}
           </HeaderRight>
 
           {children}
-          <Button variantColor='none' onClick={onOpen} display={{ sm: 'block', md: 'none' }} size='xs' position='absolute' right='0px'>
-            <Box fontSize={{ base: '22px', sm: '28px' }} color={colorMode === 'light' ? 'black' : 'white'} as={FiAlignJustify} />
-          </Button>
-          <Drawer placement='left' onClose={onClose} isOpen={isOpen}>
-            <DrawerOverlay />
-            <DrawerContent>
-              <DrawerCloseButton />
-              <DrawerHeader borderBottomWidth='1px'>選項</DrawerHeader>
-              <DrawerBody fontSize={{ sm: 'xs', md: 'sm' }}>
-                <p>1</p>
-                <p>2</p>
-                <p>3</p>
-              </DrawerBody>
-            </DrawerContent>
-          </Drawer>
+          {!!drawerBody && (
+            <Flex justify='flex-end'>
+              <Button variantColor='none' onClick={onOpen} display={{ sm: 'block', md: 'none' }} size='xs'>
+                <Box fontSize={{ base: '20px', sm: '24px' }} color={colorMode === 'light' ? 'black' : 'white'} as={AiOutlineMenu} />
+              </Button>
+              {isOpen && (
+                <DrawerWithBody
+                  isOpen={isOpen}
+                  onClose={onClose}
+                >
+                  {drawerBody}
+                </DrawerWithBody>
+              )}
+            </Flex>
+          )}
         </Flex>
       </Container>
     </HeaderContainer>

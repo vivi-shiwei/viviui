@@ -4,8 +4,7 @@ import {
   CSSReset,
   theme,
   ColorModeProvider,
-  useColorMode,
-  IconButton
+  useColorMode
 } from '@chakra-ui/core'
 import { button } from '@storybook/addon-knobs'
 
@@ -21,7 +20,7 @@ const ColorModeSwitch = () => {
 const App = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
-      <ColorModeProvider value='light'>
+      <ColorModeProvider>
         <CSSReset />
         <ColorModeSwitch />
         {children}

@@ -156,13 +156,13 @@ export const ProgramaGroup = ({ talent, deleteColor, deleteButtonTop = true, chi
   )
 }
 
-// 智能添加
+// 智能添加ref
 export const Noopsyche = ({ ming, ...props }) => {
   const ref1 = useRef()
   const ref2 = useRef()
   const obj = { title: null, content: null }
 
-  function validateName (value) {
+  function validateName(value) {
     let error
     if (!value) {
       error = '内容不能为空'
@@ -188,6 +188,7 @@ export const Noopsyche = ({ ming, ...props }) => {
     </PseudoBox>
   )
 }
+
 
 // 智能添加关闭 useDisclosure
 export const NoopsycheAdd = () => {
