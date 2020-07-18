@@ -24,11 +24,15 @@ const Hero = ({ title, subtitle, children, noBottomBorder = false, leftButton = 
               </Text>
             )}
             {(!!children || !!leftButton || !!rightButton) && (
-              <Box mt={(title || subtitle) ? 4 : 0}>
-                {leftButton}
-                {rightButton}
-                {children}
-              </Box>
+              <>
+                <Box mt={(title || subtitle) ? 4 : 0}>
+                  {leftButton}
+                  {rightButton}
+                </Box>
+                <Box mt={(title || subtitle || rightButton || leftButton) ? 4 : 0}>
+                  {children}
+                </Box>
+              </>
             )}
           </Box>
         </Container>

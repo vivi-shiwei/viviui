@@ -1,10 +1,8 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useRouter } from 'react'
 import {
   Box,
   Input,
-  Grid,
   Heading,
-  Flex,
   Icon,
   Text,
   Editable,
@@ -12,12 +10,7 @@ import {
   EditablePreview,
   ButtonGroup,
   IconButton,
-  Button,
   useDisclosure,
-  FormControl,
-
-  FormErrorMessage,
-
   NewModal,
   Drawer,
   DrawerBody,
@@ -25,8 +18,16 @@ import {
   DrawerContent,
   Stack,
   DrawerOverlay,
+  Select,
+  Flex,
+  Grid,
+  Button,
   PseudoBox,
-  Select
+  useToast,
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  FormHelperText
 } from '@chakra-ui/core'
 import { Container } from '../containerPage'
 import Admin from '../admin/adminPage'
@@ -156,13 +157,10 @@ export const ProgramaGroup = ({ talent, deleteColor, deleteButtonTop = true, chi
   )
 }
 
-// 智能添加ref
-export const Noopsyche = ({ ming, ...props }) => {
-  const ref1 = useRef()
-  const ref2 = useRef()
-  const obj = { title: null, content: null }
-
-  function validateName(value) {
+// 智能添加
+export const AddIntelligence = ({ submitButton, cancelButton, ...props }) => {
+  const toast = useToast()
+  const validateName = (value) => {
     let error
     if (!value) {
       error = '内容不能为空'
@@ -172,23 +170,57 @@ export const Noopsyche = ({ ming, ...props }) => {
     return error
   }
   return (
-    <PseudoBox mx='auto' _hover={{ bg: 'blue.100' }} cursor='pointer'>
-      <Formik>
-        <Flex direction='' alignItems='center' justifyContent='space-between' border='none' p='20px'>
-          <Grid templateColumns='repeat(1, 1fr)' gap={0} m='10px' width='60%'>
-            <Input variant='outline' type='text' placeholder='新增智能名稱' mb='5px' ref={ref1} value={obj.title} />
-            <Input variant='outline' type='text' placeholder='新增英文智能名稱' ref={ref2} value={obj.content} />
-          </Grid>
-          <Grid templateColumns='repeat(3, 1fr)' gap={6} width='20%'>
-            <Button bg='#9370DB' color='white' _hover='color:black' p='0px 50px' onClick={() => { obj.title = ref1.current.value; obj.content = ref2.current.value; console.log(obj) }}>送出資料</Button>
-            <Button bg='#00B2EE' color='white' _hover='color:black' p='0px 20px' onClick={() => { props.onClose() }}>取消</Button>
-          </Grid>
-        </Flex>
+    <PseudoBox
+      _hover={{ backgroundColor: '#ceedff' }} cursor='pointer' p={{ base: '20px', sm: '20px', md: '10px' }}
+    >
+      <Formik
+        initialValues={{ name1: '', name2: '' }}
+        onSubmit={(values, actions) => {
+          toast({
+            position: 'top',
+            title: 'Account created.',
+            description: "We've created your account for you.",
+            status: 'success',
+            duration: 9000,
+            isClosable: true
+          })
+          console.log(values.name1, values.name2)
+          actions.setSubmitting(false)
+        }}
+      >
+        {({ isSubmitting }) => (
+          <Form p='5px 0'>
+            <Flex direction={{ base: 'column', md: 'row' }} alignItems='center' justifyContent={{ md: 'space-between', base: 'flex-start' }}>
+              <Grid width={{ base: '100%', md: '60%' }} templateColumns='repeat(1, 1fr)' gap={4}>
+                <Field name='name1' validate={validateName}>
+                  {({ field, form: { errors, touched } }) => (
+                    <FormControl isInvalid={errors.name1 && touched.name1}>
+                      <Input placeholder='新增智能名称' {...field} />
+                      <FormErrorMessage>{errors.name1}</FormErrorMessage>
+                    </FormControl>
+                  )}
+                </Field>
+                <Field name='name2' validate={validateName}>
+                  {({ field, form: { errors, touched } }) => (
+                    <FormControl isInvalid={errors.name2 && touched.name2}>
+                      <Input placeholder='新增智能英文名称' {...field} />
+                      <FormErrorMessage>{errors.name2}</FormErrorMessage>
+                    </FormControl>
+                  )}
+                </Field>
+              </Grid>
+              <Grid width={{ base: '100%', md: '30%' }} mt={{ base: '20px', md: '0' }} templateColumns='repeat(2, 1fr)' gap={8}>
+                <Button isLoading={props.isSubmitting} variantColor='green' type='submit'> {submitButton || '送出资料'} </Button>
+                <Button onClick={() => { props.onClose() }} variantColor='green'>{cancelButton || '取消'} </Button>
+              </Grid>
+            </Flex>
+          </Form>
+
+        )}
       </Formik>
     </PseudoBox>
   )
 }
-
 
 // 智能添加关闭 useDisclosure
 export const NoopsycheAdd = () => {
@@ -210,7 +242,7 @@ export const NoopsycheAdd = () => {
         新增
       </Button>
       {isOpen && (
-        <Noopsyche onClose={onClose} isOpen={isOpen} ming={onClose} />
+        <AddIntelligence onClose={onClose} isOpen={isOpen} ming={onClose} />
       )}
 
     </>
@@ -233,114 +265,6 @@ export const OpenDrawers = () => {
           </DrawerBody>
         </DrawerContent>
       </Drawer>
-    </>
-  )
-}
-
-// vivi单组件数据渲染
-export const ViviProgramaOne = () => {
-  const talents = ['efeiohf', '建瓯我就二分', '哦奥列克都发了']
-  const arry = [{ title: '啊打发二', content: '发为' }, { title: '啊打发二', content: '发为' }]
-  return (
-    <Box mt={3}>
-      {arry.map((talent, i) => (
-        <Box key={i}>
-          <TalentCard
-            talent={talent}
-          />
-        </Box>
-      ))}
-    </Box>
-  )
-}
-
-// vivi 单组件
-export const TalentCard = ({ talent }) => {
-  const [selectValue, setSelectValue] = useState(talent || '')
-  const [talentName, setTalentName] = useState(talent)
-
-  return (
-    <>
-      <PseudoBox
-        d='flex'
-        p={4}
-        justifyContent='space-between'
-        _hover={{ bg: 'blue.100', color: 'black' }}
-      >
-        <Editable
-          ml={20}
-          fontSize='2xl'
-          value={talent.title}
-          isPreviewFocusable={false}
-          whiteSpace='nowrap'
-          overflow='hidden'
-          textOverflow='ellipsis'
-          maxWidth='300px'
-          p='5px 10px'
-        >
-          {({ isEditing, onRequestEdit, onSubmit }) => (
-            <>
-              <EditablePreview />
-              <EditableInput w='auto' onChange={(e) => { setTalentName({ title: e.target.value }) }} />
-              {!isEditing && (
-                <IconButton
-                  variantColor='cyan' variant='outline'
-                  ml={5} size='sm' icon='edit' onClick={onRequestEdit}
-                />
-              )}
-            </>
-          )}
-        </Editable>
-        <Editable
-          ml={20}
-          fontSize='2xl'
-          value={talent.content}
-          isPreviewFocusable={false}
-          whiteSpace='nowrap'
-          overflow='hidden'
-          textOverflow='ellipsis'
-          maxWidth='300px'
-          p='5px 10px'
-        >
-          {({ isEditing, onRequestEdit, onSubmit }) => (
-            <>
-              <EditablePreview />
-              <EditableInput w='auto' onChange={(e) => { setTalentName({ content: e.target.value }) }} />
-              {!isEditing && (
-                <IconButton
-                  variantColor='cyan' variant='outline'
-                  ml={5} size='sm' icon='edit' onClick={onRequestEdit}
-                />
-              )}
-            </>
-          )}
-        </Editable>
-        <Grid templateColumns='repeat(3, 1fr)' gap={6} width='30%'>
-          <Box display='flex' alignItems='center'>
-            <Icon name='delete' size='24px' cursor='pointer' />
-          </Box>
-          <Stack isInline>
-            <Button
-              visibility={
-                ((talent !== selectValue && selectValue !== '') || talentName !== talent)
-                  ? 'visible'
-                  : 'hidden'
-              } bg='#9370DB' color='white' _hover='color:black'
-
-            >確認修改
-            </Button>
-            <Button
-              visibility={
-                ((talent !== selectValue && selectValue !== '') || talentName !== talent)
-                  ? 'visible'
-                  : 'hidden'
-              }
-              bg='#00B2EE' color='white' _hover='color:black'
-            > 還原
-            </Button>
-          </Stack>
-        </Grid>
-      </PseudoBox>
     </>
   )
 }

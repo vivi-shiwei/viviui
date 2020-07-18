@@ -131,6 +131,15 @@ export const heroWithButtons = () => {
           GitHub
         </Button>
       }
-    />
+
+    >
+
+      <Button size='lg' as='a' variantColor='teal' m={2}>
+        Get Started
+      </Button>
+      <Button as='a' size='lg' m={2}>
+        GitHub
+      </Button>
+    </Hero>
   )
 }

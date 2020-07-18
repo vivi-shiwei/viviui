@@ -29,10 +29,9 @@ import {
 import {
   ProgramaOne,
   ProgramaGroup,
-  Noopsyche,
+  AddIntelligence,
   NoopsycheAdd,
   OpenDrawers,
-  ViviProgramaOne
 } from '../src/components/selectSearch/programa'
 import Admin from '../src/components/admin/adminPage'
 
@@ -58,29 +57,21 @@ export const PopGroup = () => {
 
 export const editDashboardList = () => {
   const talents = [{ title: '自己啊就睏了就', content: '加哦就發欸違法' },
-    { title: '及基督教發射東風五', content: '打發發打飛' },
-    { title: '大沙發惡法而無法', content: '德法俄法違法' },
-    { title: '士大夫文人收到', content: '蘇打粉微軟分爲' }]
+  { title: '及基督教發射東風五', content: '打發發打飛' },
+  { title: '大沙發惡法而無法', content: '德法俄法違法' },
+  { title: '士大夫文人收到', content: '蘇打粉微軟分爲' }]
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
       <Admin
         backurl='教義中學第六校>管理員'
         button={
-          <Box d='flex' justifyContent='center' p={4} with='100%'>
-            <Button
-              variant='outline'
-              variantColor='green'
-              onClick={onOpen}
-              display={isOpen ? 'none' : 'block'}
-              mb='100px'
-            >
-              新增智能
-            </Button>
+          <>
+            <Button variant='outline' variantColor='green' onClick={onOpen} display={isOpen ? 'none' : 'block'} mx=' auto'>新增智能</Button>
             {isOpen && (
-              <Noopsyche onClose={onClose} isOpen={isOpen} ming={onClose} />
+              <AddIntelligence onClose={onClose} isOpen={isOpen} />
             )}
-          </Box>
+          </>
         }
       >
         {
@@ -93,14 +84,14 @@ export const editDashboardList = () => {
   )
 }
 
-export const noopsycheSingle = () => {
+export const AddIntelligencea = () => {
   return (
     <>
-      <Noopsyche />
+      <AddIntelligence />
     </>
   )
 }
-export const noopsycheButtonAdd = () => {
+export const AddIntelligenceas = () => {
   return (
     <>
       <NoopsycheAdd />
@@ -111,14 +102,6 @@ export const OpenDrawersa = () => {
   return (
     <>
       <OpenDrawers />
-    </>
-  )
-}
-
-export const ViViTest = () => {
-  return (
-    <>
-      <ViviProgramaOne title='KIng' />
     </>
   )
 }
