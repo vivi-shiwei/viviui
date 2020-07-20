@@ -10,5 +10,4 @@ export { default as DrawerWithBody } from './components/header/drawerWithBody'
 export { default as DrawerItemHeader } from './components/header/drawerItemHeader'
 export { default as DrawerItemDivider } from './components/header/drawerItemDivider'
 export { default as DrawerItemButton } from './components/header/drawerItemButton'
-
 export { default as Hero } from './components/hero'

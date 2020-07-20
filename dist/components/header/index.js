@@ -59,12 +59,13 @@ const Header = (_ref) => {
     onOpen,
     onClose
   } = (0, _core.useDisclosure)();
-  return /*#__PURE__*/_react.default.createElement(_DocsHeaderPage.Header, {
+  return /*#__PURE__*/_react.default.createElement(_DocsHeaderPage.Header, (0, _extends2.default)({
     bg: bg[colorMode]
-  }, /*#__PURE__*/_react.default.createElement(_containerPage.Container, (0, _extends2.default)({
+  }, props), /*#__PURE__*/_react.default.createElement(_containerPage.Container, {
     h: "100%",
-    height: "4rem"
-  }, props), /*#__PURE__*/_react.default.createElement(_core.Flex, {
+    height: "4rem",
+    style: props.style
+  }, /*#__PURE__*/_react.default.createElement(_core.Flex, {
     size: "100%",
     px: {
       base: 0,

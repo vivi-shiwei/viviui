@@ -15,7 +15,8 @@ var _exportNames = {
   DrawerWithBody: true,
   DrawerItemHeader: true,
   DrawerItemDivider: true,
-  DrawerItemButton: true
+  DrawerItemButton: true,
+  Hero: true
 };
 Object.defineProperty(exports, "Header", {
   enumerable: true,
@@ -77,6 +78,12 @@ Object.defineProperty(exports, "DrawerItemButton", {
     return _drawerItemButton.default;
   }
 });
+Object.defineProperty(exports, "Hero", {
+  enumerable: true,
+  get: function () {
+    return _hero.default;
+  }
+});
 
 var _core = require("@chakra-ui/core");
 
@@ -110,3 +117,5 @@ var _drawerItemHeader = _interopRequireDefault(require("./components/header/draw
 var _drawerItemDivider = _interopRequireDefault(require("./components/header/drawerItemDivider"));
 
 var _drawerItemButton = _interopRequireDefault(require("./components/header/drawerItemButton"));
+
+var _hero = _interopRequireDefault(require("./components/hero"));
