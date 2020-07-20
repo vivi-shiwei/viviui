@@ -20,7 +20,7 @@ export const OddFeature = ({ title, icon, subtitle, children, ...props }) => {
           align='center'
           justify='center'
         >
-          <Box size={6} color='white' as={icon} />
+          {icon || (<Box size={6} color='white' as={icon} />)}
         </Flex>
       )}
       {!!title && (

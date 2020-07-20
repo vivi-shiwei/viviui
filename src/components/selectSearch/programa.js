@@ -33,60 +33,41 @@ import { Container } from '../containerPage'
 import Admin from '../admin/adminPage'
 import { Formik, Field, Form } from 'formik'
 
-// Editable单个
+// Editable单个编辑
 export const ProgramaOne = ({ title, content, color, fontSize, children, ...props }) => {
   const [begin, setBegin] = useState(title || '')
   const [finish, setFinish] = useState(title)
 
   return (
-    <Editable
-      textAlign='left'
-      defaultValue={title || ('空' || !!content ? content : '空')}
-      fontSize={fontSize}
-      color={color}
-      whiteSpace='nowrap'
-      overflow='hidden'
-      textOverflow='ellipsis'
-      p='5px 10px'
-      isPreviewFocusable={false}
-    >
-      {({ isEditing, onSubmit, onRequestEdit, onChange }) => (
-        <>
-          <EditablePreview />
-          <EditableInput onChange={(e) => { setFinish(e.target.value) }} />
-          <IconButton
-            variantColor='green.600' variant='outline'
-            ml={5} size='xs' icon='edit' onClick={onRequestEdit}
-          />
-        </>
-      )}
-    </Editable>
+    <Box border=''>
+      <Editable
+        textAlign='left'
+        defaultValue={title || ('空' || !!content ? content : '空')}
+        fontSize={fontSize}
+        color={color}
+        whiteSpace='nowrap'
+        overflow='hidden'
+        textOverflow='ellipsis'
+        p='5px 10px'
+        isPreviewFocusable={false}
+      >
+        {({ isEditing, onSubmit, onRequestEdit, onChange }) => (
+          <>
+            <EditablePreview />
+            <EditableInput onChange={(e) => { setFinish(e.target.value) }} />
+            <IconButton
+              variantColor='green.600' variant='outline'
+              ml={5} size='xs' icon='edit' onClick={onRequestEdit}
+            />
+          </>
+        )}
+      </Editable>
+    </Box>
   )
 }
 
-// Programa Left
-export const ProgramaLeftButton = ({ title, content }) => {
-  return (
-    <>
-      <Grid templateColumns='repeat(1, 1fr)' gap={0} m='10px' width='40%'>
-        <ProgramaOne title={title} c color='#1E90FF' fontSize='24px' />
-        <ProgramaOne content={content} color='#8B814C' fontSize='18px' />
-      </Grid>
-    </>
-  )
-}
-// Programa right
-export const ProgramaRightButton = (visibility) => {
-  return (
-    <>
-      <Button bg='#9370DB' color='white' _hover='color:black' visibility={visibility}>確認修改</Button>
-      <Button bg='#00B2EE' color='white' _hover='color:black' visibility={visibility}>還原</Button>
-    </>
-  )
-}
-
-// Editable单个組
-export const ProgramaGroup = ({ talent, deleteColor, deleteButtonTop = true, children, ...props }) => {
+// 智能编辑
+export const EditIntelligence = ({ talent, deleteColor, deleteButtonTop = true, children, ...props }) => {
   const [selectValue, setSelectValue] = useState(talent || '')
   const [talentName, setTalentName] = useState(talent)
   return (
@@ -99,7 +80,7 @@ export const ProgramaGroup = ({ talent, deleteColor, deleteButtonTop = true, chi
               fontSize='24px'
               color='#2f98ff'
               whiteSpace='nowrap'
-              value={talent.title}
+              defaultValue={talent.title}
               overflow='hidden'
               textOverflow='ellipsis'
               p='5px 10px'
@@ -108,7 +89,7 @@ export const ProgramaGroup = ({ talent, deleteColor, deleteButtonTop = true, chi
               {({ isEditing, onSubmit, onRequestEdit, onChange }) => (
                 <>
                   <EditablePreview />
-                  <EditableInput onChange={(e) => { setTalentName({ title: e.target.value }) }} />
+                  <EditableInput onChange={(e) => { setTalentName({ title: e.target.value }); console.log(e.target.value) }} />
                   <IconButton
                     variantColor='green.600' variant='outline'
                     ml={5} size='xs' icon='edit' onClick={onRequestEdit}
@@ -119,7 +100,7 @@ export const ProgramaGroup = ({ talent, deleteColor, deleteButtonTop = true, chi
             <Editable
               textAlign='left'
               fontSize='24px'
-              value={talent.content}
+              defaultValue={talent.content}
               color='#8b814c'
               whiteSpace='nowrap'
               overflow='hidden'
@@ -130,7 +111,7 @@ export const ProgramaGroup = ({ talent, deleteColor, deleteButtonTop = true, chi
               {({ isEditing, onSubmit, onRequestEdit, onChange }) => (
                 <>
                   <EditablePreview />
-                  <EditableInput onChange={(e) => { setTalentName({ content: e.target.value }) }} />
+                  <EditableInput onChange={(e) => { setTalentName({ content: e.target.value }); console.log(e.target.value) }} />
                   <IconButton
                     variantColor='green.600' variant='outline'
                     ml={5} size='xs' icon='edit' onClick={onRequestEdit}
@@ -153,6 +134,16 @@ export const ProgramaGroup = ({ talent, deleteColor, deleteButtonTop = true, chi
           </Grid>
         </Flex>
       </Box>
+    </>
+  )
+}
+
+// 添加按钮
+export const ProgramaRightButton = (visibility) => {
+  return (
+    <>
+      <Button bg='#9370DB' color='white' _hover='color:black' visibility={visibility}>確認修改</Button>
+      <Button bg='#00B2EE' color='white' _hover='color:black' visibility={visibility}>還原</Button>
     </>
   )
 }
@@ -219,52 +210,5 @@ export const AddIntelligence = ({ submitButton, cancelButton, ...props }) => {
         )}
       </Formik>
     </PseudoBox>
-  )
-}
-
-// 智能添加关闭 useDisclosure
-export const NoopsycheAdd = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  return (
-    <>
-      <Button
-        variantColor='blue'
-        borderWidth='1px'
-        position=' absolute'
-        borderRadius='9999px'
-        top='50%'
-        left=' 0'
-        transform=' translate(0, -50%)'
-        minW={{ base: '80px', sm: '110px' }}
-        onClick={onOpen}
-        display={isOpen ? 'none' : 'block'}
-      >
-        新增
-      </Button>
-      {isOpen && (
-        <AddIntelligence onClose={onClose} isOpen={isOpen} ming={onClose} />
-      )}
-
-    </>
-  )
-}
-// openDrawer
-export const OpenDrawers = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  return (
-    <>
-      <Button onClick={onOpen}>Open Drawer</Button>
-      <Drawer placement='right' onClose={onClose} isOpen={isOpen}>
-        <DrawerOverlay />
-        <DrawerContent>
-          <DrawerHeader borderBottomWidth='1px'>Basic Drawer</DrawerHeader>
-          <DrawerBody>
-            <p>Some contents...</p>
-            <p>Some contents...</p>
-            <p>Some contents...</p>
-          </DrawerBody>
-        </DrawerContent>
-      </Drawer>
-    </>
   )
 }

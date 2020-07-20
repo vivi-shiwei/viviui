@@ -343,7 +343,81 @@ export const AfterLoginPaper = () => {
     <>
       <Menu placement='bottom-end'>
         <MenuButton as='div'>
-          <Avatar name='vivi' src={MyImage} size='sm' cursor='pointer' display={{ base: 'none', sm: 'none', md: 'flex' }} />
+          <Avatar name='vivi' src={MyImage} size='sm' cursor='pointer' />
+        </MenuButton>
+        <MenuList w='280px'>
+          <NextLink href='/' passHref>
+            <MenuItem as='a'>
+              <Box as={IoMdHome} mr='4px' />
+              <span>返回 Macau School</span>
+            </MenuItem>
+          </NextLink>
+          <Link href='/'>
+            <MenuItem>
+              <Box as={AiOutlineLogout} mr='4px' />
+              <span>登出</span>
+            </MenuItem>
+          </Link>
+        </MenuList>
+      </Menu>
+    </>
+  )
+
+  const DrawerBody = () => (
+    <>
+      <DrawerItemButton icon={IoMdPaper}>首頁</DrawerItemButton>
+      <DrawerItemDivider />
+      <DrawerItemButton icon={MdDashboard}>学校專頁</DrawerItemButton>
+      <DrawerItemDivider />
+      <DrawerItemButton icon={IoMdSearch}>搜索</DrawerItemButton>
+      <DrawerItemDivider />
+      <DrawerItemButton icon={IoMdHome}>返回 Macau School</DrawerItemButton>
+      <DrawerItemDivider />
+      <DrawerItemButton icon={AiOutlineLogout}>登出</DrawerItemButton>
+      <DrawerItemDivider />
+    </>
+  )
+
+  return (
+    <Header
+      logo={<Logo />}
+      // center={<HeaderCenter />}
+      right={<HeaderRight />}
+    // drawerBody={<DrawerBody />}
+    />
+  )
+}
+
+export const AfterPostLoginPaper = () => {
+  const Logo = () => (
+    <>
+      <Heading as='h1' size='lg' letterSpacing='-.1rem'>
+        <Box as='span' d={{ base: 'none', sm: 'inline' }}>
+          Macau School
+        </Box>
+        <Box as='span' d={{ base: 'inline', sm: 'none' }}>
+          MS
+        </Box>
+        <Box as='span' color='blue.500' d={{ base: 'none', md: 'inline' }}>
+          {' '}學不停
+        </Box>
+      </Heading>
+    </>
+  )
+
+  const HeaderCenter = () => (
+    <>
+      <HeaderButton icon={IoMdPaper} title='首頁' />
+      <HeaderButton icon={MdDashboard} title='学校專頁' />
+      <HeaderButton icon={IoMdSearch} title='搜索' />
+    </>
+  )
+
+  const HeaderRight = () => (
+    <>
+      <Menu placement='bottom-end'>
+        <MenuButton as='div'>
+          <Avatar name='vivi' src={MyImage} size='sm' cursor='pointer' />
         </MenuButton>
         <MenuList w='280px'>
           <NextLink href='/' passHref>
@@ -382,7 +456,6 @@ export const AfterLoginPaper = () => {
     <Header
       logo={<Logo />}
       center={<HeaderCenter />}
-
       right={<HeaderRight />}
       drawerBody={<DrawerBody />}
     />

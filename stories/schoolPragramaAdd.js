@@ -28,10 +28,8 @@ import {
 } from '@chakra-ui/core'
 import {
   ProgramaOne,
-  ProgramaGroup,
-  AddIntelligence,
-  NoopsycheAdd,
-  OpenDrawers,
+  EditIntelligence,
+  AddIntelligence
 } from '../src/components/selectSearch/programa'
 import Admin from '../src/components/admin/adminPage'
 
@@ -45,21 +43,21 @@ export const ProgramaOnes = () => {
   )
 }
 
-export const PopGroup = () => {
+export const EditIntelligenceas = () => {
   const talentOne = { title: '打发二', content: '哦哦附件为非' }
 
   return (
     <>
-      <ProgramaGroup deleteColor='#696969' talent={talentOne} />
+      <EditIntelligence deleteColor='#696969' talent={talentOne} />
     </>
   )
 }
 
 export const editDashboardList = () => {
   const talents = [{ title: '自己啊就睏了就', content: '加哦就發欸違法' },
-  { title: '及基督教發射東風五', content: '打發發打飛' },
-  { title: '大沙發惡法而無法', content: '德法俄法違法' },
-  { title: '士大夫文人收到', content: '蘇打粉微軟分爲' }]
+    { title: '及基督教發射東風五', content: '打發發打飛' },
+    { title: '大沙發惡法而無法', content: '德法俄法違法' },
+    { title: '士大夫文人收到', content: '蘇打粉微軟分爲' }]
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
@@ -76,7 +74,7 @@ export const editDashboardList = () => {
       >
         {
           talents.map((item, index) => {
-            return (<><ProgramaGroup deleteColor='green' talent={item} /></>)
+            return (<><EditIntelligence deleteColor='green' talent={item} /></>)
           })
         }
       </Admin>
@@ -88,20 +86,6 @@ export const AddIntelligencea = () => {
   return (
     <>
       <AddIntelligence />
-    </>
-  )
-}
-export const AddIntelligenceas = () => {
-  return (
-    <>
-      <NoopsycheAdd />
-    </>
-  )
-}
-export const OpenDrawersa = () => {
-  return (
-    <>
-      <OpenDrawers />
     </>
   )
 }
