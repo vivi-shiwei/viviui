@@ -24,11 +24,11 @@ const Header = ({ left, center, right, text, logo, logoHref, profilePhoto, drawe
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
-    <HeaderContainer bg={bg[colorMode]}>
+    <HeaderContainer bg={bg[colorMode]} {...props}>
       <Container
         h='100%'
         height='4rem'
-        {...props}
+        style={props.style}
       >
         <Flex size='100%' px={{ base: 0, sm: 2, md: 4 }} align='center' w='full' justify='space-between'>
 
