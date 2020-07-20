@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import {
   DrawerOverlay,
   Drawer,
@@ -24,4 +24,4 @@ const DrawerWithBody = ({ title, icon, onClose, isOpen, href, children, ...props
     </>
   )
 }
-export default DrawerWithBody
+export default memo(DrawerWithBody)

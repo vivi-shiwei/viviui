@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import {
   Divider
 } from '@chakra-ui/core'
@@ -9,4 +9,4 @@ const DrawerItemDivider = ({ title, icon, href, children, ...props }) => {
     </>
   )
 }
-export default DrawerItemDivider
+export default memo(DrawerItemDivider)

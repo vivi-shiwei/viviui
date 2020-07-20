@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import {
   Box,
   Button,
@@ -29,4 +29,4 @@ const HeaderButton = ({ title, icon, href, children, ...props }) => {
     </>
   )
 }
-export default HeaderButton
+export default memo(HeaderButton)

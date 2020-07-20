@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import {
   Flex
 } from '@chakra-ui/core'
@@ -16,4 +16,4 @@ const HeaderRight = ({ logo, profilePhoto, MenuTest, noColormode = false, disclo
     </>
   )
 }
-export default HeaderRight
+export default memo(HeaderRight)

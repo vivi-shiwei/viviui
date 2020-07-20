@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import {
   MenuButton,
   Button
@@ -11,4 +11,4 @@ const HeaderMenuButton = ({ children, ...props }) => {
     </MenuButton>
   )
 }
-export default HeaderMenuButton
+export default memo(HeaderMenuButton)

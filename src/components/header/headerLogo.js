@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import {
   Flex,
   Box
@@ -23,4 +23,4 @@ const HeaderLogo = ({ icon, href, children, ...props }) => {
     </Flex>
   )
 }
-export default HeaderLogo
+export default memo(HeaderLogo)

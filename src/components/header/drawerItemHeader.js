@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import {
   DrawerHeader
 } from '@chakra-ui/core'
@@ -9,4 +9,4 @@ const DrawerItemHeader = ({ title, icon, href, children, ...props }) => {
     </>
   )
 }
-export default DrawerItemHeader
+export default memo(DrawerItemHeader)

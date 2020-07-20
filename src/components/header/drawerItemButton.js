@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import {
   Box,
   Button,
@@ -28,4 +28,4 @@ const DrawerItemButton = ({ title, icon, href, children, ...props }) => {
     </Button>
   )
 }
-export default DrawerItemButton
+export default memo(DrawerItemButton)

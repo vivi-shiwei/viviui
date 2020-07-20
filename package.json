@@ -2,11 +2,14 @@
   "name": "viviui",
   "version": "1.0.9",
   "description": "",
-  "main": "build.js",
+  "main": "dist/index.js",
   "scripts": {
     "storybook": "start-storybook",
-    "build": "build-storybook -c .storybook -o build"
+    "build": "babel src --out-dir dist"
   },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@chakra-ui/core": "^0.8.0",
     "@emotion/core": "^10.0.28",
@@ -17,12 +20,19 @@
   "devDependencies": {
     "@babel/cli": "^7.10.3",
     "@babel/core": "^7.10.3",
-    "@babel/preset-env": "^7.10.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.10.4",
+    "@babel/plugin-syntax-jsx": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
     "@nivo/bar": "^0.62.0",
     "@storybook/addon-knobs": "^5.3.19",
     "@storybook/react": "^5.3.19",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.3.0",
     "next": "^9.4.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -30,7 +40,9 @@
     "react-infinite-scroller": "^1.2.4",
     "sinon": "^9.0.2",
     "standard": "^14.3.4",
-    "style-it": "^2.1.4"
+    "style-it": "^2.1.4",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
   },
   "standard": {
     "parser": "babel-eslint"
