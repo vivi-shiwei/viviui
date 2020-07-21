@@ -5,8 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "storybook": "start-storybook",
-    "build": "babel src --out-dir dist",
-    "build-storybook": "build-storybook -c .storybook -o build"
+    "build-babel": "babel src --out-dir dist",
+    "build": "build-storybook -c .storybook -o build"
   },
   "files": [
     "dist"
