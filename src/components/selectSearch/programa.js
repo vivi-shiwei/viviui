@@ -2,32 +2,18 @@ import React, { useState, useRef, useRouter } from 'react'
 import {
   Box,
   Input,
-  Heading,
   Icon,
-  Text,
   Editable,
   EditableInput,
   EditablePreview,
-  ButtonGroup,
   IconButton,
-  useDisclosure,
-  NewModal,
-  Drawer,
-  DrawerBody,
-  DrawerHeader,
-  DrawerContent,
-  Stack,
-  DrawerOverlay,
-  Select,
   Flex,
   Grid,
   Button,
   PseudoBox,
   useToast,
   FormControl,
-  FormLabel,
-  FormErrorMessage,
-  FormHelperText
+  FormErrorMessage
 } from '@chakra-ui/core'
 import { Container } from '../containerPage'
 import Admin from '../admin/adminPage'
@@ -35,47 +21,32 @@ import { Formik, Field, Form } from 'formik'
 
 // Editable单个编辑
 export const ProgramaOne = ({ title, content, color, fontSize, children, ...props }) => {
-  var str = 'sdfjklasjdfka'
-  function EditableControls({ isEditing, onSubmit, onCancel, onRequestEdit }) {
-    return isEditing ? (
-      <ButtonGroup justifyContent='center' size='sm'>
-        <IconButton icon='check' onClick={onSubmit} />
-        <IconButton icon='close' onClick={onCancel} />
-      </ButtonGroup>
-    ) : (
-        <Flex justifyContent='left'>
-          <IconButton size='sm' icon='edit' onClick={onRequestEdit} />
-        </Flex>
-      )
-  }
-
+  const str = '你好'
+  const [talentName, setTalentName] = useState(str)
+  const [two, setTwo] = useState(talentName)
   return (
-    <Editable
-      textAlign='left'
-      defaultValue='Rasengan ⚡️'
-      fontSize='2xl'
-      isPreviewFocusable={false}
-      whiteSpace='nowrap'
-      overflow='hidden'
-      textOverflow='ellipsis'
-      p='5px 10px'
-      width='40%'
-    >
-      {({ isEditing, onSubmit, onRequestEdit }) => (
-        <>
-          <Box>
+    <Box>
+      <Editable
+        ml={20}
+        fontSize='2xl'
+        defaultValue={talentName}
+        isPreviewFocusable={false}
+        submitOnBlur={false}
+      >
+        {({ isEditing, onRequestEdit, onSubmit }) => (
+          <>
             <EditablePreview />
-            <EditableInput />
-          </Box>
-          {!isEditing && (
-            <IconButton
-              variantColor='green.600' variant='outline'
-              ml={5} size='xs' icon='edit' onClick={onRequestEdit}
-            />
-          )}
-        </>
-      )}
-    </Editable>
+            <EditableInput w='auto' onChange={(e) => { setTwo(e.target.value); console.log(talentName) }} />
+            {!isEditing && (
+              <IconButton
+                variantColor='cyan' variant='outline'
+                ml={5} size='sm' icon='edit' onClick={onRequestEdit}
+              />
+            )}
+          </>
+        )}
+      </Editable>
+    </Box>
   )
 }
 
@@ -137,7 +108,9 @@ export const EditIntelligence = ({ talent, deleteColor, deleteButtonTop = true, 
             </Editable>
           </Grid>
           <Box width='32%' display='flex' alignItems='center' justifyContent='space-around' mr={{ base: '5px', sm: '5px', md: '0' }}>
-            <DeleteButton />
+            <Box display='flex' alignItems='center'>
+              <Icon name='delete' size='24px' color='#696969' cursor='pointer' onClick={() => { console.log('删除') }} />
+            </Box>
             <Button
               bg='#9370DB' color='white' _hover='color:black' fontSize={{ base: '12px', sm: '12px', md: '16px' }} m={{ base: '5px', sm: '5px' }}
               visibility={
@@ -150,7 +123,18 @@ export const EditIntelligence = ({ talent, deleteColor, deleteButtonTop = true, 
               }}
             >確認
             </Button>
-            <CancelButton talent={talent} selectValue={selectValue} talentName={talentName} {...props} />
+            <Button
+              bg='#00B2EE' color='white' _hover='color:black' fontSize={{ base: '12px', sm: '12px', md: '16px' }}
+              visibility={
+                ((talent !== selectValue && selectValue !== '') || talentName !== talent)
+                  ? 'visible'
+                  : 'visible'
+              }
+              onClick={() => {
+                console.log('还原')
+              }}
+            >還原
+            </Button>
           </Box>
         </Flex>
       </Box>
@@ -159,20 +143,6 @@ export const EditIntelligence = ({ talent, deleteColor, deleteButtonTop = true, 
 }
 
 // 智能编辑分解
-export const Editlntelligence = () => {
-  return (
-    <>
-    </>
-  )
-}
-
-export const DeleteButton = () => {
-  return (
-    <Box display='flex' alignItems='center'>
-      <Icon name='delete' size='24px' color='#696969' cursor='pointer' onClick={() => { console.log('删除') }} />
-    </Box>
-  )
-}
 
 export const confirmButton = ({ talent, selectValue, talentName, ...props }) => {
   return (

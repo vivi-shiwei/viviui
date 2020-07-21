@@ -1,29 +1,8 @@
 import React from 'react'
 import {
-  ButtonGroup,
   Button,
-  Stack,
-  Menu,
-  Avatar,
-  MenuButton,
-  MenuItem,
   Box,
-  MenuList,
-  Link,
-  MenuDivider,
-  Heading,
-  Flex,
-  Text,
-  Grid,
-  Input,
-  Divider,
-  useDisclosure,
-  DrawerBody,
-  DrawerHeader,
-  DrawerContent,
-  DrawerOverlay,
-  Drawer,
-  OpenDrawer
+  useDisclosure
 
 } from '@chakra-ui/core'
 import {
@@ -33,7 +12,7 @@ import {
 } from '../src/components/selectSearch/programa'
 import Admin from '../src/components/admin/adminPage'
 
-export default { title: 'SchoolPrograma' }
+export default { title: 'AddIntelligence' }
 
 export const Editable = () => {
   return (
@@ -48,7 +27,7 @@ export const EditIntelligenceas = () => {
 
   return (
     <>
-      <Box mx='auto' maxW='500px' background='#CCFFFF'>
+      <Box mx='auto' background='#CCFFFF'>
         <EditIntelligence deleteColor='#696969' talent={talentOne} />
       </Box>
     </>
@@ -83,11 +62,8 @@ export const editDashboardList = () => {
     </>
   )
 }
-
-export const AddIntelligencea = () => {
+export const add = () => {
   return (
-    <>
-      <AddIntelligence />
-    </>
+    <AddIntelligence />
   )
 }
