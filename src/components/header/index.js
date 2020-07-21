@@ -8,7 +8,7 @@ import {
 } from '@chakra-ui/core'
 import {
   Header as HeaderContainer
-} from '../DocsHeaderPage'
+} from './DocsHeaderPage'
 import { Container } from '../containerPage'
 import { AiOutlineMenu } from 'react-icons/ai'
 
@@ -19,12 +19,10 @@ import HeaderCenter from './headerCenter'
 import DrawerWithBody from './drawerWithBody'
 
 const Header = ({ left, center, right, text, logo, logoHref, profilePhoto, drawerBody, children, disclosure, ...props }) => {
-  const { colorMode } = useColorMode()
-  const bg = { light: 'white', dark: 'gray.800' }
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
-    <HeaderContainer bg={bg[colorMode]} {...props}>
+    <HeaderContainer {...props}>
       <Container
         h='100%'
         height='4rem'
