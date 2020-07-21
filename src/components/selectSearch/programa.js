@@ -35,116 +35,176 @@ import { Formik, Field, Form } from 'formik'
 
 // Editable单个编辑
 export const ProgramaOne = ({ title, content, color, fontSize, children, ...props }) => {
-  const [begin, setBegin] = useState(title || '')
-  const [finish, setFinish] = useState(title)
+  var str = 'sdfjklasjdfka'
+  function EditableControls({ isEditing, onSubmit, onCancel, onRequestEdit }) {
+    return isEditing ? (
+      <ButtonGroup justifyContent='center' size='sm'>
+        <IconButton icon='check' onClick={onSubmit} />
+        <IconButton icon='close' onClick={onCancel} />
+      </ButtonGroup>
+    ) : (
+        <Flex justifyContent='left'>
+          <IconButton size='sm' icon='edit' onClick={onRequestEdit} />
+        </Flex>
+      )
+  }
 
   return (
-    <Box border=''>
-      <Editable
-        textAlign='left'
-        defaultValue={title || ('空' || !!content ? content : '空')}
-        fontSize={fontSize}
-        color={color}
-        whiteSpace='nowrap'
-        overflow='hidden'
-        textOverflow='ellipsis'
-        p='5px 10px'
-        isPreviewFocusable={false}
-      >
-        {({ isEditing, onSubmit, onRequestEdit, onChange }) => (
-          <>
+    <Editable
+      textAlign='left'
+      defaultValue='Rasengan ⚡️'
+      fontSize='2xl'
+      isPreviewFocusable={false}
+      whiteSpace='nowrap'
+      overflow='hidden'
+      textOverflow='ellipsis'
+      p='5px 10px'
+      width='40%'
+    >
+      {({ isEditing, onSubmit, onRequestEdit }) => (
+        <>
+          <Box>
             <EditablePreview />
-            <EditableInput onChange={(e) => { setFinish(e.target.value) }} />
+            <EditableInput />
+          </Box>
+          {!isEditing && (
             <IconButton
               variantColor='green.600' variant='outline'
               ml={5} size='xs' icon='edit' onClick={onRequestEdit}
             />
-          </>
-        )}
-      </Editable>
-    </Box>
+          )}
+        </>
+      )}
+    </Editable>
   )
 }
 
 // 智能编辑
 export const EditIntelligence = ({ talent, deleteColor, deleteButtonTop = true, children, ...props }) => {
-  const [selectValue, setSelectValue] = useState(talent || '')
-  const [talentName, setTalentName] = useState(talent)
+  // 使用useState
+  const [selectValue, setSelectValue] = useState(talent || '') // 传入开始值
+  const [talentName, setTalentName] = useState(talent) // 修改后的值
+  // 使用对象
+  const beginObj = { title: talent.title, content: talent.content }
+  const endObj = { title: '', content: '' }
   return (
     <>
       <Box mx='auto'>
         <Flex alignItems='center' justifyContent='space-between'>
-          <Grid templateColumns='repeat(1, 1fr)' gap={0} m='10px' width='40%'>
+          <Grid templateColumns='repeat(1, 1fr)' width='40%'>
             <Editable
               textAlign='left'
-              fontSize='24px'
+              fontSize={{ base: '14px', sm: '14px', md: '24px' }}
               color='#2f98ff'
+              p='5px 10px'
               whiteSpace='nowrap'
-              defaultValue={talent.title}
               overflow='hidden'
               textOverflow='ellipsis'
-              p='5px 10px'
-              isPreviewFocusable={false}
+              defaultValue={selectValue.title}
+
             >
               {({ isEditing, onSubmit, onRequestEdit, onChange }) => (
                 <>
-                  <EditablePreview />
-                  <EditableInput onChange={(e) => { setTalentName({ title: e.target.value }); console.log(e.target.value) }} />
+                  <EditablePreview as='flex' alignItems='center' justifyContent='space-between' />
+                  <EditableInput onChange={(e) => { setTalentName({ title: e.target.value }); console.log(endObj.title = e.target.value) }} />
                   <IconButton
                     variantColor='green.600' variant='outline'
-                    ml={5} size='xs' icon='edit' onClick={onRequestEdit}
+                    size='xs' icon='edit' onClick={onRequestEdit}
                   />
                 </>
               )}
             </Editable>
             <Editable
               textAlign='left'
-              fontSize='24px'
-              defaultValue={talent.content}
+              fontSize={{ base: '14px', sm: '14px', md: '24px' }}
+              defaultValue={selectValue.content}
               color='#8b814c'
               whiteSpace='nowrap'
               overflow='hidden'
               textOverflow='ellipsis'
               p='5px 10px'
-              isPreviewFocusable={false}
             >
               {({ isEditing, onSubmit, onRequestEdit, onChange }) => (
                 <>
                   <EditablePreview />
-                  <EditableInput onChange={(e) => { setTalentName({ content: e.target.value }); console.log(e.target.value) }} />
+                  <EditableInput onChange={(e) => { setTalentName({ content: e.target.value }); console.log(endObj.content = e.target.value) }} />
                   <IconButton
                     variantColor='green.600' variant='outline'
-                    ml={5} size='xs' icon='edit' onClick={onRequestEdit}
+                    size='xs' icon='edit' onClick={onRequestEdit}
                   />
                 </>
               )}
             </Editable>
           </Grid>
-          <Grid templateColumns='repeat(3, 1fr)' gap={6} width='30%'>
-            <Box display='flex' alignItems='center'>
-              <Icon name='delete' size='24px' color='#696969' cursor='pointer' />
-            </Box>
-            <ProgramaRightButton
+          <Box width='32%' display='flex' alignItems='center' justifyContent='space-around' mr={{ base: '5px', sm: '5px', md: '0' }}>
+            <DeleteButton />
+            <Button
+              bg='#9370DB' color='white' _hover='color:black' fontSize={{ base: '12px', sm: '12px', md: '16px' }} m={{ base: '5px', sm: '5px' }}
               visibility={
                 ((talent !== selectValue && selectValue !== '') || talentName !== talent)
                   ? 'visible'
-                  : 'hidden'
+                  : 'visible'
               }
-            />
-          </Grid>
+              onClick={() => {
+                console.log('确认修改')
+              }}
+            >確認
+            </Button>
+            <CancelButton talent={talent} selectValue={selectValue} talentName={talentName} {...props} />
+          </Box>
         </Flex>
       </Box>
     </>
   )
 }
 
-// 添加按钮
-export const ProgramaRightButton = (visibility) => {
+// 智能编辑分解
+export const Editlntelligence = () => {
   return (
     <>
-      <Button bg='#9370DB' color='white' _hover='color:black' visibility={visibility}>確認修改</Button>
-      <Button bg='#00B2EE' color='white' _hover='color:black' visibility={visibility}>還原</Button>
     </>
+  )
+}
+
+export const DeleteButton = () => {
+  return (
+    <Box display='flex' alignItems='center'>
+      <Icon name='delete' size='24px' color='#696969' cursor='pointer' onClick={() => { console.log('删除') }} />
+    </Box>
+  )
+}
+
+export const confirmButton = ({ talent, selectValue, talentName, ...props }) => {
+  return (
+    <Button
+      bg='#9370DB' color='white' _hover='color:black' fontSize={{ base: '12px', sm: '12px', md: '16px' }} m={{ base: '5px', sm: '5px' }}
+      visibility={
+        ((talent !== selectValue && selectValue !== '') || talentName !== talent)
+          ? 'visible'
+          : 'visible'
+      }
+      onClick={() => {
+        console.log('确认修改')
+      }}
+    >確認
+    </Button>
+  )
+}
+
+export const CancelButton = ({ talent, selectValue, talentName, ...props }) => {
+  return (
+    <Button
+      bg='#00B2EE' color='white' _hover='color:black' fontSize={{ base: '12px', sm: '12px', md: '16px' }}
+      visibility={
+        ((talent !== selectValue && selectValue !== '') || talentName !== talent)
+          ? 'visible'
+          : 'visible'
+      }
+      onClick={() => {
+        console.log('还原')
+      }}
+    >還原
+    </Button>
   )
 }
 
