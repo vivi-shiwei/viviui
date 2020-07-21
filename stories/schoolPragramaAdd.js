@@ -35,20 +35,22 @@ import Admin from '../src/components/admin/adminPage'
 
 export default { title: 'SchoolPrograma' }
 
-export const ProgramaOnes = () => {
+export const Editable = () => {
   return (
     <>
-      <Box width='300px'> <ProgramaOne color='#90EE90' /></Box>
+      <ProgramaOne color='#90EE90' />
     </>
   )
 }
 
 export const EditIntelligenceas = () => {
-  const talentOne = { title: '打发二', content: '哦哦附件为非' }
+  const talentOne = { title: 'TESTBingKing', content: 'VVJINGKINGYUN' }
 
   return (
     <>
-      <EditIntelligence deleteColor='#696969' talent={talentOne} />
+      <Box mx='auto' maxW='500px' background='#CCFFFF'>
+        <EditIntelligence deleteColor='#696969' talent={talentOne} />
+      </Box>
     </>
   )
 }
