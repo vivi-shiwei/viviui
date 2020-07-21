@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../src/components/home/headerPage'
+import Header from '../src/components/header'
 import {
   Box,
   Heading,

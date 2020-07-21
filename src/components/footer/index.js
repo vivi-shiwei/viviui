@@ -1,42 +1,11 @@
 import React from 'react'
 import {
-  Box,
-  Heading,
-  Text,
   Grid,
-  Divider,
-  Flex
+  Divider
 } from '@chakra-ui/core'
 import { Container } from '../containerPage'
 
-export const OddFeature = ({ title, icon, subtitle, children, ...props }) => {
-  return (
-    <Box {...props}>
-      {!!icon && (
-        <Flex
-          rounded='full'
-          size={12}
-          bg='blue.500'
-          align='center'
-          justify='center'
-        >
-          {icon || (<Box size={6} color='white' as={icon} />)}
-        </Flex>
-      )}
-      {!!title && (
-        <Heading as='h2' size='md' fontWeight='semibold' mt='1em' mb='0.5em'>
-          {title}
-        </Heading>
-      )}
-      {!!subtitle && (
-        <Text>{subtitle}</Text>
-      )}
-      {children}
-    </Box>
-  )
-}
-
-export const GridFooter = ({ children, noBottomBorder = false, gap, ...props }) => {
+const Footer = ({ children, noBottomBorder = false, gap, ...props }) => {
   return (
     <>
       <Container {...props}>
@@ -71,3 +40,4 @@ export const GridFooter = ({ children, noBottomBorder = false, gap, ...props }) 
     </>
   )
 }
+export default Footer

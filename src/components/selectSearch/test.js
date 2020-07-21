@@ -7,11 +7,10 @@ import { IconName, FiAlignLeft } from 'react-icons/fi'
 
 // logo接受logo文字或圖片  text接受top中部佈局的盒子
 const Testpages = ({ logoimgurl, logo, text, children, ...props }) => {
-
   return (
-   <>
-    <Box>123456789</Box>
-   </>
+    <>
+      <Box>123456789</Box>
+    </>
   )
 }
 
