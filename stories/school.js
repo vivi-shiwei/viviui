@@ -83,6 +83,7 @@ export const school = () => {
   return (
     <>
       <Header
+        bg='white'
         logo={Logo}
         right={Right}
         Disclosure={Disclosure}
@@ -216,6 +217,7 @@ export const Homeschool = () => {
   return (
     <>
       <Header
+        bg='white'
         logo={Logo}
         profilePhoto={MyImage}
         noColormode

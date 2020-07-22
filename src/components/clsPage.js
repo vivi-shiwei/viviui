@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/core'
 import { Container } from './containerPage'
 
-const clsPage = ({ classes, clsImage, noDivider = false, title, noTitle = false, left, right, button, PostCard, children, ...rest }) => {
+const ClsPage = ({ classes, clsImage, noDivider = false, title, noTitle = false, left, right, button, PostCard, children, ...rest }) => {
   return (
     <>
       <Box {...rest}>
@@ -77,4 +77,4 @@ const clsPage = ({ classes, clsImage, noDivider = false, title, noTitle = false,
     </>
   )
 }
-export default clsPage
+export default ClsPage
