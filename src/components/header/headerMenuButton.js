@@ -6,7 +6,7 @@ import {
 
 const HeaderMenuButton = ({ children, ...props }) => {
   return (
-    <MenuButton as={Button} rightIcon='chevron-down' {...props}>
+    <MenuButton as={Button} {...props}>
       {children}
     </MenuButton>
   )

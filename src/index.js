@@ -271,5 +271,5 @@ export { default as DrawerItemHeader } from './components/header/drawerItemHeade
 export { default as DrawerItemDivider } from './components/header/drawerItemDivider'
 export { default as DrawerItemButton } from './components/header/drawerItemButton'
 export { default as Hero } from './components/hero'
-export { default as Footer } from './components/footer'
-export { default as OddFeatrure } from './components/footer/oddFeature'
+export { default as FeatrueGrid } from './components/featureGrid'
+export { default as Featrure } from './components/featureGrid/oddFeature'

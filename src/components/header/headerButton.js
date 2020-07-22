@@ -8,7 +8,6 @@ const HeaderButton = ({ title, icon, href, children, ...props }) => {
   return (
     <>
       <Button
-        as='a'
         align='center'
         fontSize={{ base: 'xs', sm: 'md', md: 'lg' }}
         px={{ base: 1, sm: 4 }}
