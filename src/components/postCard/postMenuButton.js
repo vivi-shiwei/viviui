@@ -1,14 +1,13 @@
 import React, { memo } from 'react'
 import {
   MenuButton,
-  Button
+  Button,
+  Icon
 } from '@chakra-ui/core'
 
 const HeaderMenuButton = ({ children, ...props }) => {
   return (
-    <MenuButton as={Button} {...props}>
-      {children}
-    </MenuButton>
+    <MenuButton as={Icon} size='30px' name='chevron-down' fontSize='20px' {...props} />
   )
 }
 export default memo(HeaderMenuButton)

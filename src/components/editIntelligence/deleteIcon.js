@@ -3,7 +3,7 @@ import {
   Icon
 } from '@chakra-ui/core'
 
-const deleteButton = ({ ...props }) => {
+const deleteButton = props => {
   return (
     <>
       <Icon name='delete' size='24px' color='#696969' cursor='pointer' {...props} />

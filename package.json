@@ -1,11 +1,12 @@
 {
   "name": "viviui",
-  "version": "1.1.2",
+  "version": "1.1.12",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
     "storybook": "start-storybook",
-    "build": "babel src --out-dir dist"
+    "build-babel": "babel src --out-dir dist",
+    "build": "build-storybook -c .storybook -o build"
   },
   "files": [
     "dist"

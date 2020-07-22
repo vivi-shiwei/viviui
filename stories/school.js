@@ -1,7 +1,8 @@
 import React from 'react'
-import Hero from '../src/components/home/heroPage'
-import Header, { Left, Right, Center } from '../src/components/home/headerPage'
-import { GridFooter, OddFeature } from '../src/components/home/footerPage'
+import Hero from '../src/components/hero'
+import Header from '../src/components/header'
+import GridFooter from '../src/components/featureGrid'
+import OddFeature from '../src/components/featureGrid/feature'
 import {
   Box,
   Heading,
@@ -81,42 +82,50 @@ export const school = () => {
   )
   return (
     <>
-      <Header logo={Logo} right={Right} Disclosure={Disclosure}>
-        <ButtonGroup>
-          <NextLink passHref href='#'>
-            <Button
-              ref='#'
-              as='a'
-              flexDirection={{ base: 'column', md: 'row' }}
-              align='center'
-              variant='link'
-              fontSize={{ base: 'xs', md: 'lg' }}
-              px={{ base: 0, sm: 4 }}
-            >
-              <Box m={0} color='currentColor' ml={{ base: 0, md: -1 }} mr={{ base: 0, md: 1 }} display={{ base: 'none', sm: 'block' }}>
-                <IoMdPerson size='1.5em' />
-              </Box>
+      <Header
+        bg='white'
+        logo={Logo}
+        right={Right}
+        Disclosure={Disclosure}
+        center={
+          <>
+            <ButtonGroup>
+              <NextLink passHref href='#'>
+                <Button
+                  ref='#'
+                  as='a'
+                  flexDirection={{ base: 'column', md: 'row' }}
+                  align='center'
+                  variant='link'
+                  fontSize={{ base: 'xs', md: 'lg' }}
+                  px={{ base: 0, sm: 4 }}
+                >
+                  <Box m={0} color='currentColor' ml={{ base: 0, md: -1 }} mr={{ base: 0, md: 1 }} display={{ base: 'none', sm: 'block' }}>
+                    <IoMdPerson size='1.5em' />
+                  </Box>
               首頁
-            </Button>
-          </NextLink>
-          <NextLink passHref href='#'>
-            <Button
-              ref='#'
-              as='a'
-              flexDirection={{ base: 'column', md: 'row' }}
-              align='center'
-              variant='link'
-              fontSize={{ base: 'xs', md: 'lg' }}
-              px={{ base: 0, sm: 4 }}
-            >
-              <Box m={0} color='currentColor' ml={{ base: 0, md: -1 }} mr={{ base: 0, md: 1 }} display={{ base: 'none', sm: 'block' }}>
-                <MdDashboard size='1.5em' />
-              </Box>
+                </Button>
+              </NextLink>
+              <NextLink passHref href='#'>
+                <Button
+                  ref='#'
+                  as='a'
+                  flexDirection={{ base: 'column', md: 'row' }}
+                  align='center'
+                  variant='link'
+                  fontSize={{ base: 'xs', md: 'lg' }}
+                  px={{ base: 0, sm: 4 }}
+                >
+                  <Box m={0} color='currentColor' ml={{ base: 0, md: -1 }} mr={{ base: 0, md: 1 }} display={{ base: 'none', sm: 'block' }}>
+                    <MdDashboard size='1.5em' />
+                  </Box>
               學校專頁
-            </Button>
-          </NextLink>
-        </ButtonGroup>
-      </Header>
+                </Button>
+              </NextLink>
+            </ButtonGroup>
+          </>
+        }
+      />
       <Hero
         title='我的學校'
         subtitle='SCHOOL 是一個簡單的、可連結很多模組的、線上的學校系統。可透過 SCHOOL 進行日常校園管理，了解學生學習生活，促進發掘學生閃光點等等。專為澳門中小幼學校而設。'
@@ -208,6 +217,7 @@ export const Homeschool = () => {
   return (
     <>
       <Header
+        bg='white'
         logo={Logo}
         profilePhoto={MyImage}
         noColormode

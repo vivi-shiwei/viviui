@@ -33,7 +33,7 @@ export const Dashboard = () => {
     </Select>
   )
   const classe = ['初中', '高中', '幼兒班', '甲板', '初中', '高中', '幼兒班', '甲板', '幼兒班', '甲板']
-  const jiu = ['相簿', '九大智能']
+  const jiu = ['相簿', '九大智能', 'haha']
   const schoolCard = (title, content) => {
     return (
       <>

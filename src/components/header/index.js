@@ -8,7 +8,7 @@ import {
 } from '@chakra-ui/core'
 import {
   Header as HeaderContainer
-} from '../DocsHeaderPage'
+} from './DocsHeaderPage'
 import { Container } from '../containerPage'
 import { AiOutlineMenu } from 'react-icons/ai'
 
@@ -18,13 +18,11 @@ import HeaderLogo from './headerLogo'
 import HeaderCenter from './headerCenter'
 import DrawerWithBody from './drawerWithBody'
 
-const Header = ({ left, center, right, text, logo, logoHref, profilePhoto, drawerBody, children, disclosure, ...props }) => {
-  const { colorMode } = useColorMode()
-  const bg = { light: 'white', dark: 'gray.800' }
+const Header = ({ left, center, right, text, logo, colorMode, logoHref, profilePhoto, drawerBody, children, disclosure, ...props }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
-    <HeaderContainer bg={bg[colorMode]} {...props}>
+    <HeaderContainer {...props}>
       <Container
         h='100%'
         height='4rem'
@@ -52,7 +50,7 @@ const Header = ({ left, center, right, text, logo, logoHref, profilePhoto, drawe
           {!!drawerBody && (
             <Flex justify='flex-end'>
               <Button variantColor='none' onClick={onOpen} display={{ sm: 'block', md: 'none' }} size='xs'>
-                <Box fontSize={{ base: '20px', sm: '24px' }} color={colorMode === 'light' ? 'black' : 'white'} as={AiOutlineMenu} />
+                <Box fontSize={{ base: '20px', sm: '24px' }} color={colorMode || 'black'} as={AiOutlineMenu} />
               </Button>
               {isOpen && (
                 <DrawerWithBody

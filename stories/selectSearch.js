@@ -22,7 +22,6 @@ import Toptest from '../src/components/selectSearch/top'
 import Centertest from '../src/components/selectSearch/center'
 import { OneGrid, GridGroup } from '../src/components/selectSearch/footer'
 import { MdAccessibility, MdPalette, MdPhoto, MdShowChart } from 'react-icons/md'
-import { GridFooter, OddFeature } from '../src/components/home/footerPage'
 
 import MyImage from '../static/QQ20200518181405.jpg'
 
