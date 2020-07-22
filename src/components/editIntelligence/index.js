@@ -5,23 +5,28 @@ import {
 } from '@chakra-ui/core'
 import IntelligenceLeft from './intelligenceLeft'
 import IntelligenceRight from './intelligenceRight'
-import Container from '../containerPage'
+import ButtonGroup from './buttonGroup'
+import { Container } from '../containerPage'
 
-const editIntelligence = ({ left, right, buttonGroup = false, children, ...props }) => {
+const EditIntelligence = ({ left, right, buttonGroup = false, children, ...props }) => {
   return (
     <>
-      <Box mx='auto'>
-        <Flex alignItems='center' justifyContent='space-between'>
-          <IntelligenceLeft>
-            {left}
-          </IntelligenceLeft>
-          <IntelligenceRight>
-            {right}
-            {buttonGroup}
-          </IntelligenceRight>
-        </Flex>
-      </Box>
+      <Container {...props}>
+        <Box mx='auto'>
+          <Flex alignItems='center' justifyContent='space-between'>
+            <IntelligenceLeft>
+              {left}
+            </IntelligenceLeft>
+            <IntelligenceRight>
+              {right}
+              <ButtonGroup>
+                {buttonGroup}
+              </ButtonGroup>
+            </IntelligenceRight>
+          </Flex>
+        </Box>
+      </Container>
     </>
   )
 }
-export default editIntelligence
+export default EditIntelligence
