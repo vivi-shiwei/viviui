@@ -11,15 +11,17 @@ const HeaderLogo = ({ icon, href, children, ...props }) => {
       flex='-1'
       {...props}
     >
-      <NextLink href={href || '/'} passHref>
-        <Box
-          as='a'
-          d='block'
-        >
-          {icon}
-          {children}
-        </Box>
-      </NextLink>
+      {(href && icon &&
+        <NextLink href={href || '/'} passHref>
+          <Box
+            as='a'
+            d='block'
+          >
+            {icon}
+            {children}
+          </Box>
+        </NextLink>
+      ) || (icon)}
     </Flex>
   )
 }
