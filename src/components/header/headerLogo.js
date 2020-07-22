@@ -11,7 +11,7 @@ const HeaderLogo = ({ icon, href, children, ...props }) => {
       flex='-1'
       {...props}
     >
-      {(href && icon &&
+      {(href &&
         <NextLink href={href || '/'} passHref>
           <Box
             as='a'
@@ -21,7 +21,7 @@ const HeaderLogo = ({ icon, href, children, ...props }) => {
             {children}
           </Box>
         </NextLink>
-      ) || (icon)}
+      ) || (children)}
     </Flex>
   )
 }
