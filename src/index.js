@@ -124,7 +124,8 @@ import {
   Tooltip,
   useClipboard,
   useDisclosure,
-  useTheme
+  useTheme,
+  useColorMode
 } from '@chakra-ui/core'
 
 // export * from '@chakra-ui/core'
@@ -254,7 +255,8 @@ export {
   Tooltip,
   useClipboard,
   useDisclosure,
-  useTheme
+  useTheme,
+  useColorMode
 }
 
 export { default as Header } from './components/header'
