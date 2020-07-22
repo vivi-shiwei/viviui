@@ -8,7 +8,7 @@ import {
 
 import Edittable from './edittable'
 
-const editIntelligence = ({ value, ...props }) => {
+const EditIntelligence = ({ value, ...props }) => {
   return (
     <Editable
       fontSize={{ base: '14px', sm: '14px', md: '24px' }}
@@ -35,4 +35,4 @@ const editIntelligence = ({ value, ...props }) => {
 
   )
 }
-export default editIntelligence
+export default EditIntelligence
