@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Heading, Text } from '@chakra-ui/core'
 
-const Card = ({ ...props }) => {
+const Card = ({title, ...props }) => {
   return (
     <>
       <Box
@@ -13,7 +13,7 @@ const Card = ({ ...props }) => {
         shadow='2px 2px 6px 0px #b9b9b9'
         {...props}
       >
-        <Heading as='h3' size='md'>初一甲班</Heading>
+        <Heading as='h3' size='md'>{title}</Heading>
       </Box>
     </>
   )
