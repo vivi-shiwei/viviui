@@ -38,7 +38,7 @@ const Hero = ({ title, subtitle, children, noBottomBorder = false, leftButton = 
         </Container>
       </Box>
       {!noBottomBorder && (
-        <Divider my={16} />
+        <Divider my={{ base: 10, sm: 10, md: 16 }} />
       )}
     </>
   )
