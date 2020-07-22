@@ -22,8 +22,8 @@ const HeaderButton = ({ title, icon, href, children, ...props }) => {
           </Box>
         )}
         {title}
+        {children}
       </Button>
-      {children}
     </>
   )
 }
