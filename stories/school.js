@@ -1,8 +1,8 @@
 import React from 'react'
 import Hero from '../src/components/hero'
 import Header from '../src/components/header'
-import GridFooter from '../src/components/footer'
-import OddFeature from '../src/components/footer/oddFeature'
+import GridFooter from '../src/components/featureGrid'
+import OddFeature from '../src/components/featureGrid/feature'
 import {
   Box,
   Heading,

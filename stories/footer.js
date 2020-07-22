@@ -1,6 +1,6 @@
 import React from 'react'
-import GridFooter from '../src/components/footer'
-import OddFeature from '../src/components/footer/oddFeature'
+import GridFooter from '../src/components/featureGrid'
+import OddFeature from '../src/components/featureGrid/feature'
 import { MdPalette, MdGrain } from 'react-icons/md'
 
 export default { title: 'Footer' }
