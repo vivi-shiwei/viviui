@@ -7,11 +7,7 @@ import GroupCard from '../src/components/cardDeck/GroupCard'
 export default { title: 'CardDeck' }
 
 export const CardDeckTest = ({ ...props }) => {
-<<<<<<< HEAD
-  const data = ['甲班', '乙班', '丙班']
-=======
   const data = ['甲班', '乙班', '丙班', '意甲班', '提升班']
->>>>>>> f8235c7ee443198a979c76cd0fe94636b4389cff
   return (
     <>
       <CardDeck
