@@ -1,10 +1,11 @@
 import React from 'react'
 import { Box } from '@chakra-ui/core'
 import Title from './title'
+import { Container } from '../containerPage'
 
 const CardDeck = ({ title, topLeft, cardButtom, chidren, ...props }) => {
   return (
-    <Box maxW='960px' mx='auto' p='20px' {...props}>
+    <Container p='20px' {...props}>
       <Box d='flex' justifyContent='center'>
         {topLeft}
         {!!title && (<Title title={title} />)}
@@ -12,7 +13,7 @@ const CardDeck = ({ title, topLeft, cardButtom, chidren, ...props }) => {
       <Box>
         {cardButtom}
       </Box>
-    </Box>
+    </Container>
   )
 }
 

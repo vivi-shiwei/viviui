@@ -1,9 +1,10 @@
 import React from 'react'
-import { Box, PseudoBox, Divider, Text, Heading } from '@chakra-ui/core'
+import { Box, PseudoBox, Divider, Text, Heading, Flex } from '@chakra-ui/core'
 
 const Title = ({ title, chidren, ...props }) => {
   return (
     <>
+<<<<<<< HEAD
       <Box width='full'>
         <fieldset position='relative' boderBottom='none' borderLeft='none' borderRight='none'>
           <legend mx='auto'>{title}</legend>
@@ -26,21 +27,21 @@ const Title = ({ title, chidren, ...props }) => {
         >
         </Heading> */}
      >
+=======
+      <Box position='relative' width='full' {...props}>
+        <Flex justify='center' align='center'>
+          <Box borderBottom='1px solid #aaa6a6' w='100%' position='absolute' zIndex='0' />
+          <Heading fontSize={{ base: '2xl', sm: '3xl', md: '4xl' }} position='relative' textAlign='center' bg='white' color='black' lineHeight='40px' p='0 5px'>
+            {title}
+          </Heading>
+        </Flex>
+      </Box>
+>>>>>>> f8235c7ee443198a979c76cd0fe94636b4389cff
       {/* <Box width='100%' position='relative' textAlign='center'>
         <Divider borderColor='#b7b9bb' position='absolute' top='12px' left='0' width={{ base: '25%', md: '40%' }} />
         <Text fontSize={{ base: '24px', sm: '24px', md: '24px' }} lineHeight='40px' fontWeight='bold' ml={{ base: '-30px', sm: '-30px', md: '0' }}> {title}</Text>
         <Divider borderColor='#b7b9bb' position='absolute' top='12px' right='0' width={{ base: '35%', sm: '35%', md: '40% ' }} />
       </Box> */}
-      {/* <Box display='flex' alignItems='center' justifyContent='center' width='100%'>
-          <Text textAlign='left' display='inline-block' width='45%' borderTop='1px solid #ccc' />
-          <Text verticalAlign='middle' width='10%' fontSize='1.3em' color='black' fontSize='30px' fontWeight='bold' textAlign='center'>班级</Text>
-          <Text textAlign='right' display='inline-block' width='45%' borderTop='1px solid #ccc' />
-          </Box> */}
-      {/* <Box position='relative' textAlign='center' width='100%'>
-          <Text width='45%' position='absolute' top='50%' left='0' borderTop='1px solid black' />
-          <Text color='black' p='0 10px' position='relative' lineHeight='40px' fontSize='24px'>班级</Text>
-          <Text width='45%' position='absolute' top='50%' right='0' borderTop='1px solid black' />
-        </Box> */}
     </>
   )
 }
