@@ -4,17 +4,17 @@ import { Box, PseudoBox, Divider, Text, Heading } from '@chakra-ui/core'
 const Title = ({ title, chidren, ...props }) => {
   return (
     <>
-		   <Box width='full'>
-				 <fieldset position="relative" boderBottom="none" borderLeft="none" borderRight="none">
-					  <legend mx="auto">{title}</legend>
-						<Box position="absolute" top="-3px" left="0px" background="white"/>
-						<Box position="absolute" top="-3px" right="0px" background="white"/>
-				 </fieldset>
-			 </Box>
-         /*<Box as='fieldset' border='1px solid #aaa6a6' width='1000px' mt='20px'>
-          <Box as='div' _before={{ content: '' }}>班级管理</Box>
-        </Box> */
-        {/* <Heading
+      <Box width='full'>
+        <fieldset position='relative' boderBottom='none' borderLeft='none' borderRight='none'>
+          <legend mx='auto'>{title}</legend>
+          <Box position='absolute' top='-3px' left='0px' background='white' />
+          <Box position='absolute' top='-3px' right='0px' background='white' />
+        </fieldset>
+      </Box>
+      {/* <Box as='fieldset' border='1px solid #aaa6a6' width='1000px' mt='20px'>
+        <Box as='div' _before={{ content: '' }}>班级管理</Box>
+      </Box>  */}
+      {/* <Heading
           mx='auto'
           color='#CC99CC'
           mt='-20px'
