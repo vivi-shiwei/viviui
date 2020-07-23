@@ -1,10 +1,6 @@
-import _ from 'lodash'
 import React from 'react'
-import NextLink from 'next/link'
 import {
-  Box,
-  Text,
-  Link
+  Box
 } from '@chakra-ui/core'
 import { FaUserTag } from 'react-icons/fa'
 
