@@ -3,7 +3,7 @@ import CardDeck from '../src/components/cardDeck/index'
 import AddButton from '../src/components/cardDeck/addButton'
 import Card from '../src/components/cardDeck/card'
 
-export default { title: 'CardDeck' }
+export default { title: 'CardDeckGroup' }
 
 export const CardDeckTest = () => {
   const data = ['甲班', '乙班', '丙班', '丁班', '超级班']
