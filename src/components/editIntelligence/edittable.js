@@ -5,7 +5,7 @@ import {
   EditableInput
 } from '@chakra-ui/core'
 
-const edittable = ({ ...props }) => {
+const Edittable = ({ ...props }) => {
   return (
     <Box
       maxW={{ base: '100px', sm: '100px', md: '300px' }}
@@ -20,4 +20,4 @@ const edittable = ({ ...props }) => {
     </Box>
   )
 }
-export default edittable
+export default Edittable
