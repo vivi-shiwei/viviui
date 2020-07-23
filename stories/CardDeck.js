@@ -1,21 +1,23 @@
 import React from 'react'
-import { Box } from '@chakra-ui/core'
 import CardDeck from '../src/components/cardDeck/index'
-import AddButton from '../src/components/cardDeck/AddButton'
-import GroupCard from '../src/components/cardDeck/GroupCard'
+import AddButton from '../src/components/cardDeck/addButton'
+import Card from '../src/components/cardDeck/card'
 
 export default { title: 'CardDeck' }
 
-export const CardDeckTest = ({ ...props }) => {
-  const data = ['甲班', '乙班', '丙班', '意甲班', '提升班']
+export const CardDeckTest = () => {
+  const data = ['甲班', '乙班', '丙班', '丁班', '超级班']
   return (
     <>
       <CardDeck
-        title='班级管理'
-        topLeft={<AddButton variantColor='red' />}
-        cardButtom={
-          <GroupCard data={data} />
+        title='班级'
+        topLeft={<AddButton backgroundColor={{ base: '#63B3ED', md: '#FFCCCC' }} color='white' />}
+        groupCard={
+          data.map((item, index) => {
+            return <> <Card title={item} color='#000000' backgroundColor='white' h='150px' />  </>
+          })
         }
+
       />
     </>
   )

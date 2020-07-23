@@ -2,8 +2,9 @@ import React from 'react'
 import { Box } from '@chakra-ui/core'
 import Title from './title'
 import { Container } from '../containerPage'
+import GroupCard from './groupCard'
 
-const CardDeck = ({ title, topLeft, cardButtom, chidren, ...props }) => {
+const CardDeck = ({ title, topLeft, groupCard, Children, ...props }) => {
   return (
     <Container p='20px' {...props}>
       <Box d='flex' justifyContent='center'>
@@ -11,8 +12,11 @@ const CardDeck = ({ title, topLeft, cardButtom, chidren, ...props }) => {
         {!!title && (<Title title={title} />)}
       </Box>
       <Box>
-        {cardButtom}
+        <GroupCard>
+          {groupCard}
+        </GroupCard>
       </Box>
+      {Children}
     </Container>
   )
 }

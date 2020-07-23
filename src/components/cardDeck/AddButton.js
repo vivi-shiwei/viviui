@@ -1,10 +1,14 @@
 import React from 'react'
 import { Button } from '@chakra-ui/core'
 
-const CardDeck = ({ chidren, ...props }) => {
+const AddButton = ({ Children, ...props }) => {
   return (
-    <Button backgroundColor={{ base: '#63B3ED', md: '#FF6600' }} color='white' rounded='15px' size='md' width={{ base: '80px', md: '100px' }} {...props}> 新增 </Button>
+    <>
+      <Button rounded='999px' size='md' width={{ base: '80px', md: '100px' }} {...props}> 新增 </Button>
+      {Children}
+    </>
+
   )
 }
 
-export default CardDeck
+export default AddButton

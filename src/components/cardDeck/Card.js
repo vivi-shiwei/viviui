@@ -1,13 +1,12 @@
 import React from 'react'
-import { Box, Heading, Text } from '@chakra-ui/core'
+import { Box, Heading } from '@chakra-ui/core'
 
-const Card = ({ title, ...props }) => {
+const Card = ({ title, Children, ...props }) => {
   return (
     <>
       <Box
-        width='100%' h='200px'
-        color='#1a202c'
-        background='#ffffff'
+        width='100%'
+        minH='150px'
         p='20px'
         borderRadius='10px'
         shadow='2px 2px 6px 0px #b9b9b9'
@@ -15,6 +14,7 @@ const Card = ({ title, ...props }) => {
       >
         <Heading as='h3' size='md'>{title}</Heading>
       </Box>
+      {Children}
     </>
   )
 }
