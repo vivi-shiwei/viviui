@@ -7,7 +7,7 @@ const CardDeck = ({ title, topLeft, cardButtom, chidren, ...props }) => {
     <Box maxW='960px' mx='auto' p='20px' {...props}>
       <Box d='flex' justifyContent='center'>
         {topLeft}
-        {!!title && (<Title title={title} />)}
+        {!!title && (<Title title={title} background='red' />)}
       </Box>
       <Box>
         {cardButtom}
