@@ -273,3 +273,5 @@ export { default as DrawerItemButton } from './components/header/drawerItemButto
 export { default as Hero } from './components/hero'
 export { default as FeatrueGrid } from './components/featureGrid'
 export { default as Featrure } from './components/featureGrid/feature'
+export { default as NewModel } from './components/newModel'
+export { default as BlueButton } from './components/blueButton'
