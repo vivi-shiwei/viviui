@@ -53,29 +53,11 @@ const PostCard = ({ title, subtitle, postHeaderLeft, postUpperRight, postMenu, t
             </PostContent>
           )}
           {/* 照片列表 */}
-          <PhotosGrid />
+          <PhotosGrid>
+            {postPhotos}
+          </PhotosGrid>
         </Box>
       </PostPage>
-      {/* <Box {...props}>
-        {!!title && (
-          <Container py={4}>
-            <Flex justifyContent='center'>
-              <Heading fontSize='1.6rem'>
-                {title}
-              </Heading>
-            </Flex>
-          </Container>
-        )}
-        {!!subtitle && (
-          <Container mb={10}>
-            <Box d='flex' justifyContent='center'>
-              {subtitle}
-            </Box>
-          </Container>
-
-        )}
-        {children}
-      </Box> */}
     </>
   )
 }
