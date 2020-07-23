@@ -31,11 +31,7 @@ const PostCard = ({ title, subtitle, postHeaderLeft, postUpperRight, postMenu, t
               {talentName}
             </PostTalent>}
           {/* 標註 */}
-          {!!tags && (
-            <PostTags>
-              {tags}
-            </PostTags>
-          )}
+          {tags}
           {/* 標題 */}
           <Box mt={3}>
             <Text fontWeight='bold' textAlign='left' minH='50px' wordBreak='break-word' fontSize='3xl'>
