@@ -4,7 +4,7 @@ import Title from './title'
 import { Container } from '../containerPage'
 import GroupCard from './groupCard'
 
-const CardDeck = ({ title, topLeft, groupCard, Children, ...props }) => {
+const CardDeck = ({ title, topLeft, groupCard, children, ...props }) => {
   return (
     <Container p='20px' {...props}>
       <Box d='flex' justifyContent='center'>
@@ -16,7 +16,7 @@ const CardDeck = ({ title, topLeft, groupCard, Children, ...props }) => {
           {groupCard}
         </GroupCard>
       </Box>
-      {Children}
+      {children}
     </Container>
   )
 }
