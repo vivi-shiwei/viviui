@@ -8,6 +8,9 @@ export default { title: 'CardDeckGroup' }
 
 export const CardDeckTest = () => {
   const data = ['甲班', '乙班', '丙班', '丁班', '超级班']
+  const one = ['甲班']
+  const two = ['乙班', '丙班']
+  const three = ['甲班', '乙班', '丙班']
   return (
     <>
       <CardDeck
