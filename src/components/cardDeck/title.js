@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Heading, Flex } from '@chakra-ui/core'
 
-const Title = ({ title, Children, ...props }) => {
+const Title = ({ title, children, ...props }) => {
   return (
     <>
       <Box position='relative' width='full' {...props}>
@@ -12,7 +12,7 @@ const Title = ({ title, Children, ...props }) => {
           </Heading>
         </Flex>
       </Box>
-      {Children}
+      {children}
     </>
   )
 }
