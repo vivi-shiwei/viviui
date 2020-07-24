@@ -5,7 +5,9 @@ import {
 
 const PhotosGrid = ({ children, ...props }) => {
   return (
-    <Box w='full' bg='black' h='100px'>{children}</Box>
+    <Box w='full' {...props}>
+      {children}
+    </Box>
   )
 }
 

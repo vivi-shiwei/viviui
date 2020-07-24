@@ -31,11 +31,7 @@ const PostCard = ({ title, subtitle, postHeaderLeft, postUpperRight, postMenu, t
               {talentName}
             </PostTalent>}
           {/* 標註 */}
-          {!!tags && (
-            <PostTags>
-              {tags}
-            </PostTags>
-          )}
+          {tags}
           {/* 標題 */}
           <Box mt={3}>
             <Text fontWeight='bold' textAlign='left' minH='50px' wordBreak='break-word' fontSize='3xl'>
@@ -53,29 +49,11 @@ const PostCard = ({ title, subtitle, postHeaderLeft, postUpperRight, postMenu, t
             </PostContent>
           )}
           {/* 照片列表 */}
-          <PhotosGrid />
+          <PhotosGrid>
+            {postPhotos}
+          </PhotosGrid>
         </Box>
       </PostPage>
-      {/* <Box {...props}>
-        {!!title && (
-          <Container py={4}>
-            <Flex justifyContent='center'>
-              <Heading fontSize='1.6rem'>
-                {title}
-              </Heading>
-            </Flex>
-          </Container>
-        )}
-        {!!subtitle && (
-          <Container mb={10}>
-            <Box d='flex' justifyContent='center'>
-              {subtitle}
-            </Box>
-          </Container>
-
-        )}
-        {children}
-      </Box> */}
     </>
   )
 }
