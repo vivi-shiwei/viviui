@@ -4,7 +4,7 @@ import { Button } from '@chakra-ui/core'
 const AddButton = ({ children, ...props }) => {
   return (
     <>
-      <Button rounded='999px' size='md' width={{ base: '80px', md: '100px' }} {...props}>  {children} </Button>
+      <Button rounded='999px' size='md' width={{ base: '80px', md: '100px' }} position='absolute' left='0' {...props}> {children} </Button>
     </>
 
   )

@@ -128,7 +128,6 @@ import {
   useColorMode
 } from '@chakra-ui/core'
 
-// export * from '@chakra-ui/core'
 export {
   Box,
   theme,
@@ -275,3 +274,9 @@ export { default as FeatrueGrid } from './components/featureGrid'
 export { default as Featrure } from './components/featureGrid/feature'
 export { default as NewModel } from './components/newModel'
 export { default as BlueButton } from './components/blueButton'
+
+export { default as SelectorPage } from './components/selectorPage'
+export { default as AddSelectorButton } from './components/selectorPage/addSelectorButton'
+export { default as Administrator } from './components/selectorPage/administrator'
+export { default as EditButton } from './components/selectorPage/editButton'
+export { default as CenterSelector } from './components/selectorPage/centerSelector'
