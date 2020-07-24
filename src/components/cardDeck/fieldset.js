@@ -11,7 +11,7 @@ const Fieldset = ({ title, topLeft, children, ...props }) => {
         <Heading
           fontSize={{ base: '20px', sm: '25px', md: '35px' }}
           textAlign='center'
-          bg='white'
+          bg={props.bg}
           color='black'
           zIndex='1'
           lineHeight='40px'
