@@ -1,8 +1,8 @@
 import React from 'react'
-import CardDeck from '../src/components/card/index'
-import AddButton from '../src/components/card/addButton'
-import Card from '../src/components/card/cards'
-import Fieldset from '../src/components/card/fieldset'
+import CardDeck from '../src/components/cardDeck/index'
+import AddButton from '../src/components/cardDeck/addButton'
+import Card from '../src/components/cardDeck/cards'
+import Fieldset from '../src/components/cardDeck/fieldset'
 
 export default { title: 'CardDeckGroup' }
 
@@ -15,7 +15,7 @@ export const CardDeckTest = () => {
         topLeft={<AddButton>新增</AddButton>}
         groupCard={
           data.map((item, index) => {
-            return <> <Card title={item} color='#000000' backgroundColor='white' h='150px' />  </>
+            return <> <Card title={item} />  </>
           })
         }
       />
@@ -24,7 +24,7 @@ export const CardDeckTest = () => {
         topLeft={<AddButton>新增</AddButton>}
         groupCard={
           data.map((item, index) => {
-            return <> <Card title={item} color='#000000' backgroundColor='white' h='150px' />  </>
+            return <> <Card title={item} />  </>
           })
         }
       />

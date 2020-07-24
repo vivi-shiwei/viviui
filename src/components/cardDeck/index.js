@@ -1,6 +1,4 @@
 import React from 'react'
-import { Box } from '@chakra-ui/core'
-import Fieldset from './fieldset'
 import { Container } from '../containerPage'
 import GroupCards from './groupCard'
 
