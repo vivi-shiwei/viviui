@@ -5,7 +5,7 @@ import { GrUserAdmin } from 'react-icons/gr'
 const Administrator = ({ children, ...props }) => {
   return (
     <>
-      <Box as={GrUserAdmin} mr={2}>{children}</Box>
+      <Box as={GrUserAdmin} mr={2} {...props}>{children}</Box>
     </>
   )
 }
