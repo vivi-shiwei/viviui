@@ -258,6 +258,7 @@ export {
   useColorMode
 }
 
+// Header
 export { default as Header } from './components/header'
 export { default as HeaderRight } from './components/header/headerRight'
 export { default as HeaderLogo } from './components/header/headerLogo'
@@ -269,22 +270,22 @@ export { default as DrawerWithBody } from './components/header/drawerWithBody'
 export { default as DrawerItemHeader } from './components/header/drawerItemHeader'
 export { default as DrawerItemDivider } from './components/header/drawerItemDivider'
 export { default as DrawerItemButton } from './components/header/drawerItemButton'
+// Hero
 export { default as Hero } from './components/hero'
+// FeatrueGrid
 export { default as FeatrueGrid } from './components/featureGrid'
 export { default as Featrure } from './components/featureGrid/feature'
 export { default as NewModel } from './components/newModel'
 export { default as BlueButton } from './components/blueButton'
-
-<<<<<<< HEAD
+// CardDeck
 export { default as CardDeck } from './components/cardDeck'
 export { default as Cards } from './components/cardDeck/cards'
 export { default as Fieldset } from './components/cardDeck/fieldset'
 export { default as AddButton } from './components/cardDeck/addButton'
 export { default as GroupCard } from './components/cardDeck/groupCard'
-=======
+// CenterSelector
 export { default as SelectorPage } from './components/selectorPage'
 export { default as AddSelectorButton } from './components/selectorPage/addSelectorButton'
 export { default as Administrator } from './components/selectorPage/administrator'
 export { default as EditButton } from './components/selectorPage/editButton'
 export { default as CenterSelector } from './components/selectorPage/centerSelector'
->>>>>>> c218fddbfd98ae1313489f83d615fad2b0838252
