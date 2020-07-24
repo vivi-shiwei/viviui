@@ -7,34 +7,27 @@ import {
 } from '@chakra-ui/core'
 import {
   ProgramaOne,
-  EditIntelligence,
   AddIntelligence
 } from '../src/components/selectSearch/programa'
 import Admin from '../src/components/admin/adminPage'
+import Intelligence from '../src/components/editIntelligence/index'
+import DeleteIcon from '../src/components/editIntelligence/deleteIcon'
+import ConfirmButton from '../src/components/editIntelligence/confirmButton'
+import CancelButton from '../src/components/editIntelligence/cancelButton'
+import EditIntelligence from '../src/components/editIntelligence/editIntelligence'
 
 export default { title: 'AddIntelligence' }
 
-export const Editable = () => {
+export const EditableOne = () => {
   return (
     <>
-      <ProgramaOne color='#90EE90' />
+       <EditIntelligence value='jfiekj' color='#CC6600' />
     </>
   )
 }
 
-export const EditIntelligenceas = () => {
-  const talentOne = { title: 'TESTBingKing', content: 'VVJINGKINGYUN' }
 
-  return (
-    <>
-      <Box mx='auto' background='#CCFFFF'>
-        <EditIntelligence deleteColor='#696969' talent={talentOne} />
-      </Box>
-    </>
-  )
-}
-
-export const editDashboardList = () => {
+export const ListTest = () => {
   const talents = [{ title: '自己啊就睏了就', content: '加哦就發欸違法' },
     { title: '及基督教發射東風五', content: '打發發打飛' },
     { title: '大沙發惡法而無法', content: '德法俄法違法' },
@@ -55,7 +48,24 @@ export const editDashboardList = () => {
       >
         {
           talents.map((item, index) => {
-            return (<><EditIntelligence deleteColor='green' talent={item} /></>)
+            return (<>
+						<Intelligence
+									left={
+										<>
+											<EditIntelligence value='亚罗可' color='#CC6600' />
+											<EditIntelligence value='明星桥' color='#99CC33' />
+										</>
+									}
+									right={
+										<DeleteIcon onClick={() => { console.log('杰克') }} />
+									}
+									buttonGroup={
+										<>
+											<ConfirmButton />
+											<CancelButton />
+										</>
+									}
+							/></>)
           })
         }
       </Admin>
