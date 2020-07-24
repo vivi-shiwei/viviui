@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Heading } from '@chakra-ui/core'
 
-const Card = ({ title, Children, ...props }) => {
+const Card = ({ title, children, ...props }) => {
   return (
     <>
       <Box
@@ -14,7 +14,7 @@ const Card = ({ title, Children, ...props }) => {
       >
         <Heading as='h3' size='md'>{title}</Heading>
       </Box>
-      {Children}
+      {children}
     </>
   )
 }

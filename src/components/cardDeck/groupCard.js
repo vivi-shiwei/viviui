@@ -17,5 +17,4 @@ const GroupCard = ({ data, children, ...props }) => {
   )
 }
 
-
 export default GroupCard
