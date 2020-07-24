@@ -3,11 +3,11 @@ import {
   Box
 } from '@chakra-ui/core'
 
-const intelligenceLeft = ({ children, ...props }) => {
+const IntelligenceLeft = ({ children, ...props }) => {
   return (
-    <Box width='40%'>
+    <Box width='40%' {...props}>
       {children}
     </Box>
   )
 }
-export default intelligenceLeft
+export default IntelligenceLeft

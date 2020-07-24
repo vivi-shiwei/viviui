@@ -22,9 +22,11 @@ const PostCreatorHeader = ({ profilePhoto, creatorName, creatorTime, ...props })
       </Box>
       <Box as='div' ml={2} fontSize={20} fontWeight='bold' textAlign='left'>
         {creatorName}
-        <Text fontSize='md' color='gray.400'>
-          {creatorTime}
-        </Text>
+        {!!creatorTime && (
+          <Text fontSize='md' color='gray.400'>
+            {creatorTime}
+          </Text>
+        )}
       </Box>
     </Stack>
   )
