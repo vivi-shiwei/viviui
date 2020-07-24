@@ -128,7 +128,6 @@ import {
   useColorMode
 } from '@chakra-ui/core'
 
-// export * from '@chakra-ui/core'
 export {
   Box,
   theme,
@@ -273,3 +272,19 @@ export { default as DrawerItemButton } from './components/header/drawerItemButto
 export { default as Hero } from './components/hero'
 export { default as FeatrueGrid } from './components/featureGrid'
 export { default as Featrure } from './components/featureGrid/feature'
+export { default as NewModel } from './components/newModel'
+export { default as BlueButton } from './components/blueButton'
+
+<<<<<<< HEAD
+export { default as CardDeck } from './components/cardDeck'
+export { default as Cards } from './components/cardDeck/cards'
+export { default as Fieldset } from './components/cardDeck/fieldset'
+export { default as AddButton } from './components/cardDeck/addButton'
+export { default as GroupCard } from './components/cardDeck/groupCard'
+=======
+export { default as SelectorPage } from './components/selectorPage'
+export { default as AddSelectorButton } from './components/selectorPage/addSelectorButton'
+export { default as Administrator } from './components/selectorPage/administrator'
+export { default as EditButton } from './components/selectorPage/editButton'
+export { default as CenterSelector } from './components/selectorPage/centerSelector'
+>>>>>>> c218fddbfd98ae1313489f83d615fad2b0838252

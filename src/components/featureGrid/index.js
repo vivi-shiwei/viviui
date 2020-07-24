@@ -1,7 +1,6 @@
 import React from 'react'
 import {
-  Grid,
-  Divider
+  Grid
 } from '@chakra-ui/core'
 import { Container } from '../containerPage'
 
