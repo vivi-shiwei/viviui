@@ -8,7 +8,7 @@ import {
 const Edittable = ({ ...props }) => {
   return (
     <Box
-      maxW={{ base: '100px', sm: '100px', md: '300px' }}
+      maxW={{ base: '150px', sm: '150px', md: '300px' }}
       p='5px 10px'
       whiteSpace='nowrap'
       overflow='hidden'
