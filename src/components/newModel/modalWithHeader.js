@@ -1,12 +1,6 @@
 import React from 'react'
 import {
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalCloseButton,
-  ModalBody,
-  ModalFooter
+  ModalHeader
 } from '@chakra-ui/core'
 
 const NewModal = ({ children, ...rest }) => {
