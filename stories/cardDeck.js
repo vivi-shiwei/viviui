@@ -1,6 +1,6 @@
 import React from 'react'
 import CardDeck from '../src/components/cardDeck/index'
-import AddButton from '../src/components/cardDeck/addButton'
+import AddButton from '../src/components/cardDeck/roundedButton'
 import Card from '../src/components/cardDeck/cards'
 import Fieldset from '../src/components/cardDeck/fieldset'
 

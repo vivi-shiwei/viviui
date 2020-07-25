@@ -5,7 +5,7 @@ import {
 
 import AddSchoolAdministrators from '../src/components/selectorPage/index'
 import Administrator from '../src/components/selectorPage/administrator'
-import AddButton from '../src/components/selectorPage/addSelectorButton'
+import AddButton from '../src/components/selectorPage/altRoundButton'
 import CenterButton from '../src/components/selectorPage/centerSelector'
 import EditButton from '../src/components/selectorPage/editButton'
 import NextLink from 'next/link'
