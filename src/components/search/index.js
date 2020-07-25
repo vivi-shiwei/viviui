@@ -1,19 +1,17 @@
-import React from 'react';
-import { Box, Stack } from '@chakra-ui/core';
-import SearchLine from './searchLine';
-const Search = ({ left, right, error, children, ...props }) => {
+import React from 'react'
+import { Box } from '@chakra-ui/core'
+import SearchLine from './searchLine'
+const Search = ({ left, right, title, children, ...props }) => {
   return (
-    <>
-      <Box {...props}>
-        <SearchLine>
-          {left}
-          {right}
-        </SearchLine>
-        <Stack>{error}</Stack>
-        {children}
-      </Box>
-    </>
+    <Box {...props}>
+      <SearchLine>
+        {left}
+        {right}
+      </SearchLine>
+      {title}
+      {children}
+    </Box>
   )
-};
+}
 
 export default Search
