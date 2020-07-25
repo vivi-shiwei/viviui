@@ -1,9 +1,7 @@
 import React from 'react'
 
 import {
-  ButtonGroup,
   Button,
-  Stack,
   Menu,
   Avatar,
   MenuButton,
@@ -11,9 +9,7 @@ import {
   Box,
   MenuList,
   Link,
-  MenuDivider,
-  Heading,
-  Flex
+  Heading
 } from '@chakra-ui/core'
 import NextLink from 'next/link'
 import Header from '../src/components/header'
@@ -41,7 +37,7 @@ export const header = () => {
           <HeaderButton icon={MdAccessibility} title='左邊按鈕' href='https://www.baidu.com' />
         </>
       }
-      logo={<HeaderLogo icon={<Box as={IoMdHome} size={6} />} />}
+      logo={<Box as={IoMdHome} size={6} />}
       right={
         <>
           <HeaderButton title='右邊按鈕' icon={MdAccessibility} href='https://www.baidu.com' />
@@ -78,7 +74,7 @@ export const header = () => {
 export const withonlylogo = () => {
   return (
     <Header
-      logo={<HeaderLogo icon={<Box as={IoMdHome} size={6} />} />}
+      logo={<Box as={IoMdHome} size={6} />}
     />
   )
 }
@@ -111,7 +107,7 @@ export const leftWithTitle = () => {
 export const leftWithDrawer = () => {
   return (
     <Header
-      logo={<HeaderLogo icon={<Box as={IoMdHome} size={6} />} />}
+      logo={<Box as={IoMdHome} size={6} />}
       left={
         <>
           <HeaderButton icon={MdAccessibility} title='首页' href='https://www.baidu.com' />
@@ -145,7 +141,7 @@ export const centerWithIconAndButton = () => {
 export const centerWithButtonTitle = () => {
   return (
     <Header
-      logo={<HeaderLogo icon={<Box as={IoMdHome} size={6} />} />}
+      logo={<Box as={IoMdHome} size={6} />}
       center={
         <>
           <HeaderButton icon={MdAccessibility} title='首页' href='https://www.baidu.com' />
@@ -159,7 +155,7 @@ export const centerWithButtonTitle = () => {
 export const WithIconAndButton = () => {
   return (
     <Header
-      logo={<HeaderLogo icon={<Box as={IoMdHome} size={6} />} />}
+      logo={<Box as={IoMdHome} size={6} />}
       left={
         <>
           <HeaderButton icon={MdAccessibility} title='首页' href='https://www.baidu.com' />
@@ -185,7 +181,7 @@ export const WithIconAndButton = () => {
 export const Withthree = () => {
   return (
     <Header
-      logo={<HeaderLogo icon={<Box as={IoMdHome} size={6} />} />}
+      logo={<Box as={IoMdHome} size={6} />}
       left={
         <>
           <HeaderButton icon={MdAccessibility} title='首页' href='https://www.baidu.com' />
@@ -227,7 +223,7 @@ export const Withthree = () => {
 export const rightphotou = () => {
   return (
     <Header
-      logo={<HeaderLogo icon={<Box as={IoMdHome} size={6} />} />}
+      logo={<Box as={IoMdHome} size={6} />}
       right={
         <>
           <Avatar name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
@@ -240,7 +236,7 @@ export const rightphotou = () => {
 export const rightIcons = () => {
   return (
     <Header
-      logo={<HeaderLogo icon={<Box as={IoMdHome} size={6} />} />}
+      logo={<Box as={IoMdHome} size={6} />}
       right={
         <>
           <HeaderLogo icon={<Box as={IoMdHome} size={6} />} />
@@ -253,7 +249,7 @@ export const rightIcons = () => {
 export const leftIcons = () => {
   return (
     <Header
-      logo={<HeaderLogo icon={<Box as={IoMdHome} size={6} />} />}
+      logo={<Box as={IoMdHome} size={6} />}
       left={
         <>
           <HeaderLogo icon={<Box as={IoMdHome} size={6} />} />
@@ -266,7 +262,7 @@ export const leftIcons = () => {
 export const centerIcons = () => {
   return (
     <Header
-      logo={<HeaderLogo icon={<Box as={IoMdHome} size={6} />} />}
+      logo={<Box as={IoMdHome} size={6} />}
       center={
         <>
           <HeaderLogo icon={<Box as={IoMdHome} size={6} />} />
@@ -293,18 +289,16 @@ export const loginPaper = () => {
     </>
   )
   const HeaderRight = () => (
-    <>
-      <Box>
-        <NextLink
-          passHref
-          href='https://www.baidu.com'
-        >
-          <Button as='a' bg='transparent' border='1px' px={2} h={{ base: '35px', sm: '38px' }}>
-            登入
-          </Button>
-        </NextLink>
-      </Box>
-    </>
+    <Box>
+      <NextLink
+        href='https://www.baidu.com'
+        passHref
+      >
+        <Button as='a' bg='transparent' border='1px' px={2} h={{ base: '35px', sm: '38px' }}>
+          登入
+        </Button>
+      </NextLink>
+    </Box>
   )
   return (
     <Header

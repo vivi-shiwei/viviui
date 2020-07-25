@@ -14,12 +14,12 @@ const Hero = ({ title, subtitle, children, noBottomBorder = false, leftButton = 
         <Container>
           <Box maxW='xl' mx='auto' textAlign='center'>
             {!!title && (
-              <Heading as='h1' size='xl' fontWeight='semibold'>
+              <Heading size='xl' fontWeight='semibold'>
                 {title}
               </Heading>
             )}
             {!!subtitle && (
-              <Text opacity='0.7' fontSize='xl' mt={title ? 6 : 0}>
+              <Text as='div' opacity='0.7' fontSize='xl' mt={title ? 6 : 0}>
                 {subtitle}
               </Text>
             )}

@@ -21,7 +21,7 @@ const HeaderLogo = ({ icon, href, children, ...props }) => {
             {children}
           </Box>
         </NextLink>
-      ) || (children)}
+      ) || icon || children}
     </Flex>
   )
 }
