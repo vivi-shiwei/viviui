@@ -13,7 +13,7 @@ export const SearchTest = () => {
       <Search
         left={<SearchBox placeholder='活动名称、特长' />}
         right={<SearchButton>搜索</SearchButton>}
-        title={<SearchResult display='none'>無數據</SearchResult>}
+        title={<SearchResult display='block'>無數據</SearchResult>}
       />
     </Container>
   )
