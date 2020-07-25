@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from '@chakra-ui/core'
 
-const AddSelectorButton = ({ title, children, ...props }) => {
+const AltRoundButton = ({ title, children, ...props }) => {
   return (
     <Button
       as='div'
@@ -12,4 +12,4 @@ const AddSelectorButton = ({ title, children, ...props }) => {
     </Button>
   )
 }
-export default AddSelectorButton
+export default AltRoundButton

@@ -1,8 +1,7 @@
 import React, { memo } from 'react'
 import {
   Box,
-  Button,
-  Icon
+  Button
 } from '@chakra-ui/core'
 const HeaderButton = ({ title, icon, href, children, ...props }) => {
   return (
@@ -18,7 +17,7 @@ const HeaderButton = ({ title, icon, href, children, ...props }) => {
     >
       {!!icon && (
         <Box m={0} ml={{ base: 0, md: 1 }} mr={{ base: 0, md: 1 }}>
-          {<Box as={icon} size='1.5em' /> || <Icon name={icon} />}
+          {<Box as={icon} size='1.5em' />}
         </Box>
       )}
       {title}

@@ -1,17 +1,17 @@
 import React from 'react'
 import { Box } from '@chakra-ui/core'
-import { Container } from '../containerPage'
+import HeaderContainer from '../container'
 const SelectorPage = ({ topAdmin, leftSelectPage, centerSelectPage, rightSelectPage, children, ...props }) => {
   return (
     <Box as='main' {...props}>
-      <Container>
+      <HeaderContainer>
         {topAdmin}
         <Box display='flex' justifyContent='center' m='auto' mt='10px'>
           {leftSelectPage}
           {centerSelectPage}
           {rightSelectPage}
         </Box>
-      </Container>
+      </HeaderContainer>
     </Box>
   )
 }

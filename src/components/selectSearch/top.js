@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Flex, Image, Icon, Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/core'
-import { Container } from '../containerPage'
-import { Header as HeaderBorder } from '../header/DocsHeaderPage'
+import HeaderContainer from '../container'
+import HeaderBorder from '../header/headerWrapper'
 import { MdAccessibility, MdSettings } from 'react-icons/md'
 import { IconName, FiAlignLeft } from 'react-icons/fi'
 
@@ -13,7 +13,7 @@ const Testpages = ({ logoimgurl, logo, text, children, ...props }) => {
     </Box>
   )
   return (
-    <Container {...props}>
+    <HeaderContainer {...props}>
       <HeaderBorder bg='#BBFFFF' pl='-24px'>
         <Flex size='100%' px={{ base: 0, sm: 4, md: 6 }} align='center' justify='space-between'>
           {(!!logo || !!logoimgurl) && (
@@ -40,7 +40,7 @@ const Testpages = ({ logoimgurl, logo, text, children, ...props }) => {
         </Flex>
         {children}
       </HeaderBorder>
-    </Container>
+    </HeaderContainer>
   )
 }
 

@@ -13,8 +13,8 @@ import {
   AspectRatioBox,
   Flex
 } from '@chakra-ui/core'
-import { FcLikePlaceholder, FcLike } from 'react-icons/fc'
-import { CenterButton, HeaderButtonOne } from '../src/components/selectSearch/button'
+
+import { action } from '@storybook/addon-actions'
 
 export default {
   title: 'Button'
@@ -23,7 +23,7 @@ export default {
 export const CenterButtonOne = () => {
   return (
     <>
-      <CenterButton title='Submit' />
+      <Button title='Submit' onClick={action('button-click')}>按鈕</Button>
     </>
 
   )

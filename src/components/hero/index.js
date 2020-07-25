@@ -5,9 +5,17 @@ import {
   Text,
   Divider
 } from '@chakra-ui/core'
-import { Container } from '../containerPage'
+import Container from '../container'
 
-const Hero = ({ title, subtitle, children, noBottomBorder = false, leftButton = null, rightButton = null, ...rest }) => {
+const Hero = ({
+  title, // 傳入標題
+  subtitle, // 傳入小標題
+  children, // children的子孫
+  noBottomBorder = false, // 是否需要底綫
+  leftButton = null, // 輸入左邊按鈕
+  rightButton = null, // 輸入右邊按鈕
+  ...rest// 傳入chakra能接受的樣式到Box裏
+}) => {
   return (
     <>
       <Box as='section' pt={40} pb={24} {...rest}>
@@ -23,17 +31,15 @@ const Hero = ({ title, subtitle, children, noBottomBorder = false, leftButton = 
                 {subtitle}
               </Text>
             )}
-            {(!!children || !!leftButton || !!rightButton) && (
-              <>
-                <Box mt={(title || subtitle) ? 4 : 0}>
-                  {leftButton}
-                  {rightButton}
-                </Box>
-                <Box mt={(title || subtitle || rightButton || leftButton) ? 4 : 0}>
-                  {children}
-                </Box>
-              </>
+            {(!!leftButton || !!rightButton) && (
+              <Box mt={(title || subtitle) ? 4 : 0}>
+                {leftButton}
+                {rightButton}
+              </Box>
             )}
+            <Box mt={(title || subtitle || rightButton || leftButton) ? 4 : 0}>
+              {children}
+            </Box>
           </Box>
         </Container>
       </Box>
