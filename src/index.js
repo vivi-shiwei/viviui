@@ -258,6 +258,8 @@ export {
   useColorMode
 }
 
+// export * from '@chakra-ui/core'
+
 // Header
 export { default as Header } from './components/header'
 export { default as HeaderButton } from './components/header/headerButton'

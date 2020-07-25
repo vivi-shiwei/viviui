@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box } from '@chakra-ui/core'
 import HeaderContainer from '../container'
-const SelectorPage = ({ topAdmin, leftSelectPage, centerSelectPage, rightSelectPage, children, ...props }) => {
+const SelectorPage = ({ topAdmin, leftSelectPage, centerSelectPage, rightSelectPage, ...props }) => {
   return (
     <Box as='main' {...props}>
       <HeaderContainer>

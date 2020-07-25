@@ -8,7 +8,8 @@ const AltRoundButton = ({ title, children, ...props }) => {
       fontSize={{ base: '14px', md: '16px' }}
       {...props}
     >
-      {children}{title}
+      {children}
+      {title}
     </Button>
   )
 }

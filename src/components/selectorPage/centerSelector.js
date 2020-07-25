@@ -18,9 +18,7 @@ const CenterSelector = ({ children, ...props }) => {
       whiteSpace='nowrap'
       textOverflow='ellipsis'
       {...props}
-    >
-      {children}
-    </Button>
+    />
   )
 }
 export default CenterSelector
