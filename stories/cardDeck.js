@@ -30,7 +30,9 @@ export const CardDeckTest = () => {
             return <> <Card title={item} />  </>
           })
         }
-      />
+      >
+        <AddButton>新增</AddButton>
+      </CardDeck>
     </>
   )
 }

@@ -24,7 +24,7 @@ export const SelectorTest = () => {
             </NextLink>
           </Box>
         }
-        leftSelectPage={<AddButton>新增</AddButton>}
+        leftSelectPage={<AddButton>jfojfoirff新增</AddButton>}
         centerSelectPage={
           <CenterButton>亮丽的风景啊觉得偶然圣诞节佛法四点零</CenterButton>
         }
