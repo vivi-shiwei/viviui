@@ -5,7 +5,7 @@ import {
 
 const ModalWithHeader = ({ children, ...rest }) => {
   return (
-    <ModalHeader textAlign='center' borderBottom='1px solid #b7b7b7' {...rest}>
+    <ModalHeader {...rest}>
       {children}
     </ModalHeader>
   )
