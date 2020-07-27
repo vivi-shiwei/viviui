@@ -13,7 +13,8 @@ const RoundedButton = ({ children, ...props }) => {
       top='0'
       left=' 0'
       {...props}
-    />
+    >{children}
+    </Button>
   )
 }
 

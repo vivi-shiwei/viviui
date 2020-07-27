@@ -19,13 +19,6 @@ export const CardDeckTest = () => {
           ))
         }
       />
-      <CardDeck
-        title='班级'
-        topLeft={<AddButton>新增</AddButton>}
-        groupCard={
-          data.map((item, index) => (<Card key={index} title={item} />))
-        }
-      />
     </>
   )
 }
