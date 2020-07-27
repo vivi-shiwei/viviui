@@ -19,13 +19,13 @@ export const SelectorTest = () => {
         topAdmin={
           <Box d={{ base: 'none', sm: 'none', md: 'flex' }} justifyContent='flex-end'>
             <NextLink href='https://www.baidu.com' passHref>
-              <Box as='a' d='flex' alignItems='center'>
+              <Box as='a'>
                 <Administrator>管理员</Administrator>
               </Box>
             </NextLink>
           </Box>
         }
-        leftSelectPage={<AddButton>jfojfoirff新增</AddButton>}
+        leftSelectPage={<AddButton>新增管理员</AddButton>}
         centerSelectPage={
           <CenterButton>亮丽的风景啊觉得偶然圣诞节佛法四点零</CenterButton>
         }
