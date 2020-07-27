@@ -1,12 +1,9 @@
 import React from 'react'
-import { Box } from '@chakra-ui/core'
-import SearchLine from './searchLine'
-const Management = ({} children, ...props }) => {
+import { Heading } from '@chakra-ui/core'
+const Description = (props) => {
   return (
-    <Box {...props}>
-      adfd
-    </Box>
+    <Heading as='h3' fontSize={{ base: '15px', sm: '1rem' }} mt={10} mb={4} {...props} />
   )
 }
 
-export default Management
+export default Description

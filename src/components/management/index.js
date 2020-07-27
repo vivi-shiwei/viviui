@@ -1,9 +1,17 @@
 import React from 'react'
-import { Box } from '@chakra-ui/core'
-const Management = ({ title, discription, columnLine, children, ...props }) => {
+import {
+  Box
+
+} from '@chakra-ui/core'
+
+const Management = ({ title, text, columnLine, children, ...props }) => {
   return (
     <Box {...props}>
-      dfsdf
+      {title}
+      <Box as='article' px='5%'>
+        {text}
+        {columnLine}
+      </Box>
     </Box>
   )
 }
