@@ -4,9 +4,7 @@ import {
 } from '@chakra-ui/core'
 const DrawerItemHeader = ({ title, icon, href, children, ...props }) => {
   return (
-    <>
-      <DrawerHeader {...props}>{children}</DrawerHeader>
-    </>
+    <DrawerHeader {...props}>{children}</DrawerHeader>
   )
 }
 export default memo(DrawerItemHeader)

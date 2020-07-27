@@ -4,11 +4,11 @@ import {
   Heading,
   Flex
 } from '@chakra-ui/core'
-import { Container } from '../containerPage'
+import HeaderContainer from '../container'
 
 export const Card = ({ left, right, title, plate, noDivider = false, moreButton, children, ...props }) => {
   return (
-    <Container {...props} pd={4} maxWidth='960px'>
+    <HeaderContainer {...props} pd={4} maxWidth='960px'>
       {(!!title || !!left || !!right) && (
         <Box position='relative' mx='auto' px={2}>
           <Flex justify='center' align='center'>
@@ -51,14 +51,14 @@ export const Card = ({ left, right, title, plate, noDivider = false, moreButton,
       )}
       {moreButton}
       {children}
-    </Container>
+    </HeaderContainer>
   )
 }
 
 const Dashboard = ({ isAdmin, backurl, left, right, children, dashboards, ...props }) => {
   return (
     <Box as='main' {...props}>
-      <Container>
+      <HeaderContainer>
         {!!isAdmin && (
           <Box d={{ base: 'none', sm: 'none', md: 'flex' }} justifyContent='flex-end'>
             {isAdmin}
@@ -78,7 +78,7 @@ const Dashboard = ({ isAdmin, backurl, left, right, children, dashboards, ...pro
             {isAdmin}
           </Box>
         )}
-      </Container>
+      </HeaderContainer>
     </Box>
   )
 }

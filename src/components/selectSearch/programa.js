@@ -15,7 +15,7 @@ import {
   FormControl,
   FormErrorMessage
 } from '@chakra-ui/core'
-import { Container } from '../containerPage'
+import Container from '../container'
 import Admin from '../admin/adminPage'
 import { Formik, Field, Form } from 'formik'
 

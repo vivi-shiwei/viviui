@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Search from '../src/components/search/index'
-import { Container } from '../src/components/containerPage'
+import Container from '../src/components/container'
 import SearchBox from '../src/components/search/searchBox'
 import SearchButton from '../src/components/search/searchButton'
 import SearchResult from '../src/components/search/searchResult'

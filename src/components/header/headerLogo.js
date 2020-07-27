@@ -1,28 +1,15 @@
 import React, { memo } from 'react'
 import {
-  Flex,
-  Box
+  Flex
 } from '@chakra-ui/core'
-import NextLink from 'next/link'
-const HeaderLogo = ({ icon, href, children, ...props }) => {
+
+const HeaderLogo = (props) => {
   return (
     <Flex
       justify='flex-start'
-      flex='-1'
       {...props}
-    >
-      {(href &&
-        <NextLink href={href || '/'} passHref>
-          <Box
-            as='a'
-            d='block'
-          >
-            {icon}
-            {children}
-          </Box>
-        </NextLink>
-      ) || (children)}
-    </Flex>
+    />
   )
 }
+
 export default memo(HeaderLogo)

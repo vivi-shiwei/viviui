@@ -9,7 +9,7 @@ import {
   TagLabel,
   Avatar
 } from '@chakra-ui/core'
-import { Container } from '../containerPage'
+import HeaderContainer from '../container'
 
 const PostContent = ({ content }) => {
   return content.split('\n').map((line, i) => {
@@ -24,7 +24,7 @@ const PostContent = ({ content }) => {
 export const PostCard = ({ left, right, noDivider = false, editModel, profilePhoto, creatorName, createTime, Posttitle, title, talentName, postPhotos, tagNames, content, children, ...props }) => {
   return (
     <>
-      <Container {...props}>
+      <HeaderContainer {...props}>
         <Box rounded={{ base: 0, md: 6 }} mx='auto' border='1px solid #b7b7b7' bg='White' width={{ base: '100%', md: '655px' }} p={4}>
           <Box as='header' position='relative'>
             {!!editModel && (
@@ -100,7 +100,7 @@ export const PostCard = ({ left, right, noDivider = false, editModel, profilePho
           </Box>
           {children}
         </Box>
-      </Container>
+      </HeaderContainer>
     </>
   )
 }
@@ -110,20 +110,20 @@ const tags = ({ title, subtitle, children, ...props }) => {
     <>
       <Box {...props}>
         {!!title && (
-          <Container py={4}>
+          <HeaderContainer py={4}>
             <Flex justifyContent='center'>
               <Heading fontSize='1.6rem'>
                 {title}
               </Heading>
             </Flex>
-          </Container>
+          </HeaderContainer>
         )}
         {!!subtitle && (
-          <Container mb={10}>
+          <HeaderContainer mb={10}>
             <Box d='flex' justifyContent='center'>
               {subtitle}
             </Box>
-          </Container>
+          </HeaderContainer>
 
         )}
         {children}

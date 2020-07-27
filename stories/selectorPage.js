@@ -5,10 +5,11 @@ import {
 
 import AddSchoolAdministrators from '../src/components/selectorPage/index'
 import Administrator from '../src/components/selectorPage/administrator'
-import AddButton from '../src/components/selectorPage/addSelectorButton'
+import AddButton from '../src/components/selectorPage/altRoundButton'
 import CenterButton from '../src/components/selectorPage/centerSelector'
 import EditButton from '../src/components/selectorPage/editButton'
 import NextLink from 'next/link'
+import Router from 'next/router'
 export default { title: 'SelectorTest' }
 
 export const SelectorTest = () => {
@@ -17,10 +18,10 @@ export const SelectorTest = () => {
       <AddSchoolAdministrators
         topAdmin={
           <Box d={{ base: 'none', sm: 'none', md: 'flex' }} justifyContent='flex-end'>
-            <NextLink href='#'>
-              <Link as='a' d='flex' alignItems='center'>
+            <NextLink href='https://www.baidu.com' passHref>
+              <Box as='a' d='flex' alignItems='center'>
                 <Administrator>管理员</Administrator>
-              </Link>
+              </Box>
             </NextLink>
           </Box>
         }

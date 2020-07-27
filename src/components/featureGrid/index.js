@@ -2,11 +2,15 @@ import React from 'react'
 import {
   Grid
 } from '@chakra-ui/core'
-import { Container } from '../containerPage'
+import HeaderContainer from '../container'
 
-const FeatureGrid = ({ children, gap, ...props }) => {
+const FeatureGrid = ({
+  children, // 它的子孫
+  gap, // 傳入grid兒子之間的距離
+  ...props// 傳入chakra能接受的樣式到Box裏
+}) => {
   return (
-    <Container {...props}>
+    <HeaderContainer {...props}>
       {
         (children.length > 4) && (
           <Grid
@@ -30,7 +34,7 @@ const FeatureGrid = ({ children, gap, ...props }) => {
         )
       }
 
-    </Container>
+    </HeaderContainer>
   )
 }
 export default FeatureGrid

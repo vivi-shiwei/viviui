@@ -64,20 +64,22 @@ export const post = () => {
     </Tags>
   )
 }
-export const nemodel = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  return (
-    <Model
-      isOpen={isOpen}
-      onOpen={onOpen}
-      onClose={onClose}
-      w='700px'
-      modalcontent={<ModalConten
-        mdalHeader={<ModalWithHeader>標題</ModalWithHeader>}
-        modalWithFooter={<ModelButton onClick={onClose} w='100%' mt={4}>關閉</ModelButton>} />}
-      openModal={<ModelButton onClick={onOpen} mt={4}>關閉</ModelButton>}
-      closeButton
-    // modalWithBody={<Box w='800px' bg='black' h='50px' />}
-    />
-  )
-}
+// export const nemodel = () => {
+//   const { isOpen, onOpen, onClose } = useDisclosure()
+//   return (
+//     <Model
+//       isOpen={isOpen}
+//       onOpen={onOpen}
+//       onClose={onClose}
+//       w='700px'
+//       modalcontent={<ModalConten
+//         mdalHeader={<ModalWithHeader>標題</ModalWithHeader>}
+//         modalWithFooter={
+//           <ModelButton onClick={onClose} w='100%' mt={4}>關閉</ModelButton>
+//         }
+//         openModal={<ModelButton onClick={onOpen} mt={4}>關閉</ModelButton>}
+//         closeButton
+//       // modalWithBody={<Box w='800px' bg='black' h='50px' />}
+//       />
+//   )
+// }

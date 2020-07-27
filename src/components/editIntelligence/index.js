@@ -6,12 +6,12 @@ import {
 import IntelligenceLeft from './intelligenceLeft'
 import IntelligenceRight from './intelligenceRight'
 import ButtonGroup from './buttonGroup'
-import { Container } from '../containerPage'
+import HeaderContainer from '../container'
 
 const EditIntelligence = ({ left, right, buttonGroup = false, children, ...props }) => {
   return (
     <>
-      <Container {...props}>
+      <HeaderContainer {...props}>
         <Box mx='auto'>
           <Flex alignItems='center' justifyContent='space-between'>
             <IntelligenceLeft>
@@ -25,7 +25,7 @@ const EditIntelligence = ({ left, right, buttonGroup = false, children, ...props
             </IntelligenceRight>
           </Flex>
         </Box>
-      </Container>
+      </HeaderContainer>
     </>
   )
 }

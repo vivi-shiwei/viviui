@@ -1,12 +1,12 @@
 import React from 'react'
 import { Box, Icon, Heading, Button } from '@chakra-ui/core'
-import { Container } from '../containerPage'
+import HeaderContainer from '../container'
 
 // logo接受logo文字或圖片  text接受top中部佈局的盒子
 const Testpages = ({ Header1, HeaderContent, HeaderIcon, centerButton, leftButton = null, rightButton = null, children, ...props }) => {
   return (
     <Box as='section'>
-      <Container>
+      <HeaderContainer>
         <Box maxW='xl' mx='auto' textAlign='center'>
           {!!Header1 && (
             <Heading as='h1' size='xl' fontWeight='semibold'>
@@ -37,7 +37,7 @@ const Testpages = ({ Header1, HeaderContent, HeaderIcon, centerButton, leftButto
             <Box>{children}</Box>
           )}
         </Box>
-      </Container>
+      </HeaderContainer>
     </Box>
   )
 }

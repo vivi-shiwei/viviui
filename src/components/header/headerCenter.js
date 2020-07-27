@@ -3,15 +3,13 @@ import {
   Flex
 } from '@chakra-ui/core'
 
-const HeaderCenter = ({ center, children, ...props }) => {
+const HeaderCenter = (props) => {
   return (
     <Flex
       justify='center'
       flex='10'
       {...props}
-    >
-      {children}
-    </Flex>
+    />
   )
 }
 export default memo(HeaderCenter)

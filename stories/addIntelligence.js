@@ -1,15 +1,14 @@
-import React from 'react';
-import { Button, Box, useDisclosure } from '@chakra-ui/core';
+import React from 'react'
+import { Button, useDisclosure } from '@chakra-ui/core'
 import {
-  ProgramaOne,
   AddIntelligence
-} from '../src/components/selectSearch/programa';
-import Admin from '../src/components/admin/adminPage';
-import Intelligence from '../src/components/editIntelligence/index';
-import DeleteIcon from '../src/components/editIntelligence/deleteIcon';
-import ConfirmButton from '../src/components/editIntelligence/confirmButton';
-import CancelButton from '../src/components/editIntelligence/cancelButton';
-import EditIntelligence from '../src/components/editIntelligence/editIntelligence';
+} from '../src/components/selectSearch/programa'
+import Admin from '../src/components/admin/adminPage'
+import Intelligence from '../src/components/editIntelligence/index'
+import DeleteIcon from '../src/components/editIntelligence/deleteIcon'
+import ConfirmButton from '../src/components/editIntelligence/confirmButton'
+import CancelButton from '../src/components/editIntelligence/cancelButton'
+import EditIntelligence from '../src/components/editIntelligence/editIntelligence'
 
 export default { title: 'AddIntelligence' }
 
@@ -19,7 +18,7 @@ export const EditableOne = () => {
       <EditIntelligence value='jfiekj' color='#CC6600' />
     </>
   )
-};
+}
 
 export const ListTest = () => {
   const talents = [
@@ -78,7 +77,7 @@ export const ListTest = () => {
       </Admin>
     </>
   )
-};
+}
 export const add = () => {
   return <AddIntelligence />
-};
+}

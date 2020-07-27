@@ -2,15 +2,9 @@ import React from 'react'
 import {
   Box,
   Heading,
-  Text,
-  Flex,
-  Stack,
-  Tag,
-  TagLabel,
-  Spinner,
   Divider
 } from '@chakra-ui/core'
-import { Container } from '../containerPage'
+import HeaderContainer from '../container'
 const Admin = ({ backurl, button = null, schoolname, dashboradname, tabNames, children, divider, title, ...props }) => {
   return (
     <>
@@ -105,12 +99,12 @@ const Admin = ({ backurl, button = null, schoolname, dashboradname, tabNames, ch
             </Box>
           </Box>
         ) : (
-          <Container>
-            <Box mt={4}>
-              {children}
-            </Box>
-          </Container>
-        )}
+            <HeaderContainer>
+              <Box mt={4}>
+                {children}
+              </Box>
+            </HeaderContainer>
+          )}
       </Box>
     </>
   )
