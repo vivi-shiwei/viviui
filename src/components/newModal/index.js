@@ -1,9 +1,10 @@
 import React from 'react'
 import {
-  Modal
+  Modal,
+  ModalOverlay
 } from '@chakra-ui/core'
 
-const NewModal = ({ mdalHeader, openModal, size, onOpen, closeButton, modalWithBody, modalcontent, isOpen, onClose, modalWithFooter, children, ...rest }) => {
+const NewModal = ({ mdalHeader, openModal, size, onOpen, closeButton, modalWithBody, noModalOverlay = false, modalcontent, isOpen, onClose, modalWithFooter, children, ...rest }) => {
   return (
     <>
       {openModal}
@@ -13,6 +14,7 @@ const NewModal = ({ mdalHeader, openModal, size, onOpen, closeButton, modalWithB
         size={size}
         {...rest}
       >
+        {!noModalOverlay && (<ModalOverlay />)}
         {modalcontent}
         {children}
       </Modal>
