@@ -3,7 +3,7 @@ import {
   ModalHeader
 } from '@chakra-ui/core'
 
-const NewModal = ({ children, ...rest }) => {
+const ModalWithHeader = ({ children, ...rest }) => {
   return (
     <ModalHeader textAlign='center' borderBottom='1px solid #b7b7b7' {...rest}>
       {children}
@@ -11,4 +11,4 @@ const NewModal = ({ children, ...rest }) => {
   )
 }
 
-export default NewModal
+export default ModalWithHeader
