@@ -9,7 +9,6 @@ import AddButton from '../src/components/selectorPage/altRoundButton'
 import CenterButton from '../src/components/selectorPage/centerSelector'
 import EditButton from '../src/components/selectorPage/editButton'
 import NextLink from 'next/link'
-import Router from 'next/router'
 export default { title: 'SelectorTest' }
 
 export const SelectorTest = () => {
