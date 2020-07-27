@@ -1,7 +1,7 @@
 import React from 'react'
 import { IconButton } from '@chakra-ui/core'
 
-const EditIcon = (...props) => {
+const EditIcon = (props) => {
   return (
     <IconButton
       as='div'
