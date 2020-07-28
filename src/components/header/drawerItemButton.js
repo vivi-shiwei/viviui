@@ -1,13 +1,13 @@
 import React, { memo } from 'react'
 import {
   Box,
-  Button,
-  Icon
+  Button
 } from '@chakra-ui/core'
 
 const DrawerItemButton = ({ title, icon, href, children, ...props }) => {
   return (
     <Button
+      as='div'
       variantColor='black'
       border='none'
       variant='outline'
@@ -21,7 +21,7 @@ const DrawerItemButton = ({ title, icon, href, children, ...props }) => {
     >
       {!!icon && (
         <Box m={0} mr='8px'>
-          {<Box as={icon} size='1.5em' /> || <Icon name={icon} />}
+          {<Box as={icon} size='1.5em' />}
         </Box>
       )}
       {children}
