@@ -7,6 +7,7 @@ import {
 } from '@chakra-ui/core'
 import { FaSchool, FaUserEdit } from 'react-icons/fa'
 import { AiTwotoneSetting } from 'react-icons/ai'
+import { GoTrashcan, GoStop } from 'react-icons/go'
 import LinkNext from 'next/link'
 
 import Management from '../src/components/management/index'
@@ -22,7 +23,7 @@ export const ManagementTest = () => {
   const data = [
     { icon: FaSchool, name: '修改学校' },
     { icon: FaUserEdit, name: '学校用户' },
-    { cion: 'plus-square', name: '批量新增' },
+    { icon: GoTrashcan, name: '批量新增' },
     { icon: AiTwotoneSetting, name: '专长设定' },
     { icon: AiTwotoneSetting, name: '智能设定' }
   ]
@@ -36,20 +37,24 @@ export const ManagementTest = () => {
       }
       columnLine={
         <List spacing={3}>
-          <ListItem className='admin-list-item'>
-            <LinkNext href='#' as='a'>
-              <Link
-                d='flex'
-                alignItems='center'
-                _hover={{
-                  textDecoration: 'none'
-                }}
-                color='#316bc3'
-              >
-                <ColumnLine icon='FaSchool'>修改用户</ColumnLine>
-              </Link>
-            </LinkNext>
-          </ListItem>
+          {data.map((item, index) => {
+            return (
+              <ListItem className='admin-list-item' key={index}>
+                <LinkNext href='#' as='a'>
+                  <Link
+                    d='flex'
+                    alignItems='center'
+                    _hover={{
+                      textDecoration: 'none'
+                    }}
+                    color='#316bc3'
+                  >
+                    <ColumnLine icon={item.icon}>{item.name}</ColumnLine>
+                  </Link>
+                </LinkNext>
+              </ListItem>
+            )
+          })}
         </List>
       }
 

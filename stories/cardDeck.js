@@ -1,6 +1,6 @@
 import React from 'react'
 import CardDeck from '../src/components/cardDeck/index'
-import AddButton from '../src/components/cardDeck/roundedButton'
+import RoundedButton from '../src/components/cardDeck/roundedButton'
 import Card from '../src/components/cardDeck/card'
 import Fieldset from '../src/components/cardDeck/fieldset'
 
@@ -11,8 +11,7 @@ export const CardDeckGroupTest = () => {
   return (
     <>
       <CardDeck
-        title={<Fieldset title='班級' topLeft={<AddButton>新增</AddButton>} />}
-        // topLeft={<AddButton>新增</AddButton>}
+        title={<Fieldset title='班級' topLeft={<RoundedButton>新增</RoundedButton>} />}
         groupCard={
           data.map((item, index) => (
             <Card key={index} title={item} />
@@ -21,7 +20,7 @@ export const CardDeckGroupTest = () => {
       />
       <CardDeck
         title='班级'
-        topLeft={<AddButton>新增</AddButton>}
+        topLeft={<RoundedButton>新增</RoundedButton>}
         groupCard={
           data.map((item, index) => (<Card key={index} title={item} />))
         }
