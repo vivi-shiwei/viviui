@@ -17,9 +17,9 @@ import MyImage from '../static/QQ20200518181405.jpg'
 import MyImage6 from '../static/timg.jpg'
 import MyImage3 from '../static/timg8J2T10BJ.jpg'
 import PostsPictures from '../src/components/postCard/postsPictures'
-import Model from '../src/components/newModel'
-import ModalWithHeader from '../src/components/newModel/modalWithHeader'
-import ModalConten from '../src/components/newModel/modalContent'
+import Model from '../src/components/newModal'
+import ModalWithHeader from '../src/components/newModal/modalWithHeader'
+import ModalConten from '../src/components/newModal/modalContent'
 import ModelButton from '../src/components/blueButton'
 
 export default {
@@ -64,22 +64,25 @@ export const post = () => {
     </Tags>
   )
 }
-// export const nemodel = () => {
-//   const { isOpen, onOpen, onClose } = useDisclosure()
-//   return (
-//     <Model
-//       isOpen={isOpen}
-//       onOpen={onOpen}
-//       onClose={onClose}
-//       w='700px'
-//       modalcontent={<ModalConten
-//         mdalHeader={<ModalWithHeader>標題</ModalWithHeader>}
-//         modalWithFooter={
-//           <ModelButton onClick={onClose} w='100%' mt={4}>關閉</ModelButton>
-//         }
-//         openModal={<ModelButton onClick={onOpen} mt={4}>關閉</ModelButton>}
-//         closeButton
-//       // modalWithBody={<Box w='800px' bg='black' h='50px' />}
-//       />
-//   )
-// }
+export const nemodel = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  return (
+    <Model
+      isOpen={isOpen}
+      onOpen={onOpen}
+      onClose={onClose}
+      w='700px'
+      openModal={<ModelButton onClick={onOpen} mt={4}>關閉</ModelButton>}
+      modalcontent={
+        <ModalConten
+          mdalHeader={<ModalWithHeader>標題</ModalWithHeader>}
+          modalWithFooter={
+            <ModelButton onClick={onClose} w='100%' mt={4}>關閉</ModelButton>
+          }
+          closeButton
+        // modalWithBody={<Box w='800px' bg='black' h='50px' />}
+        />
+      }
+    />
+  )
+}

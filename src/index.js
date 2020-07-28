@@ -285,5 +285,12 @@ export { default as SquareButton } from './components/selectorPage/altRoundButto
 export { default as Administrator } from './components/selectorPage/administrator'
 export { default as EditButton } from './components/selectorPage/editButton'
 export { default as CenterSelector } from './components/selectorPage/centerSelector'
+<<<<<<< HEAD
+=======
+// Modal
+export { default as NewModal } from './components/newModal'
+export { default as ModalWithContent } from './components/newModal/modalContent'
+export { default as ModalWithHeader } from './components/newModal/modalWithHeader'
+>>>>>>> 0441d2b776557c7bbb36e274da36c4241ae03216
 
 export { default as BlueButton } from './components/blueButton'

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Grid, Heading, Flex, Icon, Text } from '@chakra-ui/core'
+import { Box, Grid, Heading, Flex, Icon, Text, Divider } from '@chakra-ui/core'
 import HeaderContainer from '../container'
 
 // logo接受logo文字或圖片  text接受top中部佈局的盒子
@@ -38,7 +38,7 @@ export const OneGrid = ({ title, icon, content, children, ...props }) => {
 
 export const GridGroup = ({ children, isBottomBorder, gap, ...props }) => {
   return (
-    // 大于4个时缩小自动换行
+  // 大于4个时缩小自动换行
 
     <HeaderContainer {...props}>
       {
@@ -51,13 +51,13 @@ export const GridGroup = ({ children, isBottomBorder, gap, ...props }) => {
             {children}
           </Grid>
         ) : (
-            <Grid
-              templateColumns={{ base: 'repeat(1, 1fr)', sm: 'repeat(2, 1fr)', md: `repeat(${(children.length)}, 1fr)` }}
-              gap={20}
-            >
-              {children}
-            </Grid>
-          )
+          <Grid
+            templateColumns={{ base: 'repeat(1, 1fr)', sm: 'repeat(2, 1fr)', md: `repeat(${(children.length)}, 1fr)` }}
+            gap={20}
+          >
+            {children}
+          </Grid>
+        )
       }
     </HeaderContainer>
   )

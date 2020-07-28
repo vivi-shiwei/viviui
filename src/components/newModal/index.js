@@ -7,17 +7,15 @@ const NewModal = ({ mdalHeader, openModal, size, onOpen, closeButton, modalWithB
   return (
     <>
       {openModal}
-      {isOpen && (
-        <Modal
-          isOpen={isOpen}
-          onClose={onClose}
-          size={size}
-          {...rest}
-        >
-          {modalcontent}
-          {children}
-        </Modal>
-      )}
+      <Modal
+        isOpen={isOpen}
+        onClose={onClose}
+        size={size}
+        {...rest}
+      >
+        {modalcontent}
+        {children}
+      </Modal>
     </>
   )
 }

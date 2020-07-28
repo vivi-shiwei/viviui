@@ -19,7 +19,7 @@ export const SelectorTest = () => {
         topAdmin={
           <Box d={{ base: 'none', sm: 'none', md: 'flex' }} justifyContent='flex-end'>
             <NextLink href='https://www.baidu.com' passHref>
-              <Box as='a'>
+              <Box as='a' d='flex' alignItems='center'>
                 <Administrator>管理员</Administrator>
               </Box>
             </NextLink>

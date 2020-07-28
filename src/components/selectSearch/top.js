@@ -1,8 +1,9 @@
 import React from 'react'
-import { Box, Flex, Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/core'
+import { Box, Flex, Image, Icon, Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/core'
 import HeaderContainer from '../container'
 import HeaderBorder from '../header/headerWrapper'
-import { FiAlignLeft } from 'react-icons/fi'
+import { MdAccessibility, MdSettings } from 'react-icons/md'
+import { IconName, FiAlignLeft } from 'react-icons/fi'
 
 // logo接受logo文字或圖片  text接受top中部佈局的盒子
 const Testpages = ({ logoimgurl, logo, text, children, ...props }) => {
