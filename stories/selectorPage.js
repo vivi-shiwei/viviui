@@ -10,6 +10,8 @@ import CenterButton from '../src/components/selectorPage/centerSelector'
 import EditButton from '../src/components/selectorPage/editButton'
 import NextLink from 'next/link'
 import Router from 'next/router'
+import { GrUserAdmin, GrUserExpert, GrTwitter } from 'react-icons/gr'
+import { GoTrashcan } from 'react-icons/go'
 export default { title: 'SelectorTest' }
 
 export const SelectorTest = () => {
@@ -20,7 +22,7 @@ export const SelectorTest = () => {
           <Box d={{ base: 'none', sm: 'none', md: 'flex' }} justifyContent='flex-end'>
             <NextLink href='https://www.baidu.com' passHref>
               <Box as='a' d='flex' alignItems='center'>
-                <Administrator>管理员</Administrator>
+                <Administrator icon={GrTwitter}>管理员</Administrator>
               </Box>
             </NextLink>
           </Box>
@@ -30,7 +32,7 @@ export const SelectorTest = () => {
           <CenterButton>亮丽的风景啊觉得偶然圣诞节佛法四点零</CenterButton>
         }
         rightSelectPage={
-          <EditButton />
+          <EditButton icon='edit' bg='#99CC99' />
         }
       />
     </>
