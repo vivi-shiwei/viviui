@@ -290,7 +290,7 @@ export { default as CenterSelector } from './components/selectorPage/centerSelec
 =======
 =======
 export { default as ModalSelector } from './components/modalSelector'
-export { default as SquareButton } from './components/modalSelector/altRoundButton'
+export { default as SquareButton } from './components/modalSelector/squareButton'
 export { default as EditButton } from './components/modalSelector/editButton'
 >>>>>>> 2e35522182b516e533a7048b67af43e7fe860ba2
 // Modal
@@ -300,3 +300,5 @@ export { default as ModalWithHeader } from './components/newModal/modalWithHeade
 >>>>>>> 0441d2b776557c7bbb36e274da36c4241ae03216
 
 export { default as BlueButton } from './components/blueButton'
+export { default as DeleteIconButton } from './components/page/deleteButton'
+export { default as Row } from './components/page/row'
