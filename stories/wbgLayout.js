@@ -334,7 +334,7 @@ export const Rows = () => {
       right={
         <>
           <DeleteIconButton />
-          <EditButton />
+          <EditButton icon='edit' />
         </>
       }
     />

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from '@chakra-ui/core'
 
-const AltRoundButton = ({ title, children, ...props }) => {
+const SquareButton = ({ children, ...props }) => {
   return (
     <Button
       as='div'
@@ -9,8 +9,7 @@ const AltRoundButton = ({ title, children, ...props }) => {
       {...props}
     >
       {children}
-      {title}
     </Button>
   )
 }
-export default AltRoundButton
+export default SquareButton
