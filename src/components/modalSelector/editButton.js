@@ -4,7 +4,6 @@ import { IconButton } from '@chakra-ui/core'
 const EditIcon = (props) => {
   return (
     <IconButton
-      as='div'
       {...props}
     />
   )
