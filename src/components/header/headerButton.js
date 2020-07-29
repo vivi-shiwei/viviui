@@ -3,7 +3,7 @@ import {
   Box,
   Button
 } from '@chakra-ui/core'
-const HeaderButton = ({ title, icon, href, children, ...props }) => {
+const HeaderButton = ({ title, icon, children, ...props }) => {
   return (
     <Button
       as='div'

@@ -34,7 +34,6 @@ const Header = ({
   return (
     <HeaderWrapper {...props}>
       <HeaderContainer
-        h='100%'
         height='4rem'
         {...containerProps}
       >

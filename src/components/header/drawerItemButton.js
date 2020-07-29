@@ -4,19 +4,14 @@ import {
   Button
 } from '@chakra-ui/core'
 
-const DrawerItemButton = ({ title, icon, href, children, ...props }) => {
+const DrawerItemButton = ({ title, icon, children, ...props }) => {
   return (
     <Button
       as='div'
-      variantColor='black'
-      border='none'
-      variant='outline'
+      bg='none'
       width='100%'
       justifyContent='flex-start'
-      _hover={{ ml: '2px' }}
-      _focus={{
-        bg: 'teal'
-      }}
+      _hover={{ ml: '2px', background: '#CEEDFF' }}
       {...props}
     >
       {!!icon && (
@@ -24,6 +19,7 @@ const DrawerItemButton = ({ title, icon, href, children, ...props }) => {
           {<Box as={icon} size='1.5em' />}
         </Box>
       )}
+      {title}
       {children}
     </Button>
   )

@@ -14,11 +14,11 @@ const Hero = ({
   noBottomBorder = false, // 是否需要底綫
   leftButton = null, // 輸入左邊按鈕
   rightButton = null, // 輸入右邊按鈕
-  ...rest// 傳入chakra能接受的樣式到Box裏
+  ...props// 傳入chakra能接受的樣式到Box裏
 }) => {
   return (
     <>
-      <Box as='section' pt={40} pb={24} {...rest}>
+      <Box as='section' pt={40} pb={24} {...props}>
         <Container>
           <Box maxW='xl' mx='auto' textAlign='center'>
             {!!title && (
