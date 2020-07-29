@@ -15,6 +15,7 @@ import HeaderPage from '../src/components/page/headerPage'
 import BackButton from '../src/components/page/backButton'
 import SureButton from '../src/components/page/sureButton'
 import DeleteRemind from '../src/components/page/deleteRemind'
+import LabelName from '../src/components/page/labelName'
 import { DeleteIconButton, Row, EditButton } from '../src/index'
 
 import MyImage from '../static/QQ20200518181405.jpg'
@@ -330,11 +331,15 @@ export const Rows = () => {
     <Row
       profilePhoto={MyImage}
       name='vivi'
-      left='jijijiji'
+      left={
+        <>
+          <LabelName type='（学生）' name='vivi' label='姓名' />
+        </>
+      }
       right={
         <>
-          <DeleteIconButton />
-          <EditButton icon='edit' />
+          <DeleteIconButton variantColor='red' mr='8px' />
+          <EditButton icon='edit' variantColor='blue' />
         </>
       }
     />
