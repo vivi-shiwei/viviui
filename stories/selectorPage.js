@@ -3,11 +3,11 @@ import {
   Box, Link
 } from '@chakra-ui/core'
 
-import AddSchoolAdministrators from '../src/components/selectorPage/index'
-import Administrator from '../src/components/selectorPage/administrator'
-import AddButton from '../src/components/selectorPage/altRoundButton'
-import CenterButton from '../src/components/selectorPage/centerSelector'
-import EditButton from '../src/components/selectorPage/editButton'
+import AddSchoolAdministrators from '../src/components/modalSelector'
+import Administrator from '../src/components/modalSelector/administrator'
+import AddButton from '../src/components/modalSelector/altRoundButton'
+import CenterButton from '../src/components/modalSelector/centerSelector'
+import EditButton from '../src/components/modalSelector/editButton'
 import NextLink from 'next/link'
 export default { title: 'SelectorTest' }
 
@@ -24,11 +24,8 @@ export const SelectorTest = () => {
             </NextLink>
           </Box>
         }
-        leftSelectPage={<AddButton>新增</AddButton>}
-        centerSelectPage={
-          <CenterButton>亮丽的风景啊觉得偶然圣诞节佛法四点零</CenterButton>
-        }
-        rightSelectPage={
+        leftY={<AddButton>新增</AddButton>}
+        rightY={
           <EditButton />
         }
       />

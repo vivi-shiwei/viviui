@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box } from '@chakra-ui/core'
 import HeaderContainer from '../container'
-const SelectorPage = ({ topAdmin, leftY, rightY, ...props }) => {
+const ModalSelector = ({ topAdmin, leftY, rightY, ...props }) => {
   return (
     <Box as='main' {...props}>
       <HeaderContainer>
@@ -15,4 +15,4 @@ const SelectorPage = ({ topAdmin, leftY, rightY, ...props }) => {
   )
 }
 
-export default SelectorPage
+export default ModalSelector
