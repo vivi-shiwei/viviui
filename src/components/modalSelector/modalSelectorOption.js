@@ -5,7 +5,7 @@ const ModalSelectorOption = ({ children, ...props }) => {
   return (
     <Box m={2}>
       <Button
-        bg={props.bg || props.background}
+        as='div'
         mb={4}
         variant='ghost'
         w='100%'

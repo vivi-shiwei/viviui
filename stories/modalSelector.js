@@ -21,6 +21,7 @@ export const ModalSelectorTest = () => {
       <ModalSelector
         mt='20px'
         value='阿迪斯发威风威风第三方撒旦发射点发大水撒打发二'
+        modalTitle='Dashboard 選擇'
         topAdmin={
           <Box d={{ base: 'none', sm: 'none', md: 'flex' }} justifyContent='flex-end'>
             <NextLink href='https://www.baidu.com' passHref>
