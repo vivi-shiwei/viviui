@@ -9,7 +9,22 @@ https://viviui.vercel.app/?path=/story/footer--footer
 
 
 
-Header
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 相关组件
 
@@ -386,3 +401,140 @@ containerProps
           </>
       }
     />
+
+## Hero
+
+相关组件
+
+
+- Hero：为其子级提供上下文的包装器。
+
+
+    import{
+      Hero
+    } from 'viviui'
+
+用法
+
+Hero的用法
+
+Hero 能传入的参数
+
+| 名称             | 描述                                     |
+| -------------- | -------------------------------------- |
+| title          | 传入标题。                                  |
+| subtitle       | 传入小标题。                                 |
+| noBottomBorder | 可以不要底线。                                |
+| leftButton     | 输入左边按钮。                                |
+| rightButton    | 输入右边按钮。                                |
+| drawerItems    | 选单里的数据。                                |
+| children       | Hero的子孙。                               |
+| …props         | 传入 chakra 能接受的 Box 样式到 Hero 的最外层 Box 里 |
+
+props
+
+
+| 名称 | 默认    | 描述     |
+| -- | ----- | ------ |
+| pt | 160px | 上方的内边距 |
+| pb | 94    | 下方的内边距 |
+
+
+
+1. title，subtitle，children，children传入了按钮。
+
+
+- 网页版
+![](https://paper-attachments.dropbox.com/s_4D810874F0863F787ABE5EC187A79D50C774EE1EABF593725F3D079EBF3FDC6B_1595841533720_image.png)
+
+
+
+- 手机版
+
+
+![](https://paper-attachments.dropbox.com/s_4D810874F0863F787ABE5EC187A79D50C774EE1EABF593725F3D079EBF3FDC6B_1595842822794_image.png)
+
+
+
+    <Hero
+      title={
+        <>
+          我的學校
+          <Box as='span' color='blue.500'>
+            {' '}
+            SCHOOL
+          </Box>
+        </>
+      }
+      subtitle='SCHOOL 是一個簡單的、多模組的線上的學校系統。可透過 SCHOOL 進行日常校園管理，了解學生學習生活，促進發掘學生閃光點等等。專為澳門中小幼學校而設。'
+    >
+      <Button size='lg' as='a' variantColor='blue' w={{ base: '100%', sm: 'auto' }}>
+        登入到我的學校
+      </Button>
+    </Hero>
+
+
+FeatureGrid
+
+相关组件
+
+
+- FeatrueGrid：为其子级提供上下文的包装器。
+- Featrure：能接受到icon，title,subtitle,children及其它chakra-ui样式。
+- FeatrueGrid 和 Featrure 需要一起使用。
+
+
+    import{
+      FeatrueGrid,
+      Featrure
+    } from 'viviui'
+
+用法
+
+FeatrueGrid
+
+
+    children：可以自定义他的儿子，也可以使用 Featrure 的 component
+    gridProps：传入 chakra 能接受的 Grid 样式到 FeatrueGrid
+    ...props：传入 chakra 能接受 Box 的样式进 FeatrueGrid 的最外层 Box 里
+
+Featrure
+ 
+
+      title： 傳入title
+      icon： 傳入 react-icons 的 icon 名字
+      subtitle： 傳入subtitle
+      children： Featrure 的子孫
+      ...props： 傳入 chakra 能接受的 Box 样式到 Featrure 的最外层 Box 裏
+
+网页版
+
+
+![](https://paper-attachments.dropbox.com/s_4D810874F0863F787ABE5EC187A79D50C774EE1EABF593725F3D079EBF3FDC6B_1595847690407_image.png)
+
+
+手机版
+
+
+![](https://paper-attachments.dropbox.com/s_4D810874F0863F787ABE5EC187A79D50C774EE1EABF593725F3D079EBF3FDC6B_1595847825473_image.png)
+
+
+
+    <FeatrueGrid>
+      <Feature
+        title='學生成長檔案'
+        subtitle='SCHOOL 替每個學生都建立一個成長檔案，老師能記錄學生的學習生活，如學生的擅好，長處等。
+                      使老師更能發現學生的閃光點。同學也能充分了解校園生活所帶給他的歷程。'
+        icon={MdAccessibility}
+      />
+      <Feature
+        title='學生相冊'
+        subtitle='每個小朋友成長的瞬間都值得紀念。SCHOOL 提供的學生相冊除了能作為記錄學生活動相片外，也能和學生成長檔案、學生活動事件相連結。讓系統能客觀地分析學生的智能發展方向。'
+        icon={MdPhoto}
+      />
+      <Feature
+        title='與基力掛勾的學生評估表'
+        subtitle='每個小朋友成長的瞬間都值得紀念。SCHOOL 提供的學生相冊除了能作為記錄學生活動相片外，也能和學生成長檔案、學生活動事件相連結。讓系統能客觀地分析學生的智能發展方向。'
+        icon={MdShowChart}
+      />
+    </FeatrueGrid>
