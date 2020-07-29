@@ -16,6 +16,7 @@ import SureButton from '../src/components/page/sureButton'
 import DeleteRemind from '../src/components/page/deleteRemind'
 
 import MyImage from '../static/QQ20200518181405.jpg'
+
 export default {
   title: 'wbgLayout'
 }

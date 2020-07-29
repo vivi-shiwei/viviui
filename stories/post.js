@@ -13,14 +13,14 @@ import {
   useDisclosure
 } from '@chakra-ui/core'
 
-import MyImage from '../static/QQ20200518181405.jpg'
-import MyImage6 from '../static/timg.jpg'
-import MyImage3 from '../static/timg8J2T10BJ.jpg'
 import PostsPictures from '../src/components/postCard/postsPictures'
 import NewModal from '../src/components/newModal'
 import ModalWithHeader from '../src/components/newModal/modalWithHeader'
 import ModalWithContent from '../src/components/newModal/modalContent'
 import ModelButton from '../src/components/blueButton'
+import MyImage from '../static/QQ20200518181405.jpg'
+import MyImage6 from '../static/timg.jpg'
+import MyImage3 from '../static/timg8J2T10BJ.jpg'
 
 export default {
   title: 'Post'
