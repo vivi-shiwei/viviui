@@ -25,7 +25,6 @@ const Header = ({
   center, // Header 中間列表
   right, // Header 右邊列表
   logo, // 自定義logo
-  logoHref, // 傳入logo的路徑
   drawerItems, // 選單數據
   containerProps, // 傳入頭部的數據
   ...props // 除以上輸入值外都會解構到props裏，props裏可以是外邊框、内邊框、字體顔色、背景顔色、border，傳入chakra能接受的樣式到最外層的Box裏。
@@ -35,7 +34,6 @@ const Header = ({
   return (
     <HeaderWrapper {...props}>
       <HeaderContainer
-        h='100%'
         height='4rem'
         {...containerProps}
       >

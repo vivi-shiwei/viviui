@@ -4,11 +4,9 @@ import {
   Button
 } from '@chakra-ui/core'
 
-const HeaderMenuButton = ({ children, ...props }) => {
+const HeaderMenuButton = (props) => {
   return (
-    <MenuButton as={Button} {...props}>
-      {children}
-    </MenuButton>
+    <MenuButton as={Button} {...props} />
   )
 }
 export default memo(HeaderMenuButton)
