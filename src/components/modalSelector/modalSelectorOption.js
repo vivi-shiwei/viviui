@@ -18,6 +18,7 @@ const ModalSelectorOption = ({ children, ...props }) => {
         border={{ base: 'none' }}
         textAlign='left'
         cursor='pointer'
+        lineHeight='40px'
         {...props}
       >
         {children}
