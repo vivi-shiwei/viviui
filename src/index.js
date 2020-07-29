@@ -281,7 +281,7 @@ export { default as RoundedButton } from './components/cardDeck/roundedButton'
 export { default as GroupCard } from './components/cardDeck/groupCard'
 // CenterSelector
 export { default as ModalSelector } from './components/modalSelector'
-export { default as SquareButton } from './components/modalSelector/altRoundButton'
+export { default as SquareButton } from './components/modalSelector/squareButton'
 export { default as EditButton } from './components/modalSelector/editButton'
 // Modal
 export { default as NewModal } from './components/newModal'
@@ -289,3 +289,5 @@ export { default as ModalWithContent } from './components/newModal/modalContent'
 export { default as ModalWithHeader } from './components/newModal/modalWithHeader'
 
 export { default as BlueButton } from './components/blueButton'
+export { default as DeleteIconButton } from './components/page/deleteButton'
+export { default as Row } from './components/page/row'

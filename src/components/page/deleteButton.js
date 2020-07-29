@@ -1,14 +1,14 @@
 import React from 'react'
 import { IconButton } from '@chakra-ui/core'
 
-const EditButton = (props) => {
+const DeleteButton = (props) => {
   return (
     <IconButton
       as='div'
-      icon='edit'
+      icon='delete'
       {...props}
     />
   )
 }
 
-export default EditButton
+export default DeleteButton

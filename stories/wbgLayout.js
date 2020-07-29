@@ -15,6 +15,7 @@ import HeaderPage from '../src/components/page/headerPage'
 import BackButton from '../src/components/page/backButton'
 import SureButton from '../src/components/page/sureButton'
 import DeleteRemind from '../src/components/page/deleteRemind'
+import { DeleteIconButton, Row, EditButton } from '../src/index'
 
 import MyImage from '../static/QQ20200518181405.jpg'
 export default {
@@ -319,5 +320,23 @@ export const InfiniteScrolltest = () => {
         </Box>
       </Box>
     </WhiteBoardPage>
+  )
+}
+
+export const Rows = () => {
+  var items = ['1', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2']
+
+  return (
+    <Row
+      profilePhoto={MyImage}
+      name='vivi'
+      left='jijijiji'
+      right={
+        <>
+          <DeleteIconButton />
+          <EditButton />
+        </>
+      }
+    />
   )
 }
