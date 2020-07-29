@@ -2,11 +2,9 @@ import React, { memo } from 'react'
 import {
   DrawerHeader
 } from '@chakra-ui/core'
-const DrawerItemHeader = ({ title, icon, href, children, ...props }) => {
+const DrawerItemHeader = (props) => {
   return (
-    <>
-      <DrawerHeader {...props}>{children}</DrawerHeader>
-    </>
+    <DrawerHeader {...props} />
   )
 }
 export default memo(DrawerItemHeader)

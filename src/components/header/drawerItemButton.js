@@ -1,29 +1,25 @@
 import React, { memo } from 'react'
 import {
   Box,
-  Button,
-  Icon
+  Button
 } from '@chakra-ui/core'
 
-const DrawerItemButton = ({ title, icon, href, children, ...props }) => {
+const DrawerItemButton = ({ title, icon, children, ...props }) => {
   return (
     <Button
-      variantColor='black'
-      border='none'
-      variant='outline'
+      as='div'
+      bg='none'
       width='100%'
       justifyContent='flex-start'
-      _hover={{ ml: '2px' }}
-      _focus={{
-        bg: 'teal'
-      }}
+      _hover={{ ml: '2px', background: '#CEEDFF' }}
       {...props}
     >
       {!!icon && (
         <Box m={0} mr='8px'>
-          {<Box as={icon} size='1.5em' /> || <Icon name={icon} />}
+          {<Box as={icon} size='1.5em' />}
         </Box>
       )}
+      {title}
       {children}
     </Button>
   )

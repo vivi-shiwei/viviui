@@ -23,7 +23,7 @@ import { AiOutlineLogout } from 'react-icons/ai'
 import { IoMdPerson, IoMdHome } from 'react-icons/io'
 import NextLink from 'next/link'
 import { MdDashboard, MdAccessibility, MdPhoto, MdShowChart } from 'react-icons/md'
-import { Container } from '../src/components/containerPage'
+import HeaderContainer from '../src/components/container'
 
 import MyImage from '../static/QQ20200518181405.jpg'
 export default {
@@ -47,6 +47,18 @@ export const school = () => {
       <p>2</p>
       <p>3</p>
     </>
+  )
+  const HeaderRight = () => (
+    <Box>
+      <NextLink
+        href='https://www.baidu.com'
+        passHref
+      >
+        <Button as='a' bg='transparent' border='1px' px={2} h={{ base: '35px', sm: '38px' }}>
+          登入
+        </Button>
+      </NextLink>
+    </Box>
   )
   const Right = (
     <Stack align='center' isInline spacing='2'>
@@ -311,7 +323,7 @@ export const Homeschool = () => {
         />
       </GridFooter>
       <Divider mt={24} mb={6} />
-      <Container mb={{ base: 4, md: 20 }} px={4}>
+      <HeaderContainer mb={{ base: 4, md: 20 }} px={4}>
         <Box as='footer'>
           <Flex flexWrap='wrap'>
             <Box w={{ base: '100%', md: '100%' }} borderLeftWidth={{ base: 0, md: 0 }} pl={{ base: 0, md: 0 }} mb={4}>
@@ -329,7 +341,7 @@ export const Homeschool = () => {
             </Box>
           </Flex>
         </Box>
-      </Container>
+      </HeaderContainer>
     </>
   )
 }

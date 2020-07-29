@@ -1,14 +1,15 @@
-import React from 'react';
-import { Box, Button } from '@chakra-ui/core';
-import NextLink from 'next/link';
+import React from 'react'
+import {
+  Box
+} from '@chakra-ui/core'
 
 // 随内容撑开居中button
-export const CenterButton = ({ title, children, ...props }) => {
+const CenterButton = ({ title, children, ...props }) => {
   return (
     <>
       {!!title && (
         <Box
-          as='button'
+          as='div'
           p='5px 10px'
           align='center'
           fontSize={{ base: 'xs', sm: 'md', md: 'lg' }}
@@ -19,9 +20,11 @@ export const CenterButton = ({ title, children, ...props }) => {
           fontWeight='500'
         >
           {title}
+          {children}
         </Box>
       )}
-      {children}
     </>
   )
-};
+}
+
+export default CenterButton

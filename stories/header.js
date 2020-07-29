@@ -1,9 +1,7 @@
 import React from 'react'
 
 import {
-  ButtonGroup,
   Button,
-  Stack,
   Menu,
   Avatar,
   MenuButton,
@@ -11,9 +9,7 @@ import {
   Box,
   MenuList,
   Link,
-  MenuDivider,
-  Heading,
-  Flex
+  Heading
 } from '@chakra-ui/core'
 import NextLink from 'next/link'
 import Header from '../src/components/header'
@@ -21,8 +17,7 @@ import DrawerItemDivider from '../src/components/header/drawerItemDivider'
 import DrawerItemButton from '../src/components/header/drawerItemButton'
 import HeaderMenuButton from '../src/components/header/headerMenuButton'
 import HeaderButton from '../src/components/header/headerButton'
-import HeaderLogo from '../src/components/header/headerLogo'
-import { MdAccessibility, MdPalette, MdSettings, MdDashboard } from 'react-icons/md'
+import { MdAccessibility, MdDashboard } from 'react-icons/md'
 import { IoMdPaper, IoMdHome, IoMdSearch } from 'react-icons/io'
 
 import { AiOutlineLogout } from 'react-icons/ai'
@@ -41,11 +36,20 @@ export const header = () => {
           <HeaderButton icon={MdAccessibility} title='左邊按鈕' href='https://www.baidu.com' />
         </>
       }
-      logo={<HeaderLogo icon={<Box as={IoMdHome} size={6} />} />}
+      logo={
+        <NextLink
+          href='https://www.baidu.com'
+          passHref
+        >
+          <Box as='a'>
+            <Box as={IoMdHome} size={6} />
+          </Box>
+        </NextLink>
+      }
       right={
         <>
           <HeaderButton title='右邊按鈕' icon={MdAccessibility} href='https://www.baidu.com' />
-          <Menu>
+          <Menu placement='bottom-end'>
             <HeaderMenuButton display={{ base: 'none', sm: 'none', md: 'flex' }}>
               Actions
             </HeaderMenuButton>
@@ -78,7 +82,16 @@ export const header = () => {
 export const withonlylogo = () => {
   return (
     <Header
-      logo={<HeaderLogo icon={<Box as={IoMdHome} size={6} />} />}
+      logo={
+        <NextLink
+          href='https://www.baidu.com'
+          passHref
+        >
+          <Box as='a'>
+            <Box as={IoMdHome} size={6} />
+          </Box>
+        </NextLink>
+      }
     />
   )
 }
@@ -111,14 +124,23 @@ export const leftWithTitle = () => {
 export const leftWithDrawer = () => {
   return (
     <Header
-      logo={<HeaderLogo icon={<Box as={IoMdHome} size={6} />} />}
+      logo={
+        <NextLink
+          href='https://www.baidu.com'
+          passHref
+        >
+          <Box as='a'>
+            <Box as={IoMdHome} size={6} />
+          </Box>
+        </NextLink>
+      }
       left={
         <>
           <HeaderButton icon={MdAccessibility} title='首页' href='https://www.baidu.com' />
           <HeaderButton icon={MdAccessibility} title='关于' href='https://www.baidu.com' />
         </>
       }
-      drawerBody={
+      drawerItems={
         <>
           <DrawerItemButton icon={MdAccessibility}>首页</DrawerItemButton>
           <DrawerItemDivider />
@@ -145,7 +167,16 @@ export const centerWithIconAndButton = () => {
 export const centerWithButtonTitle = () => {
   return (
     <Header
-      logo={<HeaderLogo icon={<Box as={IoMdHome} size={6} />} />}
+      logo={
+        <NextLink
+          href='https://www.baidu.com'
+          passHref
+        >
+          <Box as='a'>
+            <Box as={IoMdHome} size={6} />
+          </Box>
+        </NextLink>
+      }
       center={
         <>
           <HeaderButton icon={MdAccessibility} title='首页' href='https://www.baidu.com' />
@@ -159,7 +190,16 @@ export const centerWithButtonTitle = () => {
 export const WithIconAndButton = () => {
   return (
     <Header
-      logo={<HeaderLogo icon={<Box as={IoMdHome} size={6} />} />}
+      logo={
+        <NextLink
+          href='https://www.baidu.com'
+          passHref
+        >
+          <Box as='a'>
+            <Box as={IoMdHome} size={6} />
+          </Box>
+        </NextLink>
+      }
       left={
         <>
           <HeaderButton icon={MdAccessibility} title='首页' href='https://www.baidu.com' />
@@ -185,26 +225,35 @@ export const WithIconAndButton = () => {
 export const Withthree = () => {
   return (
     <Header
-      logo={<HeaderLogo icon={<Box as={IoMdHome} size={6} />} />}
+      logo={
+        <NextLink
+          href='https://www.baidu.com'
+          passHref
+        >
+          <Box as='a'>
+            <Box as={IoMdHome} size={6} />
+          </Box>
+        </NextLink>
+      }
       left={
         <>
-          <HeaderButton icon={MdAccessibility} title='首页' href='https://www.baidu.com' />
-          <HeaderButton icon={MdAccessibility} title='关于' href='https://www.baidu.com' />
+          <HeaderButton title='首页' href='https://www.baidu.com' />
+          <HeaderButton title='关于' href='https://www.baidu.com' />
         </>
       }
       right={
         <>
-          <HeaderButton icon={MdAccessibility} title='首页' href='https://www.baidu.com' />
-          <HeaderButton icon={MdAccessibility} title='关于' href='https://www.baidu.com' />
+          <HeaderButton title='首页' href='https://www.baidu.com' />
+          <HeaderButton title='关于' href='https://www.baidu.com' />
         </>
       }
       center={
         <>
-          <HeaderButton icon={MdAccessibility} title='首页' href='https://www.baidu.com' />
-          <HeaderButton icon={MdAccessibility} title='关于' href='https://www.baidu.com' />
+          <HeaderButton title='首页' href='https://www.baidu.com' />
+          <HeaderButton title='关于' href='https://www.baidu.com' />
         </>
       }
-      drawerBody={
+      drawerItems={
         <>
           <DrawerItemButton icon={MdAccessibility}>首页</DrawerItemButton>
           <DrawerItemDivider />
@@ -227,7 +276,16 @@ export const Withthree = () => {
 export const rightphotou = () => {
   return (
     <Header
-      logo={<HeaderLogo icon={<Box as={IoMdHome} size={6} />} />}
+      logo={
+        <NextLink
+          href='https://www.baidu.com'
+          passHref
+        >
+          <Box as='a'>
+            <Box as={IoMdHome} size={6} />
+          </Box>
+        </NextLink>
+      }
       right={
         <>
           <Avatar name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
@@ -240,12 +298,17 @@ export const rightphotou = () => {
 export const rightIcons = () => {
   return (
     <Header
-      logo={<HeaderLogo icon={<Box as={IoMdHome} size={6} />} />}
-      right={
-        <>
-          <HeaderLogo icon={<Box as={IoMdHome} size={6} />} />
-        </>
+      logo={
+        <NextLink
+          href='https://www.baidu.com'
+          passHref
+        >
+          <Box as='a'>
+            <Box as={IoMdHome} size={6} />
+          </Box>
+        </NextLink>
       }
+      right={<Box as={IoMdHome} size={6} />}
     />
   )
 }
@@ -253,12 +316,17 @@ export const rightIcons = () => {
 export const leftIcons = () => {
   return (
     <Header
-      logo={<HeaderLogo icon={<Box as={IoMdHome} size={6} />} />}
-      left={
-        <>
-          <HeaderLogo icon={<Box as={IoMdHome} size={6} />} />
-        </>
+      logo={
+        <NextLink
+          href='https://www.baidu.com'
+          passHref
+        >
+          <Box as='a'>
+            <Box as={IoMdHome} size={6} />
+          </Box>
+        </NextLink>
       }
+      left={<Box as={IoMdHome} size={6} />}
     />
   )
 }
@@ -266,45 +334,53 @@ export const leftIcons = () => {
 export const centerIcons = () => {
   return (
     <Header
-      logo={<HeaderLogo icon={<Box as={IoMdHome} size={6} />} />}
-      center={
-        <>
-          <HeaderLogo icon={<Box as={IoMdHome} size={6} />} />
-        </>
+      logo={
+        <NextLink
+          href='https://www.baidu.com'
+          passHref
+        >
+          <Box as='a'>
+            <Box as={IoMdHome} size={6} />
+          </Box>
+        </NextLink>
       }
+      center={<Box as={IoMdHome} size={6} />}
     />
   )
 }
 
 export const loginPaper = () => {
   const Logo = () => (
-    <>
-      <Heading as='h1' size='lg' letterSpacing='-.1rem'>
-        <Box as='span' d={{ base: 'none', sm: 'inline' }}>
-          Macau School
-        </Box>
-        <Box as='span' d={{ base: 'inline', sm: 'none' }}>
-          MS
-        </Box>
-        <Box as='span' color='blue.500' d={{ base: 'none', md: 'inline' }}>
-          {' '}學不停
-        </Box>
-      </Heading>
-    </>
+    <NextLink
+      href='https://www.baidu.com'
+      passHref
+    >
+      <Box as='a'>
+        <Heading as='h1' size='lg' letterSpacing='-.1rem'>
+          <Box as='span' d={{ base: 'none', sm: 'inline' }}>
+            Macau School
+          </Box>
+          <Box as='span' d={{ base: 'inline', sm: 'none' }}>
+            MS
+          </Box>
+          <Box as='span' color='blue.500' d={{ base: 'none', md: 'inline' }}>
+            {' '}學不停
+          </Box>
+        </Heading>
+      </Box>
+    </NextLink>
   )
   const HeaderRight = () => (
-    <>
-      <Box>
-        <NextLink
-          passHref
-          href='https://www.baidu.com'
-        >
-          <Button as='a' bg='transparent' border='1px' px={2} h={{ base: '35px', sm: '38px' }}>
-            登入
-          </Button>
-        </NextLink>
-      </Box>
-    </>
+    <Box>
+      <NextLink
+        href='https://www.baidu.com'
+        passHref
+      >
+        <Button as='a' bg='transparent' border='1px' px={2} h={{ base: '35px', sm: '38px' }}>
+          登入
+        </Button>
+      </NextLink>
+    </Box>
   )
   return (
     <Header
@@ -316,19 +392,24 @@ export const loginPaper = () => {
 
 export const AfterLoginPaper = () => {
   const Logo = () => (
-    <>
-      <Heading as='h1' size='lg' letterSpacing='-.1rem'>
-        <Box as='span' d={{ base: 'none', sm: 'inline' }}>
-          Macau School
-        </Box>
-        <Box as='span' d={{ base: 'inline', sm: 'none' }}>
-          MS
-        </Box>
-        <Box as='span' color='blue.500' d={{ base: 'none', md: 'inline' }}>
-          {' '}學不停
-        </Box>
-      </Heading>
-    </>
+    <NextLink
+      href='https://www.baidu.com'
+      passHref
+    >
+      <Box as='a'>
+        <Heading as='h1' size='lg' letterSpacing='-.1rem'>
+          <Box as='span' d={{ base: 'none', sm: 'inline' }}>
+            Macau School
+          </Box>
+          <Box as='span' d={{ base: 'inline', sm: 'none' }}>
+            MS
+          </Box>
+          <Box as='span' color='blue.500' d={{ base: 'none', md: 'inline' }}>
+            {' '}學不停
+          </Box>
+        </Heading>
+      </Box>
+    </NextLink>
   )
 
   const HeaderCenter = () => (
@@ -390,19 +471,24 @@ export const AfterLoginPaper = () => {
 
 export const AfterPostLoginPaper = () => {
   const Logo = () => (
-    <>
-      <Heading as='h1' size='lg' letterSpacing='-.1rem'>
-        <Box as='span' d={{ base: 'none', sm: 'inline' }}>
-          Macau School
-        </Box>
-        <Box as='span' d={{ base: 'inline', sm: 'none' }}>
-          MS
-        </Box>
-        <Box as='span' color='blue.500' d={{ base: 'none', md: 'inline' }}>
-          {' '}學不停
-        </Box>
-      </Heading>
-    </>
+    <NextLink
+      href='https://www.baidu.com'
+      passHref
+    >
+      <Box as='a'>
+        <Heading as='h1' size='lg' letterSpacing='-.1rem'>
+          <Box as='span' d={{ base: 'none', sm: 'inline' }}>
+            Macau School
+          </Box>
+          <Box as='span' d={{ base: 'inline', sm: 'none' }}>
+            MS
+          </Box>
+          <Box as='span' color='blue.500' d={{ base: 'none', md: 'inline' }}>
+            {' '}學不停
+          </Box>
+        </Heading>
+      </Box>
+    </NextLink>
   )
 
   const HeaderCenter = () => (
@@ -457,7 +543,7 @@ export const AfterPostLoginPaper = () => {
       logo={<Logo />}
       center={<HeaderCenter />}
       right={<HeaderRight />}
-      drawerBody={<DrawerBody />}
+      drawerItems={<DrawerBody />}
     />
   )
 }
