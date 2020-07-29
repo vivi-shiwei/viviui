@@ -8,24 +8,6 @@ https://viviui.vercel.app/?path=/story/footer--footer
 # Header使用
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 相关组件
 
 
@@ -252,9 +234,9 @@ containerProps
 | px       | 8px    | x轴上内边距为8px  |
 
 
-
-1. logo与right数据头像menu
-
+  
+1. logo与right数据头像menu  
+  
 网页版
 
 
@@ -316,9 +298,9 @@ containerProps
       }
     />
 
-
-2. 传入 logo center right 的数据案例
-
+  
+2. 传入 logo center right 的数据案例  
+  
 网页版
 
 
@@ -441,7 +423,7 @@ props
 
 
 
-1. title，subtitle，children，children传入了按钮。
+1. title，subtitle，children，children传入了按钮。  
 
 
 - 网页版
@@ -474,7 +456,7 @@ props
     </Hero>
 
 
-FeatureGrid
+## FeatureGrid
 
 相关组件
 
