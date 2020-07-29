@@ -12,7 +12,6 @@ const ModalSelectorOption = ({ children, ...props }) => {
         justifyContent='flex-start'
         size='lg'
         overflow='hidden'
-        d='block'
         whiteSpace='nowrap'
         textOverflow='ellipsis'
         border={{ base: 'none' }}
