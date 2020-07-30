@@ -5,6 +5,7 @@ import Container from '../src/components/container'
 import SearchBox from '../src/components/search/searchBox'
 import SearchButton from '../src/components/search/searchButton'
 import SearchResult from '../src/components/search/searchResult'
+
 export default { title: 'Search' }
 
 export const SearchTest = () => {

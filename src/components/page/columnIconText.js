@@ -1,6 +1,10 @@
 import React from 'react'
-import { ListIcon, Box } from '@chakra-ui/core'
-const ColumnOne = ({ icon, children, props }) => {
+import {
+  ListIcon,
+  Box
+} from '@chakra-ui/core'
+
+const ColumnIconText = ({ icon, title, children, props }) => {
   return (
     <>
       <ListIcon
@@ -11,10 +15,12 @@ const ColumnOne = ({ icon, children, props }) => {
         w={{ base: 'calc(100% - 32px)', md: 'calc(100% - 35px)' }}
         borderBottom='1px solid #ededed'
         p={2}
-      >{children}
+      >
+        {children}
+        {title}
       </Box>
     </>
   )
 }
 
-export default ColumnOne
+export default ColumnIconText

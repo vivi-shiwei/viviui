@@ -1,11 +1,9 @@
 import React from 'react'
 import { Input } from '@chakra-ui/core'
 
-const SearchBox = ({ placeholder, children, ...props }) => {
+const SearchBox = (props) => {
   return (
     <Input
-      placeholder={placeholder}
-      variant='outline'
       maxW='590px'
       {...props}
     />

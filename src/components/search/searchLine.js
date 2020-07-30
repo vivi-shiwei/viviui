@@ -1,16 +1,13 @@
 import React from 'react'
 import { Flex } from '@chakra-ui/core'
-const SearchLine = ({ children, ...props }) => {
+const SearchLine = (props) => {
   return (
     <Flex
-      align='center'
-      justify='space-between'
-      width={{ base: '100%', sm: '55%', md: '55%' }}
-      margin='0 auto'
+      w={{ base: '100%', md: '700px' }}
+      mx='auto'
+      mt={4}
       {...props}
-    >
-      {children}
-    </Flex>
+    />
   )
 }
 

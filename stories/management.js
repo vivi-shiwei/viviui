@@ -10,10 +10,10 @@ import { AiTwotoneSetting } from 'react-icons/ai'
 import { GoTrashcan, GoStop } from 'react-icons/go'
 import LinkNext from 'next/link'
 
-import Management from '../src/components/management/index'
-import Description from '../src/components/management/description'
-import ManageTitle from '../src/components/management/manageTitle'
-import ColumnLine from '../src/components/management/columnOne'
+import Management from '../src/components/page/manageMent'
+import ColumnLine from '../src/components/page/columnIconText'
+import WhiteBoardPage from '../src/components/page'
+import HeaderPage from '../src/components/page/headerPage'
 
 export default {
   title: 'Management'
@@ -28,36 +28,39 @@ export const ManagementTest = () => {
     { icon: AiTwotoneSetting, name: '智能设定' }
   ]
   return (
-    <Management
+    <WhiteBoardPage
       title={
-        <ManageTitle>管理员</ManageTitle>
+        <HeaderPage>
+          管理员
+        </HeaderPage>
       }
-      text={
-        <Description>你是以为管理员，;可以拥有以下操作</Description>
-      }
-      columnLine={
-        <List spacing={3}>
-          {data.map((item, index) => {
-            return (
-              <ListItem className='admin-list-item' key={index}>
-                <LinkNext href='#' as='a'>
-                  <Link
-                    d='flex'
-                    alignItems='center'
-                    _hover={{
-                      textDecoration: 'none'
-                    }}
-                    color='#316bc3'
-                  >
-                    <ColumnLine icon={item.icon}>{item.name}</ColumnLine>
-                  </Link>
-                </LinkNext>
-              </ListItem>
-            )
-          })}
-        </List>
-      }
+    >
+      <Management
+        px='5%'
+        text='你是管理员，可以拥有以下操作...'
+        columnLine={
+          <List spacing={3}>
+            {
+              data.map((item, index) =>
+                <ListItem key={index}>
+                  <LinkNext href='#' as='a'>
+                    <Link
+                      d='flex'
+                      alignItems='center'
+                      _hover={{
+                        textDecoration: 'none'
+                      }}
+                      color='#316bc3'
+                    >
+                      <ColumnLine icon={item.icon}>{item.name}</ColumnLine>
+                    </Link>
+                  </LinkNext>
+                </ListItem>)
+            }
+          </List>
+        }
+      />
 
-    />
+    </WhiteBoardPage>
   )
 }
