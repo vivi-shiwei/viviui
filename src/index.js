@@ -275,7 +275,7 @@ export { default as Featrure } from './components/featureGrid/feature'
 
 // CardDeck
 export { default as CardDeck } from './components/cardDeck'
-export { default as Cards } from './components/cardDeck/cards'
+export { default as Card } from './components/cardDeck/card'
 export { default as Fieldset } from './components/cardDeck/fieldset'
 export { default as RoundedButton } from './components/cardDeck/roundedButton'
 export { default as GroupCard } from './components/cardDeck/groupCard'
