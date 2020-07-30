@@ -33,7 +33,7 @@ export const ManagementTest = () => {
         <ManageTitle>管理员</ManageTitle>
       }
       text={
-        <Description>你是以为管理员，可以拥有以下操作</Description>
+        <Description>你是以为管理员，;可以拥有以下操作</Description>
       }
       columnLine={
         <List spacing={3}>
