@@ -1,6 +1,6 @@
 import React from 'react'
 import { Heading } from '@chakra-ui/core'
-const SearchResult = ({ children, ...props }) => {
+const SearchResult = (props) => {
   return (
     <>
       <Heading
@@ -10,9 +10,7 @@ const SearchResult = ({ children, ...props }) => {
         fontWeight='bold'
         mt='10px'
         {...props}
-      >
-        {children}
-      </Heading>
+      />
     </>
   )
 }

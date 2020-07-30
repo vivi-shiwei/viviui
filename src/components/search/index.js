@@ -5,7 +5,7 @@ import {
 
 import SearchLine from './searchLine'
 
-const Search = ({ left, right, title, children, ...props }) => {
+const Search = ({ left, right, children, ...props }) => {
   return (
     <>
       <Box mt={16} py={4} {...props}>
@@ -13,7 +13,6 @@ const Search = ({ left, right, title, children, ...props }) => {
           {left}
           {right}
         </SearchLine>
-        {title}
         {children}
       </Box>
     </>

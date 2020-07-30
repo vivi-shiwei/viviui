@@ -1,25 +1,37 @@
-import React, { useRef } from 'react'
+import React, { useContext, useEffect } from 'react'
 import {
-  Box, Button,
+  Box,
+  Button,
   useDisclosure,
   Modal,
   ModalOverlay,
   ModalContent,
   ModalHeader,
   ModalBody,
-  ModalCloseButton
+  ModalCloseButton,
+  Input
 } from '@chakra-ui/core'
-import Container from '../container'
 
-const ModalSelector = ({ topAdmin, leftY, value, rightY, modalTitle, children, ...props }) => {
+import Container from '../container'
+import { UserContext } from './appContext'
+
+const ModalSelector = ({ left, value, right, modalTitle, children, ...props }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const { user, setUser } = useContext(UserContext)
+
+  useEffect(() => {
+    setUser({
+      value: 'uiuiop',
+      onClose
+    })
+  }, [])
+
   return (
-    <Box as='main' {...props}>
+    <Box as='main'>
       <Container>
-        {topAdmin}
         <Box display='flex' justifyContent='center' m='auto' mt='10px'>
-          {leftY}
-          <Button
+          {left}
+          <Input
             as='div'
             maxW='400px'
             lineHeight='40px'
@@ -34,9 +46,11 @@ const ModalSelector = ({ topAdmin, leftY, value, rightY, modalTitle, children, .
             whiteSpace='nowrap'
             textOverflow='ellipsis'
             onClick={onOpen}
+            {...props}
           >
-            {value}
-          </Button>
+
+            {!!user && !!user.value ? user.value : ''}
+          </Input>
 
           {isOpen && (
             <Modal isOpen={isOpen} onClose={onClose}>
@@ -48,7 +62,7 @@ const ModalSelector = ({ topAdmin, leftY, value, rightY, modalTitle, children, .
                 h={{ base: '100%', md: '500px' }}
                 maxH={{ base: '100%', md: '500px' }}
               >
-                <ModalHeader>{modalTitle}</ModalHeader>
+                {!!modalTitle && <ModalHeader>{modalTitle}</ModalHeader>}
                 <ModalCloseButton />
                 <ModalBody>
                   {children}
@@ -56,7 +70,7 @@ const ModalSelector = ({ topAdmin, leftY, value, rightY, modalTitle, children, .
               </ModalContent>
             </Modal>
           )}
-          {rightY}
+          {right}
         </Box>
       </Container>
 

@@ -1,30 +1,32 @@
-import React from 'react'
-import { Button, Box } from '@chakra-ui/core'
+import React, { useContext } from 'react'
+import {
+  Button
+} from '@chakra-ui/core'
+import { UserContext } from './appContext'
 
-const ModalSelectorOption = ({ children, ...props }) => {
+const ModalSelectorOption = (props) => {
+  const { user, setUser } = useContext(UserContext)
   return (
-    <Box m={2}>
-      <Button
-        as='div'
-        mb={4}
-        variant='ghost'
-        w='100%'
-        justifyContent='flex-start'
-        size='lg'
-        overflow='hidden'
-        // d='block'
-        whiteSpace='nowrap'
-        textOverflow='ellipsis'
-        border={{ base: 'none' }}
-        textAlign='left'
-        cursor='pointer'
-        lineHeight='40px'
-        {...props}
-      >
-        {children}
-      </Button>
-    </Box>
-
+    <Button
+      as='div'
+      mb={4}
+      variant='ghost'
+      w='100%'
+      justifyContent='flex-start'
+      size='lg'
+      overflow='hidden'
+      whiteSpace='nowrap'
+      textOverflow='ellipsis'
+      border={{ base: 'none' }}
+      textAlign='left'
+      cursor='pointer'
+      lineHeight='40px'
+      onClick={() => {
+        setUser({ ...user, value: props.value })
+        user.onClose()
+      }}
+      {...props}
+    />
   )
 }
 

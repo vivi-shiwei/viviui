@@ -11,7 +11,8 @@ module.exports = {
     '../stories/**/modalSelector.[tj]s',
     '../stories/**/wbgLayout.[tj]s',
     '../stories/**/school.[tj]s',
-    '../stories/**/search.[tj]s'
+    '../stories/**/search.[tj]s',
+    '../stories/**/test.[tj]s'
   ],
   addons: [
     '@storybook/addon-knobs/register',
