@@ -275,29 +275,18 @@ export { default as Featrure } from './components/featureGrid/feature'
 
 // CardDeck
 export { default as CardDeck } from './components/cardDeck'
-export { default as Cards } from './components/cardDeck/cards'
+export { default as Card } from './components/cardDeck/card'
 export { default as Fieldset } from './components/cardDeck/fieldset'
 export { default as RoundedButton } from './components/cardDeck/roundedButton'
 export { default as GroupCard } from './components/cardDeck/groupCard'
 // CenterSelector
-<<<<<<< HEAD
-export { default as SelectorPage } from './components/selectorPage'
-export { default as SquareButton } from './components/selectorPage/altRoundButton'
-export { default as Administrator } from './components/selectorPage/administrator'
-export { default as EditButton } from './components/selectorPage/editButton'
-export { default as CenterSelector } from './components/selectorPage/centerSelector'
-<<<<<<< HEAD
-=======
-=======
 export { default as ModalSelector } from './components/modalSelector'
 export { default as SquareButton } from './components/modalSelector/squareButton'
 export { default as EditButton } from './components/modalSelector/editButton'
->>>>>>> 2e35522182b516e533a7048b67af43e7fe860ba2
 // Modal
 export { default as NewModal } from './components/newModal'
 export { default as ModalWithContent } from './components/newModal/modalContent'
 export { default as ModalWithHeader } from './components/newModal/modalWithHeader'
->>>>>>> 0441d2b776557c7bbb36e274da36c4241ae03216
 
 export { default as BlueButton } from './components/blueButton'
 export { default as DeleteIconButton } from './components/page/deleteButton'
