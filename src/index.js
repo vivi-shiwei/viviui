@@ -282,6 +282,8 @@ export { default as GroupCard } from './components/cardDeck/groupCard'
 // CenterSelector
 export { default as ModalSelector } from './components/modalSelector'
 export { default as SquareButton } from './components/modalSelector/squareButton'
+export { default as ModalSelectorOption } from './components/modalSelector/modalSelectorOption'
+export { UserContext } from './components/modalSelector/userContext'
 export { default as EditButton } from './components/modalSelector/editButton'
 // Modal
 export { default as NewModal } from './components/newModal'

@@ -9,10 +9,14 @@ import WbgPage from './wbgPage'
 const WhiteBoard = ({ title, backurl, nodivider = false, children, ...props }) => {
   return (
     <WbgPage backurl={backurl} {...props}>
-      <Box as='header' pt={4} px={16}>
-        {title}
-      </Box>
-      {!nodivider && <Divider my={6} d={{ base: 'none', md: 'flex' }} />}
+      {!!title && (
+        <>
+          <Box as='header' pt={4} px={16}>
+            {title}
+          </Box>
+          {!nodivider && <Divider my={6} d={{ base: 'none', md: 'flex' }} />}
+        </>
+      )}
       {children}
     </WbgPage>
   )

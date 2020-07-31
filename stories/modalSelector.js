@@ -9,7 +9,7 @@ import ModalSelector from '../src/components/modalSelector/index'
 import AltRoundButton from '../src/components/modalSelector/squareButton'
 import EditButton from '../src/components/modalSelector/editButton'
 import ModalSelectorOption from '../src/components/modalSelector/modalSelectorOption'
-import { UserContext } from '../src/components/modalSelector/appContext'
+import { UserContext } from '../src/components/modalSelector/userContext'
 
 export default { title: 'ModalSelector' }
 
