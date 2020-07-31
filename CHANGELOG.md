@@ -1,4 +1,4 @@
-## viviui 1.2.1
+## viviui 1.2.3
   
   - ModalSelector 的component 的改良：
   1. 新增 modal 裏的數據 component ModalSelectorOption 
