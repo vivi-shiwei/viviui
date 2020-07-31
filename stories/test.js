@@ -1,33 +1,53 @@
 import React, { useState } from 'react'
 import {
-  Box
+  Box,
+  Button
 } from '@chakra-ui/core'
 
+// import Table from '../src/components/test'
+import Test, { useFocusElement } from '../src/components/test'
+
 import MyImage from '../static/QQ20200518181405.jpg'
-export default {
-  title: 'Test'
-}
-export const noProfilePhoto = () => {
-  const [recipientID, setRecipientID] = useState(1)
-  const isRecipientOnline = useFriendStatus(recipientID)
-  const friendList = [
-    { id: 1, name: 'Phoebe' },
-    { id: 2, name: 'Rachel' },
-    { id: 3, name: 'Ross' }
-  ]
+
+export const focusElement = () => {
+  const elementRef = React.useRef(null)
+  const [showing, setShowing] = React.useState(false)
+  const bind = useFocusElement(elementRef, showing, { background: 'red' })
+  console.log(bind)
   return (
     <>
-      <Box color={isRecipientOnline ? 'green' : 'red'}>fdf</Box>
-      <select
-        value={recipientID}
-        onChange={e => setRecipientID(Number(e.target.value))}
-      >
-        {friendList.map(friend => (
-          <option key={friend.id} value={friend.id}>
-            {friend.name}
-          </option>
-        ))}
-      </select>
+      <div ref={elementRef}>nimei</div>
+      <Button onClick={() => setShowing(true)}>焦點</Button>
+      <Button onClick={() => setShowing(false)}>失去</Button>
     </>
   )
+}
+export const test = () => {
+  return (
+    <Test />
+  )
+}
+export const counter = () => {
+  let counter = 0
+
+  const [number, useNumber] = useState(() => counter++)
+  return (
+    <>
+      <div>{number}</div>
+      <Button onClick={() => useNumber(number + 1)}>點擊+1</Button>
+    </>
+  )
+}
+export const state = () => {
+  const [number, useNumber] = useState(0)
+  return (
+    <>
+      <Box>{number}</Box>
+      <Button onClick={() => useNumber(number + 1)}>點擊+1</Button>
+    </>
+  )
+}
+
+export default {
+  title: 'Test'
 }

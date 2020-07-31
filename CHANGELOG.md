@@ -1,3 +1,9 @@
+## viviui 1.2.1
+  
+  - ModalSelector 的component 的改良：
+  1. 新增 modal 裏的數據 component ModalSelectorOption 
+  2. ModalSelector 與 ModalSelectorOption 添加了 React useContext 實現這兩個 component 的數據共享
+
 ## viviui 1.2.0  
   
   - 可以使用 chakra-ui 0.8.0 版本的組件
