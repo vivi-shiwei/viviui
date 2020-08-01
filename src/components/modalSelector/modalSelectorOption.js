@@ -1,11 +1,12 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import {
   Button
 } from '@chakra-ui/core'
-import { UserContext } from './userContext'
+
+import { ModalContext } from './modalContext'
 
 const ModalSelectorOption = (props) => {
-  const { user, setUser } = useContext(UserContext)
+  const { value: selectValue, onChange, onClose } = React.useContext(ModalContext)
   return (
     <Button
       as='div'
@@ -21,12 +22,11 @@ const ModalSelectorOption = (props) => {
       textAlign='left'
       cursor='pointer'
       lineHeight='40px'
-      isDisabled={props.value === user.value}
+      isDisabled={selectValue === props.value}
       onClick={() => {
-        // 不相等時才重新賦值，然後關閉 modal
-        if (props.value !== user.value) {
-          setUser({ ...user, value: props.value })
-          user.onClose()
+        onChange(props.value)
+        if (selectValue !== props.value) {
+          onClose()
         }
       }}
       {...props}

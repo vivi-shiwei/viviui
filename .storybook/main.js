@@ -12,7 +12,8 @@ module.exports = {
     '../stories/**/wbgLayout.[tj]s',
     '../stories/**/school.[tj]s',
     '../stories/**/search.[tj]s',
-    '../stories/**/test.[tj]s'
+    '../stories/**/test.[tj]s',
+    '../stories/**/addIntelligence.[tj]s'
   ],
   addons: [
     '@storybook/addon-knobs/register',

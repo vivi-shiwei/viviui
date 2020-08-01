@@ -53,8 +53,8 @@ export const ListTest = () => {
               <Intelligence
                 left={
                   <>
-                    <EditIntelligence value='亚罗可' color='#CC6600' />
-                    <EditIntelligence value='明星桥' color='#99CC33' />
+                    <EditIntelligence value='亚罗可' />
+                    <EditIntelligence value='明星桥' />
                   </>
                 }
                 right={

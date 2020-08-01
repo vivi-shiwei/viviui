@@ -24,8 +24,12 @@ const EditIntelligence = ({ value, ...props }) => {
           {!isEditing && (
             <Flex align='center'>
               <IconButton
-                variantColor='green.600' variant='outline'
-                ml={5} size='xs' icon='edit' onClick={onRequestEdit}
+                variantColor='green.600'
+                variant='outline'
+                ml={5}
+                size='xs'
+                icon='edit'
+                onClick={onRequestEdit}
               />
             </Flex>
           )}

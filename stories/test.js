@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   Box,
-  Button
+  Button,
+  Input
 } from '@chakra-ui/core'
 
 // import Table from '../src/components/test'
@@ -11,12 +12,15 @@ import MyImage from '../static/QQ20200518181405.jpg'
 
 export const focusElement = () => {
   const elementRef = React.useRef(null)
+
   const [showing, setShowing] = React.useState(false)
-  const bind = useFocusElement(elementRef, showing, { background: 'red' })
-  console.log(bind)
+
+  useFocusElement(elementRef, showing)
+
   return (
     <>
       <div ref={elementRef}>nimei</div>
+      {/* <Input ref={trapRef} /> */}
       <Button onClick={() => setShowing(true)}>焦點</Button>
       <Button onClick={() => setShowing(false)}>失去</Button>
     </>

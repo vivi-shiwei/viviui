@@ -56,17 +56,20 @@ const Table = () => (
   </table>
 )
 
-export function useFocusElement (elementRef, showing, options = {}) {
+export const useFocusElement = (elementRef, showing, options = {}) => {
   // const elementRef = React.useRef(null)
   console.log('elementRef', elementRef.current)
   const trapRef = React.useRef(null)
 
-  function focusElement () {
+  const focusElement = () => {
     if (!elementRef.current) {
       console.error('No element found to found')
       return null
     }
 
+    elementRef.current.style.color = 'red'
+
+    console.log(elementRef.current)
     const trap = createFocusTrap(elementRef.current, {
       escapeDeactivates: false,
       clickOutsideDeactivates: true,
@@ -78,7 +81,7 @@ export function useFocusElement (elementRef, showing, options = {}) {
     trap.activate()
   }
 
-  function focusTrigger () {
+  const focusTrigger = () => {
     if (trapRef.current) {
       trapRef.current.deactivate()
     }
