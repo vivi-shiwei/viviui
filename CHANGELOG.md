@@ -1,3 +1,10 @@
+## viviui 1.2.4
+
+  - ModalSelector 的 component 的改良：
+  1. 給 ModalSelector 添加了 cloneElement 版的 useContext 方法
+
+  - Header 的 component 的改良
+
 ## viviui 1.2.3
   
   - ModalSelector 的component 的改良：
