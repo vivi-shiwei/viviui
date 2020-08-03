@@ -22,17 +22,11 @@ import HeaderWrapper from './headerWrapper'
 import HeaderMobileNav from './headerMobileNav'
 
 const Header = ({
-  // left, // Header左邊列表
-  // center, // Header 中間列表
-  // right, // Header 右邊列表
-  // logo, // 自定義logo
-  // drawerItems, // 選單數據
   containerProps, // 傳入頭部的數據
   children,
   ...props // 除以上輸入值外都會解構到props裏，props裏可以是外邊框、内邊框、字體顔色、背景顔色、border，傳入chakra能接受的樣式到最外層的Box裏。
 }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  // console.log(children)
 
   let logo = null
   let left = null
@@ -40,35 +34,25 @@ const Header = ({
   let right = null
   let drawerItems = null
 
-  console.log(children)
-
   React.Children.map(children, (c, i) => {
-    if (c.type === HeaderLogo) {
-      logo = c
-    } else if (c.type === HeaderLeft) {
-      left = c
-    } else if (c.type === HeaderCenter) {
-      center = c
-    } else if (c.type === HeaderRight) {
-      right = c
-    } else if (c.type === HeaderMobileNav) {
-      drawerItems = c.props.children
+    switch (c.type) {
+      case HeaderLogo:
+        logo = c // 自定義logo
+        break
+      case HeaderLeft:
+        left = c // Header左邊列表
+        break
+      case HeaderCenter:
+        center = c // Header 中間列表
+        break
+      case HeaderRight:
+        right = c // Header 右邊列表
+        break
+      case HeaderMobileNav:
+        drawerItems = c.props.children// 選單數據
+        break
     }
   })
-
-  // children.forEach(child => {
-  //   if (child.type === HeaderLogo) {
-  //     logo = child
-  //   } else if (child.type === HeaderLeft) {
-  //     left = child
-  //   } else if (child.type === HeaderCenter) {
-  //     center = child
-  //   } else if (child.type === HeaderRight) {
-  //     right = child
-  //   } else if (child.type === HeaderMobileNav) {
-  //     drawerItems = child.props.children
-  //   }
-  // })
 
   return (
     <HeaderWrapper {...props}>
