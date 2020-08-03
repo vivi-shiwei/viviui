@@ -4,6 +4,7 @@ import {
   Box
 } from '@chakra-ui/core'
 
+// 學校管理員的界面的橫綫數據
 const ColumnIconText = ({ icon, title, children, props }) => {
   return (
     <>

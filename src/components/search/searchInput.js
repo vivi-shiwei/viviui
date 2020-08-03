@@ -1,7 +1,7 @@
 import React from 'react'
 import { Input } from '@chakra-ui/core'
 
-const SearchBox = (props) => {
+const SearchInput = (props) => {
   return (
     <Input
       maxW='590px'
@@ -10,4 +10,4 @@ const SearchBox = (props) => {
   )
 }
 
-export default SearchBox
+export default SearchInput

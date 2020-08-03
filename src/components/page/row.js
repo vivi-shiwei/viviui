@@ -8,6 +8,7 @@ import {
 
 import Container from '../container'
 
+// 顯示學校用戶的component
 const Row = ({ right, left, name, profilePhoto, noDivider = false, children, ...props }) => {
   return (
     <Container>

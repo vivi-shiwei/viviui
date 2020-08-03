@@ -4,6 +4,7 @@ import {
   Heading
 } from '@chakra-ui/core'
 
+// 學校管理員的數據
 const Management = ({ text, columnLine, children, descriptionProps, ...props }) => {
   return (
     <Box as='article' {...props}>

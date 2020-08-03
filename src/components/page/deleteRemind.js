@@ -5,6 +5,7 @@ import {
   Divider
 } from '@chakra-ui/core'
 
+// 刪除提示框
 const HeaderPage = ({ title, content, children, ...props }) => {
   return (
     <Box border='1px solid #FED7D7' background='#FFF5F5' rounded={4} mt={20} p={5} {...props}>

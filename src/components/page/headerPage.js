@@ -3,6 +3,7 @@ import {
   Heading
 } from '@chakra-ui/core'
 
+// 白板標題
 const HeaderPage = (props) => {
   return (
     <Heading
