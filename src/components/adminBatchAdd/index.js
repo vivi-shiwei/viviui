@@ -2,7 +2,7 @@ import React from 'react'
 import HeaderContainer from '../container'
 import { Heading, Box } from '@chakra-ui/core'
 
-const addminBatchAdd = ({ title, body, children, ...props }) => {
+const AddminBatchAdd = ({ title, body, children, ...props }) => {
   return (
     <HeaderContainer pb={4} px={0} maxW='960px' {...props}>
       <Heading
@@ -22,4 +22,4 @@ const addminBatchAdd = ({ title, body, children, ...props }) => {
   )
 }
 
-export default addminBatchAdd
+export default AddminBatchAdd

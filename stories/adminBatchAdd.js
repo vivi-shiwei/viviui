@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react'
-import { useRouter } from 'next/router'
+import React from 'react'
 import NextLink from 'next/link'
-import { Box, Link, Button } from '@chakra-ui/core'
+import { Link } from '@chakra-ui/core'
 
 import Container from '../src/components/container'
-import AddminBatchAdd from '../src/components/adminBatchAdd'
+import AddminBatchAdd from '../src/components/adminBatchAdd/index'
 import NewButton from '../src/components/adminBatchAdd/newButton'
 
-export default { title: 'showLing' }
+export default { title: 'AddminBatchAdd' }
 
 export const SearchTest = () => {
   const data = [
