@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {
   Button
 } from '@chakra-ui/core'
@@ -6,7 +6,7 @@ import {
 import { ModalContext } from './modalContext'
 
 const ModalSelectorOption = (props) => {
-  const { value: selectValue, onChange, onClose } = React.useContext(ModalContext)
+  const { value: selectValue, onChange, onClose } = useContext(ModalContext)
   return (
     <Button
       as='div'

@@ -526,3 +526,128 @@ Featrure
         icon={MdShowChart}
       />
     </FeatrueGrid>
+
+## ModalSelector
+
+相關組件
+
+
+- ModalSelector: 包容器
+- SquareButton：左侧新增按钮    
+- ModalSelectorOption：弹出窗口后的 modal 数据
+- EditButton：右侧編輯按钮
+
+
+    import {
+      ModalSelector,
+      SquareButton,
+      ModalSelectorOption,
+      EditButton
+    } from "viviui"
+
+用法
+
+SquareButton 的 Component 用法
+
+SquareButton 能傳入的參數
+
+
+| 名字    | 描述                                                  |
+| ----- | --------------------------------------------------- |
+| props | 傳入 children 和 chakra 能接受的 Button 样式到 SquareButton 裏 |
+
+
+SquareButton 裏的 props
+
+
+| 名字       | 默認                             | 描述        |
+| -------- | ------------------------------ | --------- |
+| fontSize | {{ base: '14px', md: '16px' }} | 隨著屏幕字體的變化 |
+
+
+新增按鈕
+
+![](https://paper-attachments.dropbox.com/s_4D810874F0863F787ABE5EC187A79D50C774EE1EABF593725F3D079EBF3FDC6B_1596436041439_image.png)
+
+
+
+    <SquareButton>新增管理员</SquareButton>
+
+EditButton
+
+EditButton 能傳入的參數
+
+| 名字    | 描述                                                    |
+| ----- | ----------------------------------------------------- |
+| props | 傳入 children 和 chakra 能接受的 IconButton 样式到 EditButton 裏 |
+
+
+
+![](https://paper-attachments.dropbox.com/s_5DFED06E22537885E45F78FF28C7DF12C0D3C15059D03B250E0220F47FEC6BAA_1595911803974_image.png)
+
+
+
+    <EditButton icon='edit' />
+
+ModalSelector
+
+ModalSelector 能傳入的參數
+
+| 名称         | 描述                                    |
+| ---------- | ------------------------------------- |
+| left       | 左侧数据                                  |
+| right      | 右侧数据                                  |
+| value      | 自定义中间顯示的数据                            |
+| children   | 点击中间value按钮时，自定义弹出的数据                 |
+| modalTitle | 弹出框中的标题                               |
+| …props     | 能接受 chakra 的 Box 样式到 ModalSelector 里。 |
+
+ModalSelector 裏的 props
+
+
+| 名称             | 默认     | 描述             |
+| -------------- | ------ | -------------- |
+| display        | flex   | 默認為 flex 類型    |
+| justifyContent | center | 讓整個 Box 居中中間   |
+| mt             | 10px   | 裏 top 外邊距為10px |
+
+點擊中間前
+
+
+![](https://paper-attachments.dropbox.com/s_4D810874F0863F787ABE5EC187A79D50C774EE1EABF593725F3D079EBF3FDC6B_1596439715541_image.png)
+
+
+點擊中間后
+
+
+![](https://paper-attachments.dropbox.com/s_4D810874F0863F787ABE5EC187A79D50C774EE1EABF593725F3D079EBF3FDC6B_1596439931823_image.png)
+
+
+
+    const ModalSelectorTest = () => {
+      const [values, setValues] = useState('cdsj6 2019/2020 Dashboard')
+      return (
+        <ModalSelector
+          modalTitle='Dashboard 選擇'
+          value={values}
+          onChange={setValues}
+          left={
+            <SquareButton>新增</SquareButton>
+          }
+          right={
+            <EditButton icon='edit' />
+          }
+        >
+          <ModalSelectorOption value='cdsj6 2019/2020 Dashboard'>
+            cdsj6 2019/2020 Dashboard
+          </ModalSelectorOption>
+          <ModalSelectorOption value='cdsj6 2020/2021 Dashboard'>
+            cdsj6 2020/2021 Dashboard
+          </ModalSelectorOption>
+          <ModalSelectorOption value='cdsj6 2021/2022 Dashboard'>
+            cdsj6 2021/2022 Dashboard
+          </ModalSelectorOption>
+        </ModalSelector>
+      )
+    }
+

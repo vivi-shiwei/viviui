@@ -1,11 +1,10 @@
 import React from 'react'
 import { Box, Heading, Flex } from '@chakra-ui/core'
 
-const Fieldset = ({ title, topLeft, children, ...props }) => {
+const Fieldset = ({ title, left, children, ...props }) => {
   return (
-
     <Box position='relative' width='full' textAlign='center' my='20px' {...props}>
-      {topLeft}
+      {left}
       <Flex justify='center' align='center'>
         <Box borderBottom='1px solid #aaa6a6' w='100%' position='absolute' zIndex='0' />
         <Heading
