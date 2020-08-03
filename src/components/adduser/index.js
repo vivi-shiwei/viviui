@@ -1,32 +1,23 @@
+import React, { memo } from 'react'
 import {
-  Box
+  Heading
 } from '@chakra-ui/core'
-import { memo } from 'react'
-const DescribeTable = ({ describeInfo }) => {
+
+const addUser = ({ heading, describeTable, children, ...props }) => {
   return (
-    <Box as='table' w='100%'>
-      <Box as='thead'>
-        <Box as='tr' h='50px'>
-          <Box as='td' border='1px #CBD5E0 solid' textAlign='center' w='60px'>序號</Box>
-          <Box as='td' border='1px #CBD5E0 solid' textAlign='center' w='180px'>名稱</Box>
-          <Box as='td' border='1px #CBD5E0 solid' textAlign='center'>值</Box>
-        </Box>
-      </Box>
-      <Box as='tbody'>
-        {
-          describeInfo.map((describe, index) => {
-            return (
-              <Box as='tr' key={index} h='40px'>
-                <Box as='td' border='1px #CBD5E0 solid' wordBreak='break-word' textAlign='center'>{index + 1}</Box>
-                <Box as='td' border='1px #CBD5E0 solid' wordBreak='break-word' textAlign='center' px={2} py={3}>{describe.fieldName}</Box>
-                <Box as='td' border='1px #CBD5E0 solid' wordBreak='break-word' px={2} py={3}>{describe.describe}</Box>
-              </Box>
-            )
-          })
-        }
-      </Box>
-    </Box>
+    <>
+      <Heading
+        as='h2'
+        textAlign='center'
+        size='lg'
+        overflow='hidden'
+        textOverflow='ellipsis'
+        whiteSpace='nowrap'
+      > {heading}
+      </Heading>
+      {describeTable}
+    </>
   )
 }
 
-export default memo(DescribeTable)
+export default memo(addUser)
