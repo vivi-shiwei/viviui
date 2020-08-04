@@ -5,7 +5,7 @@ import {
   useDisclosure
 } from '@chakra-ui/core'
 
-import ModalSelector from '../src/components/modalSelector/index'
+import ModalSelector from '../src/components/modalSelector'
 import AltRoundButton from '../src/components/modalSelector/squareButton'
 import EditButton from '../src/components/modalSelector/editButton'
 import ModalSelectorOption from '../src/components/modalSelector/modalSelectorOption'
