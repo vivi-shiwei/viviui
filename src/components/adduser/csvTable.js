@@ -1,3 +1,4 @@
+import React from 'react'
 import {
   Box
 } from '@chakra-ui/core'
@@ -11,7 +12,7 @@ const CsvTable = ({ tableHead, csvContent }) => {
   return (
     <Box border='1px solid #e6e6e6' overflow='auto' minH='300px' maxH='500px'>
       <Box>
-        <Box as='table' border='1' w='auto'>
+        <Box as='table' border='1' w='auto' fontSize={{ base: '12px', sm: '12px', md: '18px' }}>
           <Box as='thead' background='#f2f2f2' className='csv-table-head'>
             <Box as='tr' h='50px'>
               <Box as='th' className='csv-tabel-haed-item'>
@@ -20,7 +21,7 @@ const CsvTable = ({ tableHead, csvContent }) => {
               {
                 tableHead.map((head, index) => (
                   <Box key={index} as='th' className='csv-tabel-haed-item'>
-                    <Box textAlign='center' w={`${head.width}px`}>{head.title}</Box>
+                    <Box textAlign='center' w={{ base: `${head.width - 120}px`, sm: `${head.width - 120}px`, md: `${head.width}px` }}>{head.title}</Box>
                   </Box>
                 ))
               }
@@ -32,21 +33,7 @@ const CsvTable = ({ tableHead, csvContent }) => {
           </Box>
 
           <Box as='tbody' fontSize='14px'>
-            {
-              Object.keys(csvContent).map((csvKey, index) => {
-                return (
-                  <CsvItem
-                    key={csvKey}
-                    index={index}
-                    csvKey={csvKey}
-                    tableHead={tableHead}
-                    data={csvContent[csvKey].data}
-                    state={csvContent[csvKey].state}
-                    error={csvContent[csvKey].error}
-                  />
-                )
-              })
-            }
+            <Box>内容列表</Box>
           </Box>
         </Box>
       </Box>
