@@ -301,3 +301,11 @@ export { default as ModalWithHeader } from './components/newModal/modalWithHeade
 export { default as BlueButton } from './components/blueButton'
 export { default as DeleteIconButton } from './components/page/deleteButton'
 export { default as Row } from './components/page/row'
+
+// editShow
+
+export { default as EditShow } from './components/editShow'
+export { default as EditTable } from './components/editShow/editTable'
+export { default as DeleteIcon } from './components/editShow/deleteIcon'
+export { default as ConfirmButton } from './components/editShow/confirmButton'
+export { default as CancelButton } from './components/editShow/cancelButton'

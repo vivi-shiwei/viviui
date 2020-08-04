@@ -6,6 +6,7 @@ import {
 
 // 白板的component，有backurl時，又有children，就會出現白板，沒有children就不會出現白板
 const WbgPage = ({ backurl, title, nodivider, children, ...props }) => {
+  console.log(title, nodivider)
   return (
     <Box as='main' {...props}>
       {!!backurl && (
@@ -52,7 +53,7 @@ const WbgPage = ({ backurl, title, nodivider, children, ...props }) => {
                 transition='0.3s'
               >
 
-                {!!title && (
+                {(!!title && !!title.length) && (
                   <>
                     <Box as='header' pt={4} px={16}>
                       {title}
@@ -61,9 +62,7 @@ const WbgPage = ({ backurl, title, nodivider, children, ...props }) => {
                   </>
                 )}
 
-                {
-                  !!children && (children)
-                }
+                {!!children && (children)}
               </Box>
             </Box>
           </Box>

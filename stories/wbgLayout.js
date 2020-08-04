@@ -32,19 +32,14 @@ export const editDashboard = () => {
     return (!value) ? '該選項不可為空！' : ((value.length < 3) ? '長度不可短於三個字符！' : '')
   }
   return (
-    <WhiteBoardPage
-      title={
-        <>
-          <HeaderPage size='lg' as='h2' pt={4}>編輯 Dashboard</HeaderPage>
-          <HeaderPage
-            fontSize={{ base: '17px', md: '25px' }}
-            mt={5}
-          >
-            聖若瑟教區中學第六校
-          </HeaderPage>
-        </>
-      }
-    >
+    <WhiteBoardPage>
+      {/* <HeaderPage size='lg' as='h2' pt={4}>編輯 Dashboard</HeaderPage>
+      <HeaderPage
+        fontSize={{ base: '17px', md: '25px' }}
+        mt={5}
+      >
+        聖若瑟教區中學第六校
+      </HeaderPage> */}
       <Box as='article' px={{ base: 8, sm: 8, md: 16 }} pb={16}>
         <Formik
           initialValues={initialValues}

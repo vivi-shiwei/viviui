@@ -1,21 +1,21 @@
 import React from 'react'
 import { Button, useDisclosure } from '@chakra-ui/core'
-import {
-  AddIntelligence
-} from '../src/components/selectSearch/programa'
+// import {
+//   AddIntelligence
+// } from '../src/components/selectSearch/programa'
 import Admin from '../src/components/admin/adminPage'
-import Intelligence from '../src/components/editIntelligence/index'
-import DeleteIcon from '../src/components/editIntelligence/deleteIcon'
-import ConfirmButton from '../src/components/editIntelligence/confirmButton'
-import CancelButton from '../src/components/editIntelligence/cancelButton'
-import EditIntelligence from '../src/components/editIntelligence/editIntelligence'
+import EditShow from '../src/components/editShow'
+import DeleteIcon from '../src/components/editShow/deleteIcon'
+import ConfirmButton from '../src/components/editShow/confirmButton'
+import CancelButton from '../src/components/editShow/cancelButton'
+import EditTable from '../src/components/editShow/editTable'
 
 export default { title: 'AddIntelligence' }
 
 export const EditableOne = () => {
   return (
     <>
-      <EditIntelligence value='jfiekj' color='#CC6600' />
+      <EditTable value='jfiekj' color='#CC6600' />
     </>
   )
 }
@@ -43,11 +43,18 @@ export const ListTest = () => {
             >
               新增智能
             </Button>
-            {isOpen && <AddIntelligence onClose={onClose} isOpen={isOpen} />}
+            {/* {isOpen && <AddIntelligence onClose={onClose} isOpen={isOpen} />} */}
           </>
         }
       >
-        {talents.map((item, index) => {
+        <EditShow>
+          <EditTable value='fdfjo' />
+          <EditTable value='fdfjo' />
+          <DeleteIcon />
+          <ConfirmButton>確認</ConfirmButton>
+          <CancelButton>還原</CancelButton>
+        </EditShow>
+        {/* {talents.map((item, index) => {
           return (
             <>
               <Intelligence
@@ -73,11 +80,11 @@ export const ListTest = () => {
               />
             </>
           )
-        })}
+        })} */}
       </Admin>
     </>
   )
 }
-export const add = () => {
-  return <AddIntelligence />
-}
+// export const add = () => {
+//   return <AddIntelligence />
+// }

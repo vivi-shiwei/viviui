@@ -4,8 +4,8 @@ import NextLink from 'next/link'
 import { Box, Link, Button } from '@chakra-ui/core'
 
 import Container from '../src/components/container'
-import AddminBatchAdd from '../src/components/adminBatchAdd'
-import NewButton from '../src/components/adminBatchAdd/newButton'
+// import AddminBatchAdd from '../src/components/adminBatchAdd'
+import NewButton from '../src/components/page/newButton'
 
 export default { title: 'showLing' }
 
@@ -34,30 +34,23 @@ export const SearchTest = () => {
     }
   ]
   return (
-    <>
-      <Container mt='30px'>
-        <AddminBatchAdd
-          title='批量新增'
-          body={
-            data.map((item, index) => {
-              return (
-                <>
-                  <NextLink
-                    href='#'
-                    as='#'
-                    key={index}
-                  >
-                    <Link _hover={{ textDecoration: 'none' }} m={1}>
-                      <NewButton>{item.name}</NewButton>
-                    </Link>
-                  </NextLink>
-                </>
-              )
-            })
+    <Container mt='30px' d='block' w='400px'>
+      {
+        data.map((item, index) => {
+          return (
+            <NextLink
+              href='#'
+              as='#'
+              key={index}
+            >
+              <Link _hover={{ textDecoration: 'none' }} m={1}>
+                <NewButton w='400px'>{item.name}</NewButton>
+              </Link>
+            </NextLink>
+          )
+        })
 
-          }
-        />
-      </Container>
-    </>
+      }
+    </Container>
   )
 }
