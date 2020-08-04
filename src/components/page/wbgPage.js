@@ -24,7 +24,7 @@ const WbgPage = ({ backurl, title, nodivider, children, ...props }) => {
       )}
 
       {
-        (!!children && !!title) && (
+        !!title && (
           <Box
             as='div'
             w={{ base: '100%', md: '90%' }}
@@ -60,7 +60,10 @@ const WbgPage = ({ backurl, title, nodivider, children, ...props }) => {
                     {!nodivider && <Divider my={6} d={{ base: 'none', md: 'flex' }} />}
                   </>
                 )}
-                {children}
+
+                {
+                  !!children && (children)
+                }
               </Box>
             </Box>
           </Box>
