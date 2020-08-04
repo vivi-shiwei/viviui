@@ -23,48 +23,58 @@ const WbgPage = ({ backurl, title, nodivider, children, ...props }) => {
         </Box>
       )}
 
-      {(!!children && !!title) ? (
-        <Box
-          as='div'
-          w={{ base: '100%', md: '90%' }}
-          mt='2px'
-          mx='auto'
-          bg='white'
-          minH='100vh'
-          maxWidth='928px'
-          borderRadius='4px 4px 0 0'
-          position='relative'
-          boxShadow={{
-            base: '',
-            sm: '',
-            md: '0 -1px 10px rgba(0,0,0,0.05), 0 1px 4px rgba(0,0,0,0.1), 0 10px 30px #f3ece8'
-          }}
-        >
-          <Box pt='1px'>
-            <Box
-              as='section'
-              mx='auto'
-              w='100%'
-              maxW={{ base: '100%', sm: '100%', md: '800px' }}
-              backgroundColor='white'
-              rounded={8}
-              transition='0.3s'
-            >
+      {
+        !!title && (
+          <Box
+            as='div'
+            w={{ base: '100%', md: '90%' }}
+            mt='2px'
+            mx='auto'
+            bg='white'
+            minH='100vh'
+            maxWidth='928px'
+            borderRadius='4px 4px 0 0'
+            position='relative'
+            boxShadow={{
+              base: '',
+              sm: '',
+              md: '0 -1px 10px rgba(0,0,0,0.05), 0 1px 4px rgba(0,0,0,0.1), 0 10px 30px #f3ece8'
+            }}
+          >
+            <Box pt='1px'>
+              <Box
+                as='section'
+                mx='auto'
+                w='100%'
+                maxW={{ base: '100%', sm: '100%', md: '800px' }}
+                backgroundColor='white'
+                rounded={8}
+                transition='0.3s'
+              >
 
-              {!!title && (
-                <>
-                  <Box as='header' pt={4} px={16}>
-                    {title}
-                  </Box>
-                  {!nodivider && <Divider my={6} d={{ base: 'none', md: 'flex' }} />}
-                </>
-              )}
-              {children}
+                {!!title && (
+                  <>
+                    <Box as='header' pt={4} px={16}>
+                      {title}
+                    </Box>
+                    {!nodivider && <Divider my={6} d={{ base: 'none', md: 'flex' }} />}
+                  </>
+                )}
+
+                {
+                  !!children && (children)
+                }
+              </Box>
             </Box>
           </Box>
-        </Box>
-      ) : children}
+        )
+      }
 
+      {
+        (!!children && !title) && (
+          children
+        )
+      }
     </Box>
   )
 }

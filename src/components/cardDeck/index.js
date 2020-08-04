@@ -1,16 +1,38 @@
-import React from 'react'
-import HeaderContainer from '../container'
-import GroupCards from './groupCard'
+import React, { Children } from 'react'
 
-const CardDeck = ({ title, groupCard, children, ...props }) => {
+import Container from '../container'
+
+import GroupCards from './groupCard'
+import Fieldset from './fieldset'
+import Card from './card'
+
+// 卡片組
+const CardDeck = ({ children, ...props }) => {
+  // 創建一個 title 的數組
+  const title = []
+  // 創建一個 groupCard 的數組
+  const groupCard = []
+
+  // 把 Children 裏的數據 map 循環出來
+  Children.map(children, (c, i) => {
+    switch (c.type) {
+      // 查找子集為 Fieldset 類型的數據，并且添加到 title 數組裏。
+      case Fieldset:
+        title.push(c)
+        break
+      case Card:
+        // 查找子集為 Card 類型的數據，并且添加到 groupCard 數組裏。
+        groupCard.push(c)
+        break
+    }
+  })
   return (
-    <HeaderContainer pb={4} px={0} maxW='960px' {...props}>
+    <Container pb={4} maxW='960px' {...props}>
       {title}
       <GroupCards>
         {groupCard}
       </GroupCards>
-      {children}
-    </HeaderContainer>
+    </Container>
   )
 }
 

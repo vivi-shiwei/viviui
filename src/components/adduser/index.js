@@ -1,22 +1,13 @@
 import React, { memo } from 'react'
 import {
-  Heading
+  Box
 } from '@chakra-ui/core'
 
-const addUser = ({ heading, describeTable, children, ...props }) => {
+const addUser = ({ children, ...props }) => {
   return (
-    <>
-      <Heading
-        as='h2'
-        textAlign='center'
-        size='lg'
-        overflow='hidden'
-        textOverflow='ellipsis'
-        whiteSpace='nowrap'
-      > {heading}
-      </Heading>
-      {describeTable}
-    </>
+    <Box>
+      {children}
+    </Box>
   )
 }
 

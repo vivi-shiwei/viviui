@@ -1,16 +1,20 @@
 import React from 'react'
 import { Box } from '@chakra-ui/core'
 
-import Container from '../src/components/container'
 import AddUser from '../src/components/addUser'
-import TableItem from '../src/components/addUser/tableItem'
 import Page from '../src/components/page'
 import HeaderPage from '../src/components/page/headerPage'
-
+import Table from '../src/components/addUser/table'
+import TableHead from '../src/components/addUser/tableHead'
+import TableBody from '../src/components/addUser/tableBody'
+import TableItem from '../src/components/addUser/tableItem'
+import TableCell from '../src/components/addUser/tableCell'
+import TableTr from '../src/components/addUser/tableTr'
+// storybook
 export default { title: 'addUser' }
 
-export const DescriptionTest = () => {
-  const tableHead = [
+export const table = () => {
+  const tableHeada = [
     { title: '姓名', width: 200 },
     { title: '英文姓名', width: 200 },
     { title: '性別', width: 200 },
@@ -74,32 +78,40 @@ export const DescriptionTest = () => {
       describe: '學生、老師、學校主管、學校管理員必填一個，學校管理員不能是學生的身份，請填入：是 或 否'
     }
   ]
+  const header = ['序號', '名稱']
   return (
-    <Container mt='30px'>
-      <AddUser
-        heading='新增用户'
-        describeTable={
-          <Box as='table' w='100%' mt={{ base: '4', sm: '4', md: '7' }}>
-            <Box as='thead'>
-              <Box as='tr' h='50px'>
-                <Box as='td' border='1px #CBD5E0 solid' textAlign='center' w='60px'>序號</Box>
-                <Box as='td' border='1px #CBD5E0 solid' textAlign='center' w='180px'>名稱</Box>
-                <Box as='td' border='1px #CBD5E0 solid' textAlign='center'>值</Box>
-              </Box>
-            </Box>
-            <Box as='tbody'>
-              {data.map((item, index) => {
-                return (<TableItem key={index} item={item} index={index} />)
-              })}
-            </Box>
-          </Box>
-        }
-      />
-    </Container>
+    <Page nodivider='false' title={<HeaderPage fontSize='28px'>新增用户</HeaderPage>}>
+      <AddUser>
+        <Table>
+          <TableHead>
+            <TableTr>
+              <TableCell textAlign='center' w='60px' width={{ base: '20%', sm: '20%' }}>序號</TableCell>
+              <TableCell textAlign='center' w='180px' px={2} py={3} width={{ base: '30%', sm: '30%' }}>名稱</TableCell>
+              <TableCell px={{ base: '1', sm: '1', md: '4' }} py={3}>值</TableCell>
+            </TableTr>
+          </TableHead>
+          <TableBody>
+            {data.map((item, index) => {
+              return (
+                <>
+                  <TableTr>
+                    <TableCell textAlign='center' w='60px' width={{ base: '20%', sm: '20%' }}>{index + 1}</TableCell>
+                    <TableCell textAlign='center' w='180px' px={2} py={3} width={{ base: '30%', sm: '30%' }}>{item.fieldName}</TableCell>
+                    <TableCell px={{ base: '1', sm: '1', md: '4' }} py={3}>{item.describe}</TableCell>
+                  </TableTr>
+                </>
+              )
+            })}
+
+          </TableBody>
+        </Table>
+      </AddUser>
+
+    </Page>
   )
 }
 
-export const table = () => {
+export const tableTest = () => {
   const tableHead = [
     { title: '姓名', width: 200 },
     { title: '英文姓名', width: 200 },
@@ -164,14 +176,14 @@ export const table = () => {
       describe: '學生、老師、學校主管、學校管理員必填一個，學校管理員不能是學生的身份，請填入：是 或 否'
     }
   ]
+  const header = ['序號', '名稱']
   return (
-    <Page title={<HeaderPage>管理员</HeaderPage>}>
+    <Page nodivider='false' title={<HeaderPage fontSize='28px'>新增用户</HeaderPage>}>
       <AddUser
-        heading='新增用户'
         describeTable={
-          <Box as='table' w='100%' mt={{ base: '4', sm: '4', md: '7' }}>
-            <Box as='thead'>
-              <Box as='tr' h='50px'>
+          <Box as='table' w='100%' mt={{ base: '4', sm: '4', md: '7' }} letterSpacing='0.05rem'>
+            <Box as='thead' fontWeight='bold'>
+              <Box as='tr' h='50px' fontSize={{ base: '12px', sm: '12px', md: '16px' }}>
                 <Box as='td' border='1px #CBD5E0 solid' textAlign='center' w='60px'>序號</Box>
                 <Box as='td' border='1px #CBD5E0 solid' textAlign='center' w='180px'>名稱</Box>
                 <Box as='td' border='1px #CBD5E0 solid' textAlign='center'>值</Box>

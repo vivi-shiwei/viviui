@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React, { memo, Children } from 'react'
 import {
   Flex,
   useDisclosure,
@@ -34,7 +34,7 @@ const Header = ({
   let right = null
   let drawerItems = null
 
-  React.Children.map(children, (c, i) => {
+  Children.map(children, (c, i) => {
     switch (c.type) {
       case HeaderLogo:
         logo = c // 自定義logo

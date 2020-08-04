@@ -1,3 +1,8 @@
+## viviui 1.2.7
+  
+  - 對 page Component 的改良：
+  - 對 CardDeck Component 的改良：
+
 ## viviui 1.2.5
 
   - ModalSelector 的 component 的改良：
