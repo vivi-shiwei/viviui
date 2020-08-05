@@ -1007,3 +1007,535 @@ CardDeck 的 props
         </CardDeck>
       )
     }
+
+
+## page
+
+相关组件
+
+
+- Page：为其子级提供上下文的包装器。
+- HeaderPage： Page 頭部的 Heading 文字  。
+- BackButton： 返回按鈕。
+- DeleteButton： 刪除按鈕。
+- DeleteRemind： 刪除提示及按鈕。
+- LabelName： 標簽加名字，例：name：vivi。
+- ManageMent： 有副標題的頁面。
+- ColumnIconText： 輸入 icon 與文字，文字下有橫綫。
+- NewButton： 一個新的按鈕。
+- Row： 顯示簡單個人學校用戶的使用 component。
+- SureButton： 確認按鈕。
+
+
+    import{
+      Page,
+      HeaderPage,
+      BackButton,
+      DeleteIconButton,
+      DeleteRemind,
+      LabelName,
+      ManageMent,
+      ColumnIconText
+      NewButton,
+      Row,
+      SureButton
+    } from 'viviui'
+
+用法
+
+HeaderPage 的 component 用法
+
+HeaderPage 接收的參數
+
+
+| 名字    | 描述                                               |
+| ----- | ------------------------------------------------ |
+| props | 能接受 children 與 chakra 的 Hading 样式到 HeaderPage 里。 |
+
+
+HeaderPage 的 props
+
+
+| 名字        | 默認     | 描述   |
+| --------- | ------ | ---- |
+| textAlign | center | 字體居中 |
+
+只需要直接傳入文字就行了
+
+![](https://paper-attachments.dropbox.com/s_4D810874F0863F787ABE5EC187A79D50C774EE1EABF593725F3D079EBF3FDC6B_1596595320215_image.png)
+
+    <HeaderPage>這是HeaderPage component</HeaderPage>
+
+BackButton 的 component 用法
+
+BackButton 接收的參數
+
+
+| 名字    | 描述                                               |
+| ----- | ------------------------------------------------ |
+| props | 能接受 children 與 chakra 的 Button 样式到 BackButton 里。 |
+
+BackButton 的 props
+
+
+| 名字              | 默認                                                  | 描述                           |
+| --------------- | --------------------------------------------------- | ---------------------------- |
+| backgroundColor | #c2c2c2                                             | BackButton 的背景顔色             |
+| minW            | {{ base: '100%', sm: '100%', md: '200px' }}         | BackButton 隨著屏幕的擴大縮小而變化      |
+| mr              | 12px                                                | 右邊外邊距為 12px                  |
+| mt              | 32px                                                | 上面外邊距為 32px                  |
+| color           | white                                               | 字體顔色為白色                      |
+| _hover          | {{backgroundColor: '#b8b8b8'}}                      | 鼠標移上去后顔色改變                   |
+| _active         | {{boxShadow: '0 0 0 3px rgba(175, 175, 175, 0.6)'}} | 點下去那瞬間會對 BackButton 進行邊框陰影賦值 |
+
+
+點擊前
+
+![](https://paper-attachments.dropbox.com/s_4D810874F0863F787ABE5EC187A79D50C774EE1EABF593725F3D079EBF3FDC6B_1596597287106_image.png)
+
+
+點擊下去不動的時候
+
+
+![](https://paper-attachments.dropbox.com/s_4D810874F0863F787ABE5EC187A79D50C774EE1EABF593725F3D079EBF3FDC6B_1596597346765_image.png)
+
+
+
+    <BackButton>返回</BackButton>
+
+DeleteIconButton 的 component 用法
+
+DeleteIconButton 接收的參數
+
+
+| 名字    | 描述                                                         |
+| ----- | ---------------------------------------------------------- |
+| props | 能接受 children 與 chakra 的 IconButton 样式到 DeleteIconButton 里。 |
+
+DeleteIconButton 的 props
+
+
+| 名字           | 默認     | 描述                   |
+| ------------ | ------ | -------------------- |
+| icon         | delete | 默認為 delete 垃圾桶的 icon |
+| variantColor | red    | 默認背景為紅色              |
+
+
+
+![](https://paper-attachments.dropbox.com/s_4D810874F0863F787ABE5EC187A79D50C774EE1EABF593725F3D079EBF3FDC6B_1596597877459_image.png)
+
+    <DeleteIconButton />
+
+DeleteRemind 的 component 用法
+
+DeleteRemind接收的參數
+
+
+| 名字       | 描述                                   |
+| -------- | ------------------------------------ |
+| title    | DeleteRemind 的標題                     |
+| content  | DeleteRemind 的文字説明                   |
+| children | 刪除按鈕所放的 children 位置                  |
+| …props   | 能接受 chakra 的 Box 样式到 DeleteRemind 里。 |
+
+
+DeleteRemind 的 props
+
+
+| 名字         | 默認                | 描述                  |
+| ---------- | ----------------- | ------------------- |
+| border     | 1px solid #FED7D7 | 邊框是實綫1px，顔色是#FED7D7 |
+| background | #FFF5F5           | 背景顔色                |
+| rounded    | 16px              | 邊框的弧度               |
+| mt         | 80px              | 上方的外邊距為80px         |
+| p          | 20px              | 内邊距為20px            |
+
+網頁版
+
+
+![](https://paper-attachments.dropbox.com/s_4D810874F0863F787ABE5EC187A79D50C774EE1EABF593725F3D079EBF3FDC6B_1596599569786_image.png)
+
+
+手機版
+
+
+![](https://paper-attachments.dropbox.com/s_4D810874F0863F787ABE5EC187A79D50C774EE1EABF593725F3D079EBF3FDC6B_1596599689222_image.png)
+
+
+
+    <DeleteRemind
+      title='標題'
+      content='這裏是添加的正文提示。'
+    >
+      <SureButton variantColor='red'>刪除</SureButton>
+    </DeleteRemind>
+
+LabelName、Row 的 component 用法
+
+
+-  LabelName 和 Row 的 component 需要一起用
+
+LabelName 的 component 用法
+
+LabelName 接收的參數
+
+
+| 名字       | 描述                                |
+| -------- | --------------------------------- |
+| label    | LabelName 的標簽。                    |
+| name     | LabelName 標簽后的名字                  |
+| type     | LabelName 的類型                     |
+| children | LabelName的子集                      |
+| ...props | 能接受 chakra 的 Box 样式到 LabelName 里。 |
+
+
+LabelName 的props
+
+
+| 名字         | 默認                              | 描述              |
+| ---------- | ------------------------------- | --------------- |
+| display    | {{ base: 'block', sm: 'flex' }} | 隨著屏幕擴大縮小而改變排列類型 |
+| lineHeight | 40px                            | 字體高度為40px       |
+
+
+Row 的 component 用法
+
+ Row 接收的參數
+
+
+| 名字           | 描述                                |
+| ------------ | --------------------------------- |
+| right        | LabelName 的標簽。                    |
+| left         | LabelName 標簽后的名字                  |
+| name         | Row 的 ch                          |
+| profilePhoto | 頭像的路徑                             |
+| noDivider    | 是否需要底綫                            |
+| children     | Row 的子集                           |
+| ...props     | 能接受 chakra 的 Box 样式到 LabelName 里。 |
+
+
+Row 的 props
+
+
+| 名字       | 默認                                                         | 描述              |
+| -------- | ---------------------------------------------------------- | --------------- |
+| justify  | space-between                                              | 排列是兩邊有距離的排列     |
+| width    | full                                                       | 寬的屏幕是滿屏         |
+| maxWidth | 1280px                                                     | 最大寬度為 1280px    |
+| mx       | auto                                                       | x軸上外邊距為 auto    |
+| px       | {{ base: '1.25rem', sm: '1.25rem', md: '1.25rem', lg: 0 }} | 内邊距隨著屏幕的擴大縮小而變化 |
+
+
+網頁版
+
+
+![](https://paper-attachments.dropbox.com/s_4D810874F0863F787ABE5EC187A79D50C774EE1EABF593725F3D079EBF3FDC6B_1596610881733_image.png)
+
+
+手機版
+
+
+![](https://paper-attachments.dropbox.com/s_4D810874F0863F787ABE5EC187A79D50C774EE1EABF593725F3D079EBF3FDC6B_1596610860812_image.png)
+
+
+
+    <Row
+      profilePhoto={MyImage}
+      name='vivi'
+      left={
+        <>
+          <LabelName type='（学生）' name='vivi' label='姓名' />
+        </>
+      }
+      right={
+        <>
+          <DeleteIconButton />
+          <EditButton icon='edit' variantColor='blue' ml='5px' />
+        </>
+      }
+    />
+    
+
+
+ColumnIconText  和 Management 的 component 用法
+
+ColumnIconText 的 component 用法
+
+ColumnIconText 接收的參數
+
+
+| 名字            | 描述                                          |
+| ------------- | ------------------------------------------- |
+| icon          | ColumnIconText 的icon                        |
+| title         | ColumnIconText 的文字                          |
+| children      | ColumnIconText 的子集                          |
+| listIconProps | 能接受 chakra 的 ListIcon 样式到 ColumnIconText 里。 |
+| dividerProps  | 能接受 chakra 的 Box 样式到 ColumnIconText 里。      |
+| …props        | 能接受 chakra 的 Box 样式到 ColumnIconText 里。      |
+
+
+ColumnIconText 的 listIconProps
+
+
+| 名字         | 默認                             | 描述            |
+| ---------- | ------------------------------ | ------------- |
+| fontSize   | {{ base: '23px', md: '26px' }} | 字體隨著屏幕擴大縮小而變化 |
+| alignItems | center                         | 上下居中          |
+
+
+
+ColumnIconText 的 listIconProps
+
+
+| 名字       | 默認                             | 描述            |
+| -------- | ------------------------------ | ------------- |
+| fontSize | {{ base: '23px', md: '26px' }} | 字體隨著屏幕擴大縮小而變化 |
+
+
+ColumnIconText 的 dividerProps
+
+
+| 名字           | 默認                                                      | 描述              |
+| ------------ | ------------------------------------------------------- | --------------- |
+| w            | { base: 'calc(100% - 32px)', md: 'calc(100% - 35px)' }} | 隨著屏幕擴大縮小計算出它的寬度 |
+| borderBottom | 1px solid #ededed                                       | 底綫為實綫 1px       |
+| p            | 8px                                                     | 内邊距為8px         |
+
+
+Management 的 component 用法
+
+Management 接收的參數
+
+
+| 名字               | 描述                                     |
+| ---------------- | -------------------------------------- |
+| subTitle         | Management 的 副標題                       |
+| children         | Management 的子集                         |
+| descriptionProps | 能接受 chakra 的 Heading 样式到 Management 里。 |
+| ...props         | 能接受 chakra 的 Box 样式到 Management 里。     |
+
+
+Management 的 descriptionProps
+
+
+| 名字       | 默認                             | 描述            |
+| -------- | ------------------------------ | ------------- |
+| fontSize | {{ base: '15px', sm: '1rem' }} | 字體隨著屏幕擴大縮小而變化 |
+| mt       | 40px                           | 外邊距的頭部        |
+| mb       | 16px                           | 外邊距的地步        |
+
+
+
+![](https://paper-attachments.dropbox.com/s_4D810874F0863F787ABE5EC187A79D50C774EE1EABF593725F3D079EBF3FDC6B_1596612659119_image.png)
+
+
+
+    <Management
+      px='5%'
+      subTitle='你是管理员，可以拥有以下操作...'
+    >
+      <ColumnLine icon={FaSchool} color='#316bc3'>修改学校</ColumnLine>
+      <ColumnLine icon={FaUserEdit} color='#316bc3'>学校用户</ColumnLine>
+      <ColumnLine icon={GoTrashcan} color='#316bc3'>批量新增</ColumnLine>
+      <ColumnLine icon={AiTwotoneSetting} color='#316bc3'>专长设定</ColumnLine>
+      <ColumnLine icon={AiTwotoneSetting} color='#316bc3'>智能设定</ColumnLine>
+    </Management>
+
+NewButton 的 component 用法
+
+NewButton 傳入的參數
+
+
+| 名字    | 描述                                              |
+| ----- | ----------------------------------------------- |
+| props | 能接受 children 與 chakra 的 Button 样式到 NewButton 里。 |
+
+
+NewButton 的 props
+
+
+| 名字           | 默認    | 描述              |
+| ------------ | ----- | --------------- |
+| variantColor | blue  | NewButton 的背景顔色 |
+| rounded      | 999px | 邊框的弧度           |
+| mt           | 8px   | 頭部的外邊距          |
+
+
+
+![](https://paper-attachments.dropbox.com/s_4D810874F0863F787ABE5EC187A79D50C774EE1EABF593725F3D079EBF3FDC6B_1596615511985_image.png)
+
+
+
+    <NewButton w='100px'>新增</NewButton>
+
+SureButton 的 component 用法
+
+SureButton 傳入的參數
+
+
+| 名字    | 描述                                              |
+| ----- | ----------------------------------------------- |
+| props | 能接受 children 與 chakra 的 Button 样式到 NewButton 里。 |
+
+
+SureButton 的 props
+
+
+| 名字           | 默認                                          | 描述               |
+| ------------ | ------------------------------------------- | ---------------- |
+| variantColor | blue                                        | SureButton 的背景顔色 |
+| minW         | {{ base: '100%', sm: '100%', md: '200px' }} | 邊框的弧度            |
+| mr           | 12px                                        | 右邊外邊距 12px       |
+| mt           | 32px                                        | 頭部的外邊距 32px      |
+
+
+
+![](https://paper-attachments.dropbox.com/s_4D810874F0863F787ABE5EC187A79D50C774EE1EABF593725F3D079EBF3FDC6B_1596616272876_image.png)
+
+
+
+    <SureButton>確認</SureButton>
+
+Page 的 component 用法
+
+Page 能傳入的參數
+
+| 名字        | 描述                                              |
+| --------- | ----------------------------------------------- |
+| backurl   | Page 板塊以上的數據                                    |
+| nodivider | title 底綫默認為 true ，不需要這個 title 底綫時直接傳入 nodivider |
+| children  | Page的子集                                         |
+| ...props  | 传入 chakra 能接受的 Box 样式到 Page 的最外层 Box 里          |
+
+
+
+1. 
+
+网页版
+
+
+![](https://paper-attachments.dropbox.com/s_4D810874F0863F787ABE5EC187A79D50C774EE1EABF593725F3D079EBF3FDC6B_1596622916422_image.png)
+
+
+手机版
+
+
+![](https://paper-attachments.dropbox.com/s_4D810874F0863F787ABE5EC187A79D50C774EE1EABF593725F3D079EBF3FDC6B_1596622840658_image.png)
+
+
+
+    const editDashboard = () => {
+      return (
+        <Page>
+          <HeaderPage size='lg' as='h2' pt={4}>編輯 Dashboard</HeaderPage>
+          <HeaderPage
+            fontSize={{ base: '17px', md: '25px' }}
+            mt={5}
+          >
+            聖若瑟教區中學第六校
+          </HeaderPage>
+          <Box as='article' px={{ base: 8, sm: 8, md: 16 }} pb={16}>
+            <Box
+              d='flex'
+              justifyContent='space-between'
+              flexDirection={{ base: 'column-reverse', md: 'initial' }}
+            >
+              <BackButton>返回</BackButton>
+              <SureButton>確認</SureButton>
+            </Box>
+            <DeleteRemind
+              title='刪除 Dashboard'
+              content='删除 Dashborad 後后，將會清空該 Dashborad 的所有資料，該操作不能還原，請謹慎操作。'
+              >
+              <SureButton variantColor='red'>刪除</SureButton>
+            </DeleteRemind>
+          </Box>
+        </Page>
+      )
+    }
+
+
+
+2. 
+
+网页版
+
+
+![](https://paper-attachments.dropbox.com/s_4D810874F0863F787ABE5EC187A79D50C774EE1EABF593725F3D079EBF3FDC6B_1596624112427_image.png)
+
+
+手机版
+
+
+![](https://paper-attachments.dropbox.com/s_4D810874F0863F787ABE5EC187A79D50C774EE1EABF593725F3D079EBF3FDC6B_1596624144237_image.png)
+
+
+
+    <Page
+      title={
+        <HeaderPage size='lg' as='h2' pt={4}>編輯學校</HeaderPage>
+      }
+    >
+      <Box as='article' px={{ base: 8, sm: 8, md: 16 }} pb={16}>
+        <Box
+          top='0px'
+          left='0px'
+          bottom='0px'
+          right='0px'
+          my={5}
+        >
+          <Row
+            profilePhoto={MyImage}
+            name='vivi'
+            left={
+              <>
+                <LabelName type='（学生）' name='vivi' label='姓名' />
+                <LabelName name='343546' label='學號' />
+                <LabelName name='vivi' label='姓名' />
+              </>
+            }
+            right={
+              <>
+                <DeleteIconButton />
+                <EditButton icon='edit' variantColor='blue' />
+              </>
+            }
+          />
+        </Box>
+      </Box>
+    </Page>
+
+
+3. 
+
+网页版
+
+
+![](https://paper-attachments.dropbox.com/s_4D810874F0863F787ABE5EC187A79D50C774EE1EABF593725F3D079EBF3FDC6B_1596624331171_image.png)
+
+
+手机版
+
+
+![](https://paper-attachments.dropbox.com/s_4D810874F0863F787ABE5EC187A79D50C774EE1EABF593725F3D079EBF3FDC6B_1596624304967_image.png)
+
+
+
+    <Page
+      title={
+        <HeaderPage>
+          管理员
+        </HeaderPage>
+      }
+    >
+      <Management
+        px='5%'
+        subTitle='你是管理员，可以拥有以下操作...'
+      >
+        <ColumnLine icon={FaSchool} color='#316bc3'>修改学校</ColumnLine>
+        <ColumnLine icon={FaUserEdit} color='#316bc3'>学校用户</ColumnLine>
+        <ColumnLine icon={GoTrashcan} color='#316bc3'>批量新增</ColumnLine>
+        <ColumnLine icon={AiTwotoneSetting} color='#316bc3'>专长设定</ColumnLine>
+        <ColumnLine icon={AiTwotoneSetting} color='#316bc3'>智能设定</ColumnLine>
+      </Management>
+    </Page>
