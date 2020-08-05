@@ -7,6 +7,7 @@ const DeleteButton = (props) => {
     <IconButton
       as='div'
       icon='delete'
+      variantColor='red'
       {...props}
     />
   )

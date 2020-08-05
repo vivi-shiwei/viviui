@@ -1,3 +1,8 @@
+## viviui 1.2.9
+
+- 对 page component 的改良，
+- 添加 page component 的使用
+
 ## viviui 1.2.8  
   
   - 對 page 的改良

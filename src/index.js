@@ -300,7 +300,6 @@ export { default as ModalWithHeader } from './components/newModal/modalWithHeade
 
 export { default as BlueButton } from './components/blueButton'
 export { default as DeleteIconButton } from './components/page/deleteButton'
-export { default as Row } from './components/page/row'
 
 // editShow
 
@@ -309,3 +308,17 @@ export { default as EditTable } from './components/editShow/editTable'
 export { default as DeleteIcon } from './components/editShow/deleteIcon'
 export { default as ConfirmButton } from './components/editShow/confirmButton'
 export { default as CancelButton } from './components/editShow/cancelButton'
+
+// page
+
+export { default as Page } from './components/page'
+export { default as ColumnIconText } from './components/page/columnIconText'
+export { default as BackButton } from './components/page/backButton'
+export { default as DeleteButton } from './components/page/deleteButton'
+export { default as DeleteRemind } from './components/page/deleteRemind'
+export { default as HeaderPage } from './components/page/headerPage'
+export { default as LabelName } from './components/page/labelName'
+export { default as ManageMent } from './components/page/manageMent'
+export { default as NewButton } from './components/page/newButton'
+export { default as Row } from './components/page/row'
+export { default as SureButton } from './components/page/sureButton'

@@ -37,29 +37,26 @@ export const ManagementTest = () => {
     >
       <Management
         px='5%'
-        text='你是管理员，可以拥有以下操作...'
-        columnLine={
-          <List spacing={3}>
-            {
-              data.map((item, index) =>
-                <ListItem key={index}>
-                  <LinkNext href='#' as='a'>
-                    <Link
-                      d='flex'
-                      alignItems='center'
-                      _hover={{
-                        textDecoration: 'none'
-                      }}
-                      color='#316bc3'
-                    >
-                      <ColumnLine icon={item.icon}>{item.name}</ColumnLine>
-                    </Link>
-                  </LinkNext>
-                </ListItem>)
-            }
-          </List>
-        }
-      />
+        subTitle='你是管理员，可以拥有以下操作...'
+      >
+        <List spacing={3}>
+          {
+            data.map((item, index) =>
+              <ListItem key={index}>
+                <LinkNext href='#' as='a'>
+                  <Link
+                    _hover={{
+                      textDecoration: 'none'
+                    }}
+                    color='#316bc3'
+                  >
+                    <ColumnLine icon={item.icon}>{item.name}</ColumnLine>
+                  </Link>
+                </LinkNext>
+              </ListItem>)
+          }
+        </List>
+      </Management>
 
     </WhiteBoardPage>
   )

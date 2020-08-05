@@ -5,7 +5,7 @@ import {
 } from '@chakra-ui/core'
 
 // 學校管理員的數據
-const Management = ({ text, columnLine, children, descriptionProps, ...props }) => {
+const Management = ({ subTitle, children, descriptionProps, ...props }) => {
   return (
     <Box as='article' {...props}>
       <Heading
@@ -15,10 +15,9 @@ const Management = ({ text, columnLine, children, descriptionProps, ...props }) 
         mb={4}
         {...descriptionProps}
       >
-        {text}
+        {subTitle}
       </Heading>
       {children}
-      {columnLine}
     </Box>
   )
 }

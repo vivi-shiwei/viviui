@@ -53,9 +53,9 @@ const WbgPage = ({ backurl, title, nodivider, children, ...props }) => {
                 transition='0.3s'
               >
 
-                {(!!title && !!title.length) && (
+                {!!title && (
                   <>
-                    <Box as='header' pt={4} px={16}>
+                    <Box as='header' pt={4} px={16} alignItems='center'>
                       {title}
                     </Box>
                     {!nodivider && <Divider my={6} d={{ base: 'none', md: 'flex' }} />}
@@ -70,9 +70,7 @@ const WbgPage = ({ backurl, title, nodivider, children, ...props }) => {
       }
 
       {
-        (!!children && !title) && (
-          children
-        )
+        (!!children && !title) && (children)
       }
     </Box>
   )

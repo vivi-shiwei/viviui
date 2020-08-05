@@ -15,6 +15,7 @@ import HeaderPage from '../src/components/page/headerPage'
 import BackButton from '../src/components/page/backButton'
 import SureButton from '../src/components/page/sureButton'
 import DeleteRemind from '../src/components/page/deleteRemind'
+// import DeleteIconButton from '../src/components/page/deleteButton'
 import LabelName from '../src/components/page/labelName'
 import { DeleteIconButton, Row, EditButton } from '../src/index'
 
@@ -22,6 +23,13 @@ import MyImage from '../static/QQ20200518181405.jpg'
 export default {
   title: 'wbgLayout'
 }
+
+export const headering = () => {
+  return (
+    <HeaderPage>這是HeaderPage component</HeaderPage>
+  )
+}
+
 export const editDashboard = () => {
   let initialValues = {}
   initialValues = {
@@ -33,66 +41,27 @@ export const editDashboard = () => {
   }
   return (
     <WhiteBoardPage>
-      {/* <HeaderPage size='lg' as='h2' pt={4}>編輯 Dashboard</HeaderPage>
+      <HeaderPage size='lg' as='h2' pt={4}>編輯</HeaderPage>
       <HeaderPage
         fontSize={{ base: '17px', md: '25px' }}
         mt={5}
       >
-        聖若瑟教區中學第六校
-      </HeaderPage> */}
-      <Box as='article' px={{ base: 8, sm: 8, md: 16 }} pb={16}>
-        <Formik
-          initialValues={initialValues}
-          onSubmit={(values, { setSubmitting, setFieldValue }) => {
-            const { name, isDefault } = values
-            const input = {
-              name,
-              isDefault
-            }
-            console.log(input)
-            setSubmitting(false)
-          }}
+        这也是一个Header
+      </HeaderPage>
+      <Box px={{ base: 8, sm: 8, md: 16 }} py={4}>
+        <Box
+          // display={{ base: 'block', sm: 'block', md: 'flex' }}
+          // justifyContent='space-between'
+          d='flex'
+          justifyContent='space-between'
+          flexDirection={{ base: 'column-reverse', md: 'initial' }}
         >
-          {({ props, isSubmitting, setFieldValue }) => (
-            <Form>
-              <Field name='name' validate={validateName}>
-                {({ field, form }) => (
-                  <FormControl mt={4} isInvalid={form.errors.name && form.touched.name}>
-                    <FormLabel htmlFor='dashboard-name'>Dashborad 名稱</FormLabel>
-                    <Input id='dashboard-name' {...field} />
-                    <FormErrorMessage>{form.errors.name}</FormErrorMessage>
-                  </FormControl>
-                )}
-              </Field>
-              <Field name='isDefault'>
-                {({ field, form }) => (
-                  <FormControl
-                    mt={4}
-                    display='flex'
-                    alignItems='baseline'
-                  >
-                    <Checkbox id='is-default' {...field} defaultIsChecked={initialValues.isDefault} mr={4} />
-                    <FormLabel htmlFor='is-default'>是否為今年 Dashborad</FormLabel>
-                  </FormControl>
-                )}
-              </Field>
-              <Box
-                // display={{ base: 'block', sm: 'block', md: 'flex' }}
-                // justifyContent='space-between'
-                d='flex'
-                justifyContent='space-between'
-                flexDirection={{ base: 'column-reverse', md: 'initial' }}
-              >
-                <BackButton>返回</BackButton>
-                <SureButton>確認</SureButton>
-              </Box>
-              <DeleteRemind title='刪除 Dashboard' content='删除 Dashborad 後后，將會清空該 Dashborad 的所有資料，該操作不能還原，請謹慎操作。'>
-                <SureButton variantColor='red'>刪除</SureButton>
-              </DeleteRemind>
-            </Form>
-          )}
-        </Formik>
-
+          <BackButton>返回</BackButton>
+          <SureButton>確認</SureButton>
+        </Box>
+        <DeleteRemind title='刪除操作' content='請謹慎操作。'>
+          <SureButton variantColor='red'>刪除</SureButton>
+        </DeleteRemind>
       </Box>
     </WhiteBoardPage>
   )
@@ -128,6 +97,13 @@ export const editCls = () => {
         </>
       }
     >
+      <HeaderPage size='lg' as='h2' pt={4}>編輯 Dashboard</HeaderPage>
+      <HeaderPage
+        fontSize={{ base: '17px', md: '25px' }}
+        mt={5}
+      >
+        聖若瑟教區中學第六校
+      </HeaderPage>
       <Box as='article' px={{ base: 8, sm: 8, md: 16 }} pb={16}>
         <Formik
           initialValues={initialValues}
@@ -271,7 +247,10 @@ export const editSchool = () => {
                 <SureButton>確認</SureButton>
               </Box>
 
-              <DeleteRemind title='刪除 Dashboard' content='删除學校後，將會清空該學校成員，該操作不能還原，請謹慎操作。'>
+              <DeleteRemind
+                title='刪除 Dashboard'
+                content='删除學校後，將會清空該學校成員，該操作不能還原，請謹慎操作。'
+              >
                 <SureButton variantColor='red'>刪除</SureButton>
               </DeleteRemind>
             </Form>
@@ -291,17 +270,131 @@ export const InfiniteScrolltest = () => {
         <HeaderPage size='lg' as='h2' pt={4}>編輯學校</HeaderPage>
       }
     >
-      <Box as='article' px={{ base: 8, sm: 8, md: 16 }} pb={16} position='relative'>
+      <Box as='article' px={{ base: 8, sm: 8, md: 16 }} pb={16}>
         <Box
-          position='absolute'
+          // position='absolute'
           top='0px'
           left='0px'
           bottom='0px'
           right='0px'
-          overflow='hidden'
+          // overflow='hidden'
           my={5}
         >
-          <InfiniteScroll
+
+          <Row
+            profilePhoto={MyImage}
+            name='vivi'
+            left={
+              <>
+                <LabelName type='（学生）' name='vivi' label='姓名' />
+                <LabelName name='343546' label='學號' />
+                <LabelName name='vivi' label='姓名' />
+              </>
+            }
+            right={
+              <>
+                <DeleteIconButton />
+                <EditButton icon='edit' variantColor='blue' />
+              </>
+            }
+          />
+
+          <Row
+            profilePhoto={MyImage}
+            name='vivi'
+            left={
+              <>
+                <LabelName type='（学生）' name='vivi' label='姓名' />
+              </>
+            }
+            right={
+              <>
+                <DeleteIconButton />
+                <EditButton icon='edit' variantColor='blue' ml='5px' />
+              </>
+            }
+          />
+
+          <Row
+            profilePhoto={MyImage}
+            name='vivi'
+            left={
+              <>
+                <LabelName type='（学生）' name='vivi' label='姓名' />
+              </>
+            }
+            right={
+              <>
+                <DeleteIconButton />
+                <EditButton icon='edit' variantColor='blue' />
+              </>
+            }
+          />
+
+          <Row
+            profilePhoto={MyImage}
+            name='vivi'
+            left={
+              <>
+                <LabelName type='（学生）' name='vivi' label='姓名' />
+              </>
+            }
+            right={
+              <>
+                <DeleteIconButton />
+                <EditButton icon='edit' variantColor='blue' />
+              </>
+            }
+          />
+
+          <Row
+            profilePhoto={MyImage}
+            name='vivi'
+            left={
+              <>
+                <LabelName type='（学生）' name='vivi' label='姓名' />
+              </>
+            }
+            right={
+              <>
+                <DeleteIconButton />
+                <EditButton icon='edit' variantColor='blue' />
+              </>
+            }
+          />
+
+          <Row
+            profilePhoto={MyImage}
+            name='vivi'
+            left={
+              <>
+                <LabelName type='（学生）' name='vivi' label='姓名' />
+              </>
+            }
+            right={
+              <>
+                <DeleteIconButton />
+                <EditButton icon='edit' variantColor='blue' />
+              </>
+            }
+          />
+
+          <Row
+            profilePhoto={MyImage}
+            name='vivi'
+            left={
+              <>
+                <LabelName type='（学生）' name='vivi' label='姓名' />
+              </>
+            }
+            right={
+              <>
+                <DeleteIconButton />
+                <EditButton icon='edit' variantColor='blue' />
+              </>
+            }
+          />
+          {/* <InfiniteScroll
             pageStart={0}
             loadMore={items}
             hasMore={true || false}
@@ -312,7 +405,7 @@ export const InfiniteScrolltest = () => {
                 <Box w='100%' h='100px' key={index}>{item}</Box>
               )
             })}
-          </InfiniteScroll>
+          </InfiniteScroll> */}
         </Box>
       </Box>
     </WhiteBoardPage>
@@ -333,7 +426,7 @@ export const Rows = () => {
       }
       right={
         <>
-          <DeleteIconButton variantColor='red' mr='8px' />
+          <DeleteIconButton />
           <EditButton icon='edit' variantColor='blue' />
         </>
       }
