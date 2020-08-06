@@ -1,3 +1,8 @@
+## viviui 1.3.0
+
+- 新增 Table component
+
+
 ## viviui 1.2.9
 
 - 对 page component 的改良，

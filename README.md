@@ -1539,3 +1539,193 @@ Page 能傳入的參數
         <ColumnLine icon={AiTwotoneSetting} color='#316bc3'>智能设定</ColumnLine>
       </Management>
     </Page>
+  
+  ## Table
+
+  相关组件
+
+
+- Table：为其子级提供上下文的包装器。
+- TableHead： Table 的他头部
+- TableBody： Table 的正文内容。
+- TableCell： 选单的头部文字。
+- TableRow： 选单的线。
+
+
+    import{
+      Table,
+      TableHead,
+      TableBody,
+      TableCell,
+      TableRow
+    } from 'viviui'
+
+用法
+
+
+- Table 、 TableHead 、TableBody、TableCell 和 TableRow 是同个使用的。
+
+
+- Table
+
+Table 能传入的值
+
+
+| 名字    | 描述                             |
+| ----- | ------------------------------ |
+| props | 能接收 children 和 chakra 的 Box 样式 |
+
+
+Table 的 props
+
+
+| 名字            | 默认      | 描述         |
+| ------------- | ------- | ---------- |
+| w             | 99%     | 宽为父级容器的99% |
+| m             | auto    | 外边距为auto   |
+| letterSpacing | 0.05rem | 文字之间的距离    |
+
+
+
+- TableHead
+
+TableHead 能传入的值
+
+
+| 名字       | 描述                             |
+| -------- | ------------------------------ |
+| children | TableHead 的子集                  |
+| props    | 能接收 children 和 chakra 的 Box 样式 |
+
+
+
+- TableBody
+
+TableBody 能传入的值
+
+
+| 名字       | 描述                  |
+| -------- | ------------------- |
+| children | TableBody 的子集       |
+| …props   | 能接收 chakra 的 Box 样式 |
+
+
+
+- TableRow
+
+TableRow 能传入的值
+
+
+| 名字       | 描述                  |
+| -------- | ------------------- |
+| children | TableRow 的子集        |
+| …props   | 能接收 chakra 的 Box 样式 |
+
+
+TableRow 的 props
+
+
+| 名字 | 默认   | 描述     |
+| -- | ---- | ------ |
+| h  | 40px | 高为40px |
+
+
+网页版
+
+
+![](https://paper-attachments.dropbox.com/s_8EFB53B459DFBDB9C235502D4BECA487A512B429058057BF480D44183B2255BB_1596688400741_image.png)
+
+
+手机版
+
+
+![](https://paper-attachments.dropbox.com/s_8EFB53B459DFBDB9C235502D4BECA487A512B429058057BF480D44183B2255BB_1596688435240_image.png)
+
+
+
+    const table = () => {
+      const data = [
+        {
+          fieldName: '姓名',
+          describe: '必填'
+        },
+        {
+          fieldName: '英文姓名',
+          describe: '選填'
+        },
+        {
+          fieldName: '性別',
+          describe: '選填可'
+        },
+        {
+          fieldName: '學生證號碼',
+          describe: '選填'
+        },
+        {
+          fieldName: '身份證號碼',
+          describe: '選填可留空'
+        },
+        {
+          fieldName: '教青',
+          describe: '選填可留空'
+        },
+        {
+          fieldName: '拍卡卡號',
+          describe: '選填可留空'
+        },
+        {
+          fieldName: '電郵信箱',
+          describe: '必填'
+        },
+        {
+          fieldName: '學生',
+          describe: '學生'
+        },
+        {
+          fieldName: '老師',
+          describe: '學生'
+        },
+        {
+          fieldName: '學校主管',
+          describe: '學生'
+        },
+        {
+          fieldName: '學校管理員',
+          describe: '學生'
+        }
+      ]
+      return (
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell w='50px'>序號</TableCell>
+              <TableCell>名稱</TableCell>
+              <TableCell>值</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {data.map((item, index) => {
+              return (
+                <>
+                  <TableRow>
+    
+                    <TableCell textAlign='center'>
+                      {index + 1}
+                    </TableCell>
+    
+                    <TableCell px={{ base: '1', sm: '1', md: '4' }}>
+                      {item.fieldName}
+                    </TableCell>
+    
+                    <TableCell px={{ base: '1', sm: '1', md: '4' }} py={3}>
+                      {item.describe}
+                    </TableCell>
+    
+                  </TableRow>
+                </>
+              )
+            })}
+          </TableBody>
+        </Table>
+      )
+    }
