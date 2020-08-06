@@ -1056,14 +1056,15 @@ export const Children = () => {
           >
             {({ isEditing, onRequestEdit, onSubmit }) => (
               <>
-                <EditablePreview />
-                <EditableInput w='auto' onChange={(e) => { setTalentName(e.target.value) }} />
                 {!isEditing && (
                   <IconButton
                     variantColor='cyan' variant='outline'
                     ml={5} size='sm' icon='edit' onClick={onRequestEdit}
                   />
                 )}
+                <EditablePreview />
+                <EditableInput w='auto' onChange={(e) => { setTalentName(e.target.value) }} />
+
               </>
             )}
           </Editable>
