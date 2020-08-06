@@ -1,7 +1,7 @@
-## viviui 1.3.0
+## viviui 1.3.2
 
 - 新增 Table component
-
+- 优化 editShow 
 
 ## viviui 1.2.9
 

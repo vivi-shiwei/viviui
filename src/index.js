@@ -322,3 +322,10 @@ export { default as ManageMent } from './components/page/manageMent'
 export { default as NewButton } from './components/page/newButton'
 export { default as Row } from './components/page/row'
 export { default as SureButton } from './components/page/sureButton'
+
+// Table
+export { default as Table } from './components/table'
+export { default as TableBody } from './components/table/tableBody'
+export { default as TableCell } from './components/table/tableCell'
+export { default as TableHead } from './components/table/tableHead'
+export { default as TableRow } from './components/table/tableRow'
