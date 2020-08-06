@@ -1,14 +1,13 @@
 import React from 'react'
 import {
-  IconButton
+  Icon
 } from '@chakra-ui/core'
 
 // 刪除按鈕
 const DeleteButton = ({ ...props }) => {
   return (
-    <IconButton
-      icon='delete'
-      variantColor='red'
+    <Icon
+      name='delete'
       {...props}
     />
   )

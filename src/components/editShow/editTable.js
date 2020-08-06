@@ -9,20 +9,30 @@ import {
   EditableInput
 } from '@chakra-ui/core'
 
-// 編輯table
-const EditTable = ({ value, ...props }) => {
+// 編輯 EditTable
+const EditTable = ({ value, inputonChange, ...props }) => {
   return (
     <Editable
-      fontSize={{ base: '16px', sm: '20px', md: '24px' }}
+      fontSize={{ base: '20px', sm: '20px', md: '24px' }}
       color={props.color || 'green.600'}
       isPreviewFocusable={false}
-      defaultValue={value}
+      value={value}
       d='flex'
-      justifyContent='space-between'
       {...props}
     >
       {({ isEditing, onSubmit, onRequestEdit }) => (
         <>
+          {!isEditing && (
+            <Flex align='center'>
+              <IconButton
+                variantColor={props.color || 'green.600'}
+                variant='outline'
+                size='xs'
+                icon='edit'
+                onClick={onRequestEdit}
+              />
+            </Flex>
+          )}
           <Box
             p='5px 10px'
           >
@@ -35,20 +45,8 @@ const EditTable = ({ value, ...props }) => {
               textOverflow='ellipsis'
               justifyContent='space-between'
             />
-            <EditableInput />
+            <EditableInput onChange={inputonChange} />
           </Box>
-          {!isEditing && (
-            <Flex align='center'>
-              <IconButton
-                variantColor={props.color || 'green.600'}
-                variant='outline'
-                ml={5}
-                size='xs'
-                icon='edit'
-                onClick={onRequestEdit}
-              />
-            </Flex>
-          )}
         </>
       )}
     </Editable>

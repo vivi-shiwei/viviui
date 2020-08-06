@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, useDisclosure } from '@chakra-ui/core'
 // import {
 //   AddIntelligence
@@ -27,7 +27,11 @@ export const ListTest = () => {
     { title: '大沙發惡法而無法', content: '德法俄法違法' },
     { title: '士大夫文人收到', content: '蘇打粉微軟分爲' }
   ]
+  const name = '個人内省'
+  const englishName = 'vivi'
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const [intelligenceName, setIntelligenceName] = useState(name)
+  const [intelligenceEngName, setIntelligenceEngName] = useState(englishName)
   return (
     <>
       <Admin
@@ -43,16 +47,21 @@ export const ListTest = () => {
             >
               新增智能
             </Button>
-            {/* {isOpen && <AddIntelligence onClose={onClose} isOpen={isOpen} />} */}
           </>
         }
       >
-        <EditShow>
-          <EditTable value='fdfjo' />
-          <EditTable value='fdfjo' />
+        <EditShow onChage='3' mb='20px'>
+          <EditTable value={intelligenceName} inputonChange={(e) => { setIntelligenceName(e.target.value) }} />
+          <EditTable value={intelligenceEngName} inputonChange={(e) => { setIntelligenceEngName(e.target.value) }} />
           <DeleteIcon />
-          <ConfirmButton>確認</ConfirmButton>
-          <CancelButton>還原</CancelButton>
+          <ConfirmButton
+            isDisabled={(intelligenceName === name && intelligenceEngName === englishName)}
+          >確認
+          </ConfirmButton>
+          <CancelButton
+            isDisabled={(intelligenceName === name && intelligenceEngName === englishName)}
+          >還原
+          </CancelButton>
         </EditShow>
         {/* {talents.map((item, index) => {
           return (

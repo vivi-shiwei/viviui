@@ -9,12 +9,13 @@ import DeleteIcon from './deleteIcon'
 import CancelButton from './cancelButton'
 import ConfirmButton from './confirmButton'
 
-const EditIntelligence = ({ left, children, ...props }) => {
+const EditIntelligence = ({ left, onChage, children, ...props }) => {
   const editTable = []
   let deleteIco = null
   let cancel = null
   let confirm = null
 
+  // 把 children 里的数字拿出来后赋值。
   Children.map(children, (c, i) => {
     switch (c.type) {
       case EditTable:
@@ -34,32 +35,29 @@ const EditIntelligence = ({ left, children, ...props }) => {
   return (
     <PseudoBox
       d={{ base: 'block', sm: 'flex' }}
+      p={2}
       alignItems='center'
       justifyContent='space-between'
       _hover={{ bg: 'blue.100', color: 'black' }}
       {...props}
     >
-      <Box ml={{ base: 2, sm: 3, md: 5 }} width={{ base: '94%', sm: '60%' }}>
-        {editTable}
-        {left}
+      <Box d='flex' justifyContent='space-between' width={{ base: '90%', sm: '64%' }} mx={{ base: 'auto', sm: 'none' }}>
+        <Box ml={{ base: 0, sm: 3 }}>
+          {editTable}
+        </Box>
+        <Box my='auto'>
+          {deleteIco}
+        </Box>
       </Box>
       <Box
-        width={{ base: '100%', sm: '30%' }}
+        width={{ base: '90%', sm: '30%' }}
+        mx={{ base: 'auto', sm: 'none' }}
         display='flex'
         alignItems='center'
-        justifyContent='space-around'
-        mr={{ base: 2, sm: 3, md: 5 }}
+        justifyContent={{ base: 'space-between', sm: 'space-around' }}
       >
-        <Box
-          maxW={{ base: '70%', md: '45%' }}
-          display='flex'
-          alignItems='center'
-          justifyContent='between'
-        >
-          {cancel}
-          {confirm}
-        </Box>
-        {deleteIco}
+        {cancel}
+        {confirm}
       </Box>
     </PseudoBox>
   )

@@ -7,11 +7,9 @@ import {
 const ConfirmButton = (props) => {
   return (
     <Button
-      bg='#9370DB'
-      color='white'
-      _hover='color:black'
-      fontSize={{ base: '12px', sm: '12px', md: '16px' }}
-      m={{ base: '5px', sm: '5px' }}
+      variantColor='teal'
+      w={{ base: '48%', sm: '30%' }}
+      fontSize='16px'
       {...props}
     />
   )
