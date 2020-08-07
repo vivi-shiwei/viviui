@@ -10,7 +10,7 @@ import ConfirmButton from '../src/components/editShow/confirmButton'
 import CancelButton from '../src/components/editShow/cancelButton'
 import EditTable from '../src/components/editShow/editTable'
 
-export default { title: 'AddIntelligence(hui)' }
+export default { title: 'AddIntelligence(vivi hui)' }
 
 export const EditableOne = () => {
   return (

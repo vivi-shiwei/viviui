@@ -20,10 +20,18 @@ import {
   Divider
 } from '@chakra-ui/core'
 import { AiOutlineLogout } from 'react-icons/ai'
-import { IoMdPerson, IoMdHome } from 'react-icons/io'
+import { IoMdHome } from 'react-icons/io'
 import NextLink from 'next/link'
 import { MdDashboard, MdAccessibility, MdPhoto, MdShowChart } from 'react-icons/md'
 import HeaderContainer from '../src/components/container'
+
+import DrawerItemDivider from '../src/components/header/drawerItemDivider'
+import DrawerItemButton from '../src/components/header/drawerItemButton'
+import HeaderLogo from '../src/components/header/headerLogo'
+import HeaderCenter from '../src/components/header/headerCenter'
+import HeaderMobileNav from '../src/components/header/headerMobileNav'
+import HeaderRight from '../src/components/header/headerRight'
+import HeaderButton from '../src/components/header/headerButton'
 
 import MyImage from '../static/QQ20200518181405.jpg'
 export default {
@@ -31,113 +39,51 @@ export default {
 }
 
 export const school = () => {
-  const Logo = (
-    <Heading as='h1' size='lg' letterSpacing='-.1rem'>
-      <Box as='span' d={{ base: 'none', sm: 'inline' }}>
-        SCHOOL
-      </Box>
-      <Box as='span' d={{ base: 'inline', sm: 'none' }}>
-        SCH
-      </Box>
-    </Heading>
-  )
-  const Disclosure = (
-    <>
-      <p>1</p>
-      <p>2</p>
-      <p>3</p>
-    </>
-  )
-  const HeaderRight = () => (
-    <Box>
-      <NextLink
-        href='https://www.baidu.com'
-        passHref
-      >
-        <Button as='a' bg='transparent' border='1px' px={2} h={{ base: '35px', sm: '38px' }}>
-          登入
-        </Button>
-      </NextLink>
-    </Box>
-  )
-  const Right = (
-    <Stack align='center' isInline spacing='2'>
-      <Menu placement='bottom-end'>
-        <MenuButton as='div'>
-          <Avatar
-            src={MyImage}
-            size='md'
-            cursor='pointer'
-            display={{ base: 'none', sm: 'block' }}
-            w={{ base: '40px', md: '50px' }}
-            h={{ base: '40px', md: '50px' }}
-          />
-          <Text fontSize='sm' display={{ base: 'block', sm: 'none' }} color='teal.500' mr='3px'>vivi</Text>
-        </MenuButton>
-        <MenuList w='280px'>
-          <NextLink href='/' passHref>
-            <MenuItem as='a'>
-              <Box as={IoMdHome} mr='4px' />
-              <span>返回 Macau School</span>
-            </MenuItem>
-          </NextLink>
-          <Link href='/api/auth/logout'>
-            <MenuItem>
-              <Box as={AiOutlineLogout} mr='4px' />
-              <span>登出</span>
-            </MenuItem>
-          </Link>
-        </MenuList>
-      </Menu>
-    </Stack>
-
-  )
   return (
     <>
-      <Header
-        bg='white'
-        logo={Logo}
-        right={Right}
-        Disclosure={Disclosure}
-        center={
-          <>
-            <ButtonGroup>
-              <NextLink passHref href='#'>
-                <Button
-                  ref='#'
-                  as='a'
-                  flexDirection={{ base: 'column', md: 'row' }}
-                  align='center'
-                  variant='link'
-                  fontSize={{ base: 'xs', md: 'lg' }}
-                  px={{ base: 0, sm: 4 }}
-                >
-                  <Box m={0} color='currentColor' ml={{ base: 0, md: -1 }} mr={{ base: 0, md: 1 }} display={{ base: 'none', sm: 'block' }}>
-                    <IoMdPerson size='1.5em' />
-                  </Box>
-              首頁
-                </Button>
+      <Header>
+        <HeaderLogo>
+          <NextLink
+            href='https://www.baidu.com'
+            passHref
+          >
+            <Box as='a'>
+              <Heading as='h1' size='lg' letterSpacing='-.1rem'>
+                <Box as='span' d={{ base: 'none', sm: 'inline' }}>
+                  Macau School
+                </Box>
+                <Box as='span' d={{ base: 'inline', sm: 'none' }}>
+                  MS
+                </Box>
+                <Box as='span' color='blue.500' d={{ base: 'none', md: 'inline' }}>
+                  {' '}學不停
+                </Box>
+              </Heading>
+            </Box>
+          </NextLink>
+        </HeaderLogo>
+        <HeaderRight>
+          <Menu placement='bottom-end'>
+            <MenuButton as='div'>
+              <Avatar name='vivi' src={MyImage} size='sm' cursor='pointer' />
+            </MenuButton>
+            <MenuList w='280px'>
+              <NextLink href='/' passHref>
+                <MenuItem as='a'>
+                  <Box as={IoMdHome} mr='4px' />
+                  <span>返回 Macau School</span>
+                </MenuItem>
               </NextLink>
-              <NextLink passHref href='#'>
-                <Button
-                  ref='#'
-                  as='a'
-                  flexDirection={{ base: 'column', md: 'row' }}
-                  align='center'
-                  variant='link'
-                  fontSize={{ base: 'xs', md: 'lg' }}
-                  px={{ base: 0, sm: 4 }}
-                >
-                  <Box m={0} color='currentColor' ml={{ base: 0, md: -1 }} mr={{ base: 0, md: 1 }} display={{ base: 'none', sm: 'block' }}>
-                    <MdDashboard size='1.5em' />
-                  </Box>
-              學校專頁
-                </Button>
-              </NextLink>
-            </ButtonGroup>
-          </>
-        }
-      />
+              <Link href='/'>
+                <MenuItem>
+                  <Box as={AiOutlineLogout} mr='4px' />
+                  <span>登出</span>
+                </MenuItem>
+              </Link>
+            </MenuList>
+          </Menu>
+        </HeaderRight>
+      </Header>
       <Hero
         title='我的學校'
         subtitle='SCHOOL 是一個簡單的、可連結很多模組的、線上的學校系統。可透過 SCHOOL 進行日常校園管理，了解學生學習生活，促進發掘學生閃光點等等。專為澳門中小幼學校而設。'
@@ -228,55 +174,62 @@ export const Homeschool = () => {
   )
   return (
     <>
-      <Header
-        bg='white'
-        logo={Logo}
-        profilePhoto={MyImage}
-        noColormode
-        disclosure
-        MenuTest={[
-          <>
-            <NextLink href='/' passHref>
-              <Box as={MdDashboard} mr='4px' />
-              <span>我的學校</span>
-            </NextLink>
-            <Link href='/api/auth/logout'>
-              <Box as={AiOutlineLogout} mr='4px' />
-              <span>登出</span>
-            </Link>
-          </>
-        ]}
-      >
-        <NextLink passHref href='#'>
-          <Button
-            ref='#'
-            as='a'
-            align='center'
-            variant='link'
-            fontSize='lg'
-            px={{ base: 0, sm: 4 }}
+      <Header>
+        <HeaderLogo>
+          <NextLink
+            href='https://www.baidu.com'
+            passHref
           >
-            <Box m={0} color='currentColor' ml={{ base: 0, md: -1 }} mr={{ base: 0, md: 1 }}>
-              <IoMdPerson size='1.5em' />
+            <Box as='a'>
+              <Heading as='h1' size='lg' letterSpacing='-.1rem'>
+                <Box as='span' d={{ base: 'none', sm: 'inline' }}>
+                  Macau School
+                </Box>
+                <Box as='span' d={{ base: 'inline', sm: 'none' }}>
+                  MS
+                </Box>
+                <Box as='span' color='blue.500' d={{ base: 'none', md: 'inline' }}>
+                  {' '}學不停
+                </Box>
+              </Heading>
             </Box>
-              首頁
-          </Button>
-        </NextLink>
-        <NextLink passHref href='#'>
-          <Button
-            ref='#'
-            as='a'
-            align='center'
-            variant='link'
-            fontSize='lg'
-            px={{ base: 0, sm: 4 }}
-          >
-            <Box m={0} color='currentColor' ml={{ base: 0, md: -1 }} mr={{ base: 0, md: 1 }}>
-              <MdDashboard size='1.5em' />
-            </Box>
-              學校專頁
-          </Button>
-        </NextLink>
+          </NextLink>
+        </HeaderLogo>
+        <HeaderCenter>
+          <HeaderButton icon={MdAccessibility} title='首页' href='https://www.baidu.com' />
+          <HeaderButton icon={MdAccessibility} title='关于' href='https://www.baidu.com' />
+        </HeaderCenter>
+        <HeaderRight>
+          <HeaderButton icon={MdAccessibility} title='首页' href='https://www.baidu.com' />
+          <HeaderButton icon={MdAccessibility} title='关于' href='https://www.baidu.com' />
+          <Menu placement='bottom-end'>
+            <MenuButton as='div'>
+              <Avatar name='vivi' src={MyImage} size='sm' cursor='pointer' />
+            </MenuButton>
+            <MenuList w='280px'>
+              <NextLink href='/' passHref>
+                <MenuItem as='a'>
+                  <Box as={IoMdHome} mr='4px' />
+                  <span>返回 Macau School</span>
+                </MenuItem>
+              </NextLink>
+              <Link href='/'>
+                <MenuItem>
+                  <Box as={AiOutlineLogout} mr='4px' />
+                  <span>登出</span>
+                </MenuItem>
+              </Link>
+            </MenuList>
+          </Menu>
+        </HeaderRight>
+        <HeaderMobileNav>
+          <DrawerItemButton>首页</DrawerItemButton>
+          <DrawerItemDivider />
+          <DrawerItemButton>关于</DrawerItemButton>
+          <DrawerItemDivider />
+          <DrawerItemButton>哈哈</DrawerItemButton>
+          <DrawerItemDivider />
+        </HeaderMobileNav>
       </Header>
 
       <Hero
