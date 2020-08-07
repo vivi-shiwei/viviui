@@ -1,7 +1,5 @@
 import React, { memo } from 'react'
-import {
-  Box
-} from '@chakra-ui/core'
+import { Box } from '@chakra-ui/core'
 
 const PostContent = memo(({ children, ...props }) => {
   return (

@@ -3,7 +3,8 @@ import {
   Button
 } from '@chakra-ui/core'
 
-const HeaderPage = (props) => {
+// 返回按鈕
+const BackButton = (props) => {
   return (
     <Button
       backgroundColor='#c2c2c2'
@@ -14,7 +15,7 @@ const HeaderPage = (props) => {
       _hover={{
         backgroundColor: '#b8b8b8'
       }}
-      _focus={{
+      _active={{
         boxShadow: '0 0 0 3px rgba(175, 175, 175, 0.6)'
       }}
       {...props}
@@ -22,4 +23,4 @@ const HeaderPage = (props) => {
   )
 }
 
-export default HeaderPage
+export default BackButton

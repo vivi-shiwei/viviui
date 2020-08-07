@@ -3,7 +3,7 @@ import {
   Button
 } from '@chakra-ui/core'
 
-const NewClsModal = ({ refetch, children, ...rest }) => {
+const BlueButton = ({ refetch, children, ...rest }) => {
   return (
     <Button variantColor='blue' {...rest}>
       {children}
@@ -11,4 +11,4 @@ const NewClsModal = ({ refetch, children, ...rest }) => {
   )
 }
 
-export default NewClsModal
+export default BlueButton

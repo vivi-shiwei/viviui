@@ -6,7 +6,7 @@ import {
   Flex
 } from '@chakra-ui/core'
 
-const OddFeature = ({
+const Feature = ({
   title, // 傳入title
   icon, // 傳入icon
   subtitle, // 傳入subtitle
@@ -39,4 +39,4 @@ const OddFeature = ({
   )
 }
 
-export default OddFeature
+export default Feature

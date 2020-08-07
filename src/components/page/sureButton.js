@@ -2,8 +2,8 @@ import React from 'react'
 import {
   Button
 } from '@chakra-ui/core'
-
-const HeaderPage = (props) => {
+// 確認按鈕
+const SureButton = (props) => {
   return (
     <Button
       variantColor='blue'
@@ -15,4 +15,4 @@ const HeaderPage = (props) => {
   )
 }
 
-export default HeaderPage
+export default SureButton

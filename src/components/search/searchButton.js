@@ -1,16 +1,15 @@
 import React from 'react'
 import { Button } from '@chakra-ui/core'
-const SearchButton = ({ children, ...props }) => {
+const SearchButton = (props) => {
   return (
     <Button
       as='div'
-      variant='outline'
-      bg='#a1c9eb'
-      ml={{ base: '10px', sm: '10px', md: '10px', lg: '0' }}
+      variantColor='blue'
+      minW={{ base: 70, md: 100 }}
+      fontSize={{ base: '14px', md: '16px' }}
+      ml={2}
       {...props}
-    >
-      {children}
-    </Button>
+    />
   )
 }
 

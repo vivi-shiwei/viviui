@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React, { memo, Children } from 'react'
 import {
   Flex,
   useDisclosure,
@@ -19,17 +19,40 @@ import HeaderRight from './headerRight'
 import HeaderLogo from './headerLogo'
 import HeaderCenter from './headerCenter'
 import HeaderWrapper from './headerWrapper'
+import HeaderMobileNav from './headerMobileNav'
 
 const Header = ({
-  left, // Header左邊列表
-  center, // Header 中間列表
-  right, // Header 右邊列表
-  logo, // 自定義logo
-  drawerItems, // 選單數據
   containerProps, // 傳入頭部的數據
+  children,
   ...props // 除以上輸入值外都會解構到props裏，props裏可以是外邊框、内邊框、字體顔色、背景顔色、border，傳入chakra能接受的樣式到最外層的Box裏。
 }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
+
+  let logo = null
+  let left = null
+  let center = null
+  let right = null
+  let drawerItems = null
+
+  Children.map(children, (c, i) => {
+    switch (c.type) {
+      case HeaderLogo:
+        logo = c // 自定義logo
+        break
+      case HeaderLeft:
+        left = c // Header左邊列表
+        break
+      case HeaderCenter:
+        center = c // Header 中間列表
+        break
+      case HeaderRight:
+        right = c // Header 右邊列表
+        break
+      case HeaderMobileNav:
+        drawerItems = c.props.children// 選單數據
+        break
+    }
+  })
 
   return (
     <HeaderWrapper {...props}>
@@ -38,22 +61,10 @@ const Header = ({
         {...containerProps}
       >
         <Flex size='100%' px={{ base: 0, sm: 2, md: 4 }} align='center' w='full' justify='space-between'>
-
-          <HeaderLogo>
-            {logo}
-          </HeaderLogo>
-
-          <HeaderLeft>
-            {left}
-          </HeaderLeft>
-
-          <HeaderCenter>
-            {center}
-          </HeaderCenter>
-
-          <HeaderRight>
-            {right}
-          </HeaderRight>
+          {logo}
+          {left}
+          {center}
+          {right}
 
           {!!drawerItems && (
             <Flex justify='flex-end'>
