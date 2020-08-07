@@ -6,7 +6,6 @@ const Card = ({ title, children, ...props }) => {
   return (
     <Box
       as='article'
-      // boxSizing='border-box'
       bg='white'
       w={['45%', '30.5%', '22.5%', '22.6%']}
       p='20px'

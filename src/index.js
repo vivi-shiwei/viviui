@@ -280,12 +280,11 @@ export { default as Hero } from './components/hero'
 export { default as FeatrueGrid } from './components/featureGrid'
 export { default as Featrure } from './components/featureGrid/feature'
 
-// CardDeck
-export { default as CardDeck } from './components/cardDeck'
-export { default as Card } from './components/cardDeck/card'
-export { default as Fieldset } from './components/cardDeck/fieldset'
-export { default as RoundedButton } from './components/cardDeck/roundedButton'
-export { default as GroupCard } from './components/cardDeck/groupCard'
+// Group
+export { default as Group } from './components/group'
+export { default as Card } from './components/group/card'
+export { default as Fieldset } from './components/Fieldset'
+export { default as LeftGroupButton } from './components/group/leftGroupButton'
 
 // CenterSelector
 export { default as ModalSelector } from './components/modalSelector'

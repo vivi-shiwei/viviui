@@ -32,9 +32,7 @@ const AvatarTooltip = ({ name, avatars, editButton, children, ...props }) => {
           <Box as='div' overflow='hidden' whiteSpace='nowrap' pr={4}>
             {avatars}
           </Box>
-          <Box as='div'>
-            {editButton}
-          </Box>
+          {editButton}
         </Box>
       </Box>
     </Container>

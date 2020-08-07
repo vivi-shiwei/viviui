@@ -38,15 +38,9 @@ export const SearchTest = () => {
       {
         data.map((item, index) => {
           return (
-            <NextLink
-              href='#'
-              as='#'
-              key={index}
-            >
-              <Link _hover={{ textDecoration: 'none' }} m={1}>
-                <NewButton w='400px'>{item.name}</NewButton>
-              </Link>
-            </NextLink>
+            <>
+              <NewButton w='95%' maxw='400px'>{item.name}</NewButton>
+            </>
           )
         })
       }
