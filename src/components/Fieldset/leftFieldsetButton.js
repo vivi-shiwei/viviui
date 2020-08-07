@@ -2,7 +2,7 @@ import React from 'react'
 import { Button } from '@chakra-ui/core'
 
 // 左右兩弧度為 999px 的 Button
-const RoundedButton = (props) => {
+const LeftFieldsetButton = (props) => {
   return (
     <Button
       as='div'
@@ -18,4 +18,4 @@ const RoundedButton = (props) => {
   )
 }
 
-export default RoundedButton
+export default LeftFieldsetButton

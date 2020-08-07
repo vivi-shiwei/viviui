@@ -2,17 +2,19 @@ import React, { useContext } from 'react'
 import {
   Avatar
 } from '@chakra-ui/core'
-import { TooltipContext } from './toolTipContext'
-// 卡片組
-const Avatars = ({ profilePhoto, tooltipProps, ...props }) => {
-  const { name } = useContext(TooltipContext)
+
+import { AvatarTooltipContext } from './avatarTooltipContext'
+
+const Tooltips = ({ profilePhotoSrc, ...props }) => {
+  const { name } = useContext(AvatarTooltipContext)
+  console.log(name)
   return (
     <Avatar
       mr={1}
       w={{ base: '30px', md: '35px' }}
       h={{ base: '30px', md: '35px' }}
-      name={name}
-      src={profilePhoto}
+      name={name || ''}
+      src={profilePhotoSrc}
       fontSize={{ base: '13px', md: '15px' }}
       color='black'
       {...props}
@@ -20,4 +22,4 @@ const Avatars = ({ profilePhoto, tooltipProps, ...props }) => {
   )
 }
 
-export default Avatars
+export default Tooltips

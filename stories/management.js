@@ -57,7 +57,6 @@ export const ManagementTest = () => {
           }
         </List>
       </Management>
-
     </WhiteBoardPage>
   )
 }

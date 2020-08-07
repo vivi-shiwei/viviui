@@ -284,7 +284,7 @@ export { default as Featrure } from './components/featureGrid/feature'
 export { default as Group } from './components/group'
 export { default as Card } from './components/group/card'
 export { default as Fieldset } from './components/Fieldset'
-export { default as LeftGroupButton } from './components/group/leftGroupButton'
+export { default as LeftGroupButton } from './components/Fieldset/leftFieldsetButton'
 
 // CenterSelector
 export { default as ModalSelector } from './components/modalSelector'
@@ -328,3 +328,8 @@ export { default as TableBody } from './components/table/tableBody'
 export { default as TableCell } from './components/table/tableCell'
 export { default as TableHead } from './components/table/tableHead'
 export { default as TableRow } from './components/table/tableRow'
+
+// 显示很多头像的component
+export { default as AvatarTooltipGroup } from './components/avatarTooltipGroup'
+export { default as Avatars } from './components/avatarTooltipGroup/avatars'
+export { default as Tooltips } from './components/avatarTooltipGroup/toolTips'

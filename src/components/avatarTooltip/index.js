@@ -5,34 +5,15 @@ import {
 
 import Container from '../container'
 
-// import Avatars from './avatars'
-// import EditButton from './editButton'
-
-// Avatar 加 Tooltip
-const AvatarTooltip = ({ name, avatars, editButton, children, ...props }) => {
-  // let avatars = null
-  // let editButton = null
-
-  // Children.map(children, (c, i) => {
-  //   switch (c.type) {
-  //     case Avatars:
-  //       if (!avatars) avatars = []
-  //       avatars.push(c) // 照片集合
-  //       break
-  //     case EditButton:
-  //       editButton = c // 编辑按钮
-  //       break
-  //   }
-  // })
-
+const AvatarTooltip = ({ left, right, children, ...props }) => {
   return (
     <Container {...props}>
       <Box as='header' textAlign='center'>
         <Box as='section' maxW='100%' mt='20px' d='flex' justifyContent='center'>
-          <Box as='div' overflow='hidden' whiteSpace='nowrap' pr={4}>
-            {avatars}
+          {left}
+          <Box as='div'>
+            {right}
           </Box>
-          {editButton}
         </Box>
       </Box>
     </Container>

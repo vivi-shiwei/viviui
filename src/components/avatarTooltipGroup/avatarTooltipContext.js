@@ -1,4 +1,3 @@
-
 import { createContext } from 'react'
 // 創建一個 Context 組件
-export const TooltipContext = createContext(null)
+export const AvatarTooltipContext = createContext('')

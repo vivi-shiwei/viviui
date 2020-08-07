@@ -1,3 +1,9 @@
+## viviui 1.3.4
+
+- 优化 Fieldset 
+- 优化 Group 
+
+
 ## viviui 1.3.2
 
 - 新增 Table component

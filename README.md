@@ -779,25 +779,50 @@ ModalSelector 裏的 props
 
 
 
-## CardDeck 
 
-相關組件
+## Fieldset
 
 
-- CardDeck: 为其子级提供上下文的包装器。
-- Fieldset:   頭部數據及左邊數據
-- RoundedButton:   标题左侧的按钮
-- Card:  单个卡片
+- Fieldset:   横线中间有字，横线默认有
+- LeftFieldsetButton:  线左边的Button
 
 
     import {
-      CardDeck,
       Fieldset,
-      RoundedButton,
-      Card
+      LeftFieldsetButton
     } from "viviui"
 
-用法
+LeftFieldsetButton的 Component 用法
+
+LeftFieldsetButton 傳入的參數
+
+
+| 名字    | 描述                                                  |
+| ----- | --------------------------------------------------- |
+| props | 能接受 children 及 chakra 的 Button 样式到 RoundedButton 里。 |
+
+
+LeftFieldsetButton 的 props 
+
+
+| 名字          | 默認                              | 描述             |
+| ----------- | ------------------------------- | -------------- |
+| borderWidth | 1px                             | 變框綫的寬度         |
+| rounded     | 999px                           | 四角為最大的弧度       |
+| minW        | {{ base: '80px', sm: '110px' }} | 最小寬度隨屏幕而變      |
+| position    | absolute                        | 絕對定位           |
+| top         | 0                               | 離上層固定定位的top為0  |
+| left        | 0                               | 離上層固定定位的left為0 |
+
+
+
+![](https://paper-attachments.dropbox.com/s_5DFED06E22537885E45F78FF28C7DF12C0D3C15059D03B250E0220F47FEC6BAA_1595932631027_image.png)
+
+
+
+    <LeftFieldsetButton>新增</LeftFieldsetButton>
+
+
 
 Fieldset 的 Component 用法
 
@@ -846,40 +871,26 @@ Fieldset 的 props
       bg='white'
       title='班級'
       left={
-        <RoundedButton>新增</RoundedButton>
+        <LeftFieldsetButton>新增</LeftFieldsetButton>
       }
     />
 
-RoundedButtton 的 Component 用法
 
-RoundedButton 傳入的參數
+## Group
 
-
-| 名字    | 描述                                                  |
-| ----- | --------------------------------------------------- |
-| props | 能接受 children 及 chakra 的 Button 样式到 RoundedButton 里。 |
+相關組件
 
 
-RoundedButton 的 props 
+- Group: 为其子级提供上下文的包装器。
+- Card:  单个卡片
 
 
-| 名字          | 默認                              | 描述             |
-| ----------- | ------------------------------- | -------------- |
-| borderWidth | 1px                             | 變框綫的寬度         |
-| rounded     | 999px                           | 四角為最大的弧度       |
-| minW        | {{ base: '80px', sm: '110px' }} | 最小寬度隨屏幕而變      |
-| position    | absolute                        | 絕對定位           |
-| top         | 0                               | 離上層固定定位的top為0  |
-| left        | 0                               | 離上層固定定位的left為0 |
+    import {
+      Group,
+      Card
+    } from "viviui"
 
-
-
-![](https://paper-attachments.dropbox.com/s_5DFED06E22537885E45F78FF28C7DF12C0D3C15059D03B250E0220F47FEC6BAA_1595932631027_image.png)
-
-
-
-    <RoundedButton>新增</RoundedButton>
-
+用法
 
 Card  的 component 的用法
 
@@ -912,9 +923,9 @@ Card 的 props
 
     <Card title="甲班" />
 
-CardDeck 的 Component 用法
+Group 的 Component 用法
 
-CardDeck 能接受到的值
+Group 能接受到的值
 
 
 | 名字       | 描述                           |
@@ -922,7 +933,7 @@ CardDeck 能接受到的值
 | children | 接收 CardDeck 的子集              |
 | ...props | 能接受 chakra 的 Box 样式到 Card 里。 |
 
-CardDeck 的 props
+Group 的 props
 
 
 | 名字       | 默認    | 描述           |
@@ -934,79 +945,40 @@ CardDeck 的 props
 | pb       | 16px  | 外邊居底部為16px   |
 
 - 最大屏時
-![](https://paper-attachments.dropbox.com/s_4D810874F0863F787ABE5EC187A79D50C774EE1EABF593725F3D079EBF3FDC6B_1596450985218_image.png)
+
+
+![](https://paper-attachments.dropbox.com/s_4D810874F0863F787ABE5EC187A79D50C774EE1EABF593725F3D079EBF3FDC6B_1596799208489_image.png)
+
+
 
 - 小屏時
 
 
-![](https://paper-attachments.dropbox.com/s_4D810874F0863F787ABE5EC187A79D50C774EE1EABF593725F3D079EBF3FDC6B_1596451887402_image.png)
+![](https://paper-attachments.dropbox.com/s_4D810874F0863F787ABE5EC187A79D50C774EE1EABF593725F3D079EBF3FDC6B_1596799225673_image.png)
 
 
 
 - 最小屏時
 
 
-![](https://paper-attachments.dropbox.com/s_4D810874F0863F787ABE5EC187A79D50C774EE1EABF593725F3D079EBF3FDC6B_1596451936914_image.png)
+![](https://paper-attachments.dropbox.com/s_4D810874F0863F787ABE5EC187A79D50C774EE1EABF593725F3D079EBF3FDC6B_1596799243600_image.png)
 
 
 
-    const CardDeck = () => {
+    const Group= () => {
       return (
-        <CardDeck>
-          <Fieldset
-            title='班級'
-            bg='white'
-            left={<RoundedButton>新增</RoundedButton>}
-          />
+        <Group>
           <Card title='甲班' />
           <Card title='乙班' />
           <Card title='丙班' />
           <Card title='丁班' />
           <Card title='超級班' />
-        </CardDeck>
+        </Group>
       )
     }
     
 
 
-- 没有新增按钮
-
-
-![](https://paper-attachments.dropbox.com/s_4D810874F0863F787ABE5EC187A79D50C774EE1EABF593725F3D079EBF3FDC6B_1596452380435_image.png)
-
-
-
-- 小屏時
-
-
-![](https://paper-attachments.dropbox.com/s_4D810874F0863F787ABE5EC187A79D50C774EE1EABF593725F3D079EBF3FDC6B_1596452353183_image.png)
-
-
-
-- 最小屏時
-
-
-![](https://paper-attachments.dropbox.com/s_4D810874F0863F787ABE5EC187A79D50C774EE1EABF593725F3D079EBF3FDC6B_1596452306563_image.png)
-
-
-
-    const CardDeck = () => {
-      return (
-        <CardDeck>
-          <Fieldset
-            title='班級'
-            bg='white'
-          />
-          <Card title='乙班' />
-          <Card title='乙班' />
-          <Card title='甲班' />
-          <Card title='乙班' />
-          <Card title='丙班' />
-          <Card title='丁班' />
-          <Card title='超級班' />
-        </CardDeck>
-      )
-    }
 
 
 ## page
