@@ -13,23 +13,14 @@ export default {
 export const EditIntelligenceTest = () => {
   return (
     <>
-      <Intelligence
-        left={
-          <>
-            <EditTable value='jfiekj' color='#CC6600' />
-            <EditTable value='jfiekj' color='#99CC33' />
-          </>
-        }
-        right={
-          <DeleteIcon onClick={() => { console.log('杰克') }} />
-        }
-        buttonGroup={
-          <>
-            <ConfirmButton />
-            <CancelButton />
-          </>
-        }
-      />
+      <Intelligence>
+
+        <EditTable value='jfiekj' color='#CC6600' />
+        <EditTable value='jfiekj' color='#99CC33' />
+        <DeleteIcon onClick={() => { console.log('杰克') }} />
+        <ConfirmButton> 确认</ConfirmButton>
+        <CancelButton>取消</CancelButton>
+      </Intelligence>
     </>
   )
 }
