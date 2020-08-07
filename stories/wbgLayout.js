@@ -22,7 +22,7 @@ import { DeleteIconButton, Row, EditButton } from '../src/index'
 import MyImage from '../static/QQ20200518181405.jpg'
 
 export default {
-  title: 'wbgLayout'
+  title: 'wbgLayout(vivi)'
 }
 
 export const headering = () => {
