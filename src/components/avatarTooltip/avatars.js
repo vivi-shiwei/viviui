@@ -1,25 +1,22 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {
-  Box,
-  Tooltip,
   Avatar
 } from '@chakra-ui/core'
-
+import { TooltipContext } from './toolTipContext'
 // 卡片組
-const Avatars = ({ name, profilePhoto, tooltipProps, ...props }) => {
+const Avatars = ({ profilePhoto, tooltipProps, ...props }) => {
+  const { name } = useContext(TooltipContext)
   return (
-    <Tooltip hasArrow label={name} placement='auto-start'>
-      <Avatar
-        mr={1}
-        w={{ base: '30px', md: '35px' }}
-        h={{ base: '30px', md: '35px' }}
-        name={name}
-        src={profilePhoto}
-        fontSize={{ base: '13px', md: '15px' }}
-        color='black'
-        {...props}
-      />
-    </Tooltip>
+    <Avatar
+      mr={1}
+      w={{ base: '30px', md: '35px' }}
+      h={{ base: '30px', md: '35px' }}
+      name={name}
+      src={profilePhoto}
+      fontSize={{ base: '13px', md: '15px' }}
+      color='black'
+      {...props}
+    />
   )
 }
 

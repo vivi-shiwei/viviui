@@ -6,6 +6,7 @@ import NextLink from 'next/link'
 import AvatarTooltip from '../src/components/avatarTooltip'
 import Avatars from '../src/components/avatarTooltip/avatars'
 import EditButton from '../src/components/avatarTooltip/editButton'
+import ToolTip from '../src/components/avatarTooltip/toolTips'
 
 import MyImage from '../static/QQ20200518181405.jpg'
 import MyImage6 from '../static/timg.jpg'
@@ -36,11 +37,9 @@ export const ClsMember = () => {
             name='vivi'
             profilePhoto={MyImage}
           />
-
-          <Avatars
-            name='vivi'
-            profilePhoto={MyImage}
-          />
+          <ToolTip name='vivi'>
+            <Avatars />
+          </ToolTip>
           <Avatars
             name='vivi'
             profilePhoto={MyImage}

@@ -1,12 +1,12 @@
-import React, { Children } from 'react'
+import React from 'react'
 import {
   Box
 } from '@chakra-ui/core'
 
 import Container from '../container'
 
-import Avatars from './avatars'
-import EditButton from './editButton'
+// import Avatars from './avatars'
+// import EditButton from './editButton'
 
 // Avatar 加 Tooltip
 const AvatarTooltip = ({ name, avatars, editButton, children, ...props }) => {
