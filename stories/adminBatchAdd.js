@@ -49,7 +49,6 @@ export const SearchTest = () => {
             </NextLink>
           )
         })
-
       }
     </Container>
   )

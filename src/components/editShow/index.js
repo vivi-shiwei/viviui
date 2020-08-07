@@ -15,7 +15,7 @@ const EditIntelligence = ({ left, onChage, children, ...props }) => {
   let cancel = null
   let confirm = null
 
-  // 把 children 里的数字拿出来后赋值。
+  // 把 children 里的标签拿出来后赋值。
   Children.map(children, (c, i) => {
     switch (c.type) {
       case EditTable:

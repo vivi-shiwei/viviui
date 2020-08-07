@@ -32,18 +32,20 @@ import {
   RadioGroup,
   Avatar
 } from '@chakra-ui/core'
-import Admin from '../src/components/admin/adminPage'
-import FomikLayout from '../src/components/fomikLayout'
-import NewModal from '../src/components/newModal'
 import NextLink from 'next/link'
-import AdminList from '../src/components/admin/adminListPage'
 import { FaSchool, FaUserEdit } from 'react-icons/fa'
 import { AiTwotoneSetting } from 'react-icons/ai'
 import { Formik, Field, Form } from 'formik'
 import { GoDeviceCamera } from 'react-icons/go'
 
+import Admin from '../src/components/admin/adminPage'
+import FomikLayout from '../src/components/fomikLayout'
+import NewModal from '../src/components/newModal'
+import AdminList from '../src/components/admin/adminListPage'
+
 import MyImage from '../static/QQ20200518181405.jpg'
 import MyImage6 from '../static/timg.jpg'
+
 export default {
   title: 'Admin'
 }
