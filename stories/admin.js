@@ -2344,10 +2344,3 @@ export const testChildrenTab = () => {
     </>
   )
 }
-
-// 測試
-export const testSpecialty = () => {
-  return (
-    <div />
-  )
-}
