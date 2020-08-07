@@ -47,7 +47,7 @@ import MyImage from '../static/QQ20200518181405.jpg'
 import MyImage6 from '../static/timg.jpg'
 
 export default {
-  title: 'Admin'
+  title: 'Admin(vivi)'
 }
 export const editSchool = () => {
   const validateName = (value) => {

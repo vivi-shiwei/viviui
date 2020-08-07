@@ -3,7 +3,7 @@ import GridFooter from '../src/components/featureGrid'
 import OddFeature from '../src/components/featureGrid/feature'
 import { MdPalette, MdGrain } from 'react-icons/md'
 
-export default { title: 'FeatureGrid' }
+export default { title: 'FeatureGrid(vivi)' }
 
 export const Footer = () => {
   return (

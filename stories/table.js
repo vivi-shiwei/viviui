@@ -9,7 +9,7 @@ import TableBody from '../src/components/table/tableBody'
 import TableCell from '../src/components/table/tableCell'
 import TableRow from '../src/components/table/tableRow'
 // storybook
-export default { title: 'addUser' }
+export default { title: 'addUser(vivi hui)' }
 
 export const table = () => {
   const tableHeada = [

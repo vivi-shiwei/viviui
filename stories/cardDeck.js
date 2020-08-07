@@ -4,7 +4,7 @@ import RoundedButton from '../src/components/cardDeck/roundedButton'
 import Card from '../src/components/cardDeck/card'
 import Fieldset from '../src/components/cardDeck/fieldset'
 
-export default { title: 'CardDeckGroup' }
+export default { title: 'CardDeckGroup(vivi hui)' }
 
 export const CardDeckGroupTest = () => {
   const data = ['甲班', '乙班', '丙班', '丁班', '超级班']

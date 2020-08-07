@@ -7,7 +7,7 @@ import Container from '../src/components/container'
 // import AddminBatchAdd from '../src/components/adminBatchAdd'
 import NewButton from '../src/components/page/newButton'
 
-export default { title: 'showLing' }
+export default { title: 'showLing(hui)' }
 
 export const SearchTest = () => {
   const data = [

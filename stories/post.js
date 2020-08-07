@@ -23,7 +23,7 @@ import MyImage6 from '../static/timg.jpg'
 import MyImage3 from '../static/timg8J2T10BJ.jpg'
 
 export default {
-  title: 'Post'
+  title: 'Post(vivi)'
 }
 
 export const post = () => {

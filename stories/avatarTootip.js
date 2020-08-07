@@ -10,7 +10,7 @@ import EditButton from '../src/components/avatarTooltip/editButton'
 import MyImage from '../static/QQ20200518181405.jpg'
 import MyImage6 from '../static/timg.jpg'
 
-export default { title: 'AvatarTootip' }
+export default { title: 'AvatarTootip(vivi)' }
 
 export const ClsMember = () => {
   const data = ['甲班', '乙班', '丙班', '丁班', '超级班']

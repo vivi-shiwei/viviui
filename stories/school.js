@@ -27,7 +27,7 @@ import HeaderContainer from '../src/components/container'
 
 import MyImage from '../static/QQ20200518181405.jpg'
 export default {
-  title: 'School'
+  title: 'School(vivi)'
 }
 
 export const school = () => {

@@ -12,7 +12,6 @@ module.exports = {
   //   '../stories/**/cardDeck.[tj]s',
   //   '../stories/**/management.[tj]s',
   //   '../stories/**/wbgLayout.[tj]s',
-  //   '../stories/**/test.[tj]s',
   //   '../stories/**/addIntelligence.[tj]s'
   // ],
   addons: [

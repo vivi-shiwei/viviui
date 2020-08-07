@@ -7,7 +7,7 @@ import CancelButton from '../src/components/editShow/cancelButton'
 import EditTable from '../src/components/editShow/editTable'
 
 export default {
-  title: 'EditIntelligenceOne'
+  title: 'EditIntelligenceOne(hui)'
 }
 
 export const EditIntelligenceTest = () => {

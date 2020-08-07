@@ -6,7 +6,7 @@ import SearchBox from '../src/components/search/searchInput'
 import SearchButton from '../src/components/search/searchButton'
 import SearchResult from '../src/components/search/searchResult'
 
-export default { title: 'Search' }
+export default { title: 'Search(hui vivi)' }
 
 export const SearchTest = () => {
   return (

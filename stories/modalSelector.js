@@ -10,7 +10,7 @@ import AltRoundButton from '../src/components/modalSelector/squareButton'
 import EditButton from '../src/components/modalSelector/editButton'
 import ModalSelectorOption from '../src/components/modalSelector/modalSelectorOption'
 
-export default { title: 'ModalSelector' }
+export default { title: 'ModalSelector(vivi hui)' }
 
 export const ModalSelectorTest = () => {
   const [values, setValues] = useState('cdsj6 2019/2020 Dashboard')

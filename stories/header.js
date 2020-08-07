@@ -29,7 +29,7 @@ import { AiOutlineLogout } from 'react-icons/ai'
 
 import MyImage from '../static/QQ20200518181405.jpg'
 
-export default { title: 'Header' }
+export default { title: 'Header(vivi)' }
 
 export const header = () => {
   return (

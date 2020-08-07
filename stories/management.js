@@ -16,7 +16,7 @@ import WhiteBoardPage from '../src/components/page'
 import HeaderPage from '../src/components/page/headerPage'
 
 export default {
-  title: 'Management'
+  title: 'Management(hui)'
 }
 
 export const ManagementTest = () => {

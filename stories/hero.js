@@ -7,7 +7,7 @@ import {
 } from '@chakra-ui/core'
 
 export default {
-  title: 'Hero'
+  title: 'Hero(vivi)'
 }
 
 export const hero = () => {

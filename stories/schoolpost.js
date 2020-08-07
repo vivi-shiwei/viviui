@@ -34,7 +34,7 @@ import { FiAlignJustify } from 'react-icons/fi'
 
 import MyImage from '../static/QQ20200518181405.jpg'
 export default {
-  title: 'Schoolpost'
+  title: 'Schoolpost(vivi)'
 }
 
 export const Schoolpost = () => {
