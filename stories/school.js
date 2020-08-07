@@ -55,7 +55,7 @@ export const school = () => {
         passHref
       >
         <Button as='a' bg='transparent' border='1px' px={2} h={{ base: '35px', sm: '38px' }}>
-          登入
+          登入j
         </Button>
       </NextLink>
     </Box>
