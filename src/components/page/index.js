@@ -3,15 +3,15 @@ import React, { Children } from 'react'
 import WbgPage from './wbgPage'
 import HeaderPage from './pageHeader'
 
-const Page = ({ backurl, nodivider = false, children, ...props }) => {
-  let title = null
+const Page = ({ backurl, title, nodivider = false, children, ...props }) => {
+  let headerPage = null
   const chil = []
 
   Children.map(children, (c, i) => {
     switch (c.type) {
       case HeaderPage:
-        if (!title) title = []
-        title.push(c) // 頭部
+        if (!headerPage) headerPage = []
+        headerPage.push(c) // 頭部
         break
       default:
         chil.push(c)// 頭部以外的 children
@@ -19,7 +19,7 @@ const Page = ({ backurl, nodivider = false, children, ...props }) => {
   })
 
   return (
-    <WbgPage backurl={backurl} title={title} nodivider={nodivider} {...props}>
+    <WbgPage backurl={backurl} title={title} headerPage={headerPage} nodivider={nodivider} {...props}>
       {chil}
     </WbgPage>
   )

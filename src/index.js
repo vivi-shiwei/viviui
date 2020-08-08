@@ -297,7 +297,7 @@ export { default as NewModal } from './components/newModal'
 export { default as ModalWithContent } from './components/newModal/modalContent'
 export { default as ModalWithHeader } from './components/newModal/modalWithHeader'
 
-export { default as BlueButton } from './components/blueButton'
+// export { default as BlueButton } from './components/blueButton'
 export { default as DeleteIconButton } from './components/page/deleteButton'
 
 // editShow
@@ -333,3 +333,10 @@ export { default as TableRow } from './components/table/tableRow'
 export { default as AvatarTooltipGroup } from './components/avatarTooltipGroup'
 export { default as Avatars } from './components/avatarTooltipGroup/avatars'
 export { default as Tooltips } from './components/avatarTooltipGroup/toolTips'
+
+// 屏幕最中间的登录页面，FullScreenView
+export { default as FullScreenView } from './components/fullScreenView'
+export { default as RedButton } from './components/fullScreenView/redButton'
+export { default as BlueButton } from './components/fullScreenView/blueButton'
+export { default as ButtonGrid } from './components/fullScreenView/buttonGrid'
+export { default as LargeTitle } from './components/fullScreenView/largeTitle'

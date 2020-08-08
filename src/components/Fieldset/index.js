@@ -8,7 +8,7 @@ import {
 
 import Container from '../container'
 // 學校專業的 title 底綫模塊
-const Fieldset = ({ title, left, children, ...props }) => {
+const Fieldset = ({ title, left, right, children, ...props }) => {
   const { colorMode } = useColorMode()
   return (
     <Container
@@ -45,6 +45,7 @@ const Fieldset = ({ title, left, children, ...props }) => {
             </>
           )}
         </Flex>
+        {right}
       </Box>
     </Container>
   )
