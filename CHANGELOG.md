@@ -1,3 +1,9 @@
+## viviui 1.3.5
+
+- 新增 FullScreenView component
+- 为各个 component 添加黑暗模式下的样式
+- 优化 EditTable
+
 ## viviui 1.3.4
 
 - 优化 Fieldset 

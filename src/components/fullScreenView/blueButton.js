@@ -4,7 +4,7 @@ import {
   Box
 } from '@chakra-ui/core'
 
-const BlueButton = ({ leftIcon, rightIcon, children, containerProps, ...props }) => {
+const BlueButton = ({ leftIcon, rightIcon, children, ...props }) => {
   return (
     <Button
       as='a'

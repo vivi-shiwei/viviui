@@ -1,13 +1,12 @@
 import React from 'react'
 import {
-  Box,
   List,
   ListItem,
   Link
 } from '@chakra-ui/core'
 import { FaSchool, FaUserEdit } from 'react-icons/fa'
 import { AiTwotoneSetting } from 'react-icons/ai'
-import { GoTrashcan, GoStop } from 'react-icons/go'
+import { GoTrashcan } from 'react-icons/go'
 import LinkNext from 'next/link'
 
 import Management from '../src/components/page/manageMent'
