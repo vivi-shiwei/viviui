@@ -1,7 +1,7 @@
 import React, { Children } from 'react'
 
 import WbgPage from './wbgPage'
-import HeaderPage from './headerPage'
+import HeaderPage from './pageHeader'
 
 const Page = ({ backurl, nodivider = false, children, ...props }) => {
   let title = null

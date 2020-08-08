@@ -22,16 +22,16 @@ export const ClsMember = () => {
       left={
         <Row>
           <ToolTip name='vivi2'>
-            <Avatars profilePhoto={MyImage} />
+            <Avatars profilePhotoSrc={MyImage} />
           </ToolTip>
           <ToolTip name='vivi2'>
-            <Avatars profilePhoto={MyImage} />
+            <Avatars profilePhotoSrc={MyImage} />
           </ToolTip>
           <ToolTip name='vivi2'>
             <Avatars />
           </ToolTip>
           <ToolTip name='vivi2'>
-            <Avatars profilePhoto={MyImage} />
+            <Avatars profilePhotoSrc={MyImage} />
           </ToolTip>
         </Row>
       }
@@ -44,35 +44,35 @@ export const Avatart = () => {
   return (
     <Row>
       <ToolTip name='vivi2'>
-        <Avatars profilePhoto={MyImage} />
+        <Avatars profilePhotoSrc={MyImage} />
       </ToolTip>
       <ToolTip name='vivi2'>
-        <Avatars profilePhoto={MyImage} />
+        <Avatars profilePhotoSrc={MyImage} />
       </ToolTip>
       <ToolTip name='vivi2'>
         <Avatars />
       </ToolTip>
-      <Avatars profilePhoto={MyImage} />
+      <Avatars profilePhotoSrc={MyImage} />
       <ToolTip name='vivi2'>
-        <Avatars profilePhoto={MyImage} />
+        <Avatars profilePhotoSrc={MyImage} />
       </ToolTip>
       <ToolTip name='vivi2'>
-        <Avatars profilePhoto={MyImage} />
+        <Avatars profilePhotoSrc={MyImage} />
       </ToolTip>
       <ToolTip name='vivi2'>
-        <Avatars profilePhoto={MyImage} />
+        <Avatars profilePhotoSrc={MyImage} />
       </ToolTip>
       <ToolTip name='vivi2'>
-        <Avatars profilePhoto={MyImage} />
+        <Avatars profilePhotoSrc={MyImage} />
       </ToolTip>
       <ToolTip name='vivi2'>
-        <Avatars profilePhoto={MyImage} />
+        <Avatars profilePhotoSrc={MyImage} />
       </ToolTip>
       <ToolTip name='vivi2'>
-        <Avatars profilePhoto={MyImage} />
+        <Avatars profilePhotoSrc={MyImage} />
       </ToolTip>
       <ToolTip name='vivi2'>
-        <Avatars profilePhoto={MyImage} />
+        <Avatars profilePhotoSrc={MyImage} />
       </ToolTip>
     </Row>
   )

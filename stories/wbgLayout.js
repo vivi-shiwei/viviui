@@ -11,7 +11,7 @@ import { Formik, Form, Field } from 'formik'
 import InfiniteScroll from 'react-infinite-scroller'
 
 import WhiteBoardPage from '../src/components/page'
-import HeaderPage from '../src/components/page/headerPage'
+import HeaderPage from '../src/components/page/pageHeader'
 import BackButton from '../src/components/page/backButton'
 import SureButton from '../src/components/page/sureButton'
 import DeleteRemind from '../src/components/page/deleteRemind'

@@ -1,12 +1,13 @@
 import React from 'react'
 import {
   Box,
-  Divider
+  Divider,
+  useColorMode
 } from '@chakra-ui/core'
 
 // 白板的component，有backurl時，又有children，就會出現白板，沒有children就不會出現白板
 const WbgPage = ({ backurl, title, nodivider, children, ...props }) => {
-  console.log(title, nodivider)
+  const { colorMode } = useColorMode()
   return (
     <Box as='main' {...props}>
       {!!backurl && (
@@ -31,7 +32,7 @@ const WbgPage = ({ backurl, title, nodivider, children, ...props }) => {
             w={{ base: '100%', md: '90%' }}
             mt='2px'
             mx='auto'
-            bg='white'
+            bg={colorMode === 'light' ? (props.bg || props.background || 'white') : (props.dark || '#1A202C')}
             minH='100vh'
             maxWidth='928px'
             borderRadius='4px 4px 0 0'
@@ -39,7 +40,7 @@ const WbgPage = ({ backurl, title, nodivider, children, ...props }) => {
             boxShadow={{
               base: '',
               sm: '',
-              md: '0 -1px 10px rgba(0,0,0,0.05), 0 1px 4px rgba(0,0,0,0.1), 0 10px 30px #f3ece8'
+              md: colorMode === 'light' ? '0 -1px 10px rgba(0,0,0,0.05), 0 1px 4px rgba(0,0,0,0.1), 0 10px 30px #f3ece8' : '0 -1px 10px rgba(0,0,0,0.05), 0 1px 4px rgba(0,0,0,0.1), 0 10px 30px #2D3748'
             }}
           >
             <Box pt='1px'>
@@ -48,7 +49,7 @@ const WbgPage = ({ backurl, title, nodivider, children, ...props }) => {
                 mx='auto'
                 w='100%'
                 maxW={{ base: '100%', sm: '100%', md: '800px' }}
-                backgroundColor='white'
+                bg={colorMode === 'light' ? (props.bg || props.background || 'white') : (props.dark || '#1A202C')}
                 rounded={8}
                 transition='0.3s'
               >

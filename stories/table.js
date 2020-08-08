@@ -2,7 +2,7 @@ import React from 'react'
 import { Box } from '@chakra-ui/core'
 
 import Page from '../src/components/page'
-import HeaderPage from '../src/components/page/headerPage'
+import HeaderPage from '../src/components/page/pageHeader'
 import Table from '../src/components/table'
 import TableHead from '../src/components/table/tableHead'
 import TableBody from '../src/components/table/tableBody'

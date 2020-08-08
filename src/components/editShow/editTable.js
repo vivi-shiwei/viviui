@@ -14,10 +14,10 @@ const EditTable = ({ value, inputonChange, ...props }) => {
   return (
     <Editable
       fontSize={{ base: '20px', sm: '20px', md: '24px' }}
-      color={props.color || 'green.600'}
-      isPreviewFocusable={false}
-      value={value}
+      defaultValue={value}
       d='flex'
+      isPreviewFocusable={false}
+      onChange={inputonChange}
       {...props}
     >
       {({ isEditing, onSubmit, onRequestEdit }) => (
@@ -25,7 +25,6 @@ const EditTable = ({ value, inputonChange, ...props }) => {
           {!isEditing && (
             <Flex align='center'>
               <IconButton
-                variantColor={props.color || 'green.600'}
                 variant='outline'
                 size='xs'
                 icon='edit'
@@ -45,7 +44,7 @@ const EditTable = ({ value, inputonChange, ...props }) => {
               textOverflow='ellipsis'
               justifyContent='space-between'
             />
-            <EditableInput onChange={inputonChange} />
+            <EditableInput />
           </Box>
         </>
       )}

@@ -13,7 +13,7 @@ import LinkNext from 'next/link'
 import Management from '../src/components/page/manageMent'
 import ColumnLine from '../src/components/page/columnIconText'
 import WhiteBoardPage from '../src/components/page'
-import HeaderPage from '../src/components/page/headerPage'
+import HeaderPage from '../src/components/page/pageHeader'
 
 export default {
   title: 'Management(hui)'
