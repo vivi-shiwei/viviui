@@ -1702,8 +1702,7 @@ TableRow 的 props
       )
     }
 
-## FullScreenView  
-
+## FullScreenView
 相关组件
 
 
@@ -1951,33 +1950,82 @@ FullScreenView 的 props
     <FullScreenView closePath='/'>
       <LargeTitle>登入</LargeTitle>
       <ButtonGrid>
-        <NextLink href='/test' passHref>
-          <a onClick={action('button-click')}>
-            <RedButton leftIcon={<AiFillGoogleSquare size='24px' />}>
-              使用google登入
-            </RedButton>
-          </a>
-        </NextLink>
-        <NextLink href='/test' passHref>
-          <a onClick={action('button-click')}>
-            <RedButton leftIcon={<AiFillGoogleSquare size='24px' />}>
-              使用google登入
-            </RedButton>
-          </a>
-        </NextLink>
-        <NextLink href='/test' passHref>
-          <a onClick={action('button-click')}>
-            <RedButton leftIcon={<AiFillGoogleSquare size='24px' />}>
-              使用google登入
-            </RedButton>
-          </a>
-        </NextLink>
-        <NextLink href='/test' passHref>
-          <a onClick={action('button-click')}>
-            <RedButton leftIcon={<AiFillGoogleSquare size='24px' />}>
-              使用google登入
-            </RedButton>
-          </a>
-        </NextLink>
+        <RedButton leftIcon={<AiFillGoogleSquare size='24px' />}>
+          使用google登入
+        </RedButton>
+        <RedButton leftIcon={<AiFillGoogleSquare size='24px' />}>
+          使用google登入
+        </RedButton>
+        <RedButton leftIcon={<AiFillGoogleSquare size='24px' />}>
+          使用google登入
+        </RedButton>
+        <RedButton leftIcon={<AiFillGoogleSquare size='24px' />}>
+          使用google登入
+        </RedButton>
       </ButtonGrid>
     </FullScreenView>
+
+
+
+## Crumb
+
+相关组件
+
+
+- Crumb
+- CrumbLink：Breadcrumb的 link 元素。
+
+
+    import{
+      Crumb,
+      CrumbLink
+    } from 'viviui'
+
+
+- Crumb 和 CrumbLink 需要一起使用
+
+Crumb 能传入的参数
+
+
+| 名称       | 描述                                     |
+| -------- | -------------------------------------- |
+| children | Crumb 的儿子                             |
+| ...props | 接受chakra 的 Breadcrumb 样式到 Crumb 里 |
+
+
+Crumb 的 Props
+
+
+| 名称        | 默认                            | 描述        |
+| --------- | ----------------------------- | --------- |
+| spacing   | 8px                           | 子集之间的距离   |
+| separator | <Icon name='chevron-right' /> | 子集之间的icon |
+
+
+CrumbLink 能传入的参数
+
+
+| 名称    | 描述                                                 |
+| ----- | -------------------------------------------------- |
+| props | 能接受 children chakra 的 BreadcrumbLink 到 CrumbLink 里 |
+
+
+CrumbLink 的 Props
+
+
+| 名称         | 默认      | 描述   |
+| ---------- | ------- | ---- |
+| color      | #1b6ac9 | 字体颜色 |
+| fontWeight | bold    | 字体加粗 |
+
+
+
+![](https://paper-attachments.dropbox.com/s_5C95C1431E8EE271575B06E0F01DCCD326973A3B62300F7E5C22D65DB3E79990_1597056325075_image.png)
+
+
+
+    <Crumb>
+        <CrumbLink>vivi</CrumbLink>
+        <CrumbLink>vivi</CrumbLink>
+        <CrumbLink>vivi</CrumbLink>
+    </Crumb>

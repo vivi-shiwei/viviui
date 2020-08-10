@@ -1,3 +1,8 @@
+## viviui 1.3.9
+
+- 新增 Footer component，
+- 新增 Crumb component。
+
 ## viviui 1.3.5
 
 - 新增 FullScreenView component
