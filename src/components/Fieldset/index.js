@@ -25,7 +25,13 @@ const Fieldset = ({ title, left, right, children, ...props }) => {
         bg={colorMode === 'light' ? (props.bg || props.background) : (props.dark || '#1A202C')}
       // {...props}
       >
-        {left}
+        <Box
+          position=' absolute'
+          top='0'
+          left=' 0'
+        >
+          {left}
+        </Box>
         <Flex justify='center' align='center'>
           {(!!children || !!title) && (
             <>
@@ -45,7 +51,13 @@ const Fieldset = ({ title, left, right, children, ...props }) => {
             </>
           )}
         </Flex>
-        {right}
+        <Box
+          position=' absolute'
+          top='0'
+          right=' 0'
+        >
+          {right}
+        </Box>
       </Box>
     </Container>
   )
