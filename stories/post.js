@@ -14,7 +14,6 @@ import {
 } from '@chakra-ui/core'
 
 import PostsPictures from '../src/components/postCard/postsPictures'
-import NewModal from '../src/components/newModal'
 import ModalWithHeader from '../src/components/newModal/modalWithHeader'
 import ModalWithContent from '../src/components/newModal/modalContent'
 import ModelButton from '../src/components/blueButton'

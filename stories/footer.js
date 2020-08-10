@@ -1,41 +1,41 @@
 import React from 'react'
-import GridFooter from '../src/components/featureGrid'
-import OddFeature from '../src/components/featureGrid/feature'
+import FeatureGrid from '../src/components/featureGrid'
+import Feature from '../src/components/featureGrid/feature'
 import { MdPalette, MdGrain } from 'react-icons/md'
 
 export default { title: 'FeatureGrid(vivi)' }
 
 export const Footer = () => {
   return (
-    <GridFooter>
-      <OddFeature title='大標題' subtitle='小標題' icon={MdGrain} />
-      <OddFeature subtitle='小標題' icon={MdPalette} />
-      <OddFeature title='大標題' icon={MdGrain} />
-      <OddFeature title='大標題' subtitle='小標題' />
-    </GridFooter>
+    <FeatureGrid>
+      <Feature title='大標題' subtitle='小標題' icon={MdGrain} />
+      <Feature subtitle='小標題' icon={MdPalette} />
+      <Feature title='大標題' icon={MdGrain} />
+      <Feature title='大標題' subtitle='小標題' />
+    </FeatureGrid>
   )
 }
 
 export const MoreFooter = () => {
   return (
-    <GridFooter>
-      <OddFeature title='大標題' subtitle='小標題' icon={MdGrain} />
-      <OddFeature subtitle='小標題' icon={MdPalette} />
-      <OddFeature title='大標題' subtitle='小標題' icon={MdGrain} />
-      <OddFeature subtitle='小標題' icon={MdPalette} />
-      <OddFeature title='大標題' icon={MdGrain} />
-      <OddFeature title='大標題' subtitle='小標題' />
-      <OddFeature subtitle='小標題' icon={MdPalette} />
-      <OddFeature title='大標題' icon={MdGrain} />
-      <OddFeature title='大標題' subtitle='小標題' />
-    </GridFooter>
+    <FeatureGrid>
+      <Feature title='大標題' subtitle='小標題' icon={MdGrain} />
+      <Feature subtitle='小標題' icon={MdPalette} />
+      <Feature title='大標題' subtitle='小標題' icon={MdGrain} />
+      <Feature subtitle='小標題' icon={MdPalette} />
+      <Feature title='大標題' icon={MdGrain} />
+      <Feature title='大標題' subtitle='小標題' />
+      <Feature subtitle='小標題' icon={MdPalette} />
+      <Feature title='大標題' icon={MdGrain} />
+      <Feature title='大標題' subtitle='小標題' />
+    </FeatureGrid>
   )
 }
 export const TwoFooter = () => {
   return (
-    <GridFooter>
-      <OddFeature title='大標題' subtitle='小標題' icon={MdGrain} />
-      <OddFeature subtitle='小標題' icon={MdPalette} />
-    </GridFooter>
+    <FeatureGrid>
+      <Feature title='大標題' subtitle='小標題' icon={MdGrain} />
+      <Feature subtitle='小標題' icon={MdPalette} />
+    </FeatureGrid>
   )
 }

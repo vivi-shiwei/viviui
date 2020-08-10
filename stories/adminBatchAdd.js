@@ -3,9 +3,10 @@ import { useRouter } from 'next/router'
 import NextLink from 'next/link'
 import { Box, Link, Button } from '@chakra-ui/core'
 
-import Container from '../src/components/container'
+import ButtonGrid from '../src/components/fullScreenView/buttonGrid'
 // import AddminBatchAdd from '../src/components/adminBatchAdd'
-import NewButton from '../src/components/page/newButton'
+import { BlueButton } from '../src/index'
+import { FullScreenView } from '../src/index'
 
 export default { title: 'showLing(hui)' }
 
@@ -34,16 +35,18 @@ export const SearchTest = () => {
     }
   ]
   return (
-    <Container mt='30px' d='block' w='400px'>
-      {
-        data.map((item, index) => {
-          return (
-            <>
-              <NewButton w='95%' maxw='400px'>{item.name}</NewButton>
-            </>
-          )
-        })
-      }
-    </Container>
+    <FullScreenView>
+      <ButtonGrid>
+        {
+          data.map((item, index) => {
+            return (
+              <>
+                <BlueButton>{item.name}</BlueButton>
+              </>
+            )
+          })
+        }
+      </ButtonGrid>
+    </FullScreenView>
   )
 }
