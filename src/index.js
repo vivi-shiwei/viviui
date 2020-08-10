@@ -280,6 +280,9 @@ export { default as Hero } from './components/hero'
 export { default as FeatrueGrid } from './components/featureGrid'
 export { default as Featrure } from './components/featureGrid/feature'
 
+// Footer
+export { default as Footer } from './components/footer'
+
 // Group
 export { default as Group } from './components/group'
 export { default as Card } from './components/group/card'
