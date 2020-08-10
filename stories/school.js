@@ -1,8 +1,5 @@
 import React from 'react'
-import Hero from '../src/components/hero'
-import Header from '../src/components/header'
-import FeatureGrid from '../src/components/featureGrid'
-import Feature from '../src/components/featureGrid/feature'
+import { action } from '@storybook/addon-actions'
 import {
   Box,
   Heading,
@@ -28,8 +25,13 @@ import HeaderMobileNav from '../src/components/header/headerMobileNav'
 import HeaderRight from '../src/components/header/headerRight'
 import HeaderButton from '../src/components/header/headerButton'
 import Footer from '../src/components/footer'
+import Hero from '../src/components/hero'
+import Header from '../src/components/header'
+import FeatureGrid from '../src/components/featureGrid'
+import Feature from '../src/components/featureGrid/feature'
 
 import MyImage from '../static/QQ20200518181405.jpg'
+
 export default {
   title: 'School(vivi)'
 }
@@ -39,11 +41,8 @@ export const school = () => {
     <>
       <Header>
         <HeaderLogo>
-          <NextLink
-            href='https://www.baidu.com'
-            passHref
-          >
-            <Box as='a'>
+          <NextLink href='/test' passHref>
+            <a onClick={action('button-click')}>
               <Heading as='h1' size='lg' letterSpacing='-.1rem'>
                 <Box as='span' d={{ base: 'none', sm: 'inline' }}>
                   Macau School
@@ -55,7 +54,7 @@ export const school = () => {
                   {' '}學不停
                 </Box>
               </Heading>
-            </Box>
+            </a>
           </NextLink>
         </HeaderLogo>
         <HeaderRight>
@@ -65,7 +64,7 @@ export const school = () => {
             </MenuButton>
             <MenuList w='280px'>
               <NextLink href='/' passHref>
-                <MenuItem as='a'>
+                <MenuItem as='a' onClick={action('button-click')}>
                   <Box as={IoMdHome} mr='4px' />
                   <span>返回 Macau School</span>
                 </MenuItem>
@@ -85,13 +84,12 @@ export const school = () => {
         subtitle='SCHOOL 是一個簡單的、可連結很多模組的、線上的學校系統。可透過 SCHOOL 進行日常校園管理，了解學生學習生活，促進發掘學生閃光點等等。專為澳門中小幼學校而設。'
         leftButton={
           <Box mt='6' d='flex' flexWrap='wrap' justifyContent='center'>
-            <NextLink
-              href='/'
-              passHref
-            >
-              <Button size='lg' as='a' variantColor='blue' w={{ base: '100%', sm: 'auto' }}>
-                登入到我的學校
-              </Button>
+            <NextLink href='/test' passHref>
+              <a onClick={action('button-click')}>
+                <Button size='lg' as='a' variantColor='blue' w={{ base: '100%', sm: 'auto' }}>
+                  登入到我的學校
+                </Button>
+              </a>
             </NextLink>
           </Box>
         }
@@ -172,11 +170,8 @@ export const Homeschool = () => {
     <>
       <Header>
         <HeaderLogo>
-          <NextLink
-            href='https://www.baidu.com'
-            passHref
-          >
-            <Box as='a'>
+          <NextLink href='/test' passHref>
+            <a onClick={action('button-click')}>
               <Heading as='h1' size='lg' letterSpacing='-.1rem'>
                 <Box as='span' d={{ base: 'none', sm: 'inline' }}>
                   Macau School
@@ -188,29 +183,45 @@ export const Homeschool = () => {
                   {' '}學不停
                 </Box>
               </Heading>
-            </Box>
+            </a>
           </NextLink>
         </HeaderLogo>
         <HeaderCenter>
-          <HeaderButton icon={MdAccessibility} title='首页' href='https://www.baidu.com' />
-          <HeaderButton icon={MdAccessibility} title='关于' href='https://www.baidu.com' />
+          <NextLink href='/test' passHref>
+            <a onClick={action('button-click')}>
+              <HeaderButton icon={MdAccessibility} title='首页' href='https://www.baidu.com' />
+            </a>
+          </NextLink>
+          <NextLink href='/test' passHref>
+            <a onClick={action('button-click')}>
+              <HeaderButton icon={MdAccessibility} title='关于' href='https://www.baidu.com' />
+            </a>
+          </NextLink>
         </HeaderCenter>
         <HeaderRight>
-          <HeaderButton icon={MdAccessibility} title='首页' href='https://www.baidu.com' />
-          <HeaderButton icon={MdAccessibility} title='关于' href='https://www.baidu.com' />
+          <NextLink href='/test' passHref>
+            <a onClick={action('button-click')}>
+              <HeaderButton icon={MdAccessibility} title='首页' href='https://www.baidu.com' />
+            </a>
+          </NextLink>
+          <NextLink href='/test' passHref>
+            <a onClick={action('button-click')}>
+              <HeaderButton icon={MdAccessibility} title='关于' href='https://www.baidu.com' />
+            </a>
+          </NextLink>
           <Menu placement='bottom-end'>
-            <MenuButton as='div'>
+            <MenuButton as='div' onClick={action('button-click')}>
               <Avatar name='vivi' src={MyImage} size='sm' cursor='pointer' />
             </MenuButton>
             <MenuList w='280px'>
               <NextLink href='/' passHref>
-                <MenuItem as='a'>
+                <MenuItem as='a' onClick={action('button-click')}>
                   <Box as={IoMdHome} mr='4px' />
                   <span>返回 Macau School</span>
                 </MenuItem>
               </NextLink>
               <Link href='/'>
-                <MenuItem>
+                <MenuItem onClick={action('button-click')}>
                   <Box as={AiOutlineLogout} mr='4px' />
                   <span>登出</span>
                 </MenuItem>
@@ -219,11 +230,11 @@ export const Homeschool = () => {
           </Menu>
         </HeaderRight>
         <HeaderMobileNav>
-          <DrawerItemButton>首页</DrawerItemButton>
+          <DrawerItemButton onClick={action('button-click')}>首页</DrawerItemButton>
           <DrawerItemDivider />
-          <DrawerItemButton>关于</DrawerItemButton>
+          <DrawerItemButton onClick={action('button-click')}>关于</DrawerItemButton>
           <DrawerItemDivider />
-          <DrawerItemButton>哈哈</DrawerItemButton>
+          <DrawerItemButton onClick={action('button-click')}>哈哈</DrawerItemButton>
           <DrawerItemDivider />
         </HeaderMobileNav>
       </Header>
@@ -245,7 +256,7 @@ export const Homeschool = () => {
               href='/'
               passHref
             >
-              <Button size='lg' as='a' variantColor='blue' w={{ base: '100%', sm: 'auto' }}>
+              <Button size='lg' as='a' onClick={action('button-click')} variantColor='blue' w={{ base: '100%', sm: 'auto' }}>
                 登入到我的學校
               </Button>
             </NextLink>
@@ -276,6 +287,12 @@ export const Homeschool = () => {
         context='Macau School 的宗旨為在生活中不停學習。提供線上學習平台，線上學校管理系統。通過視頻課程，在您的瀏覽器中舒適地教授課程，為澳門學生而設。'
         sign='© 2020 Macau School. Crafted lovingly in Macau.'
       />
+
+      <NextLink href='/test'>
+        <a onClick={action('button-click')}>
+          <Button>返回</Button>
+        </a>
+      </NextLink>
     </>
   )
 }

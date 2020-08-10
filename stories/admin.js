@@ -107,7 +107,7 @@ export const editSchool = () => {
                 flexDirection={{ base: 'column-reverse', md: 'initial' }}
               >
                 <NextLink
-                  href='#'
+                  href='/'
                 >
                   <Link _hover={{ textDecoration: 'none' }}>
                     <Button
@@ -729,7 +729,7 @@ export const isAdmin = () => {
           {
             adminFunc.map((item, index) => (
               <ListItem className='admin-list-item' key={index}>
-                <NextLink href='#'>
+                <NextLink href='/'>
                   <Link
                     d='flex'
                     alignItems='center'

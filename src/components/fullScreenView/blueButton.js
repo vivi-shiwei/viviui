@@ -9,7 +9,7 @@ const BlueButton = ({ leftIcon, rightIcon, children, ...props }) => {
     <Button
       as='a'
       size='lg'
-      w='100%'
+      w={{ base: '98%', sm: '340px' }}
       variantColor='blue'
       borderRadius='9999px'
       {...props}

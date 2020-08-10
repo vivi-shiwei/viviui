@@ -18,7 +18,8 @@ module.exports = {
     '../stories/**/editintelligence.[tj]s',
     '../stories/**/post.[tj]s',
     '../stories/**/table.[tj]s',
-    '../stories/**/fullScreenView.[tj]s'
+    '../stories/**/fullScreenView.[tj]s',
+    '../stories/**/fieldset.[tj]s'
   ],
   addons: [
     '@storybook/addon-knobs/register',

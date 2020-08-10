@@ -7,6 +7,8 @@ import {
   Input,
   Checkbox
 } from '@chakra-ui/core'
+import NextLink from 'next/link'
+import { action } from '@storybook/addon-actions'
 import { Formik, Form, Field } from 'formik'
 import InfiniteScroll from 'react-infinite-scroller'
 
@@ -57,11 +59,23 @@ export const editDashboard = () => {
           justifyContent='space-between'
           flexDirection={{ base: 'column-reverse', md: 'initial' }}
         >
-          <BackButton>返回</BackButton>
-          <SureButton>確認</SureButton>
+          <NextLink href='/test' passHref>
+            <a onClick={action('button-click')}>
+              <BackButton onClick={action('button-click')}>返回</BackButton>
+            </a>
+          </NextLink>
+          <NextLink href='/test' passHref>
+            <a onClick={action('button-click')}>
+              <SureButton onClick={action('button-click')}>確認</SureButton>
+            </a>
+          </NextLink>
         </Box>
         <DeleteRemind title='刪除操作' content='請謹慎操作。'>
-          <SureButton variantColor='red'>刪除</SureButton>
+          <NextLink href='/test' passHref>
+            <a onClick={action('button-click')}>
+              <SureButton onClick={action('button-click')} variantColor='red'>刪除</SureButton>
+            </a>
+          </NextLink>
         </DeleteRemind>
       </Box>
     </Page>
@@ -160,11 +174,23 @@ export const editCls = () => {
                 justifyContent='space-between'
                 flexDirection={{ base: 'column-reverse', md: 'initial' }}
               >
-                <BackButton>返回</BackButton>
-                <SureButton>確認</SureButton>
+                <NextLink href='/test' passHref>
+                  <a onClick={action('button-click')}>
+                    <BackButton>返回</BackButton>
+                  </a>
+                </NextLink>
+                <NextLink href='/test' passHref>
+                  <a onClick={action('button-click')}>
+                    <SureButton>確認</SureButton>
+                  </a>
+                </NextLink>
               </Box>
               <DeleteRemind title='刪除 Dashboard' content='删除班級後后，將會清空該班級成員，請謹慎操作。'>
-                <SureButton variantColor='red'>刪除</SureButton>
+                <NextLink href='/test' passHref>
+                  <a onClick={action('button-click')}>
+                    <SureButton variantColor='red'>刪除</SureButton>
+                  </a>
+                </NextLink>
               </DeleteRemind>
             </Form>)}
         </Formik>
@@ -244,15 +270,27 @@ export const editSchool = () => {
                 justifyContent='space-between'
                 flexDirection={{ base: 'column-reverse', md: 'initial' }}
               >
-                <BackButton>返回</BackButton>
-                <SureButton>確認</SureButton>
+                <NextLink href='/test' passHref>
+                  <a onClick={action('button-click')}>
+                    <BackButton onClick={action('button-click')}>返回</BackButton>
+                  </a>
+                </NextLink>
+                <NextLink href='/test' passHref>
+                  <a onClick={action('button-click')}>
+                    <SureButton onClick={action('button-click')}>確認</SureButton>
+                  </a>
+                </NextLink>
               </Box>
 
               <DeleteRemind
                 title='刪除 Dashboard'
                 content='删除學校後，將會清空該學校成員，該操作不能還原，請謹慎操作。'
               >
-                <SureButton variantColor='red'>刪除</SureButton>
+                <NextLink href='/test' passHref>
+                  <a onClick={action('button-click')}>
+                    <SureButton onClick={action('button-click')} variantColor='red'>刪除</SureButton>
+                  </a>
+                </NextLink>
               </DeleteRemind>
             </Form>
           )}
@@ -294,8 +332,16 @@ export const InfiniteScrolltest = () => {
             }
             right={
               <>
-                <DeleteIconButton />
-                <EditButton icon='edit' variantColor='blue' />
+                <NextLink href='/test' passHref>
+                  <a onClick={action('button-click')}>
+                    <DeleteIconButton onClick={action('button-click')} />
+                  </a>
+                </NextLink>
+                <NextLink href='/test' passHref>
+                  <a onClick={action('button-click')}>
+                    <EditButton onClick={action('button-click')} icon='edit' variantColor='blue' />
+                  </a>
+                </NextLink>
               </>
             }
           />
@@ -310,8 +356,16 @@ export const InfiniteScrolltest = () => {
             }
             right={
               <>
-                <DeleteIconButton />
-                <EditButton icon='edit' variantColor='blue' ml='5px' />
+                <NextLink href='/test' passHref>
+                  <a onClick={action('button-click')}>
+                    <DeleteIconButton />
+                  </a>
+                </NextLink>
+                <NextLink href='/test' passHref>
+                  <a onClick={action('button-click')}>
+                    <EditButton onClick={action('button-click')} icon='edit' variantColor='blue' ml='5px' />
+                  </a>
+                </NextLink>
               </>
             }
           />
@@ -326,8 +380,16 @@ export const InfiniteScrolltest = () => {
             }
             right={
               <>
-                <DeleteIconButton />
-                <EditButton icon='edit' variantColor='blue' />
+                <NextLink href='/test' passHref>
+                  <a onClick={action('button-click')}>
+                    <DeleteIconButton onClick={action('button-click')} />
+                  </a>
+                </NextLink>
+                <NextLink href='/test' passHref>
+                  <a onClick={action('button-click')}>
+                    <EditButton onClick={action('button-click')} icon='edit' variantColor='blue' />
+                  </a>
+                </NextLink>
               </>
             }
           />
@@ -342,8 +404,16 @@ export const InfiniteScrolltest = () => {
             }
             right={
               <>
-                <DeleteIconButton />
-                <EditButton icon='edit' variantColor='blue' />
+                <NextLink href='/test' passHref>
+                  <a onClick={action('button-click')}>
+                    <DeleteIconButton onClick={action('button-click')} />
+                  </a>
+                </NextLink>
+                <NextLink href='/test' passHref>
+                  <a onClick={action('button-click')}>
+                    <EditButton onClick={action('button-click')} icon='edit' variantColor='blue' />
+                  </a>
+                </NextLink>
               </>
             }
           />
@@ -358,8 +428,16 @@ export const InfiniteScrolltest = () => {
             }
             right={
               <>
-                <DeleteIconButton />
-                <EditButton icon='edit' variantColor='blue' />
+                <NextLink href='/test' passHref>
+                  <a onClick={action('button-click')}>
+                    <DeleteIconButton />
+                  </a>
+                </NextLink>
+                <NextLink href='/test' passHref>
+                  <a onClick={action('button-click')}>
+                    <EditButton icon='edit' variantColor='blue' />
+                  </a>
+                </NextLink>
               </>
             }
           />
@@ -374,8 +452,16 @@ export const InfiniteScrolltest = () => {
             }
             right={
               <>
-                <DeleteIconButton />
-                <EditButton icon='edit' variantColor='blue' />
+                <NextLink href='/test' passHref>
+                  <a onClick={action('button-click')}>
+                    <DeleteIconButton />
+                  </a>
+                </NextLink>
+                <NextLink href='/test' passHref>
+                  <a onClick={action('button-click')}>
+                    <EditButton icon='edit' variantColor='blue' />
+                  </a>
+                </NextLink>
               </>
             }
           />
@@ -390,8 +476,16 @@ export const InfiniteScrolltest = () => {
             }
             right={
               <>
-                <DeleteIconButton />
-                <EditButton icon='edit' variantColor='blue' />
+                <NextLink href='/test' passHref>
+                  <a onClick={action('button-click')}>
+                    <DeleteIconButton />
+                  </a>
+                </NextLink>
+                <NextLink href='/test' passHref>
+                  <a onClick={action('button-click')}>
+                    <EditButton icon='edit' variantColor='blue' />
+                  </a>
+                </NextLink>
               </>
             }
           />
@@ -427,8 +521,16 @@ export const Rows = () => {
       }
       right={
         <>
-          <DeleteIconButton />
-          <EditButton icon='edit' variantColor='blue' />
+          <NextLink href='/test' passHref>
+            <a onClick={action('button-click')}>
+              <DeleteIconButton />
+            </a>
+          </NextLink>
+          <NextLink href='/test' passHref>
+            <a onClick={action('button-click')}>
+              <EditButton icon='edit' variantColor='blue' />
+            </a>
+          </NextLink>
         </>
       }
     />

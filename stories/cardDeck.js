@@ -1,4 +1,9 @@
 import React from 'react'
+import { Box } from '@chakra-ui/core'
+
+import { action } from '@storybook/addon-actions'
+import NextLink from 'next/link'
+
 import Group from '../src/components/group'
 import LeftGroupButton from '../src/components/Fieldset/leftFieldsetButton'
 import Card from '../src/components/group/card'
@@ -12,20 +17,39 @@ export const GroupTest = () => {
     <>
       <Fieldset title='班級' bg='white' left={<LeftGroupButton>新增</LeftGroupButton>} />
       <Group>
-        <Card title='乙班' />
-        <Card title='乙班' />
+        <NextLink href='/test' passHref>
+          <a onClick={action('button-click')}>
+            <Card title='乙班' />
+          </a>
+        </NextLink>
+        <NextLink href='/test' passHref>
+          <a onClick={action('button-click')}>
+            <Card title='乙班' />
+          </a>
+        </NextLink>
         {
           data.map((item, index) => (
-            <Card key={index} title={item} />
+            <>
+              <NextLink href='/test' passHref>
+                <a onClick={action('button-click')}>
+                  <Card key={index} title={item} />
+                </a>
+              </NextLink>
+            </>
           ))
         }
       </Group>
-
+      <Fieldset title='班級' bg='white' left={<LeftGroupButton>新增</LeftGroupButton>} />
       <Group>
-        <Fieldset title='班級' bg='white' left={<LeftGroupButton>新增</LeftGroupButton>} />
         {
           data.map((item, index) => (
-            <Card key={index} title={item} />
+            <>
+              <NextLink href='/test' passHref>
+                <a onClick={action('button-click')}>
+                  <Card key={index} title={item} />
+                </a>
+              </NextLink>
+            </>
           ))
         }
       </Group>

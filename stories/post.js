@@ -12,6 +12,8 @@ import {
   MenuItem,
   useDisclosure
 } from '@chakra-ui/core'
+import NextLink from 'next/link'
+import { action } from '@storybook/addon-actions'
 
 import PostsPictures from '../src/components/postCard/postsPictures'
 import ModalWithHeader from '../src/components/newModal/modalWithHeader'
@@ -30,7 +32,13 @@ export const post = () => {
     <Tags
       creator={
         <Creator
-          profilePhoto={<Avatar name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />}
+          profilePhoto={
+            <NextLink href='/test' passHref>
+              <a onClick={action('button-click')}>
+                <Avatar name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
+              </a>
+            </NextLink>
+          }
           creatorName='vivi'
           creatorTime='2019-7-22'
         />

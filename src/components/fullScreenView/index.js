@@ -6,7 +6,7 @@ import CloseLink from './closeLink'
 
 const FullscreenView = ({ closePath, children, ...props }) => {
   return (
-    <FullscreenViewContainer>
+    <FullscreenViewContainer {...props}>
       {!!closePath && (
         <CloseLink href={closePath} />
       )}
