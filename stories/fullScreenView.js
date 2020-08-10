@@ -1,5 +1,5 @@
 import React from 'react'
-import { AiFillGoogleSquare, AiFillMessage } from 'react-icons/ai'
+import { AiFillGoogleSquare } from 'react-icons/ai'
 
 import FullScreenView from '../src/components/fullScreenView'
 import RedButton from '../src/components/fullScreenView/redButton'

@@ -99,12 +99,12 @@ const Admin = ({ backurl, button = null, schoolname, dashboradname, tabNames, ch
             </Box>
           </Box>
         ) : (
-            <HeaderContainer>
-              <Box mt={4}>
-                {children}
-              </Box>
-            </HeaderContainer>
-          )}
+          <HeaderContainer>
+            <Box mt={4}>
+              {children}
+            </Box>
+          </HeaderContainer>
+        )}
       </Box>
     </>
   )

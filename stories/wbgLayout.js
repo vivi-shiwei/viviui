@@ -10,7 +10,7 @@ import {
 import { Formik, Form, Field } from 'formik'
 import InfiniteScroll from 'react-infinite-scroller'
 
-import WhiteBoardPage from '../src/components/page'
+import Page from '../src/components/page'
 import HeaderPage from '../src/components/page/pageHeader'
 import BackButton from '../src/components/page/backButton'
 import SureButton from '../src/components/page/sureButton'
@@ -41,7 +41,7 @@ export const editDashboard = () => {
     return (!value) ? '該選項不可為空！' : ((value.length < 3) ? '長度不可短於三個字符！' : '')
   }
   return (
-    <WhiteBoardPage>
+    <Page>
       <HeaderPage size='lg' as='h2' pt={4}>編輯</HeaderPage>
       <HeaderPage
         fontSize={{ base: '17px', md: '25px' }}
@@ -64,7 +64,7 @@ export const editDashboard = () => {
           <SureButton variantColor='red'>刪除</SureButton>
         </DeleteRemind>
       </Box>
-    </WhiteBoardPage>
+    </Page>
   )
 }
 
@@ -79,7 +79,7 @@ export const editCls = () => {
     return (!value) ? '該選項不可為空！' : ((value.length < 3) ? '長度不可短於三個字符！' : '')
   }
   return (
-    <WhiteBoardPage
+    <Page
       title={
         <>
           <HeaderPage size='lg' as='h2' pt={4}>編輯 Dashboard</HeaderPage>
@@ -169,7 +169,7 @@ export const editCls = () => {
             </Form>)}
         </Formik>
       </Box>
-    </WhiteBoardPage>
+    </Page>
   )
 }
 
@@ -184,7 +184,7 @@ export const editSchool = () => {
     return (!value) ? '該選項不可為空！' : ((value.length < 3) ? '長度不可短於三個字符！' : '')
   }
   return (
-    <WhiteBoardPage
+    <Page
       title={
         <HeaderPage size='lg' as='h2' pt={4}>編輯學校</HeaderPage>
       }
@@ -258,7 +258,7 @@ export const editSchool = () => {
           )}
         </Formik>
       </Box>
-    </WhiteBoardPage>
+    </Page>
   )
 }
 
@@ -266,7 +266,7 @@ export const InfiniteScrolltest = () => {
   var items = ['1', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2']
 
   return (
-    <WhiteBoardPage
+    <Page
       title={
         <HeaderPage size='lg' as='h2' pt={4}>編輯學校</HeaderPage>
       }
@@ -409,7 +409,7 @@ export const InfiniteScrolltest = () => {
           </InfiniteScroll> */}
         </Box>
       </Box>
-    </WhiteBoardPage>
+    </Page>
   )
 }
 

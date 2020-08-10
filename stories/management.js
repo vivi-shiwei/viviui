@@ -1,18 +1,17 @@
 import React from 'react'
 import {
-  Box,
   List,
   ListItem,
   Link
 } from '@chakra-ui/core'
 import { FaSchool, FaUserEdit } from 'react-icons/fa'
 import { AiTwotoneSetting } from 'react-icons/ai'
-import { GoTrashcan, GoStop } from 'react-icons/go'
+import { GoTrashcan } from 'react-icons/go'
 import LinkNext from 'next/link'
 
 import Management from '../src/components/page/manageMent'
 import ColumnLine from '../src/components/page/columnIconText'
-import WhiteBoardPage from '../src/components/page'
+import Page from '../src/components/page'
 import HeaderPage from '../src/components/page/pageHeader'
 
 export default {
@@ -28,7 +27,7 @@ export const ManagementTest = () => {
     { icon: AiTwotoneSetting, name: '智能设定' }
   ]
   return (
-    <WhiteBoardPage
+    <Page
       title={
         <HeaderPage>
           管理员
@@ -57,6 +56,6 @@ export const ManagementTest = () => {
           }
         </List>
       </Management>
-    </WhiteBoardPage>
+    </Page>
   )
 }

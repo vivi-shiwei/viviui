@@ -12,7 +12,7 @@ const Container = (props) => {
       maxWidth='1280px'
       mx='auto'
       px={2}
-      bg={colorMode === 'light' ? (props.bg || props.background) : '#1A202C'}
+      bg={colorMode === 'light' ? (props.bg || props.background || 'white') : '#1A202C'}
       {...props}
     />
   )

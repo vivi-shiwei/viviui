@@ -1,10 +1,12 @@
 import React from 'react'
 import {
   Modal,
-  ModalOverlay
+  ModalOverlay,
+  useDisclosure
 } from '@chakra-ui/core'
 
 const NewModal = ({ mdalHeader, openModal, size, onOpen, closeButton, modalWithBody, noModalOverlay = false, modalcontent, isOpen, onClose, modalWithFooter, children, ...rest }) => {
+  // const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
       {openModal}

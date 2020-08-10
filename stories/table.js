@@ -1,5 +1,4 @@
 import React from 'react'
-import { Box } from '@chakra-ui/core'
 
 import Page from '../src/components/page'
 import HeaderPage from '../src/components/page/pageHeader'
@@ -12,20 +11,20 @@ import TableRow from '../src/components/table/tableRow'
 export default { title: 'addUser(vivi hui)' }
 
 export const table = () => {
-  const tableHeada = [
-    { title: '姓名', width: 200 },
-    { title: '英文姓名', width: 200 },
-    { title: '性別', width: 200 },
-    { title: '學生證號碼', width: 200 },
-    { title: '身份證號碼', width: 200 },
-    { title: '教青局教師證/教青局學生證編號', width: 250 },
-    { title: '拍卡卡號', width: 200 },
-    { title: '電郵信箱', width: 200 },
-    { title: '學生', width: 200 },
-    { title: '老師', width: 200 },
-    { title: '學校主管', width: 200 },
-    { title: '學校管理員', width: 200 }
-  ]
+  // const tableHeada = [
+  //   { title: '姓名', width: 200 },
+  //   { title: '英文姓名', width: 200 },
+  //   { title: '性別', width: 200 },
+  //   { title: '學生證號碼', width: 200 },
+  //   { title: '身份證號碼', width: 200 },
+  //   { title: '教青局教師證/教青局學生證編號', width: 250 },
+  //   { title: '拍卡卡號', width: 200 },
+  //   { title: '電郵信箱', width: 200 },
+  //   { title: '學生', width: 200 },
+  //   { title: '老師', width: 200 },
+  //   { title: '學校主管', width: 200 },
+  //   { title: '學校管理員', width: 200 }
+  // ]
   // const data = [
   //   {
   //     fieldName: '姓名',

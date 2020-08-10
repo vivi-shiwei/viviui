@@ -1,8 +1,8 @@
 import React from 'react'
 import Hero from '../src/components/hero'
 import Header from '../src/components/header'
-import GridFooter from '../src/components/featureGrid'
-import OddFeature from '../src/components/featureGrid/feature'
+import FeatureGrid from '../src/components/featureGrid'
+import Feature from '../src/components/featureGrid/feature'
 import {
   Box,
   Heading,
@@ -13,16 +13,12 @@ import {
   Menu,
   MenuList,
   MenuItem,
-  Link,
-  Text,
-  Flex,
-  Divider
+  Link
 } from '@chakra-ui/core'
 import { AiOutlineLogout } from 'react-icons/ai'
 import { IoMdHome } from 'react-icons/io'
 import NextLink from 'next/link'
 import { MdDashboard, MdAccessibility, MdPhoto, MdShowChart } from 'react-icons/md'
-import HeaderContainer from '../src/components/container'
 
 import DrawerItemDivider from '../src/components/header/drawerItemDivider'
 import DrawerItemButton from '../src/components/header/drawerItemButton'
@@ -31,6 +27,7 @@ import HeaderCenter from '../src/components/header/headerCenter'
 import HeaderMobileNav from '../src/components/header/headerMobileNav'
 import HeaderRight from '../src/components/header/headerRight'
 import HeaderButton from '../src/components/header/headerButton'
+import Footer from '../src/components/footer'
 
 import MyImage from '../static/QQ20200518181405.jpg'
 export default {
@@ -100,24 +97,24 @@ export const school = () => {
         }
       />
 
-      <GridFooter>
-        <OddFeature
+      <FeatureGrid>
+        <Feature
           title='學生成長檔案'
           subtitle='SCHOOL 替每個學生都建立一個成長檔案，老師能記錄學生的學習生活，如學生的擅好，長處等。
                         使老師更能發現學生的閃光點。同學也能充分了解校園生活所帶給他的歷程。'
           icon={MdAccessibility}
         />
-        <OddFeature
+        <Feature
           title='學生相冊'
           subtitle='每個小朋友成長的瞬間都值得紀念。SCHOOL 提供的學生相冊除了能作為記錄學生活動相片外，也能和學生成長檔案、學生活動事件相連結。讓系統能客觀地分析學生的智能發展方向。'
           icon={MdPhoto}
         />
-        <OddFeature
+        <Feature
           title='與基力掛勾的學生評估表'
           subtitle='每個小朋友成長的瞬間都值得紀念。SCHOOL 提供的學生相冊除了能作為記錄學生活動相片外，也能和學生成長檔案、學生活動事件相連結。讓系統能客觀地分析學生的智能發展方向。'
           icon={MdShowChart}
         />
-      </GridFooter>
+      </FeatureGrid>
     </>
   )
 }
@@ -256,44 +253,29 @@ export const Homeschool = () => {
         }
       />
 
-      <GridFooter>
-        <OddFeature
+      <FeatureGrid>
+        <Feature
           title='學生成長檔案'
           subtitle='SCHOOL 替每個學生都建立一個成長檔案，老師能記錄學生的學習生活，如學生的擅好，長處等。
                         使老師更能發現學生的閃光點。同學也能充分了解校園生活所帶給他的歷程。'
           icon={MdAccessibility}
         />
-        <OddFeature
+        <Feature
           title='學生相冊'
           subtitle='每個小朋友成長的瞬間都值得紀念。SCHOOL 提供的學生相冊除了能作為記錄學生活動相片外，也能和學生成長檔案、學生活動事件相連結。讓系統能客觀地分析學生的智能發展方向。'
           icon={MdPhoto}
         />
-        <OddFeature
+        <Feature
           title='與基力掛勾的學生評估表'
           subtitle='每個小朋友成長的瞬間都值得紀念。SCHOOL 提供的學生相冊除了能作為記錄學生活動相片外，也能和學生成長檔案、學生活動事件相連結。讓系統能客觀地分析學生的智能發展方向。'
           icon={MdShowChart}
         />
-      </GridFooter>
-      <Divider mt={24} mb={6} />
-      <HeaderContainer mb={{ base: 4, md: 20 }} px={4}>
-        <Box as='footer'>
-          <Flex flexWrap='wrap'>
-            <Box w={{ base: '100%', md: '100%' }} borderLeftWidth={{ base: 0, md: 0 }} pl={{ base: 0, md: 0 }} mb={4}>
-              <Heading as='p' size='lg' letterSpacing='-.1rem' mb={5}>
-                <Box as='span'>
-                  Macau School 學不停
-                </Box>
-              </Heading>
-              <Text mb={2}>
-                Macau School 的宗旨為在生活中不停學習。提供線上學習平台，線上學校管理系統。通過視頻課程，在您的瀏覽器中舒適地教授課程，為澳門學生而設。
-              </Text>
-            </Box>
-            <Box d={{ base: 'block', md: 'block' }}>
-              © 2020 Macau School. Crafted lovingly in Macau.
-            </Box>
-          </Flex>
-        </Box>
-      </HeaderContainer>
+      </FeatureGrid>
+      <Footer
+        title='Macau School 學不停'
+        context='Macau School 的宗旨為在生活中不停學習。提供線上學習平台，線上學校管理系統。通過視頻課程，在您的瀏覽器中舒適地教授課程，為澳門學生而設。'
+        sign='© 2020 Macau School. Crafted lovingly in Macau.'
+      />
     </>
   )
 }

@@ -4,9 +4,9 @@ import LeftGroupButton from '../src/components/Fieldset/leftFieldsetButton'
 import Card from '../src/components/group/card'
 import Fieldset from '../src/components/Fieldset'
 
-export default { title: 'CardDeckGroup(vivi hui)' }
+export default { title: 'Group(vivi hui)' }
 
-export const CardDeckGroupTest = () => {
+export const GroupTest = () => {
   const data = ['甲班', '乙班', '丙班', '丁班', '超级班']
   return (
     <>

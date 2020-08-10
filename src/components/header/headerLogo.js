@@ -7,6 +7,7 @@ const HeaderLogo = (props) => {
   return (
     <Flex
       justify='flex-start'
+      mx={2}
       {...props}
     />
   )
