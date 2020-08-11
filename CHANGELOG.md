@@ -3,6 +3,7 @@
 - 優化 Page component，
 - 優化 Group component。
 - 優化 Fieldset component。
+- 優化 Table component。
 
 ## viviui 1.3.9
 
