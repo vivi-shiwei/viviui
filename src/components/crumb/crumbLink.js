@@ -7,6 +7,7 @@ const CrumbLink = (props) => (
   <BreadcrumbLink
     color='#1b6ac9'
     fontWeight='bold'
+    _hover={{ textDecoration: 'none' }}
     {...props}
   />
 )

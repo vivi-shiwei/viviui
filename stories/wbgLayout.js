@@ -4,13 +4,11 @@ import {
   FormLabel,
   FormControl,
   FormErrorMessage,
-  Input,
-  Checkbox
+  Input
 } from '@chakra-ui/core'
 import NextLink from 'next/link'
 import { action } from '@storybook/addon-actions'
 import { Formik, Form, Field } from 'formik'
-import InfiniteScroll from 'react-infinite-scroller'
 
 import Page from '../src/components/page'
 import HeaderPage from '../src/components/page/pageHeader'
@@ -29,7 +27,9 @@ export default {
 
 export const headering = () => {
   return (
-    <HeaderPage>這是HeaderPage component</HeaderPage>
+    <Page>
+      <HeaderPage>這是HeaderPage component</HeaderPage>
+    </Page>
   )
 }
 

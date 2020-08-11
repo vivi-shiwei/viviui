@@ -2,23 +2,36 @@ import React from 'react'
 import {
   Icon,
   Breadcrumb,
-  BreadcrumbItem
+  BreadcrumbItem,
+  Box
 } from '@chakra-ui/core'
 
-const CrumbLink = ({ crumbItemProps, children, ...props }) => (
-  <Breadcrumb
-    spacing='8px'
-    separator={<Icon name='chevron-right' />}
+const CrumbLink = ({ children, crumbProps, ...props }) => (
+  <Box
+    mx='auto'
+    h='45px'
+    w='100%'
+    d='flex'
+    alignItems='center'
+    justifyContent='center'
+    roundedTopLeft='4px'
+    roundedTopRight='4px'
     {...props}
   >
-    {
-      children.map((breadcrumd, index) => (
-        <BreadcrumbItem key={index} {...crumbItemProps}>
-          {breadcrumd}
-        </BreadcrumbItem>
-      ))
-    }
-  </Breadcrumb>
+    <Breadcrumb
+      spacing='8px'
+      separator={<Icon name='chevron-right' />}
+      {...crumbProps}
+    >
+      {
+        children.map((breadcrumd, index) => (
+          <BreadcrumbItem key={index}>
+            {breadcrumd}
+          </BreadcrumbItem>
+        ))
+      }
+    </Breadcrumb>
+  </Box>
 )
 
 export default CrumbLink
