@@ -3,6 +3,8 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import NextLink from 'next/link'
 
+import { Button } from '@chakra-ui/core'
+
 import AvatarTooltip from '../src/components/avatarTooltip'
 import EditButton from '../src/components/avatarTooltip/editButton'
 import ToolTip from '../src/components/avatarTooltipGroup/toolTips'
@@ -133,5 +135,18 @@ export const Avatart = () => {
         </NextLink>
       </ToolTip>
     </Row>
+  )
+}
+
+export const buttonTip = () => {
+  return (
+    <ToolTip name='vivi2'>
+      <Button
+        variantColor='cyan'
+        mx={2}
+      >
+        建立全校／班級貼文
+      </Button>
+    </ToolTip>
   )
 }

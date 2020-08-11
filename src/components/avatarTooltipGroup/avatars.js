@@ -7,7 +7,6 @@ import { AvatarTooltipContext } from './avatarTooltipContext'
 
 const Tooltips = ({ profilePhotoSrc, ...props }) => {
   const { name } = useContext(AvatarTooltipContext)
-  console.log(name)
   return (
     <Avatar
       mr={1}
