@@ -1,3 +1,9 @@
+## viviui 1.4.2
+
+- 優化 Page component，
+- 優化 Group component。
+- 優化 Fieldset component。
+
 ## viviui 1.3.9
 
 - 新增 Footer component，
