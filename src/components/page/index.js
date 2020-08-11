@@ -1,7 +1,7 @@
 import React, { Children } from 'react'
 
 import WbgPage from './wbgPage'
-import HeaderPage from './pageHeader'
+import PageHeader from './pageHeader'
 
 const Page = ({ title, nodivider = false, children, ...props }) => {
   let headerPage = null
@@ -9,7 +9,7 @@ const Page = ({ title, nodivider = false, children, ...props }) => {
 
   Children.map(children, (c, i) => {
     switch (c.type) {
-      case HeaderPage:
+      case PageHeader:
         if (!headerPage) headerPage = []
         headerPage.push(c) // 頭部
         break
