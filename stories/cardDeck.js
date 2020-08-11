@@ -5,9 +5,7 @@ import { action } from '@storybook/addon-actions'
 import NextLink from 'next/link'
 
 import Group from '../src/components/group'
-import LeftGroupButton from '../src/components/Fieldset/leftFieldsetButton'
 import Card from '../src/components/group/card'
-import Fieldset from '../src/components/Fieldset'
 
 export default { title: 'Group(vivi hui)' }
 
@@ -15,7 +13,6 @@ export const GroupTest = () => {
   const data = ['甲班', '乙班', '丙班', '丁班', '超级班']
   return (
     <>
-      <Fieldset title='班級' bg='white' left={<LeftGroupButton>新增</LeftGroupButton>} />
       <Group>
         <NextLink href='/test' passHref>
           <a onClick={action('button-click')}>
@@ -39,7 +36,6 @@ export const GroupTest = () => {
           ))
         }
       </Group>
-      <Fieldset title='班級' bg='white' left={<LeftGroupButton>新增</LeftGroupButton>} />
       <Group>
         {
           data.map((item, index) => (
@@ -53,13 +49,16 @@ export const GroupTest = () => {
           ))
         }
       </Group>
-      {/* <CardDeck
-        title='班级'
-        topLeft={<RoundedButton>新增</RoundedButton>}
-        groupCard={
-          data.map((item, index) => (<Card key={index} title={item} />))
-        }
-      /> */}
+    </>
+  )
+}
+export const OneGroup = () => {
+  const data = ['甲班', '乙班', '丙班', '丁班', '超级班']
+  return (
+    <>
+      <Group>
+        <Card title='甲班' />
+      </Group>
     </>
   )
 }

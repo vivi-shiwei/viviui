@@ -6,7 +6,7 @@ import {
   Box
 } from '@chakra-ui/core'
 
-const CrumbLink = ({ children, crumbProps, ...props }) => (
+const Crumb = ({ children, crumbProps, ...props }) => (
   <Box
     mx='auto'
     h='45px'
@@ -34,4 +34,4 @@ const CrumbLink = ({ children, crumbProps, ...props }) => (
   </Box>
 )
 
-export default CrumbLink
+export default Crumb

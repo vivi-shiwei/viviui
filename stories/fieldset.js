@@ -7,7 +7,7 @@ import Fieldset from '../src/components/Fieldset'
 
 export default { title: 'Fieldset(vivi)' }
 
-export const GroupTest = () => {
+export const Fieldsetsure = () => {
   return (
     <>
       <Fieldset
@@ -20,6 +20,42 @@ export const GroupTest = () => {
             </a>
           </NextLink>
         }
+        right={
+          <NextLink href='/test' passHref>
+            <a onClick={action('button-click')}>
+              <RightGroupButton>新增</RightGroupButton>
+            </a>
+          </NextLink>
+        }
+      />
+    </>
+  )
+}
+
+export const LeftFieldset = () => {
+  return (
+    <>
+      <Fieldset
+        title='班級'
+        bg='white'
+        left={
+          <NextLink href='/test' passHref>
+            <a onClick={action('button-click')}>
+              <LeftGroupButton>新增</LeftGroupButton>
+            </a>
+          </NextLink>
+        }
+      />
+    </>
+  )
+}
+
+export const RightFieldset = () => {
+  return (
+    <>
+      <Fieldset
+        title='班級'
+        bg='white'
         right={
           <NextLink href='/test' passHref>
             <a onClick={action('button-click')}>
