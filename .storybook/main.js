@@ -20,7 +20,8 @@ module.exports = {
     '../stories/**/table.[tj]s',
     '../stories/**/fullScreenView.[tj]s',
     '../stories/**/fieldset.[tj]s',
-    '../stories/**/breadcrumb.[tj]s'
+    '../stories/**/breadcrumb.[tj]s',
+    '../stories/**/picture.[tj]s'
   ],
   addons: [
     '@storybook/addon-knobs/register',

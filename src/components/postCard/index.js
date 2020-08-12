@@ -21,7 +21,6 @@ const PostCard = ({ title, subtitle, postHeaderLeft, postUpperRight, postMenu, t
         <Box as='header' position='relative'>
           {/* 右上角 menu, 內有 post modal 作編輯用 */}
           <PostUpperRight>
-            {postUpperRight}
             {postMenu}
           </PostUpperRight>
           {/* 發文者頭像和時間 */}

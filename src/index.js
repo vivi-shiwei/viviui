@@ -347,3 +347,7 @@ export { default as LargeTitle } from './components/fullScreenView/largeTitle'
 // 面包屑
 export { default as Crumb } from './components/crumb'
 export { default as CrumbLink } from './components/crumb/crumbLink'
+
+// post
+export { default as Pictures } from './components/postCard/pictures'
+export { default as PictureBox } from './components/postCard/pictureBox'
