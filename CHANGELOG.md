@@ -1,3 +1,7 @@
+## viviui 1.4.3
+
+- 新增图片排序的component
+
 ## viviui 1.4.2
 
 - 優化 Page component，
