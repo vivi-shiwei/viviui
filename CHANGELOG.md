@@ -1,3 +1,8 @@
+## viviui 1.4.4
+
+- 优化 Fieldset
+- 优化 Table
+
 ## viviui 1.4.3
 
 - 新增图片排序的component
