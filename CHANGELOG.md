@@ -1,3 +1,7 @@
+## viviui 1.4.5
+
+- 优化 LabelName component
+
 ## viviui 1.4.4
 
 - 优化 Fieldset
