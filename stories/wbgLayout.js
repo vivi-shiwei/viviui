@@ -325,7 +325,7 @@ export const InfiniteScrolltest = () => {
             name='vivi'
             left={
               <>
-                <LabelName type='（学生）' name='vivi' label='姓名' />
+                <LabelName type='（学生）' labelProps={{ w: '100px' }} name='vivi' label='姓名' />
                 <LabelName name='343546' label='學號' />
                 <LabelName name='vivi' label='姓名' />
               </>

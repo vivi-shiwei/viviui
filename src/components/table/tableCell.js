@@ -9,12 +9,14 @@ const TableCell = ({ label, children, ...props }) => {
   const { parent } = useContext(TableContext)
   // 使用三元表达式判断它是否等于 TableHead， 再去赋值。
   const Component = (parent === 'TableHead' ? 'th' : 'td')
+
   return (
     <Box
       as={Component}
-      border='1px #CBD5E0 solid'
+      // border={dborder}
       // wordBreak='break-word'
       {...props}
+
     >
       {
         // 有label时，就会执行这一段
@@ -26,10 +28,13 @@ const TableCell = ({ label, children, ...props }) => {
           </Tooltip>
         )
       }
-
       {
         // 只有 children 且没有 label 时，执行这段代码
-        (!!children && !label) && (children)
+        (!!children && !label) && (
+          <>
+            {children}
+          </>
+        )
       }
     </Box>
   )
