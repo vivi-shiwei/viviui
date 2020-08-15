@@ -9,7 +9,7 @@ const HeaderButton = ({ title, icon, children, ...props }) => {
       as='div'
       align='center'
       fontSize={{ base: 'xs', sm: 'md', md: 'lg' }}
-      px={{ base: 1, sm: 4 }}
+      mx={{ base: 1, sm: 2 }}
       display={{ base: 'none', sm: 'none', md: 'flex' }}
       variant='ghost'
       color='gray.500'

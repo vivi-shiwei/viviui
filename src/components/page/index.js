@@ -1,17 +1,28 @@
-import React from 'react'
-import {
-  Box,
-  Divider
-} from '@chakra-ui/core'
+import React, { Children } from 'react'
 
 import WbgPage from './wbgPage'
+import PageHeader from './pageHeader'
 
-const WhiteBoard = ({ title, backurl, nodivider = false, children, ...props }) => {
+const Page = ({ title, nodivider = false, children, ...props }) => {
+  let headerPage = null
+  const chil = []
+
+  Children.map(children, (c, i) => {
+    switch (c.type) {
+      case PageHeader:
+        if (!headerPage) headerPage = []
+        headerPage.push(c) // 頭部
+        break
+      default:
+        chil.push(c)// 頭部以外的 children
+    }
+  })
+
   return (
-    <WbgPage backurl={backurl} title={title} nodivider={nodivider} {...props}>
-      {children}
+    <WbgPage title={title} headerPage={headerPage} nodivider={nodivider} {...props}>
+      {chil}
     </WbgPage>
   )
 }
 
-export default WhiteBoard
+export default Page

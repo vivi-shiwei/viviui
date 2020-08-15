@@ -32,20 +32,22 @@ import {
   RadioGroup,
   Avatar
 } from '@chakra-ui/core'
-import Admin from '../src/components/admin/adminPage'
-import FomikLayout from '../src/components/fomikLayout'
-import NewModal from '../src/components/newModal'
 import NextLink from 'next/link'
-import AdminList from '../src/components/admin/adminListPage'
 import { FaSchool, FaUserEdit } from 'react-icons/fa'
 import { AiTwotoneSetting } from 'react-icons/ai'
 import { Formik, Field, Form } from 'formik'
 import { GoDeviceCamera } from 'react-icons/go'
 
+import Admin from '../src/components/admin/adminPage'
+import FomikLayout from '../src/components/fomikLayout'
+import NewModal from '../src/components/newModal'
+import AdminList from '../src/components/admin/adminListPage'
+
 import MyImage from '../static/QQ20200518181405.jpg'
 import MyImage6 from '../static/timg.jpg'
+
 export default {
-  title: 'Admin'
+  title: 'Admin(vivi)'
 }
 export const editSchool = () => {
   const validateName = (value) => {
@@ -105,7 +107,7 @@ export const editSchool = () => {
                 flexDirection={{ base: 'column-reverse', md: 'initial' }}
               >
                 <NextLink
-                  href='#'
+                  href='/'
                 >
                   <Link _hover={{ textDecoration: 'none' }}>
                     <Button
@@ -727,7 +729,7 @@ export const isAdmin = () => {
           {
             adminFunc.map((item, index) => (
               <ListItem className='admin-list-item' key={index}>
-                <NextLink href='#'>
+                <NextLink href='/'>
                   <Link
                     d='flex'
                     alignItems='center'
@@ -790,7 +792,7 @@ export const Specialty = () => {
           <Editable
             ml={20}
             fontSize='2xl'
-            value={talentName}
+            defaultValue={talentName}
             isPreviewFocusable={false}
             submitOnBlur={false}
           >
@@ -1056,14 +1058,15 @@ export const Children = () => {
           >
             {({ isEditing, onRequestEdit, onSubmit }) => (
               <>
-                <EditablePreview />
-                <EditableInput w='auto' onChange={(e) => { setTalentName(e.target.value) }} />
                 {!isEditing && (
                   <IconButton
                     variantColor='cyan' variant='outline'
                     ml={5} size='sm' icon='edit' onClick={onRequestEdit}
                   />
                 )}
+                <EditablePreview />
+                <EditableInput w='auto' onChange={(e) => { setTalentName(e.target.value) }} />
+
               </>
             )}
           </Editable>
@@ -2339,12 +2342,5 @@ export const testChildrenTab = () => {
     <>
       <Admin tabNames='夏薇' />
     </>
-  )
-}
-
-// 測試
-export const testSpecialty = () => {
-  return (
-    <div />
   )
 }

@@ -1,12 +1,11 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { action } from '@storybook/addon-actions'
 import NextLink from 'next/link'
-import { Link } from '@chakra-ui/core'
 
-import Container from '../src/components/container'
-import AddminBatchAdd from '../src/components/adminBatchAdd/index'
-import NewButton from '../src/components/adminBatchAdd/newButton'
+import ButtonGrid from '../src/components/fullScreenView/buttonGrid'
+import { BlueButton, FullScreenView } from '../src/index'
 
-export default { title: 'AddminBatchAdd' }
+export default { title: 'showLing(hui)' }
 
 export const SearchTest = () => {
   const data = [
@@ -33,30 +32,22 @@ export const SearchTest = () => {
     }
   ]
   return (
-    <>
-      <Container mt='30px'>
-        <AddminBatchAdd
-          title='批量新增'
-          body={
-            data.map((item, index) => {
-              return (
-                <>
-                  <NextLink
-                    href='#'
-                    as='#'
-                    key={index}
-                  >
-                    <Link _hover={{ textDecoration: 'none' }} m={1}>
-                      <NewButton>{item.name}</NewButton>
-                    </Link>
-                  </NextLink>
-                </>
-              )
-            })
-
-          }
-        />
-      </Container>
-    </>
+    <FullScreenView>
+      <ButtonGrid>
+        {
+          data.map((item, index) => {
+            return (
+              <>
+                <NextLink href='/test' passHref>
+                  <a onClick={action('button-click')}>
+                    <BlueButton>{item.name}</BlueButton>
+                  </a>
+                </NextLink>
+              </>
+            )
+          })
+        }
+      </ButtonGrid>
+    </FullScreenView>
   )
 }

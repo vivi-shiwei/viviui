@@ -12,18 +12,19 @@ import {
   MenuItem,
   useDisclosure
 } from '@chakra-ui/core'
+import NextLink from 'next/link'
+import { action } from '@storybook/addon-actions'
 
-import MyImage from '../static/QQ20200518181405.jpg'
-import MyImage6 from '../static/timg.jpg'
-import MyImage3 from '../static/timg8J2T10BJ.jpg'
-import PostsPictures from '../src/components/postCard/postsPictures'
-import NewModal from '../src/components/newModal'
+import PostsPictures from '../src/components/postCard/pictures'
 import ModalWithHeader from '../src/components/newModal/modalWithHeader'
 import ModalWithContent from '../src/components/newModal/modalContent'
 import ModelButton from '../src/components/blueButton'
+import MyImage from '../static/QQ20200518181405.jpg'
+import MyImage6 from '../static/timg.jpg'
+import MyImage3 from '../static/timg8J2T10BJ.jpg'
 
 export default {
-  title: 'Post'
+  title: 'Post(vivi)'
 }
 
 export const post = () => {
@@ -31,7 +32,13 @@ export const post = () => {
     <Tags
       creator={
         <Creator
-          profilePhoto={<Avatar name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />}
+          profilePhoto={
+            <NextLink href='/test' passHref>
+              <a onClick={action('button-click')}>
+                <Avatar name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
+              </a>
+            </NextLink>
+          }
           creatorName='vivi'
           creatorTime='2019-7-22'
         />
@@ -64,25 +71,25 @@ export const post = () => {
     </Tags>
   )
 }
-export const nemodel = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  return (
-    <NewModal
-      isOpen={isOpen}
-      onOpen={onOpen}
-      onClose={onClose}
-      w='700px'
-      openModal={<ModelButton onClick={onOpen} mt={4}>關閉</ModelButton>}
-      modalcontent={
-        <ModalWithContent
-          mdalHeader={<ModalWithHeader>標題</ModalWithHeader>}
-          modalWithFooter={
-            <ModelButton onClick={onClose} w='100%' mt={4}>關閉</ModelButton>
-          }
-          closeButton
-        // modalWithBody={<Box w='800px' bg='black' h='50px' />}
-        />
-      }
-    />
-  )
-}
+// export const nemodel = () => {
+//   const { isOpen, onOpen, onClose } = useDisclosure()
+//   return (
+//     <NewModal
+//       isOpen={isOpen}
+//       onOpen={onOpen}
+//       onClose={onClose}
+//       w='700px'
+//       openModal={<ModelButton onClick={onOpen} mt={4}>關閉</ModelButton>}
+//       modalcontent={
+//         <ModalWithContent
+//           mdalHeader={<ModalWithHeader>標題</ModalWithHeader>}
+//           modalWithFooter={
+//             <ModelButton onClick={onClose} w='100%' mt={4}>關閉</ModelButton>
+//           }
+//           closeButton
+//         // modalWithBody={<Box w='800px' bg='black' h='50px' />}
+//         />
+//       }
+//     />
+//   )
+// }

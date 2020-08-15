@@ -5,12 +5,19 @@ import {
 } from '@chakra-ui/core'
 
 // 學校管理員的數據
-const Management = ({ text, columnLine, children, descriptionProps, ...props }) => {
+const Management = ({ subTitle, children, descriptionProps, ...props }) => {
   return (
     <Box as='article' {...props}>
-      <Heading as='h3' fontSize={{ base: '15px', sm: '1rem' }} mt={10} mb={4} {...descriptionProps}>{text}</Heading>
+      <Heading
+        as='h3'
+        fontSize={{ base: '15px', sm: '1rem' }}
+        mt={10}
+        mb={4}
+        {...descriptionProps}
+      >
+        {subTitle}
+      </Heading>
       {children}
-      {columnLine}
     </Box>
   )
 }

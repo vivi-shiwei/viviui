@@ -1,41 +1,64 @@
 import React from 'react'
-import CardDeck from '../src/components/cardDeck/index'
-import RoundedButton from '../src/components/cardDeck/roundedButton'
-import Card from '../src/components/cardDeck/card'
-import Fieldset from '../src/components/cardDeck/fieldset'
+import { Box } from '@chakra-ui/core'
 
-export default { title: 'CardDeckGroup' }
+import { action } from '@storybook/addon-actions'
+import NextLink from 'next/link'
 
-export const CardDeckGroupTest = () => {
+import Group from '../src/components/group'
+import Card from '../src/components/group/card'
+
+export default { title: 'Group(vivi hui)' }
+
+export const GroupTest = () => {
   const data = ['甲班', '乙班', '丙班', '丁班', '超级班']
   return (
     <>
-      <CardDeck>
-        <Fieldset title='班級' bg='white' left={<RoundedButton>新增</RoundedButton>} />
-        <Card title='乙班' />
-        <Card title='乙班' />
+      <Group>
+        <NextLink href='/test' passHref>
+          <a onClick={action('button-click')}>
+            <Card title='乙班' />
+          </a>
+        </NextLink>
+        <NextLink href='/test' passHref>
+          <a onClick={action('button-click')}>
+            <Card title='乙班' />
+          </a>
+        </NextLink>
         {
           data.map((item, index) => (
-            <Card key={index} title={item} />
+            <>
+              <NextLink href='/test' passHref>
+                <a onClick={action('button-click')}>
+                  <Card key={index} title={item} />
+                </a>
+              </NextLink>
+            </>
           ))
         }
-      </CardDeck>
-
-      <CardDeck>
-        <Fieldset title='班級' bg='white' left={<RoundedButton>新增</RoundedButton>} />
+      </Group>
+      <Group>
         {
           data.map((item, index) => (
-            <Card key={index} title={item} />
+            <>
+              <NextLink href='/test' passHref>
+                <a onClick={action('button-click')}>
+                  <Card key={index} title={item} />
+                </a>
+              </NextLink>
+            </>
           ))
         }
-      </CardDeck>
-      {/* <CardDeck
-        title='班级'
-        topLeft={<RoundedButton>新增</RoundedButton>}
-        groupCard={
-          data.map((item, index) => (<Card key={index} title={item} />))
-        }
-      /> */}
+      </Group>
+    </>
+  )
+}
+export const OneGroup = () => {
+  const data = ['甲班', '乙班', '丙班', '丁班', '超级班']
+  return (
+    <>
+      <Group>
+        <Card title='甲班' />
+      </Group>
     </>
   )
 }

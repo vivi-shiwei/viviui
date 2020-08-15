@@ -14,7 +14,7 @@ import MyImage from '../static/QQ20200518181405.jpg'
 import MyImage6 from '../static/timg.jpg'
 
 export default {
-  title: 'ClsPage'
+  title: 'ClsPage(vivi)'
 }
 export const Cls = () => {
   return (

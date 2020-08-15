@@ -1,26 +1,26 @@
 import React from 'react'
 import {
   Box,
-  Text
+  Text,
+  useColorMode
 } from '@chakra-ui/core'
 import { PostPage } from './postPage'
 import PostUpperRight from './PostUpperRight'
-import PostTags from './postTags'
 import PostTalent from './postTalent'
 import PostContent from './postContent'
 import PhotosGrid from './photosGrid'
 
 const PostCard = ({ title, subtitle, postHeaderLeft, postUpperRight, postMenu, tags, talentName, content, creator, postPhotos, children, ...props }) => {
+  const { colorMode } = useColorMode()
   return (
     <>
       <PostPage
-        bg='white'
+        bg={colorMode === 'light' ? 'white' : '#1A202C'}
         {...props}
       >
         <Box as='header' position='relative'>
           {/* 右上角 menu, 內有 post modal 作編輯用 */}
           <PostUpperRight>
-            {postUpperRight}
             {postMenu}
           </PostUpperRight>
           {/* 發文者頭像和時間 */}

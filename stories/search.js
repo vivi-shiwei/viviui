@@ -6,14 +6,14 @@ import SearchBox from '../src/components/search/searchInput'
 import SearchButton from '../src/components/search/searchButton'
 import SearchResult from '../src/components/search/searchResult'
 
-export default { title: 'Search' }
+export default { title: 'Search(hui vivi)' }
 
 export const SearchTest = () => {
   return (
     <Container mt='30px'>
       <Search
         left={<SearchBox placeholder='活动名称、特长' />}
-        right={<SearchButton>搜索</SearchButton>}
+        right={<SearchButton onClick={action('button-click')}>搜索</SearchButton>}
       >
         <SearchResult display='block'>無數據</SearchResult>
       </Search>

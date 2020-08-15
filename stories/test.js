@@ -53,5 +53,5 @@ export const state = () => {
 }
 
 export default {
-  title: 'Test'
+  title: 'Test(vivi)'
 }

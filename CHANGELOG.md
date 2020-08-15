@@ -1,3 +1,55 @@
+## viviui 1.4.5
+
+- 优化 LabelName component
+
+## viviui 1.4.4
+
+- 优化 Fieldset
+- 优化 Table
+
+## viviui 1.4.3
+
+- 新增图片排序的component
+
+## viviui 1.4.2
+
+- 優化 Page component，
+- 優化 Group component。
+- 優化 Fieldset component。
+- 優化 Table component。
+
+## viviui 1.3.9
+
+- 新增 Footer component，
+- 新增 Crumb component。
+
+## viviui 1.3.5
+
+- 新增 FullScreenView component
+- 为各个 component 添加黑暗模式下的样式
+- 优化 EditTable
+
+## viviui 1.3.4
+
+- 优化 Fieldset 
+- 优化 Group 
+
+
+## viviui 1.3.2
+
+- 新增 Table component
+- 优化 editShow 
+
+## viviui 1.2.9
+
+- 对 page component 的改良，
+- 添加 page component 的使用
+
+## viviui 1.2.8  
+  
+  - 對 page 的改良
+  - 對 editShow 的改良
+
 ## viviui 1.2.7
   
   - 對 page Component 的改良：

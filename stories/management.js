@@ -1,22 +1,22 @@
 import React from 'react'
 import {
-  Box,
   List,
   ListItem,
   Link
 } from '@chakra-ui/core'
 import { FaSchool, FaUserEdit } from 'react-icons/fa'
 import { AiTwotoneSetting } from 'react-icons/ai'
-import { GoTrashcan, GoStop } from 'react-icons/go'
-import LinkNext from 'next/link'
+import { GoTrashcan } from 'react-icons/go'
+import NextLink from 'next/link'
+import { action } from '@storybook/addon-actions'
 
 import Management from '../src/components/page/manageMent'
 import ColumnLine from '../src/components/page/columnIconText'
-import WhiteBoardPage from '../src/components/page'
-import HeaderPage from '../src/components/page/headerPage'
+import Page from '../src/components/page'
+import HeaderPage from '../src/components/page/pageHeader'
 
 export default {
-  title: 'Management'
+  title: 'Management(hui)'
 }
 
 export const ManagementTest = () => {
@@ -28,7 +28,7 @@ export const ManagementTest = () => {
     { icon: AiTwotoneSetting, name: '智能设定' }
   ]
   return (
-    <WhiteBoardPage
+    <Page
       title={
         <HeaderPage>
           管理员
@@ -37,30 +37,26 @@ export const ManagementTest = () => {
     >
       <Management
         px='5%'
-        text='你是管理员，可以拥有以下操作...'
-        columnLine={
-          <List spacing={3}>
-            {
-              data.map((item, index) =>
-                <ListItem key={index}>
-                  <LinkNext href='#' as='a'>
-                    <Link
-                      d='flex'
-                      alignItems='center'
-                      _hover={{
-                        textDecoration: 'none'
-                      }}
-                      color='#316bc3'
-                    >
-                      <ColumnLine icon={item.icon}>{item.name}</ColumnLine>
-                    </Link>
-                  </LinkNext>
-                </ListItem>)
-            }
-          </List>
-        }
-      />
-
-    </WhiteBoardPage>
+        subTitle='你是管理员，可以拥有以下操作...'
+      >
+        <List spacing={3}>
+          {
+            data.map((item, index) =>
+              <ListItem key={index}>
+                <NextLink
+                  href='/test' passHref
+                  _hover={{
+                    textDecoration: 'none'
+                  }}
+                >
+                  <a onClick={action('button-click')}>
+                    <ColumnLine icon={item.icon} color='#316bc3'>{item.name}</ColumnLine>
+                  </a>
+                </NextLink>
+              </ListItem>)
+          }
+        </List>
+      </Management>
+    </Page>
   )
 }

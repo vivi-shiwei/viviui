@@ -6,13 +6,18 @@ import {
   Box
 } from '@chakra-ui/core'
 
-import Container from '../container'
-
 // 顯示學校用戶的component
 const Row = ({ right, left, name, profilePhoto, noDivider = false, children, ...props }) => {
   return (
-    <Container>
-      <Flex justify='space-between' px={{ base: '1.25rem', sm: '1.25rem', md: '1.25rem', lg: 0 }} {...props}>
+    <>
+      <Flex
+        justify='space-between'
+        width='full'
+        maxWidth='1280px'
+        mx='auto'
+        px={{ base: '1.25rem', sm: '1.25rem', md: '1.25rem', lg: 0 }}
+        {...props}
+      >
         <Flex>
           <Box mr={5}>
             <Avatar
@@ -21,12 +26,14 @@ const Row = ({ right, left, name, profilePhoto, noDivider = false, children, ...
             />
           </Box>
           {children}
-          {left}
+          <Box>
+            {left}
+          </Box>
         </Flex>
         <Flex>{right}</Flex>
       </Flex>
       {!noDivider && <Divider my={6} />}
-    </Container>
+    </>
   )
 }
 

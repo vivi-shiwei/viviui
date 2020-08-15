@@ -1,6 +1,6 @@
 {
   "name": "viviui",
-  "version": "1.2.7",
+  "version": "1.4.4",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -29,6 +29,7 @@
     "@nivo/bar": "^0.62.0",
     "@storybook/addon-actions": "^5.3.19",
     "@storybook/addon-knobs": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
     "@storybook/addon-storysource": "^5.3.19",
     "@storybook/react": "^5.3.19",
     "babel-eslint": "^10.1.0",
