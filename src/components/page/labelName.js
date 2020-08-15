@@ -18,7 +18,7 @@ const LabelName = ({ label, text, type, labelProps, children, ...props }) => {
       <Text>{text}</Text>
       <Text>{type}</Text>
       {children}
-      <style jsx global>
+      <style>
         {
           // chakra 没有 text-align-last 样式，要利用 css 样式来给它定义文本字体均匀分布
           `
