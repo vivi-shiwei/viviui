@@ -15,6 +15,8 @@ const TableCell = ({ label, children, ...props }) => {
       as={Component}
       // border={dborder}
       // wordBreak='break-word'
+      textAlign='left'
+
       {...props}
 
     >
@@ -36,6 +38,7 @@ const TableCell = ({ label, children, ...props }) => {
           </>
         )
       }
+
     </Box>
   )
 }

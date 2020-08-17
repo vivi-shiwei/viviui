@@ -10,7 +10,7 @@ import TableRow from '../src/components/table/tableRow'
 // storybook
 export default { title: 'Table(vivi hui)' }
 
-export const noColor = () => {
+export const blackBorder = () => {
   const data = [
     {
       fieldName: '姓名',
@@ -40,7 +40,7 @@ export const noColor = () => {
   const header = ['序號', '名稱']
   return (
     <Page nodivider='false' title={<HeaderPage fontSize='28px'>新增用户</HeaderPage>}>
-      <Table dtype='noColor'>
+      <Table dtype='blackBorder'>
         <TableHead>
           <TableRow>
             <TableCell w='50px'>序號</TableCell>
@@ -54,8 +54,8 @@ export const noColor = () => {
               <>
                 <TableRow>
                   <TableCell textAlign='center'>{index + 1}</TableCell>
-                  <TableCell px={{ base: '1', sm: '1', md: '4' }}>{item.fieldName}</TableCell>
-                  <TableCell px={{ base: '1', sm: '1', md: '4' }}>{item.describe}</TableCell>
+                  <TableCell>{item.fieldName}</TableCell>
+                  <TableCell>{item.describe}</TableCell>
                 </TableRow>
               </>
             )
@@ -67,7 +67,7 @@ export const noColor = () => {
   )
 }
 
-export const defaultTable = () => {
+export const defaultBorder = () => {
   const tableHeada = [
     //   { title: '姓名', width: 200 },
     //   { title: '英文姓名', width: 200 },
@@ -153,14 +153,6 @@ export const defaultTable = () => {
     {
       fieldName: '身份證號碼',
       describe: '選填可留空'
-    },
-    {
-      fieldName: '教青',
-      describe: '選填可留空'
-    },
-    {
-      fieldName: '拍卡卡號',
-      describe: '選填可留空'
     }
   ]
   const header = ['序號', '名稱']
@@ -169,9 +161,13 @@ export const defaultTable = () => {
       <Table dtype='border'>
         <TableHead>
           <TableRow>
-            <TableCell w='50px'>序號</TableCell>
-            <TableCell>名稱</TableCell>
-            <TableCell>值</TableCell>
+            <TableCell textAlign='center' width='70px'>序號</TableCell>
+            <TableCell px={{ base: '1', sm: '1', md: '3' }}>名稱</TableCell>
+            <TableCell px={{ base: '1', sm: '1', md: '3' }}>值</TableCell>
+            <TableCell px={{ base: '1', sm: '1', md: '3' }}>名稱</TableCell>
+            <TableCell px={{ base: '1', sm: '1', md: '3' }}>值</TableCell>
+            <TableCell px={{ base: '1', sm: '1', md: '3' }}>名稱</TableCell>
+            <TableCell px={{ base: '1', sm: '1', md: '3' }}>值</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -180,8 +176,12 @@ export const defaultTable = () => {
               <>
                 <TableRow>
                   <TableCell textAlign='center'>{index + 1}</TableCell>
-                  <TableCell px={{ base: '1', sm: '1', md: '4' }}>{item.fieldName}</TableCell>
-                  <TableCell px={{ base: '1', sm: '1', md: '4' }}>{item.describe}</TableCell>
+                  <TableCell px={{ base: '1', sm: '1', md: '3' }}>{item.fieldName}</TableCell>
+                  <TableCell px={{ base: '1', sm: '1', md: '3' }}>{item.describe}</TableCell>
+                  <TableCell px={{ base: '1', sm: '1', md: '3' }}>{item.fieldName}</TableCell>
+                  <TableCell px={{ base: '1', sm: '1', md: '3' }}>{item.describe}</TableCell>
+                  <TableCell px={{ base: '1', sm: '1', md: '3' }}>{item.fieldName}</TableCell>
+                  <TableCell px={{ base: '1', sm: '1', md: '3' }}>{item.describe}</TableCell>
                 </TableRow>
               </>
             )
@@ -237,8 +237,120 @@ export const compact = () => {
               <>
                 <TableRow>
                   <TableCell textAlign='center'>{index + 1}</TableCell>
-                  <TableCell px={{ base: '1', sm: '1', md: '4' }}>{item.fieldName}</TableCell>
-                  <TableCell px={{ base: '1', sm: '1', md: '4' }}>{item.describe}</TableCell>
+                  <TableCell>{item.fieldName}</TableCell>
+                  <TableCell>{item.describe}</TableCell>
+                </TableRow>
+              </>
+            )
+          })}
+
+        </TableBody>
+      </Table>
+    </Page>
+  )
+}
+export const looseBig = () => {
+  const data = [
+    {
+      fieldName: '姓名',
+      describe: '必填'
+    },
+    {
+      fieldName: '英文姓名',
+      describe: '選填'
+    },
+    {
+      fieldName: '性別',
+      describe: '選填可'
+    },
+    {
+      fieldName: '學生證號碼',
+      describe: '選填'
+    },
+    {
+      fieldName: '身份證號碼',
+      describe: '選填可留空'
+    },
+    {
+      fieldName: '學校管理員',
+      describe: '學生'
+    }
+  ]
+  const header = ['序號', '名稱']
+  return (
+    <Page nodivider='false' title={<HeaderPage fontSize='28px'>新增用户</HeaderPage>}>
+      <Table dtype='looseBig'>
+        <TableHead>
+          <TableRow>
+            <TableCell w='50px'>序號</TableCell>
+            <TableCell>名稱</TableCell>
+            <TableCell>值</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {data.map((item, index) => {
+            return (
+              <>
+                <TableRow>
+                  <TableCell textAlign='center'>{index + 1}</TableCell>
+                  <TableCell>{item.fieldName}</TableCell>
+                  <TableCell>{item.describe}</TableCell>
+                </TableRow>
+              </>
+            )
+          })}
+
+        </TableBody>
+      </Table>
+    </Page>
+  )
+}
+export const shadow = () => {
+  const data = [
+    {
+      fieldName: '姓名',
+      describe: '必填'
+    },
+    {
+      fieldName: '英文姓名',
+      describe: '選填'
+    },
+    {
+      fieldName: '性別',
+      describe: '選填可'
+    },
+    {
+      fieldName: '學生證號碼',
+      describe: '選填'
+    },
+    {
+      fieldName: '身份證號碼',
+      describe: '選填可留空'
+    },
+    {
+      fieldName: '學校管理員',
+      describe: '學生'
+    }
+  ]
+  const header = ['序號', '名稱']
+  return (
+    <Page nodivider='false' title={<HeaderPage fontSize='28px'>新增用户</HeaderPage>}>
+      <Table dtype='shadow'>
+        <TableHead>
+          <TableRow>
+            <TableCell w='50px'>序號</TableCell>
+            <TableCell>名稱</TableCell>
+            <TableCell>值</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {data.map((item, index) => {
+            return (
+              <>
+                <TableRow>
+                  <TableCell textAlign='center'>{index + 1}</TableCell>
+                  <TableCell>{item.fieldName}</TableCell>
+                  <TableCell>{item.describe}</TableCell>
                 </TableRow>
               </>
             )
@@ -294,8 +406,8 @@ export const mouse = () => {
               <>
                 <TableRow>
                   <TableCell textAlign='center'>{index + 1}</TableCell>
-                  <TableCell px={{ base: '1', sm: '1', md: '4' }}>{item.fieldName}</TableCell>
-                  <TableCell px={{ base: '1', sm: '1', md: '4' }}>{item.describe}</TableCell>
+                  <TableCell>{item.fieldName}</TableCell>
+                  <TableCell>{item.describe}</TableCell>
                 </TableRow>
               </>
             )
