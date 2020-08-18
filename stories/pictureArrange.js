@@ -31,6 +31,7 @@ export const PictureArrangeTest = () => {
         <RatioImg src='https://bit.ly/naruto-sage' />
         <RatioImg src='https://bit.ly/naruto-sage' />
         <RatioImg src='https://bit.ly/naruto-sage' />
+        <RatioImg src='https://bit.ly/naruto-sage' />
       </PictureArrange>
     </Box>
   )
