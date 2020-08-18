@@ -36,7 +36,7 @@ export const Cls = () => {
               color='#718096'
               background='#ebf8ff'
             >
-              <span>編輯成gyiugui員</span>
+              <span>編輯成gyiugui員陳偉陳維</span>
             </Box>
           </Box>
         </Box>
