@@ -2,239 +2,97 @@ import React, { memo } from 'react'
 import {
   Box
 } from '@chakra-ui/core'
-// import { ParameContext } from './tableContext'
 
-// table component
-// const Table = ({ children, ...props }) => {
-//   return (
-//     <Box
-//       as='table'
-//       w='99%'
-//       m='auto'
-//       letterSpacing='0.05rem'
-//       className='table'
-//       {...props}
-//     >
-//       {children}
-//       <style>
-//         {
-//           `
-//           .table tbody tr:nth-child(odd) td{
-//             background-color: #ddd;
-//           }
-//         `
-//         }
-//       </style>
-//     </Box>
-const Table = ({ dtype, children, ...props }) => {
+const Table = ({ type, children, ...props }) => {
+  let table = null
+  let stripe = null
+  let line = null
+  let hover = null
+  let condensed = null
+
+  if (type) {
+    type.split(' ').map((c) => {
+      switch (c) {
+        case 'table':
+          table = c
+          break
+        case 'stripe':
+          stripe = c
+          break
+        case 'condensed':
+          condensed = c
+          break
+        case 'hover':
+          hover = c
+          break
+        case 'line':
+          line = c
+          break
+      }
+    })
+  }
+
   return (
-    <>
-      {/* 样式 默认 */}
-      {(dtype === 'blackBorder') && (
-        <Box
-          as='table'
-          className='tableBlack '
-          w='99%'
-          m='auto'
-          letterSpacing='0.05rem'
-          {...props}
-        >
-          {children}
-          <style>
-            {`
-            .tableBlack tr td ,.tableBlack tr th{
-               border: 1px solid black;
-            }
-           `}
-          </style>
-        </Box>
-      )}
-
-      {(dtype === 'border') && (
-        <Box
-          as='table'
-          className='borderStyle'
-          w='99%'
-          m='auto'
-          letterSpacing='0.05rem'
-          {...props}
-        >
-          {children}
-
-          <style>
-            {`
-               .borderStyle tr td , .borderStyle tr th{
-                border: 1px solid black;//所有边框黑色
+    <Box
+      as='table'
+      className='table'
+      w='100%'
+      m='auto'
+      letterSpacing='0.05rem'
+      {...props}
+    >
+      {children}
+      {table && (
+        <style>
+          {`
+              .table tr td,th{
+                border: 1px solid #d0cbcb;
+                text-align: center;
+                padding: 8px;
               }
-              .borderStyle tr:nth-child(1) td{
-                background-color:none; //隔行换色
-              }
-              .borderStyle tr:nth-child(even) td{
-                background-color:#dff0d8;
-              }
-              .borderStyle tr:nth-child(odd) td{
-                background-color:#f9f9f9 ;
-              }
-              .borderStyle tr:first-child{
-               background-color:#EEE0E5;//第一个
-             }
-            
-            `}
-          </style>
-        </Box>
-      )}
-      {/* 样式 条纹  */}
-      {(dtype === 'shadow') && (
-        <Box
-          as='table'
-          className=' trShadow'
-          w='99%'
-          m='auto'
-          letterSpacing='0.05rem'
-          {...props}
-        >
-          {children}
-          <style>
-            {`
-               .trShadow tr{ //条纹
-                box-shadow: '0 6px 20px 0 rgba(0,0,0,0.19)';
-              }   
-              .trShadow tr{ 
-                border-bottom: 1px solid #ddd;  //黑直线
-              }
-              .trShadow tr:nth-last-child(1){ 
-               border-bottom:none; //最后一个 
-              }
-              .trShadow  tr:nth-child(1) td{
-                background-color:none; //隔行换色
-              }
-              .trShadow  tr:nth-child(even) td{
-                background-color:#dff0d8;
-              }
-              .trShadow  tr:nth-child(odd) td{
-                background-color:#f9f9f9 ;
-              }
-              .trShadow tr:first-child{
-               background-color:#EEE0E5;//第一个
-             }
-
               `}
-          </style>
-        </Box>
+        </style>
       )}
-
-      {/* 鼠标指示 */}
-      {(dtype === 'mouse') && (
-        <Box
-          as='table'
-          className='trHover'
-          w='99%'
-          m='auto'
-          letterSpacing='0.05rem'
-          {...props}
-        >
-          {children}
-          <style>
-            {`
-              .trHover tr td:hover,.trHover tr th:hover{ 
-                  cursor:auto; //鼠标经过
+      {hover && (
+        <style>
+          {`
+              .table tbody tr:hover{
+                  cursor:auto;
+                  background-color:rgba(0, 0, 0, 0.05);
               }
-              .trHover tr{
-                border-bottom: 1px solid #ddd;  //黑直线
-              }
-              .trHover tr:nth-last-child(1){ 
-                border-bottom:none; //最后一个 
-               }
-              .trHover tr:nth-child(1) td{
-                background-color:none; //隔行换色
-              }
-              .trHover tr:nth-child(even) td{
-                background-color:#dff0d8;
-              }
-              .trHover tr:nth-child(odd) td{
-                background-color:#f9f9f9 ;
-              }
-              .trHover tr:first-child{
-               background-color:#EEE0E5;//第一个
+              `}
+        </style>
+      )}
+      {stripe && (
+        <style>
+          {`
+              .table tbody tr:nth-child(odd) {
+                background-color: rgba(0, 0, 0, 0.01);
              }
               `}
-          </style>
-        </Box>
-
+        </style>
       )}
-      {/* 紧凑 */}
-      {
-        (dtype === 'compact') && (
-          <Box
-            as='table'
-            className='trLeight'
-            w='99%'
-            m='auto'
-            letterSpacing='0.05rem'
-            {...props}
-          >
-            {children}
-
-            <style>
-              {`
-               .trLeight tr{
-                line-height:30px;//紧凑
-               }
-               .trLeight tr:nth-child(1) td{
-                background-color:none; //隔行换色
-              }
-              .trLeight tr:nth-child(even) td{
-                background-color:#dff0d8;
-              }
-              .trLeight tr:nth-child(odd) td{
-                background-color:#f9f9f9 ;
-              }
-              .trLeight tr:first-child{
-               background-color:#EEE0E5;//第一个
-             }
-              
-              `}
-            </style>
-          </Box>
-        )
-      }
-      {/* 松大 */}
-      {
-        (dtype === 'looseBig') && (
-          <Box
-            as='table'
-            className='trLeight'
-            w='99%'
-            m='auto'
-            letterSpacing='0.05rem'
-            {...props}
-          >
-            {children}
-
-            <style>
-              {`
-               .trLeight tr{
-                line-height:50px;//紧凑
-               }
-               .trLeight tr:nth-child(1) td{
-                background-color:none; //隔行换色
-              }
-              .trLeight tr:nth-child(even) td{
-                background-color:#dff0d8;
-              }
-              .trLeight tr:nth-child(odd) td{
-                background-color:#f9f9f9 ;
-              }
-              .trLeight tr:first-child{
-               background-color:#EEE0E5;//第一个
+      {line && (
+        <style>
+          {`
+              .table tr td {
+                border-top: 1px solid #f1f2f4;
+                text-align: left;
+                padding: 8px;
              }
               `}
-            </style>
-          </Box>
-        )
-      }
-
-    </>
+        </style>
+      )}
+      {condensed && (
+        <style>
+          {`
+              .table tr td,th {
+                padding: 5px;
+             }
+              `}
+        </style>
+      )}
+    </Box>
   )
 }
 

@@ -1,3 +1,8 @@
+## viviui 1.4.6
+
+- 优化 Table component
+
+
 ## viviui 1.4.5
 
 - 优化 LabelName component

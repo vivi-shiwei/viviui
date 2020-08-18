@@ -19,7 +19,7 @@ const ColorModeSwitch = () => {
 
 const App = ({ children }) => {
   return (
-    <ThemeProvider theme={theme.colors}>
+    <ThemeProvider theme={theme}>
       <ColorModeProvider>
         <CSSReset />
         <ColorModeSwitch />

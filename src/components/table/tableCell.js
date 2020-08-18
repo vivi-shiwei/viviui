@@ -13,10 +13,6 @@ const TableCell = ({ label, children, ...props }) => {
   return (
     <Box
       as={Component}
-      // border={dborder}
-      // wordBreak='break-word'
-      textAlign='left'
-
       {...props}
 
     >
@@ -32,11 +28,7 @@ const TableCell = ({ label, children, ...props }) => {
       }
       {
         // 只有 children 且没有 label 时，执行这段代码
-        (!!children && !label) && (
-          <>
-            {children}
-          </>
-        )
+        (!!children && !label) && (children)
       }
 
     </Box>
