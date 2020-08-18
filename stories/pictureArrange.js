@@ -25,7 +25,7 @@ export const PictureArrangeTest = () => {
   ]
   return (
     <Box>
-      <PictureArrange arrangement='' maxW='400px' m='0 auto' mt='50px' backgroundColor='#FF0033'>
+      <PictureArrange arrangement='' maxW='400px' m='0 auto' mt='50px'>
         <RatioImg src='https://bit.ly/naruto-sage' />
         <RatioImg src='https://bit.ly/naruto-sage' />
       </PictureArrange>

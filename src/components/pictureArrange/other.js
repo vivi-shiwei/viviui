@@ -20,16 +20,16 @@ const PictureArrange = ({ arrangement, children, ...props }) => {
           <Box backgroundColor='#FF6666' width='49%' height='100%'>45 </Box>
         </Flex>
       )}
-      {
-        children.length === 3 && arrangement === 'vertical' && (
-          <Flex align='center' justifyContent='space-between' width='auto' height='full' flexDirection='column'>
-            <Box backgroundColor='#FFCCCC' width='100%' height='100%'>45 </Box>
-            <Flex align='center' justifyContent='space-between' width='full' height='full' mt='2'>
-              <Box backgroundColor='#FF6666' width='49%' height='100%'>45 </Box>
-              <Box backgroundColor='#66CC99' width='49%' height='100%'>45 </Box>
-            </Flex>
+
+      {children.length === 3 && arrangement === 'vertical' && (
+        <Flex align='center' justifyContent='space-between' width='auto' height='full' flexDirection='column'>
+          <Box backgroundColor='#FFCCCC' width='100%' height='100%'>45 </Box>
+          <Flex align='center' justifyContent='space-between' width='full' height='full' mt='2'>
+            <Box backgroundColor='#FF6666' width='49%' height='100%'>45 </Box>
+            <Box backgroundColor='#66CC99' width='49%' height='100%'>45 </Box>
           </Flex>
-        )
+        </Flex>
+      )
       }
       {
         children.length === 3 && arrangement === 'crosswise' && (
