@@ -170,14 +170,14 @@ const PictureArrange = ({ arrangement, children, ...props }) => { // arrangement
                 </AspectRatioBox>
               </Flex>
               <Flex justifyContent='space-between' flexDirection='column' width='50%' maxH='full' ml='5px'>
-                <AspectRatioBox width='100%' ratio={1}>
+                <AspectRatioBox width='65%' ratio={1}>
                   {children[2]}
                 </AspectRatioBox>
-                <AspectRatioBox width='100%' ratio={1} mt='5px'>
+                <AspectRatioBox width='65%' ratio={1} mt='5px'>
                   {children[3]}
                 </AspectRatioBox>
 
-                <Box pos='relative' width='100%' mt='5px'>
+                <Box pos='relative' width='65%' mt='5px'>
                   <AspectRatioBox ratio={1} m='1px'>
                     {children[4]}
                   </AspectRatioBox>
