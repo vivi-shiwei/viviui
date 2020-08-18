@@ -3,6 +3,8 @@ import { Button, useDisclosure } from '@chakra-ui/core'
 // import {
 //   AddIntelligence
 // } from '../src/components/selectSearch/programa'
+import { action } from '@storybook/addon-actions'
+import NextLink from 'next/link'
 import Admin from '../src/components/admin/adminPage'
 import EditShow from '../src/components/editShow'
 import DeleteIcon from '../src/components/editShow/deleteIcon'
@@ -38,15 +40,19 @@ export const ListTest = () => {
         backurl='教義中學第六校>管理員'
         button={
           <>
-            <Button
-              variant='outline'
-              variantColor='green'
-              onClick={onOpen}
-              display={isOpen ? 'none' : 'block'}
-              mx=' auto'
-            >
-              新增智能
-            </Button>
+            <NextLink href='/test' passHref>
+              <a onClick={action('button-click')}>
+                <Button
+                  variant='outline'
+                  variantColor='green'
+                  onClick={onOpen}
+                  display={isOpen ? 'none' : 'block'}
+                  mx=' auto'
+                >
+                  新增智能
+                </Button>
+              </a>
+            </NextLink>
           </>
         }
       >
@@ -54,14 +60,22 @@ export const ListTest = () => {
           <EditTable value={intelligenceName} inputonChange={(e) => { setIntelligenceName(e.target.value) }} />
           <EditTable value={intelligenceEngName} inputonChange={(e) => { setIntelligenceEngName(e.target.value) }} />
           <DeleteIcon />
-          <ConfirmButton
-            isDisabled={(intelligenceName === name && intelligenceEngName === englishName)}
-          >確認
-          </ConfirmButton>
-          <CancelButton
-            isDisabled={(intelligenceName === name && intelligenceEngName === englishName)}
-          >還原
-          </CancelButton>
+          <NextLink href='/test' passHref>
+            <a onClick={action('button-click')}>
+              <ConfirmButton
+                isDisabled={(intelligenceName === name && intelligenceEngName === englishName)}
+              >確認
+              </ConfirmButton>
+            </a>
+          </NextLink>
+          <NextLink href='/test' passHref>
+            <a onClick={action('button-click')}>
+              <CancelButton
+                isDisabled={(intelligenceName === name && intelligenceEngName === englishName)}
+              >還原
+              </CancelButton>
+            </a>
+          </NextLink>
         </EditShow>
         {/* {talents.map((item, index) => {
           return (

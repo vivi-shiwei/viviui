@@ -1,15 +1,15 @@
 import React, { Children } from 'react'
 
 import WbgPage from './wbgPage'
-import HeaderPage from './pageHeader'
+import PageHeader from './pageHeader'
 
-const Page = ({ backurl, title, nodivider = false, children, ...props }) => {
+const Page = ({ title, nodivider = false, children, ...props }) => {
   let headerPage = null
   const chil = []
 
   Children.map(children, (c, i) => {
     switch (c.type) {
-      case HeaderPage:
+      case PageHeader:
         if (!headerPage) headerPage = []
         headerPage.push(c) // 頭部
         break
@@ -19,7 +19,7 @@ const Page = ({ backurl, title, nodivider = false, children, ...props }) => {
   })
 
   return (
-    <WbgPage backurl={backurl} title={title} headerPage={headerPage} nodivider={nodivider} {...props}>
+    <WbgPage title={title} headerPage={headerPage} nodivider={nodivider} {...props}>
       {chil}
     </WbgPage>
   )

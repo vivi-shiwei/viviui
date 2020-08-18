@@ -10,7 +10,7 @@ const TableBody = ({ children, ...props }) => {
   return (
     <Box as='tbody' {...props}>
       <TableContext.Provider
-        value={{ parent: 'TableBody' }}// 给每一个子集都赋值
+        value={{ parent: 'TableBody' }}// 在 TableBody 下的所有组件都能共享到 value 里的数据
       >
         {children}
       </TableContext.Provider>

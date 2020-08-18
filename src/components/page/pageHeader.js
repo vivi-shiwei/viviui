@@ -9,9 +9,11 @@ const HeaderPage = (props) => {
     <Heading
       as='div'
       textAlign='center'
-      // overflow='hidden'
-      // textOverflow='ellipsis'
-      // whiteSpace='nowrap'
+      size='lg'
+
+      overflow='hidden'
+      textOverflow='ellipsis'
+      whiteSpace='nowrap'
       {...props}
     />
   )

@@ -5,6 +5,8 @@ import {
   Heading,
   Button
 } from '@chakra-ui/core'
+import NextLink from 'next/link'
+import { action } from '@storybook/addon-actions'
 
 export default {
   title: 'Hero(vivi)'
@@ -106,12 +108,20 @@ export const heroWithCustomContent = () => {
 export const heroWithCustomContent2 = () => {
   return (
     <Hero>
-      <Button size='lg' as='a' variantColor='teal' m={2}>
-        Get Started
-      </Button>
-      <Button as='a' size='lg' m={2}>
-        GitHub
-      </Button>
+      <NextLink href='/test' passHref>
+        <a onClick={action('button-click')}>
+          <Button size='lg' as='a' variantColor='teal' m={2}>
+            Get Started
+          </Button>
+        </a>
+      </NextLink>
+      <NextLink href='/test' passHref>
+        <a onClick={action('button-click')}>
+          <Button as='a' size='lg' m={2}>
+            GitHub
+          </Button>
+        </a>
+      </NextLink>
     </Hero>
   )
 }
@@ -122,24 +132,38 @@ export const heroWithButtons = () => {
       title='這是大標題（title）'
       subtitle='這是小標題（subtitle）'
       leftButton={
-        <Button size='lg' as='a' variantColor='teal' m={2}>
-          Get Started
-        </Button>
+        <NextLink href='/test' passHref>
+          <a onClick={action('button-click')}>
+            <Button size='lg' as='a' variantColor='teal' m={2}>
+              Get Started
+            </Button>
+          </a>
+        </NextLink>
       }
       rightButton={
-        <Button as='a' size='lg' m={2}>
-          GitHub
-        </Button>
+        <NextLink NextLink href='/test' passHref>
+          <a onClick={action('button-click')}>
+            <Button as='a' size='lg' m={2}>
+              GitHub
+            </Button>
+          </a>
+        </NextLink>
       }
-
     >
-
-      <Button size='lg' as='a' variantColor='teal' m={2}>
-        Get Started
-      </Button>
-      <Button as='a' size='lg' m={2}>
-        GitHub
-      </Button>
+      <NextLink href='/test' passHref>
+        <a onClick={action('button-click')}>
+          <Button size='lg' as='a' variantColor='teal' m={2}>
+            Get Started
+          </Button>
+        </a>
+      </NextLink>
+      <NextLink href='/test' passHref>
+        <a onClick={action('button-click')}>
+          <Button as='a' size='lg' m={2}>
+            GitHub
+          </Button>
+        </a>
+      </NextLink>
     </Hero>
   )
 }

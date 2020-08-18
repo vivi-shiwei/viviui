@@ -4,12 +4,11 @@ import {
   Box
 } from '@chakra-ui/core'
 
-const SiginButton = ({ leftIcon, rightIcon, containerProps, children, ...props }) => {
+const RedButton = ({ leftIcon, rightIcon, children, ...props }) => {
   return (
     <Button
-      as='a'
+      as='div'
       size='lg'
-      // w='100%'
       bg='#E53E3E'
       w={{ base: '100%', sm: '340px' }}
       variant='solid'
@@ -38,4 +37,4 @@ const SiginButton = ({ leftIcon, rightIcon, containerProps, children, ...props }
   )
 }
 
-export default SiginButton
+export default RedButton

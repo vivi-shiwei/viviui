@@ -280,6 +280,9 @@ export { default as Hero } from './components/hero'
 export { default as FeatrueGrid } from './components/featureGrid'
 export { default as Featrure } from './components/featureGrid/feature'
 
+// Footer
+export { default as Footer } from './components/footer'
+
 // Group
 export { default as Group } from './components/group'
 export { default as Card } from './components/group/card'
@@ -315,7 +318,7 @@ export { default as ColumnIconText } from './components/page/columnIconText'
 export { default as BackButton } from './components/page/backButton'
 export { default as DeleteButton } from './components/page/deleteButton'
 export { default as DeleteRemind } from './components/page/deleteRemind'
-export { default as HeaderPage } from './components/page/pageHeader'
+export { default as PageHeader } from './components/page/pageHeader'
 export { default as LabelName } from './components/page/labelName'
 export { default as ManageMent } from './components/page/manageMent'
 export { default as NewButton } from './components/page/newButton'
@@ -340,3 +343,11 @@ export { default as RedButton } from './components/fullScreenView/redButton'
 export { default as BlueButton } from './components/fullScreenView/blueButton'
 export { default as ButtonGrid } from './components/fullScreenView/buttonGrid'
 export { default as LargeTitle } from './components/fullScreenView/largeTitle'
+
+// 面包屑
+export { default as Crumb } from './components/crumb'
+export { default as CrumbLink } from './components/crumb/crumbLink'
+
+// post
+export { default as Pictures } from './components/postCard/pictures'
+export { default as PictureBox } from './components/postCard/pictureBox'

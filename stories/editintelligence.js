@@ -1,5 +1,8 @@
 
 import React from 'react'
+import { action } from '@storybook/addon-actions'
+import NextLink from 'next/link'
+
 import Intelligence from '../src/components/editShow'
 import DeleteIcon from '../src/components/editShow/deleteIcon'
 import ConfirmButton from '../src/components/editShow/confirmButton'
@@ -17,9 +20,21 @@ export const EditIntelligenceTest = () => {
 
         <EditTable value='jfiekj' color='#CC6600' />
         <EditTable value='jfiekj' color='#99CC33' />
-        <DeleteIcon onClick={() => { console.log('杰克') }} />
-        <ConfirmButton> 确认</ConfirmButton>
-        <CancelButton>取消</CancelButton>
+        <NextLink href='/test' passHref>
+          <a onClick={action('button-click')}>
+            <DeleteIcon onClick={() => { console.log('杰克') }} />
+          </a>
+        </NextLink>
+        <NextLink href='/test' passHref>
+          <a onClick={action('button-click')}>
+            <ConfirmButton> 确认</ConfirmButton>
+          </a>
+        </NextLink>
+        <NextLink href='/test' passHref>
+          <a onClick={action('button-click')}>
+            <CancelButton>取消</CancelButton>
+          </a>
+        </NextLink>
       </Intelligence>
     </>
   )

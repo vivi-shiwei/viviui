@@ -14,6 +14,7 @@ const EditIntelligence = ({ left, onChage, children, ...props }) => {
   let deleteIco = null
   let cancel = null
   let confirm = null
+  const right = []
 
   // 把 children 里的标签拿出来后赋值。
   Children.map(children, (c, i) => {
@@ -30,6 +31,8 @@ const EditIntelligence = ({ left, onChage, children, ...props }) => {
       case ConfirmButton:
         confirm = c
         break
+      default:
+        right.push(c)
     }
   })
   return (
@@ -58,6 +61,7 @@ const EditIntelligence = ({ left, onChage, children, ...props }) => {
       >
         {cancel}
         {confirm}
+        {right}
       </Box>
     </PseudoBox>
   )
