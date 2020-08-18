@@ -134,6 +134,30 @@ const PictureArrange = ({ arrangement, children, ...props }) => { // arrangement
           </Flex>
         )}
 
+        {children.length === 5 && (
+          <Flex justifyContent='space-between' flexDirection='row' width='full'>
+            <Flex justifyContent='space-between' flexDirection='column' width='50%' height='50%'>
+              <AspectRatioBox width='full' ratio={1}>
+                {children[0]}
+              </AspectRatioBox>
+              <AspectRatioBox width='full' ratio={1} mt='5px'>
+                {children[1]}
+              </AspectRatioBox>
+            </Flex>
+            <Flex justifyContent='space-between' flexDirection='column' width='50%' maxH='full' ml='5px'>
+              <AspectRatioBox width='100%' ratio={1}>
+                {children[2]}
+              </AspectRatioBox>
+              <AspectRatioBox width='100%' ratio={1} mt='5px'>
+                {children[3]}
+              </AspectRatioBox>
+              <AspectRatioBox width='100%' ratio={1} mt='5px'>
+                {children[4]}
+              </AspectRatioBox>
+            </Flex>
+          </Flex>
+        )}
+
       </Box>
 
     </Box>
