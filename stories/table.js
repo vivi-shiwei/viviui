@@ -134,7 +134,7 @@ export const table = () => {
           <TableRow>
             <TableCell w='50px'>序號</TableCell>
             <TableCell>名稱</TableCell>
-            <TableCell>值</TableCell>
+            <TableCell>fdfdfdf值</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
