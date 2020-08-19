@@ -16,7 +16,8 @@
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
     "emotion-theming": "^10.0.27",
-    "formik": "^2.1.5"
+    "formik": "^2.1.5",
+    "video-react": "^0.14.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.3",
