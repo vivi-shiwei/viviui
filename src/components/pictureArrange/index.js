@@ -11,12 +11,12 @@ const PictureArrange = ({ arrangement, children, ...props }) => { // arrangement
     <Box {...props}>
       <Box>
         {!children.length && (
-          <AspectRatioBox ratio={1} maxW='400px' maxH='400px'>
+          <AspectRatioBox ratio={1}>
             {children}
           </AspectRatioBox>
         )}
         {children.length === 2 && arrangement && (
-          <Box d='flex' justifyContent='space-between' maxW='400px' maxH='400px'>
+          <Box d='flex' justifyContent='space-between'>
             {children.map((c, i) => {
               return (
                 <>
@@ -47,14 +47,14 @@ const PictureArrange = ({ arrangement, children, ...props }) => { // arrangement
                 <>
                   {i === 0 && (
                     <Box as='article' w={['100%', '100%', '100%', '100%']} height='49%'>
-                      <AspectRatioBox ratio={4 / 2}>
+                      <AspectRatioBox ratio={2 / 1}>
                         {c}
                       </AspectRatioBox>
                     </Box>
                   )}
                   {i === 1 && (
                     <Box as='article' w={['100%', '100%', '100%', '100%']} mt='2px'>
-                      <AspectRatioBox ratio={4 / 2}>
+                      <AspectRatioBox ratio={2 / 1}>
                         {c}
                       </AspectRatioBox>
 
@@ -103,7 +103,8 @@ const PictureArrange = ({ arrangement, children, ...props }) => { // arrangement
               {children[0]}
             </AspectRatioBox>
             <Flex justifyContent='space-between' flexDirection='column' width='50%' ml='5px'>
-              <AspectRatioBox width='full' ratio={1}>
+              <Image src={children[1].src} objectFit='cover' />
+              <AspectRatioBox width='full' ratio={4 / 4}>
                 {children[1]}
               </AspectRatioBox>
               <AspectRatioBox width='full' ratio={1} mt='5px'>
