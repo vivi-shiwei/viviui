@@ -8,6 +8,8 @@ import PostGroup from '../src/components/postGroup'
 import PostCreatorHeader from '../src/components/postGroup/postCreatorHeader'
 import PostMenu from '../src/components/postGroup/postMenu'
 import PostTalent from '../src/components/postGroup/postTalent'
+import PostTags from '../src/components/postGroup/postTags'
+import PostTitle from '../src/components/postGroup/postTitle'
 
 export default {
   title: 'PostGroup(hui)'
@@ -21,7 +23,10 @@ export const postHeader = () => {
         topLeft={<PostCreatorHeader />}
         topRight={<PostMenu />}
         postTalent={<PostTalent />}
-        PostTags
+        postTags={<PostTags />}
+        postTitle={<PostTitle />}
+        postContent
+        photosGrid
       />
       {/* 右上角 menu, 內有 post modal 作編輯用 */}
       {/* <PostMenu post={post} view={view} /> */}

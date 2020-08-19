@@ -4,7 +4,7 @@ import {
 
 } from '@chakra-ui/core'
 
-const PostCard = ({ topLeft, topRight, postTalent, PostTags, children, ...props }) => {
+const PostCard = ({ topLeft, topRight, postTalent, postTags, postTitle, postContent, photosGrid, children, ...props }) => {
   return (
     <Box
       rounded={{ base: 0, md: 6 }}
@@ -18,8 +18,13 @@ const PostCard = ({ topLeft, topRight, postTalent, PostTags, children, ...props 
         {topLeft}
         {topRight}
         {postTalent}
+        {postTags}
+        {postTitle}
       </Box>
-      {/* <Box as='article'>45</Box> */}
+      <Box as='article'>
+        {postContent}
+        {photosGrid}
+      </Box>
     </Box>
   )
 }
