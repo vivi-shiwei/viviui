@@ -1,4 +1,5 @@
 import React from 'react'
+import { action } from '@storybook/addon-actions'
 
 import Search from '../src/components/search/index'
 import Container from '../src/components/container'
