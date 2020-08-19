@@ -25,13 +25,13 @@ export const PictureArrangeTest = () => {
   ]
   return (
     <Box>
-      <PictureArrange arrangement='' maxW='400px' m='0 auto' mt='50px'>
+      <PictureArrange arrangement='' m='0 auto'>
         <RatioImg src='https://bit.ly/naruto-sage' />
         <RatioImg src='https://bit.ly/naruto-sage' />
         <RatioImg src='https://bit.ly/naruto-sage' />
         <RatioImg src='https://bit.ly/naruto-sage' />
         <RatioImg src='https://bit.ly/naruto-sage' />
-        <RatioImg src='https://bit.ly/naruto-sage' />
+        {/* <RatioImg src='https://bit.ly/naruto-sage' /> */}
       </PictureArrange>
     </Box>
   )
