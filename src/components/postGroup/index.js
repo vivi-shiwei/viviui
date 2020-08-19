@@ -1,7 +1,6 @@
 import React from 'react'
 import {
   Box
-
 } from '@chakra-ui/core'
 
 const PostCard = ({ topLeft, topRight, postTalent, postTags, postTitle, postContent, photosGrid, children, ...props }) => {
