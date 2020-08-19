@@ -11,7 +11,9 @@ const PostTalent = ({ children, ...props }) => {
     <Box mt={3}>
       <Tag rounded='full' variant='outline' variantColor='green' style={{ whiteSpace: 'nowrap' }}>
         <Icon mr='1' name='star' />
-        <TagLabel>才能</TagLabel>
+        <TagLabel>调皮</TagLabel>
+        <TagLabel>捣蛋</TagLabel>
+        <TagLabel>爱说话</TagLabel>
       </Tag>
     </Box>
   )

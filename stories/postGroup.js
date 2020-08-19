@@ -10,6 +10,8 @@ import PostMenu from '../src/components/postGroup/postMenu'
 import PostTalent from '../src/components/postGroup/postTalent'
 import PostTags from '../src/components/postGroup/postTags'
 import PostTitle from '../src/components/postGroup/postTitle'
+import PostContent from '../src/components/postGroup/postContent'
+// import PhotosGrid from '../src/components/postGroup/photosGrid'
 
 export default {
   title: 'PostGroup(hui)'
@@ -25,43 +27,9 @@ export const postHeader = () => {
         postTalent={<PostTalent />}
         postTags={<PostTags />}
         postTitle={<PostTitle />}
-        postContent
-        photosGrid
+        postContent={<PostContent content='图片标题1 图片标题1 图片标题1' />}
+      // photosGrid={<PhotosGrid />}
       />
-      {/* 右上角 menu, 內有 post modal 作編輯用 */}
-      {/* <PostMenu post={post} view={view} /> */}
-      {/* 發文者頭像和時間 */}
-      {/* <PostCreatorHeader post={post} /> */}
-      {/* 才能 */}
-      {/* <PostTalent post={post} /> */}
-      {/* 標註 */}
-      {/* <PostTags post={post} /> */}
-      {/* 標題 */}
-      {/* <Box mt={3}>
-          <Text fontWeight='bold' textAlign='left' minH='50px' wordBreak='break-word' fontSize='3xl'>
-            {post.title || '無標題'}
-          </Text>
-        </Box> */}
-
-      {/* 貼文的內文與照片 */}
-
-      {/* 內文的文字 */}
-      {/* <PostContent
-              content={post.content || ''}
-              contentBlocks={post.contentBlocks || {}}
-              showEmbed={!photos || !photos.length}
-            /> */}
-
-      {/* 照片列表 */}
-      {/* {photoCount > 0 && (
-              <PhotosGrid
-                post={post}
-                photoCount={photoCount}
-                photos={photos}
-                onOpenPhotoViewModal={onOpenPhotoViewModal}
-              />
-            )}
-          </Box> */}
     </Box>
   )
 }
