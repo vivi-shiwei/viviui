@@ -1,7 +1,6 @@
 import React from 'react'
 import {
-  Link,
-  Text
+  Link
 } from '@chakra-ui/core'
 import NextLink from 'next/link'
 
