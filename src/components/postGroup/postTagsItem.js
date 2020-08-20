@@ -11,7 +11,6 @@ const PostTagsItem = ({ link, children, ...props }) => {
       <NextLink href={link} as={link} passHref>
         <Link fontSize='lg'>
           {children}
-          <Text as='span'>、</Text>
         </Link>
       </NextLink>
     </>

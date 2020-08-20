@@ -48,7 +48,7 @@ export const postHeader = () => {
             <PostTagsItem link='https://www.baidu.com/'>小薇</PostTagsItem>
             <PostTagsItem link='https://www.baidu.com/'>紫霞</PostTagsItem>
             <PostTagsItem link='https://www.baidu.com/'>小鬼</PostTagsItem>
-            <PostTagsItem link='https://www.baidu.com/'>小鬼</PostTagsItem>
+            <PostTagsItem link='https://www.baidu.com/'>小西</PostTagsItem>
           </PostTags>
         }
         postTitle={<PostTitle>夏威夷夏令营</PostTitle>}

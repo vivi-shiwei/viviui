@@ -1,6 +1,8 @@
 import React from 'react'
 import {
-  Box
+  Box,
+  Link,
+  Text
 } from '@chakra-ui/core'
 import { FaUserTag } from 'react-icons/fa'
 
@@ -10,12 +12,10 @@ const PostTags = ({ children, ...props }) => {
     <Box mt={3} d='flex' alignItems='center' flexWrap='wrap' {...props}>
       <Box as={FaUserTag} fontSize='20px' w='20px' mr={2} />
       {children.map((item, index) => {
-        const name = item.props.children
-        const name2 = name.concat('、')
-        if (count !== index + 1) {
-          return name2
+        if (children.length !== index + 1) {
+          return <Text as='span'>{item}、</Text>
         } else {
-          return name
+          return <Text as='span'>{item}</Text> // 标注最后一个不加点
         }
       })}
     </Box>
