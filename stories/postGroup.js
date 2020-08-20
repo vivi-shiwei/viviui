@@ -29,7 +29,7 @@ export const postHeader = () => {
     // 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2494239978,1960683224&fm=15&gp=0.jpg'
   ]
   return (
-    <Box>
+    <Box mt='20px'>
       <PostGroup
         m='0 auto' width={{ base: '100%', sm: '100%', md: '800px' }}
         topLeft={
@@ -41,9 +41,9 @@ export const postHeader = () => {
           />
         }
         topRight={<PostMenu />}
-        postTalent={<PostTalent color='#CD96CD'>充满爱心、追求时髦 </PostTalent>}
-        postTags={<PostTags />}
-        postTitle={<PostTitle />}
+        postTalent={<PostTalent color='#CD96CD'>充满爱心、追求时髦</PostTalent>}
+        postTags={<PostTags color='#D1EEEE'>李海、李逵、张秀</PostTags>}
+        postTitle={<PostTitle color='#A2CD5A'>夏威夷夏令营</PostTitle>}
         postContent={<PostContent content='图片标题1 图片标题1 图片标题1' />}
         photosGrid={<PhotosGrid photos={data} />}
       />
