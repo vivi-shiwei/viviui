@@ -31,10 +31,17 @@ export const postHeader = () => {
   return (
     <Box>
       <PostGroup
-        m='0 auto' width={{ base: '100%', md: '655px' }}
-        topLeft={<PostCreatorHeader photoId photoImg userName />}
+        m='0 auto' width={{ base: '100%', sm: '100%', md: '800px' }}
+        topLeft={
+          <PostCreatorHeader
+            link='https://www.baidu.com/'
+            name='pengchihui2'
+            photo='https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=246460487,3481024636&fm=26&gp=0.jpg'
+            time=' 2020-08-20 10:32:55'
+          />
+        }
         topRight={<PostMenu />}
-        postTalent={<PostTalent />}
+        postTalent={<PostTalent color='#CD96CD'>充满爱心、追求时髦 </PostTalent>}
         postTags={<PostTags />}
         postTitle={<PostTitle />}
         postContent={<PostContent content='图片标题1 图片标题1 图片标题1' />}

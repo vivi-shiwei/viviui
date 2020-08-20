@@ -9,11 +9,9 @@ import {
 const PostTalent = ({ children, ...props }) => {
   return (
     <Box mt={3}>
-      <Tag rounded='full' variant='outline' variantColor='green' style={{ whiteSpace: 'nowrap' }}>
+      <Tag rounded='full' variant='outline' variantColor='green' style={{ whiteSpace: 'nowrap' }} {...props}>
         <Icon mr='1' name='star' />
-        <TagLabel>调皮</TagLabel>
-        <TagLabel>捣蛋</TagLabel>
-        <TagLabel>爱说话</TagLabel>
+        <TagLabel>{children}</TagLabel>
       </Tag>
     </Box>
   )

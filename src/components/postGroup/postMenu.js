@@ -11,15 +11,15 @@ import {
 
 const PostMenu = ({ canDelete, canEdit, children, ...props }) => {
   return (
-    <Box position='absolute' right='0px' top='0px'>
+    <Box position='absolute' right='0px' top='0px' d='flex' justifyContent='flex-end' alignItems='flex-start' {...props}>
       {/* 編輯與刪除的按鈕 */}
       <Menu placement='bottom-end'>
-        <MenuButton as={Icon} size='30px' name='chevron-down' fontSize='20px' />
+        <MenuButton as={Icon} size='30px' name='chevron-down' />
         <MenuList>
-          <MenuItem minH='20px' o>
+          <MenuItem minH='20px' onClick=''>
             <Text>編輯</Text>
           </MenuItem>
-          <MenuItem minH='20px'>
+          <MenuItem minH='20px' onClick=''>
             <Text>刪除</Text>
           </MenuItem>
         </MenuList>
