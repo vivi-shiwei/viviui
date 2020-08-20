@@ -8,7 +8,7 @@ import {
 
 import { Player, BigPlayButton } from 'video-react'
 
-const PhotosGrid = ({ post, photos, photoCount, onOpenPhotoViewModal }) => {
+const PhotosGrid = ({ post, photos, children, ...props }) => {
   const content = []
   let itemContent = []
   let items = []
@@ -23,7 +23,7 @@ const PhotosGrid = ({ post, photos, photoCount, onOpenPhotoViewModal }) => {
           url={val.url}
           key={val.id}
           index={index}
-          onOpenPhotoViewModal={onOpenPhotoViewModal}
+
         />
       )
     } else {
@@ -34,7 +34,6 @@ const PhotosGrid = ({ post, photos, photoCount, onOpenPhotoViewModal }) => {
           imageURL={val.key}
           key={val.id}
           images={photos}
-          onOpenPhotoViewModal={onOpenPhotoViewModal}
           index={index}
         />)
     }
@@ -65,26 +64,18 @@ const PhotosGrid = ({ post, photos, photoCount, onOpenPhotoViewModal }) => {
         })
       }
 
-      {!!photoCount && photoCount > 5 && (
+      {photos.length > 5 && (
         <Box d='flex' justifyContent='center' mt={2}>
           <Button
             variant='outline'
             variantColor='green'
-            onClick={() => {
-              if (onOpenPhotoViewModal) {
-                onOpenPhotoViewModal({
-                  postId: post.id,
-                  index: 5
-                })
-              }
-            }}
           >
-            {`還有${photoCount - photos.length}張照片`}
+            {`還有${photos.length - 5}張照片`}
           </Button>
         </Box>
       )}
 
-      <style jsx global>
+      <style>
         {`
           .grid-images {
             display: flex;
@@ -157,19 +148,20 @@ const ImageItem = ({ id, imageURL, images, index, post, onOpenPhotoViewModal }) 
   )
 }
 
-// 圖片列表
-const VideoItem = ({ children, ...props }) => {
+// 圖片 视频 列表
+const VideoItem = ({ id, url, index, onOpenPhotoViewModal, post }) => {
   return (
-    <Box as='div' className='imgs'>
+    <Box as='div' key={id} className='imgs'>
       <Box
         className='img-item'
+
       >
         <Player
           width='100%'
           height='100%'
           playsInline
           fluid={false}
-          src={photos[0]}
+          src='https://f10.baidu.com/it/u=1911995130,2805437140&fm=76'
           autoPlay={false}
           muted
         >

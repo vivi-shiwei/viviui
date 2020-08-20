@@ -8,7 +8,7 @@ import {
 } from '@chakra-ui/core'
 import NextLink from 'next/link'
 
-const PostCreatorHeader = ({ creator, children, ...props }) => {
+const PostCreatorHeader = ({ photoHref, photoImg, userName, children, ...props }) => {
   return (
     <Stack isInline>
       {/* 發文者的頭像 姓名 發文時間 */}
@@ -29,7 +29,7 @@ const PostCreatorHeader = ({ creator, children, ...props }) => {
           <Link>
             <Image
               src='https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1141259048,554497535&fm=26&gp=0.jpg'
-              fallbackSrc='#'
+              fallbackSrc='#'// 默认
             />
           </Link>
         </NextLink>
