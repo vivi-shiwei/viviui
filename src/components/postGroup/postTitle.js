@@ -7,7 +7,7 @@ import {
 const PostTitle = ({ children, ...props }) => {
   return (
     <Box mt={3}>
-      <Text fontWeight='bold' textAlign='left' minH='50px' wordBreak='break-word' fontSize='3xl' {...props}>
+      <Text fontWeight='bold' textAlign='left' minH='50px' wordBreak='break-word' fontSize={{ base: '24px', sm: '24px', md: '30px' }} {...props}>
         {children}
       </Text>
     </Box>

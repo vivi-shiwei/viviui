@@ -7,7 +7,7 @@ const PostContent = ({ children, ...props }) => {
   return (
     <>
       {children.trim() && (
-        <Text fontSize='2xl' textAlign='left' wordBreak='break-word' {...props}>
+        <Text fontSize={{ base: '16px', sm: '16px', md: '18px' }} textAlign='left' wordBreak='break-word' {...props}>
           {children}
         </Text>
       )}

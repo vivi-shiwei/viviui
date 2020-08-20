@@ -10,6 +10,7 @@ const PostTags = ({ children, ...props }) => {
     <>
       <Box mt={3} d='flex' alignItems='center' flexWrap='wrap' {...props}>
         <Box as={FaUserTag} fontSize='20px' w='20px' mr={2} />
+        {console.log(children)}
         {Children.map(children, (item, index) => {
           if (children.length >= 1 && children.length !== index + 1) {
             return <Text as='span'>{item}、</Text>

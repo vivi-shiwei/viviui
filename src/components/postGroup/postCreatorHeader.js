@@ -33,9 +33,8 @@ const PostCreatorHeader = ({ link, name, photo, time, children, ...props }) => {
             height='full'
           >
             <Image
-              rounded='50%'
               src={photo}
-              fallbackSrc='http://localhost:3000/school/static/default-avatar.jpg'// 默认头像
+              fallbackSrc='https://f10.baidu.com/it/u=1911995130,2805437140&fm=76'// 默认头像
             />
           </Link>
         </NextLink>
@@ -44,6 +43,7 @@ const PostCreatorHeader = ({ link, name, photo, time, children, ...props }) => {
           .photo img{
             max-width: 100%;
             height: 100%;
+            
           }
           `}
         </style>

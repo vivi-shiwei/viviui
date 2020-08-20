@@ -37,7 +37,7 @@ export const postHeader = () => {
           <PostCreatorHeader
             link='https://www.baidu.com/'
             name='pengchihui2'
-            photo='https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=246460487,3481024636&fm=26&gp=0.jpg'
+            // photo='https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1873101598,2655143176&fm=26&gp=0.jpg'
             time=' 2020-08-20 10:32:55'
           />
         }
@@ -46,13 +46,13 @@ export const postHeader = () => {
         postTags={
           <PostTags>
             <PostTagsItem link='https://www.baidu.com/'>小薇</PostTagsItem>
-            {/* <PostTagsItem link='https://www.baidu.com/'>紫霞</PostTagsItem> */}
-            {/* <PostTagsItem link='https://www.baidu.com/'>小鬼</PostTagsItem> */}
-            {/* <PostTagsItem link='https://www.baidu.com/'>小西</PostTagsItem> */}
+            <PostTagsItem link='https://www.baidu.com/'>紫霞</PostTagsItem>
+            <PostTagsItem link='https://www.baidu.com/'>小鬼</PostTagsItem>
+            <PostTagsItem link='https://www.baidu.com/'>小西</PostTagsItem>
           </PostTags>
         }
-        postTitle={<PostTitle>夏威夷夏令营</PostTitle>}
-        postContent={<PostContent fontSize='20px'>夏威夷地处太平洋,四面环海,气候宜人,环境优美,有“旅游天堂”之美誉。阳光,海洋,沙滩,火山,还有当地的民俗文化,构成了极富特色的夏威夷风光。</PostContent>}
+        postTitle={<PostTitle>夏威夷 夏令营</PostTitle>}
+        postContent={<PostContent>夏威夷地处太平洋,四面环海,气候宜人,环境优美,有“旅游天堂”之美誉。阳光,海洋,沙滩,火山,还有当地的民俗文化,构成了极富特色的夏威夷风光。</PostContent>}
         photosGrid={<PhotosGrid photos={data} />}
       />
     </Box>
