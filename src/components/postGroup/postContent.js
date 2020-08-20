@@ -8,15 +8,9 @@ const PostContent = ({ children, ...props }) => {
   return (
     <>
       {children.trim() && (
-        <Box as='div' textAlign='left' wordBreak='break-word' {...props}>
-          {children.split('\n').map((line, i) => {
-            return (
-              <Text key={i} fontSize='2xl'>
-                {line}
-              </Text>
-            )
-          })}
-        </Box>
+        <Text fontSize='2xl' textAlign='left' wordBreak='break-word' {...props}>
+          {children}
+        </Text>
       )}
     </>
 

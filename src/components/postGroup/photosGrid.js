@@ -149,7 +149,7 @@ const ImageItem = ({ id, imageURL, images, index, post, onOpenPhotoViewModal }) 
 }
 
 // 圖片 视频 列表
-const VideoItem = ({ id, url, index, onOpenPhotoViewModal, post }) => {
+const VideoItem = ({ id, url, index, post, onOpenPhotoViewModal }) => {
   return (
     <Box as='div' key={id} className='imgs'>
       <Box
