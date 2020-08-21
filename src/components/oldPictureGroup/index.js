@@ -91,8 +91,9 @@ const OldPictureGroup = ({ photos, children, ...props }) => {
         Show()
       )}
       {/* 五张以上 */}
-      {
-        photoCount >= 6 && (
+      {photoCount >= 6 && (
+        <>
+          <Box>{Show()}</Box>
           <Box d='flex' justifyContent='center' mt={2}>
             <Button
               variant='outline'
@@ -101,8 +102,8 @@ const OldPictureGroup = ({ photos, children, ...props }) => {
               {`還有${photoCount - 5}張照片`}
             </Button>
           </Box>
-        )
-      }
+        </>
+      )}
       <style jsx='true' global='true'>
         {`
          .grid-images{
