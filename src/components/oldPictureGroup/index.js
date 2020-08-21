@@ -32,30 +32,24 @@ const OldPictureGroup = ({ photos, children, ...props }) => {
       )
     }
   })
-
-  return (
-    <Box {...props}>
-      {/* 一张 */}
-      {photoCount < 2 && (
-        <ImgItem url={array[0].url} />
-      )}
-      {/* 二到五张 */}
-      {photoCount >= 2 && photoCount < 4 && (
+  const Show = () => {
+    return (
+      <>
         <Flex justify='space-between'>
           {Children.map(items, (item, index) => {
-            if ((index + 1) % 3 === 1) {
+            if ((index + 1) % 3 === 1 & index === 0) {
               return (
                 <LinePicture className={`images-total-${1}`}>
                   {item}
                 </LinePicture>
               )
-            } else if ((index + 1) % 3 === 2) {
+            } else if ((index + 1) % 3 === 2 && index === 1) {
               return (
                 <LinePicture className={`images-total-${2}`}>
                   {item}
                 </LinePicture>
               )
-            } else if ((index + 1) % 3 === 0) {
+            } else if ((index + 1) % 3 === 0 && index === 2) {
               return (
                 <LinePicture className={`images-total-${3}`}>
                   {item}
@@ -64,6 +58,37 @@ const OldPictureGroup = ({ photos, children, ...props }) => {
             }
           })}
         </Flex>
+        <Flex justify='space-between'>
+          {Children.map(items, (item, index) => {
+            if ((index + 1) % 3 === 1 & index === 3) {
+              return (
+                <LinePicture className={`images-total-${1}`}>
+                  {item}
+                </LinePicture>
+              )
+            } else if ((index + 1) % 3 === 2 && index === 4) {
+              return (
+                <LinePicture className={`images-total-${2}`}>
+                  {item}
+                </LinePicture>
+              )
+            }
+          })}
+        </Flex>
+      </>
+
+    )
+  }
+
+  return (
+    <Box {...props}>
+      {/* 一张 */}
+      {photoCount < 2 && (
+        <ImgItem url={array[0].url} />
+      )}
+      {/* 二到五张 */}
+      {photoCount >= 2 && photoCount < 6 && (
+        Show()
       )}
       {/* 五张以上 */}
       {
@@ -85,7 +110,7 @@ const OldPictureGroup = ({ photos, children, ...props }) => {
          }   
          .grid-images .img-item{
            max-width:96%;
-           max-height: 90%;
+           max-height: 100%;
          }
       
          .grid-images .imgs {
