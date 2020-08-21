@@ -6,17 +6,15 @@ import {
 
 const ImgItem = ({ url, children, ...props }) => {
   return (
-    <>
-      <Box as='div' className='imgs'>
-        <Box className='img-item'>
-          <Image
-            size='100%'
-            objectFit='cover'
-            src={url}
-          />
-        </Box>
+    <Box as='div' className='imgs' {...props}>
+      <Box className='img-item'>
+        <Image
+          size='100%'
+          objectFit='cover'
+          src={url}
+        />
       </Box>
-    </>
+    </Box>
   )
 }
 
