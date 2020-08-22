@@ -18,24 +18,13 @@ const PhotosGrid = ({ post, photos, photoCount, onOpenPhotoViewModal, children, 
     if (val.type === 'video') {
       items.push(
         <VideoItem
-          post={post}
-          id={val.id}
           url={val.url}
-          key={val.id}
-          index={index}
-          onOpenPhotoViewModal={onOpenPhotoViewModal}
         />
       )
     } else {
       items.push(
         <ImageItem
-          post={post}
-          id={val.id}
-          imageURL={val.key}
-          key={val.id}
-          images={photos}
-          onOpenPhotoViewModal={onOpenPhotoViewModal}
-          index={index}
+          imageURL={val.url}
         />)
     }
 
@@ -137,7 +126,7 @@ const ImagesContent = (props) => {
 }
 
 // 圖片列表
-const ImageItem = ({ children, ...props }) => {
+const ImageItem = ({ imageURL, children, ...props }) => {
   return (
     <Box as='div' className='imgs' {...props}>
       <Box className='img-item'>
@@ -152,7 +141,7 @@ const ImageItem = ({ children, ...props }) => {
 }
 
 // 圖片列表
-const VideoItem = ({ children, ...props }) => {
+const VideoItem = ({ url, children, ...props }) => {
   return (
     <Box as='div' className='imgs'>
       <Box
