@@ -10,7 +10,7 @@ import NextLink from 'next/link'
 
 const PostHeader = ({ link, name, photo, time, children, ...props }) => {
   return (
-    <Stack isInline>
+    <Stack isInline {...props}>
       {/* 發文者的頭像 姓名 發文時間 */}
 
       <Box

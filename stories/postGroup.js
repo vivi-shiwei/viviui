@@ -89,7 +89,53 @@ export const TopLR = () => {
             time=' 2020-08-20 10:32:55'
           />
         }
-        topRight={<PostMenu />}
+        topRight={<PostMenu color='#EE0000' />}
+      />
+    </Box>
+  )
+}
+export const postTalent = () => {
+  return (
+    <Box mt='20px' m='0 auto' width={{ base: '100%', sm: '100%', md: '500px' }}>
+      <PostGroup
+        postTalent={<PostTalent>充满爱心、追求时髦、一朵花</PostTalent>}
+      />
+    </Box>
+  )
+}
+export const postTags = () => {
+  return (
+    <Box mt='20px' m='0 auto' width={{ base: '100%', sm: '100%', md: '500px' }}>
+      <PostGroup
+        postTags={
+          <PostTags color='#7EC0EE'>
+            <PostTagsItem link='https://www.baidu.com/'>小薇</PostTagsItem>
+            <PostTagsItem link='https://www.baidu.com/'>紫霞</PostTagsItem>
+            <PostTagsItem link='https://www.baidu.com/'>小鬼</PostTagsItem>
+            <PostTagsItem link='https://www.baidu.com/'>小西</PostTagsItem>
+          </PostTags>
+        }
+      />
+    </Box>
+  )
+}
+export const postContent = () => {
+  return (
+    <Box mt='20px' m='0 auto' width={{ base: '100%', sm: '100%', md: '500px' }}>
+      <PostGroup
+        postTitle={<PostTitle color='#7A67EE'>夏威夷 夏令营</PostTitle>}
+        postContent={<PostContent color='#E066FF'>夏威夷地处太平洋,四面环海,气候宜人,环境优美,有“旅游天堂”之美誉。阳光,海洋,沙滩,火山,还有当地的民俗文化,构成了极富特色的夏威夷风光。</PostContent>}
+      />
+    </Box>
+  )
+}
+
+export const photosTwo = () => {
+  const show = pictures.slice(0, 2)
+  return (
+    <Box mt='20px' m='0 auto' width={{ base: '100%', sm: '100%', md: '500px' }}>
+      <PostGroup
+        photosGroup={<OldPictureGroup photos={show} />}
       />
     </Box>
   )
