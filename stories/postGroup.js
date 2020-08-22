@@ -27,7 +27,7 @@ const pictures = [
   { type: 'image/png', url: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=325461855,3402280707&fm=26&gp=0.jpg', id: 6 },
   { type: 'image/png', url: 'https://vdposter.bdstatic.com/78e9d4347ddc538256c6eb3bced8e12b.jpeg?x-bce-process=image/resize,m_fill,w_242,h_182/format,f_jpg/quality,Q_100', id: 7 }
 ]
-export const PostGroupAll = () => {
+export const PostAll = () => {
   const show = pictures
   const lablesList = ['李海', '李逵', '张秀']
   return (
@@ -38,7 +38,7 @@ export const PostGroupAll = () => {
           <PostHeader
             link='https://www.baidu.com/'
             name='pengchihui2'
-            photo='https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1873101598,2655143176&fm=26&gp=0.jpg'
+            photo='https://f10.baidu.com/it/u=1911995130,2805437140&fm=76'
             time=' 2020-08-20 10:32:55'
           />
         }
@@ -68,7 +68,7 @@ export const TopLeft = () => {
           <PostHeader
             link='https://www.baidu.com/'
             name='pengchihui2'
-            photo='https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1873101598,2655143176&fm=26&gp=0.jpg'
+            photo='https://f10.baidu.com/it/u=1911995130,2805437140&fm=76'
             time=' 2020-08-20 10:32:55'
           />
         }
@@ -85,7 +85,7 @@ export const TopLR = () => {
           <PostHeader
             link='https://www.baidu.com/'
             name='pengchihui2'
-            photo='https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1873101598,2655143176&fm=26&gp=0.jpg'
+            photo='https://f10.baidu.com/it/u=1911995130,2805437140&fm=76'
             time=' 2020-08-20 10:32:55'
           />
         }
