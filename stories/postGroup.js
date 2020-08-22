@@ -5,7 +5,7 @@ import {
 } from '@chakra-ui/core'
 
 import PostGroup from '../src/components/postGroup'
-import PostCreatorHeader from '../src/components/postGroup/postCreatorHeader'
+import PostHeader from '../src/components/postGroup/postHeader'
 import PostMenu from '../src/components/postGroup/postMenu'
 import PostTalent from '../src/components/postGroup/postTalent'
 import PostTags from '../src/components/postGroup/postTags'
@@ -35,7 +35,7 @@ export const PostGroupAll = () => {
       <PostGroup
         m='0 auto' width={{ base: '100%', sm: '100%', md: '500px' }}
         topLeft={
-          <PostCreatorHeader
+          <PostHeader
             link='https://www.baidu.com/'
             name='pengchihui2'
             photo='https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1873101598,2655143176&fm=26&gp=0.jpg'
@@ -60,19 +60,36 @@ export const PostGroupAll = () => {
   )
 }
 
-export const topLeft = () => {
+export const TopLeft = () => {
   return (
-    <Box mt='20px'>
+    <Box mt='20px' m='0 auto' width={{ base: '100%', sm: '100%', md: '500px' }}>
       <PostGroup
-        m='0 auto' width={{ base: '100%', sm: '100%', md: '500px' }}
         topLeft={
-          <PostCreatorHeader
+          <PostHeader
             link='https://www.baidu.com/'
             name='pengchihui2'
             photo='https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1873101598,2655143176&fm=26&gp=0.jpg'
             time=' 2020-08-20 10:32:55'
           />
         }
+      />
+    </Box>
+  )
+}
+
+export const TopLR = () => {
+  return (
+    <Box mt='20px' m='0 auto' width={{ base: '100%', sm: '100%', md: '500px' }}>
+      <PostGroup
+        topLeft={
+          <PostHeader
+            link='https://www.baidu.com/'
+            name='pengchihui2'
+            photo='https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1873101598,2655143176&fm=26&gp=0.jpg'
+            time=' 2020-08-20 10:32:55'
+          />
+        }
+        topRight={<PostMenu />}
       />
     </Box>
   )
