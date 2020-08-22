@@ -84,7 +84,9 @@ const OldPictureGroup = ({ photos, children, ...props }) => {
     <Box {...props}>
       {/* 一张 */}
       {photoCount < 2 && (
-        <ImgItem url={array[0].url} />
+        <>
+          {items[0]}
+        </>
       )}
       {/* 二到五张 */}
       {photoCount >= 2 && photoCount < 6 && (
