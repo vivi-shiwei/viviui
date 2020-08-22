@@ -3,7 +3,7 @@ import {
   Box
 } from '@chakra-ui/core'
 
-const PostCard = ({ topLeft, topRight, postTalent, postTags, postTitle, postContent, photosGrid, children, ...props }) => {
+const PostCard = ({ topLeft, topRight, postTalent, postTags, postTitle, postContent, photosGroup, children, ...props }) => {
   return (
     <Box
       rounded={{ base: 0, md: 6 }}
@@ -22,7 +22,7 @@ const PostCard = ({ topLeft, topRight, postTalent, postTags, postTitle, postCont
       </Box>
       <Box as='article'>
         {postContent}
-        {photosGrid}
+        {photosGroup}
       </Box>
     </Box>
   )
