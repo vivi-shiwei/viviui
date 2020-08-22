@@ -45,7 +45,7 @@ export const Other1 = () => {
   ]
   return (
     <Box m='0 auto'>
-      <Other photos={vedios} maxW='800px' m='0 auto' />
+      <Other photos={darks} maxW='800px' m='0 auto' />
     </Box>
   )
 }
