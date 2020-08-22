@@ -1,134 +1,117 @@
-import React, { Children } from 'react'
+import React from 'react'
 import {
   Box,
-  Button,
-  Flex
+  Button
 } from '@chakra-ui/core'
 
-import LinePicture from './linePicture'
-import ImgItem from './imgItem'
-import VideoItem from './videoItem'
+import ImageItem from './otherImg'
+import VideoItem from './otherVideo'
+import ImagesContent from './otherContent'
 
 const OldPictureGroup = ({ photos, children, ...props }) => {
-  const photoCount = photos.length // 长度
-  const items = [] // 根据类型存储 img video
+  const content = []
+  let itemContent = []
+  let items = []
 
-  const array = photos.slice(0, 5) // 浅拷贝五个
-  array.forEach((item, index) => {
-    // 类型判断
-    if (item.type === 'video') {
+  const images = photos.slice(0, 5)
+  images.forEach((val, index) => {
+    if (val.type === 'video') {
       items.push(
         <VideoItem
-          url={item.url}
-          index={index}
+          url={val.url}
         />
       )
     } else {
       items.push(
-        <ImgItem
-          url={item.url}
-          index={index}
-        />
-      )
+        <ImageItem
+          imageURL={val.url}
+        />)
+    }
+
+    if ((images.length - 1) === index && (index + 1) % 3 !== 0) {
+      itemContent = []
+      itemContent.push(items)
+      content.push(itemContent)
+    }
+
+    // 儲存三個
+    if ((index + 1) % 3 === 0) {
+      itemContent.push(items)
+      content.push(itemContent)
+      itemContent = items = []
     }
   })
-  const Show = () => {
-    return (
-      <>
-        <Flex justify='space-between'>
-          {Children.map(items, (item, index) => {
-            if ((index + 1) % 3 === 1 & index === 0) {
-              return (
-                <LinePicture className={`images-total-${1} mtNone`}>
-                  {item}
-                </LinePicture>
-              )
-            } else if ((index + 1) % 3 === 2 && index === 1) {
-              return (
-                <LinePicture className={`images-total-${2} mtNone`}>
-                  {item}
-                </LinePicture>
-              )
-            } else if ((index + 1) % 3 === 0 && index === 2) {
-              return (
-                <LinePicture className={`images-total-${3} mtNone three `}>
-                  {item}
-                </LinePicture>
-              )
-            }
-          })}
-        </Flex>
-        <Flex justify='space-between' className='flexTwo'>
-          {Children.map(items, (item, index) => {
-            if ((index + 1) % 3 === 1 & index === 3) {
-              return (
-                <LinePicture className={`images-total-${1}`}>
-                  {item}
-                </LinePicture>
-              )
-            } else if ((index + 1) % 3 === 2 && index === 4) {
-              return (
-                <LinePicture className={`images-total-${2} five `}>
-                  {item}
-                </LinePicture>
-              )
-            }
-          })}
-        </Flex>
-      </>
-
-    )
-  }
 
   return (
-    <Box {...props}>
-      {/* 一张 */}
-      {photoCount < 2 && (
-        <>
-          {items[0]}
-        </>
-      )}
-      {/* 二到五张 */}
-      {photoCount >= 2 && photoCount < 6 && (
-        Show()
-      )}
-      {/* 五张以上 */}
-      {photoCount >= 6 && (
-        <>
-          <Box>{Show()}</Box>
+    <Box>
+      <Box {...props}>
+        {
+          content.map((val, index) => {
+            return (
+              <ImagesContent key={index} className={`images-total-${val[0].length} king`}>
+                {val}
+              </ImagesContent>
+            )
+          })
+        }
+
+        {photos.length > 5 && (
           <Box d='flex' justifyContent='center' mt={2}>
             <Button
               variant='outline'
               variantColor='green'
             >
-              {`還有${photoCount - 5}張照片`}
+              {`還有${photos.length - images.length}張照片`}
             </Button>
           </Box>
-        </>
-      )}
-      <style jsx='true' global='true'>
-        {`
-         .grid-images{
-           display:flex;
-         }   
-         .mtNone{
-           margin-top:0
-         }
-         .grid-images .imgs {
-            display:flex;
+        )}
+
+        <style jsx='true' global='true'>
+          {`
+          .grid-images {
+            display: flex;
+          }
+
+          .grid-images.images-total-2 .img-item,
+          .grid-images.images-total-3 .img-item{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+
+            width: 100%;
+            height: 100%;
+
+            overflow: hidden;
+
+            display: flex;
             justify-content: center;
-            width: auto;  
-            height: auto;  
-            max-width: 100%;  
-            max-height: 100%;   
+            align-items: center;
           }
-          .grid-images .img-item{
-            max-width:100%;
-            max-height: 100%;
+
+          .grid-images.images-total-2 .imgs:after,
+          .grid-images.images-total-3 .imgs:after {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
           }
-        
-     `}
-      </style>
+
+          .grid-images .imgs {
+            width: 100%;
+            position: relative;
+            display: inline-block;
+            background: white;
+          }
+
+          .grid-images.images-total-3 .imgs:nth-child(2n) {
+            margin: 0 5px;
+          }
+
+          .grid-images.images-total-2 .imgs:first-of-type {
+            margin-right: 5px;
+          }
+        `}
+        </style>
+      </Box>
     </Box>
   )
 }
