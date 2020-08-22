@@ -28,7 +28,7 @@ export const PictureOne = () => {
   const show = darks.slice(0, 1)
   return (
     <Box m='0 auto'>
-      <OldPictureGroup photos={show} maxW='500px' m='0 auto' />
+      <OldPictureGroup photos={show} maxW='700px' m='0 auto' />
     </Box>
   )
 }
@@ -36,7 +36,31 @@ export const PictureTwo = () => {
   const show = darks.slice(0, 2)
   return (
     <Box m='0 auto'>
-      <OldPictureGroup photos={show} maxW='500px' m='0 auto' />
+      <OldPictureGroup photos={show} maxW='700px' m='0 auto' />
+    </Box>
+  )
+}
+export const PictureThree = () => {
+  const show = darks.slice(0, 3)
+  return (
+    <Box m='0 auto'>
+      <OldPictureGroup photos={show} maxW='700px' m='0 auto' />
+    </Box>
+  )
+}
+export const PictureFour = () => {
+  const show = darks.slice(0, 4)
+  return (
+    <Box m='0 auto'>
+      <OldPictureGroup photos={show} maxW='700px' m='0 auto' />
+    </Box>
+  )
+}
+export const PictureFive = () => {
+  const show = darks.slice(0, 5)
+  return (
+    <Box m='0 auto'>
+      <OldPictureGroup photos={show} maxW='700px' m='0 auto' />
     </Box>
   )
 }
@@ -44,7 +68,7 @@ export const PictureGroupMore = () => {
   const show = darks
   return (
     <Box m='0 auto'>
-      <OldPictureGroup photos={show} maxW='500px' m='0 auto' />
+      <OldPictureGroup photos={show} maxW='700px' m='0 auto' />
     </Box>
   )
 }
@@ -54,7 +78,7 @@ export const MovieOne = () => {
   const show = vedios.slice(0, 1)
   return (
     <Box m='0 auto'>
-      <OldPictureGroup photos={show} maxW='500px' m='0 auto' />
+      <OldPictureGroup photos={show} maxW='700px' m='0 auto' />
     </Box>
   )
 }
@@ -62,7 +86,31 @@ export const MovieTwo = () => {
   const show = vedios.slice(0, 2)
   return (
     <Box m='0 auto'>
-      <OldPictureGroup photos={show} maxW='500px' m='0 auto' />
+      <OldPictureGroup photos={show} maxW='700px' m='0 auto' />
+    </Box>
+  )
+}
+export const MovieThree = () => {
+  const show = vedios.slice(0, 3)
+  return (
+    <Box m='0 auto'>
+      <OldPictureGroup photos={show} maxW='700px' m='0 auto' />
+    </Box>
+  )
+}
+export const MovieFour = () => {
+  const show = vedios.slice(0, 4)
+  return (
+    <Box m='0 auto'>
+      <OldPictureGroup photos={show} maxW='700px' m='0 auto' />
+    </Box>
+  )
+}
+export const MovieFive = () => {
+  const show = vedios.slice(0, 5)
+  return (
+    <Box m='0 auto'>
+      <OldPictureGroup photos={show} maxW='700px' m='0 auto' />
     </Box>
   )
 }
@@ -71,7 +119,7 @@ export const MovieGroupMore = () => {
   const show = vedios
   return (
     <Box m='0 auto'>
-      <OldPictureGroup photos={show} maxW='500px' m='0 auto' />
+      <OldPictureGroup photos={show} maxW='700px' m='0 auto' />
     </Box>
   )
 }
