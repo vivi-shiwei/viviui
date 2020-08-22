@@ -5,18 +5,29 @@ import OldPictureGroup from '../src/components/oldPictureGroup'
 
 export default { title: 'OldPictureGroup(hui)' }
 
-export const OldPictureOne = () => {
+// 图片
+export const PictureOne = () => {
   const darks = [
     { type: 'image/jpg', url: 'https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3988286801,48626279&fm=26&gp=0.jpg', id: 1 }
   ]
-
   return (
     <Box m='0 auto'>
       <OldPictureGroup photos={darks} maxW='500px' m='0 auto' />
     </Box>
   )
 }
-export const OldPictureGroupMore = () => {
+export const PictureTwo = () => {
+  const darks = [
+    { type: 'image/jpg', url: 'https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3988286801,48626279&fm=26&gp=0.jpg', id: 1 },
+    { type: 'image/jpg', url: 'https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1947839005,1811220579&fm=26&gp=0.jpg', id: 2 }
+  ]
+  return (
+    <Box m='0 auto'>
+      <OldPictureGroup photos={darks} maxW='500px' m='0 auto' />
+    </Box>
+  )
+}
+export const PictureGroupMore = () => {
   const darks = [
     { type: 'image/jpg', url: 'https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3988286801,48626279&fm=26&gp=0.jpg', id: 1 },
     { type: 'image/jpg', url: 'https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1947839005,1811220579&fm=26&gp=0.jpg', id: 2 },
@@ -34,7 +45,8 @@ export const OldPictureGroupMore = () => {
   )
 }
 
-export const OldMovieOne = () => {
+// 影片
+export const MovieOne = () => {
   const vedios = [
     { type: 'video', url: 'https://macau-school.s3.ap-northeast-1.amazonaws.com/10000000-0000-0000-0000-000000000003/posts/YljR73PiRi23TLuoINZk_%E7%86%8A%E7%8C%AB.mp4', id: 1 }
   ]
@@ -44,8 +56,19 @@ export const OldMovieOne = () => {
     </Box>
   )
 }
+export const MovieTwo = () => {
+  const vedios = [
+    { type: 'video', url: 'https://macau-school.s3.ap-northeast-1.amazonaws.com/10000000-0000-0000-0000-000000000003/posts/YljR73PiRi23TLuoINZk_%E7%86%8A%E7%8C%AB.mp4', id: 1 },
+    { type: 'video', url: 'https://macau-school.s3.ap-northeast-1.amazonaws.com/10000000-0000-0000-0000-000000000003/posts/FNz8mxqfSCGOlz5IH9Hf_%E9%9F%B3%E8%B0%83%E6%97%8B%E5%BE%8B.mp4', id: 2 }
+  ]
+  return (
+    <Box m='0 auto'>
+      <OldPictureGroup photos={vedios} maxW='500px' m='0 auto' />
+    </Box>
+  )
+}
 
-export const OldMovieGroupMore = () => {
+export const MovieGroupMore = () => {
   const vedios = [
     { type: 'video', url: 'https://macau-school.s3.ap-northeast-1.amazonaws.com/10000000-0000-0000-0000-000000000003/posts/YljR73PiRi23TLuoINZk_%E7%86%8A%E7%8C%AB.mp4', id: 1 },
     { type: 'video', url: 'https://macau-school.s3.ap-northeast-1.amazonaws.com/10000000-0000-0000-0000-000000000003/posts/FNz8mxqfSCGOlz5IH9Hf_%E9%9F%B3%E8%B0%83%E6%97%8B%E5%BE%8B.mp4', id: 2 },
