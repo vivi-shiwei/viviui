@@ -8,37 +8,18 @@ import Other from '../src/components/oldPictureGroup/other'
 export default { title: 'OldPictureGroup(hui)' }
 
 export const OldPictureGroup1 = () => {
-  const photos = [
-    { type: 'image/jpg', url: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2534295925,1741655192&fm=26&gp=0.jpg', id: 1 }
-    // { type: 'image/jpg', url: 'https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=390752696,937398701&fm=26&gp=0.jpg}', id: 2 },
-    // { type: 'image/jpg', url: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3679156262,2063123018&fm=26&gp=0.jpg', id: 3 },
-    // { type: 'image/jpg', url: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1815132930,1669392629&fm=26&gp=0.jpg', id: 4 },
-    // { type: 'image/webg', url: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2416085737,1631868062&fm=26&gp=0.jpg', id: 5 }
-    // { type: 'image/png', url: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3193828568,4262493738&fm=26&gp=0.jpg', id: 6 }
-    // { type: 'video', url: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1896313333,2910419514&fm=26&gp=0.jpg', id: 7 }
-
+  const darks = [
+    { type: 'image/jpg', url: 'https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3988286801,48626279&fm=26&gp=0.jpg', id: 1 },
+    { type: 'image/jpg', url: 'https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1947839005,1811220579&fm=26&gp=0.jpg', id: 2 },
+    { type: 'image/jpg', url: 'https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3383916863,1183745965&fm=26&gp=0.jpg', id: 3 },
+    { type: 'image/jpg', url: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3383916863,1183745965&fm=26&gp=0.jpg', id: 4 },
+    { type: 'image/webg', url: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2407081651,3186896498&fm=26&gp=0.jpg', id: 5 }
+    // { type: 'image/png', url: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=325461855,3402280707&fm=26&gp=0.jpg', id: 6 }
+    // { type: 'video', url: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1327687920,1542279815&fm=26&gp=0.jpg', id: 7 }
   ]
   return (
     <Box>
-      <OldPictureGroup photos={photos} mt='30px' maxW='500px' m='0 auto' backgroundColor='red' />
-    </Box>
-  )
-}
-
-export const Other1 = () => {
-  const photos = [
-    { type: 'image/jpg', url: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2534295925,1741655192&fm=26&gp=0.jpg', id: 1 },
-    { type: 'image/jpg', url: 'https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=390752696,937398701&fm=26&gp=0.jpg}', id: 2 }
-    // { type: 'image/jpg', url: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3679156262,2063123018&fm=26&gp=0.jpg', id: 3 }
-    // { type: 'image/jpg', url: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1815132930,1669392629&fm=26&gp=0.jpg', id: 4 }
-    // { type: 'image/webg', url: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2416085737,1631868062&fm=26&gp=0.jpg', id: 5 }
-    // { type: 'image/png', url: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3193828568,4262493738&fm=26&gp=0.jpg', id: 6 }
-    // { type: 'video', url: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1896313333,2910419514&fm=26&gp=0.jpg', id: 7 }
-
-  ]
-  return (
-    <Box mt='30px' width='500px' m='0 auto' backgroundColor='red'>
-      <Other photos={photos} />
+      <OldPictureGroup photos={darks} mt='30px' maxW='500px' m='0 auto' backgroundColor='#EE6AA7' />
     </Box>
   )
 }

@@ -39,19 +39,19 @@ const OldPictureGroup = ({ photos, children, ...props }) => {
           {Children.map(items, (item, index) => {
             if ((index + 1) % 3 === 1 & index === 0) {
               return (
-                <LinePicture className={`images-total-${1}`}>
+                <LinePicture className={`images-total-${1} mtNone`}>
                   {item}
                 </LinePicture>
               )
             } else if ((index + 1) % 3 === 2 && index === 1) {
               return (
-                <LinePicture className={`images-total-${2}`}>
+                <LinePicture className={`images-total-${2} mtNone`}>
                   {item}
                 </LinePicture>
               )
             } else if ((index + 1) % 3 === 0 && index === 2) {
               return (
-                <LinePicture className={`images-total-${3}`}>
+                <LinePicture className={`images-total-${3} mtNone`}>
                   {item}
                 </LinePicture>
               )
@@ -62,13 +62,13 @@ const OldPictureGroup = ({ photos, children, ...props }) => {
           {Children.map(items, (item, index) => {
             if ((index + 1) % 3 === 1 & index === 3) {
               return (
-                <LinePicture className={`images-total-${1}`}>
+                <LinePicture className={`images-total-${1} four`}>
                   {item}
                 </LinePicture>
               )
             } else if ((index + 1) % 3 === 2 && index === 4) {
               return (
-                <LinePicture className={`images-total-${2}`}>
+                <LinePicture className={`images-total-${2} five`}>
                   {item}
                 </LinePicture>
               )
@@ -109,13 +109,11 @@ const OldPictureGroup = ({ photos, children, ...props }) => {
       <style jsx='true' global='true'>
         {`
          .grid-images{
-           display:flex
+           display:flex;
          }   
-         .grid-images .img-item{
-           max-width:96%;
-           max-height: 100%;
+         .mtNone{
+           margin-top:0
          }
-      
          .grid-images .imgs {
             display:flex;
             justify-content: center;
@@ -124,11 +122,29 @@ const OldPictureGroup = ({ photos, children, ...props }) => {
             max-width: 100%;  
             max-height: 100%;   
           }
-          .images-total-3:after{
-           content:''
-           width:100%;
-           height:100%;
-           display:block;
+          //  .img-item{
+          //   max-width:100%;
+          //   max-height: 100%;
+          //   margin-left:5px;
+          //   margin-right:5px
+          // }
+          .images-total-1 .img-item, .images-total-3 .img-item {
+             max-width:100%;
+             max-height: 100%;
+          }
+          .images-total-2 .img-item{
+            max-width:96%;
+            max-height: 100%;
+          }
+          .five .img-item{
+            max-width:100%;
+            max-height: 100%;
+            margin-left:2px
+          }
+          .four .img-item{
+            max-width:100%;
+            max-height: 100%;
+            margin-right:2px
           }
      
      `}
