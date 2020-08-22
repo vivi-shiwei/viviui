@@ -43,7 +43,6 @@ const PostCreatorHeader = ({ link, name, photo, time, children, ...props }) => {
           .photo img{
             max-width: 100%;
             height: 100%;
-            
           }
           `}
         </style>
