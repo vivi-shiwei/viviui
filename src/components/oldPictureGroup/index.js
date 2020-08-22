@@ -51,24 +51,24 @@ const OldPictureGroup = ({ photos, children, ...props }) => {
               )
             } else if ((index + 1) % 3 === 0 && index === 2) {
               return (
-                <LinePicture className={`images-total-${3} mtNone`}>
+                <LinePicture className={`images-total-${3} mtNone three `}>
                   {item}
                 </LinePicture>
               )
             }
           })}
         </Flex>
-        <Flex justify='space-between'>
+        <Flex justify='space-between' className='flexTwo'>
           {Children.map(items, (item, index) => {
             if ((index + 1) % 3 === 1 & index === 3) {
               return (
-                <LinePicture className={`images-total-${1} four`}>
+                <LinePicture className={`images-total-${1}`}>
                   {item}
                 </LinePicture>
               )
             } else if ((index + 1) % 3 === 2 && index === 4) {
               return (
-                <LinePicture className={`images-total-${2} five`}>
+                <LinePicture className={`images-total-${2} five `}>
                   {item}
                 </LinePicture>
               )
@@ -122,31 +122,11 @@ const OldPictureGroup = ({ photos, children, ...props }) => {
             max-width: 100%;  
             max-height: 100%;   
           }
-          //  .img-item{
-          //   max-width:100%;
-          //   max-height: 100%;
-          //   margin-left:5px;
-          //   margin-right:5px
-          // }
-          .images-total-1 .img-item, .images-total-3 .img-item {
-             max-width:100%;
-             max-height: 100%;
-          }
-          .images-total-2 .img-item{
-            max-width:96%;
-            max-height: 100%;
-          }
-          .five .img-item{
+          .grid-images .img-item{
             max-width:100%;
             max-height: 100%;
-            margin-left:2px
           }
-          .four .img-item{
-            max-width:100%;
-            max-height: 100%;
-            margin-right:2px
-          }
-     
+        
      `}
       </style>
     </Box>

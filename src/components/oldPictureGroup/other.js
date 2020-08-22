@@ -8,7 +8,7 @@ import {
 
 import { Player, BigPlayButton } from 'video-react'
 
-const Other = ({ post, photos, photoCount, onOpenPhotoViewModal }) => {
+const PhotosGrid = ({ post, photos, photoCount, onOpenPhotoViewModal, children, ...props }) => {
   const content = []
   let itemContent = []
   let items = []
@@ -55,43 +55,36 @@ const Other = ({ post, photos, photoCount, onOpenPhotoViewModal }) => {
 
   return (
     <Box>
-      {
-        content.map((val, index) => {
-          return (
-            <ImagesContent key={index} className={`images-total-${index}`}>
-              {val}
-            </ImagesContent>
-          )
-        })
-      }
+      <Box {...props}>
+        {
+          content.map((val, index) => {
+            return (
+              <ImagesContent key={index} className={`images-total-${val[0].length}`}>
+                {val}
+              </ImagesContent>
+            )
+          })
+        }
 
-      {!!photoCount && photoCount > 5 && (
-        <Box d='flex' justifyContent='center' mt={2}>
-          <Button
-            variant='outline'
-            variantColor='green'
-            onClick={() => {
-              if (onOpenPhotoViewModal) {
-                onOpenPhotoViewModal({
-                  postId: post.id,
-                  index: 5
-                })
-              }
-            }}
-          >
-            {`還有${photoCount - photos.length}張照片`}
-          </Button>
-        </Box>
-      )}
+        {photos.length > 5 && (
+          <Box d='flex' justifyContent='center' mt={2}>
+            <Button
+              variant='outline'
+              variantColor='green'
+            >
+              {`還有${photos.length - 5}張照片`}
+            </Button>
+          </Box>
+        )}
 
-      <style jsx global>
-        {`
+        <style jsx='true' global='true'>
+          {`
           .grid-images {
             display: flex;
           }
 
-           .images-total-2 .img-item,
-           .images-total-3 .img-item{
+          .grid-images.images-total-2 .img-item,
+          .grid-images.images-total-3 .img-item{
             position: absolute;
             top: 0px;
             left: 0px;
@@ -106,8 +99,8 @@ const Other = ({ post, photos, photoCount, onOpenPhotoViewModal }) => {
             align-items: center;
           }
 
-           .images-total-2 .imgs:after,
-           .images-total-3 .imgs:after {
+          .grid-images.images-total-2 .imgs:after,
+          .grid-images.images-total-3 .imgs:after {
             content: "";
             display: block;
             padding-bottom: 100%;
@@ -120,15 +113,16 @@ const Other = ({ post, photos, photoCount, onOpenPhotoViewModal }) => {
             background: white;
           }
 
-         .images-total-3 .imgs:nth-child(2n) {
+          .grid-images.images-total-3 .imgs:nth-child(2n) {
             margin: 0 5px;
           }
 
-          .images-total-2 .imgs:first-of-type {
+          .grid-images.images-total-2 .imgs:first-of-type {
             margin-right: 5px;
           }
         `}
-      </style>
+        </style>
+      </Box>
     </Box>
   )
 }
@@ -143,22 +137,14 @@ const ImagesContent = (props) => {
 }
 
 // 圖片列表
-const ImageItem = ({ id, imageURL, images, index, post, onOpenPhotoViewModal }) => {
+const ImageItem = ({ children, ...props }) => {
   return (
-    <Box as='div' key={id} className='imgs'>
+    <Box as='div' className='imgs' {...props}>
       <Box className='img-item'>
         <Image
           size='100%'
           objectFit='cover'
-          src={imageURL}
-          onClick={() => {
-            if (onOpenPhotoViewModal) {
-              onOpenPhotoViewModal({
-                postId: post.id,
-                index
-              })
-            }
-          }}
+          src='https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3988286801,48626279&fm=26&gp=0.jpg'
         />
       </Box>
     </Box>
@@ -166,26 +152,18 @@ const ImageItem = ({ id, imageURL, images, index, post, onOpenPhotoViewModal }) 
 }
 
 // 圖片列表
-const VideoItem = ({ id, url, index, onOpenPhotoViewModal, post }) => {
+const VideoItem = ({ children, ...props }) => {
   return (
-    <Box as='div' key={id} className='imgs'>
+    <Box as='div' className='imgs'>
       <Box
         className='img-item'
-        onClick={() => {
-          if (onOpenPhotoViewModal) {
-            onOpenPhotoViewModal({
-              postId: post.id,
-              index
-            })
-          }
-        }}
       >
         <Player
           width='100%'
           height='100%'
           playsInline
           fluid={false}
-          src={url}
+          src='https://vdposter.bdstatic.com/3ed735b6b41c677f2855313f6d98153b.jpeg?x-bce-process=image/resize,m_fill,w_242,h_182/format,f_jpg/quality,Q_100'
           autoPlay={false}
           muted
         >
@@ -196,7 +174,8 @@ const VideoItem = ({ id, url, index, onOpenPhotoViewModal, post }) => {
         </Player>
       </Box>
     </Box>
+
   )
 }
 
-export default Other
+export default PhotosGrid
