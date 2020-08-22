@@ -48,6 +48,7 @@ export const PictureThree = () => {
     </Box>
   )
 }
+
 export const PictureFour = () => {
   const show = darks.slice(0, 4)
   return (
@@ -64,7 +65,7 @@ export const PictureFive = () => {
     </Box>
   )
 }
-export const PictureGroupMore = () => {
+export const PictureMore = () => {
   const show = darks
   return (
     <Box m='0 auto'>
@@ -115,7 +116,7 @@ export const MovieFive = () => {
   )
 }
 
-export const MovieGroupMore = () => {
+export const MovieMore = () => {
   const show = vedios
   return (
     <Box m='0 auto'>
