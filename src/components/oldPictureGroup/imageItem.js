@@ -4,7 +4,7 @@ import {
   Image
 } from '@chakra-ui/core'
 
-const OtherImg = ({ imageURL, children, ...props }) => {
+const ImageItem = ({ imageURL, children, ...props }) => {
   return (
     <Box as='div' className='imgs' {...props}>
       <Box className='img-item'>
@@ -18,4 +18,4 @@ const OtherImg = ({ imageURL, children, ...props }) => {
   )
 }
 
-export default OtherImg
+export default ImageItem

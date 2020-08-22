@@ -4,7 +4,7 @@ import {
 } from '@chakra-ui/core'
 
 // 只裝三個
-const OtherContent = (props) => {
+const ImagesContent = (props) => {
   return (
     <Box {...props}>
       <Box as='div' className={`grid-images ${props.className}`} mt={2}>
@@ -13,4 +13,4 @@ const OtherContent = (props) => {
     </Box>
   )
 }
-export default OtherContent
+export default ImagesContent

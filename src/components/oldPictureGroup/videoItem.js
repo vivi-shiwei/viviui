@@ -7,7 +7,7 @@ import {
 import { Player, BigPlayButton } from 'video-react'
 
 // 圖片列表
-const OtherVideo = ({ url, children, ...props }) => {
+const VideoItem = ({ url, children, ...props }) => {
   return (
     <Box as='div' className='imgs' {...props}>
       <Box
@@ -85,4 +85,4 @@ const OtherVideo = ({ url, children, ...props }) => {
   )
 }
 
-export default OtherVideo
+export default VideoItem

@@ -4,9 +4,9 @@ import {
   Button
 } from '@chakra-ui/core'
 
-import ImageItem from './otherImg'
-import VideoItem from './otherVideo'
-import ImagesContent from './otherContent'
+import ImageItem from './imageItem'
+import VideoItem from './videoItem'
+import ImagesContent from './imagesContent'
 
 const OldPictureGroup = ({ photos, children, ...props }) => {
   const content = []
