@@ -8,7 +8,11 @@ import {
 
 import { Player, BigPlayButton } from 'video-react'
 
-const PhotosGrid = ({ post, photos, photoCount, onOpenPhotoViewModal, children, ...props }) => {
+import ImageItem from './otherImg'
+import VideoItem from './otherVideo'
+import ImagesContent from './otherContent'
+
+const PhotosGrid = ({ photos, children, ...props }) => {
   const content = []
   let itemContent = []
   let items = []
@@ -48,7 +52,7 @@ const PhotosGrid = ({ post, photos, photoCount, onOpenPhotoViewModal, children, 
         {
           content.map((val, index) => {
             return (
-              <ImagesContent key={index} className={`images-total-${val[0].length}`}>
+              <ImagesContent key={index} className={`images-total-${val[0].length} king`}>
                 {val}
               </ImagesContent>
             )
@@ -61,7 +65,7 @@ const PhotosGrid = ({ post, photos, photoCount, onOpenPhotoViewModal, children, 
               variant='outline'
               variantColor='green'
             >
-              {`還有${photos.length - 5}張照片`}
+              {`還有${photos.length - images.length}張照片`}
             </Button>
           </Box>
         )}
@@ -113,57 +117,6 @@ const PhotosGrid = ({ post, photos, photoCount, onOpenPhotoViewModal, children, 
         </style>
       </Box>
     </Box>
-  )
-}
-
-// 只裝三個
-const ImagesContent = (props) => {
-  return (
-    <Box as='div' className={`grid-images ${props.className}`} mt={2}>
-      {props.children}
-    </Box>
-  )
-}
-
-// 圖片列表
-const ImageItem = ({ imageURL, children, ...props }) => {
-  return (
-    <Box as='div' className='imgs' {...props}>
-      <Box className='img-item'>
-        <Image
-          size='100%'
-          objectFit='cover'
-          src='https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3988286801,48626279&fm=26&gp=0.jpg'
-        />
-      </Box>
-    </Box>
-  )
-}
-
-// 圖片列表
-const VideoItem = ({ url, children, ...props }) => {
-  return (
-    <Box as='div' className='imgs'>
-      <Box
-        className='img-item'
-      >
-        <Player
-          width='100%'
-          height='100%'
-          playsInline
-          fluid={false}
-          src='https://vdposter.bdstatic.com/3ed735b6b41c677f2855313f6d98153b.jpeg?x-bce-process=image/resize,m_fill,w_242,h_182/format,f_jpg/quality,Q_100'
-          autoPlay={false}
-          muted
-        >
-          <Box ml={1} mt={1}>
-            <Icon name='view' size='24px' />
-          </Box>
-          <BigPlayButton position='center' disabled />
-        </Player>
-      </Box>
-    </Box>
-
   )
 }
 
