@@ -3,7 +3,6 @@ const path = require('path')
 module.exports = {
   // stories: ['../stories/**/*.[tj]s'],
   stories: [
-<<<<<<< HEAD
     '../stories/**/header.[tj]s',
     '../stories/**/hero.[tj]s',
     '../stories/**/footer.[tj]s',
@@ -23,29 +22,8 @@ module.exports = {
     '../stories/**/fieldset.[tj]s',
     '../stories/**/breadcrumb.[tj]s',
     '../stories/**/picture.[tj]s',
-    '../stories/**/pictureArrange.[tj]s'
-=======
-    // '../stories/**/header.[tj]s',
-    // '../stories/**/hero.[tj]s',
-    // '../stories/**/footer.[tj]s',
-    // '../stories/**/school.[tj]s',
-    // '../stories/**/modalSelector.[tj]s',
-    // '../stories/**/search.[tj]s',
-    // '../stories/**/cardDeck.[tj]s',
-    // '../stories/**/management.[tj]s',
-    // '../stories/**/wbgLayout.[tj]s',
-    // '../stories/**/adminBatchAdd.[tj]s',
-    // '../stories/**/avatarTootip.[tj]s',
-    // '../stories/**/addIntelligence.[tj]s',
-    // '../stories/**/editintelligence.[tj]s',
-    // '../stories/**/post.[tj]s',
-    // '../stories/**/table.[tj]s',
-    // '../stories/**/fullScreenView.[tj]s',
-    // '../stories/**/fieldset.[tj]s',
-    // '../stories/**/breadcrumb.[tj]s',
-    '../stories/**/picture.[tj]s',
+    '../stories/**/pictureArrange.[tj]s',
     '../stories/**/oldPictureGroup.[tj]s'
->>>>>>> f0aa6b8dec93a0a2993c002b64b3fdf635446588
   ],
   addons: [
     '@storybook/addon-knobs/register',
