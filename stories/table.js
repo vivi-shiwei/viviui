@@ -10,7 +10,7 @@ import TableRow from '../src/components/table/tableRow'
 // storybook
 export default { title: 'Table(vivi hui)' }
 
-export const blackBorder = () => {
+export const hover = () => {
   const data = [
     {
       fieldName: '姓名',
@@ -40,10 +40,10 @@ export const blackBorder = () => {
   const header = ['序號', '名稱']
   return (
     <Page nodivider='false' title={<HeaderPage fontSize='28px'>新增用户</HeaderPage>}>
-      <Table dtype='blackBorder'>
+      <Table type='hover'>
         <TableHead>
           <TableRow>
-            <TableCell w='50px'>序號</TableCell>
+            <TableCell>序號</TableCell>
             <TableCell>名稱</TableCell>
             <TableCell>值</TableCell>
           </TableRow>
@@ -53,7 +53,7 @@ export const blackBorder = () => {
             return (
               <>
                 <TableRow>
-                  <TableCell textAlign='center'>{index + 1}</TableCell>
+                  <TableCell>{index + 1}</TableCell>
                   <TableCell>{item.fieldName}</TableCell>
                   <TableCell>{item.describe}</TableCell>
                 </TableRow>
@@ -67,7 +67,7 @@ export const blackBorder = () => {
   )
 }
 
-export const defaultBorder = () => {
+export const tables = () => {
   const tableHeada = [
     //   { title: '姓名', width: 200 },
     //   { title: '英文姓名', width: 200 },
@@ -158,10 +158,10 @@ export const defaultBorder = () => {
   const header = ['序號', '名稱']
   return (
     <Page nodivider='false' title={<HeaderPage fontSize='28px'>新增用户</HeaderPage>}>
-      <Table dtype='border'>
+      <Table type='table'>
         <TableHead>
           <TableRow>
-            <TableCell textAlign='center' width='70px'>序號</TableCell>
+            <TableCell>序號</TableCell>
             <TableCell px={{ base: '1', sm: '1', md: '3' }}>名稱</TableCell>
             <TableCell px={{ base: '1', sm: '1', md: '3' }}>值</TableCell>
             <TableCell px={{ base: '1', sm: '1', md: '3' }}>名稱</TableCell>
@@ -175,7 +175,7 @@ export const defaultBorder = () => {
             return (
               <>
                 <TableRow>
-                  <TableCell textAlign='center'>{index + 1}</TableCell>
+                  <TableCell>{index + 1}</TableCell>
                   <TableCell px={{ base: '1', sm: '1', md: '3' }}>{item.fieldName}</TableCell>
                   <TableCell px={{ base: '1', sm: '1', md: '3' }}>{item.describe}</TableCell>
                   <TableCell px={{ base: '1', sm: '1', md: '3' }}>{item.fieldName}</TableCell>
@@ -193,7 +193,7 @@ export const defaultBorder = () => {
   )
 }
 
-export const compact = () => {
+export const condensed = () => {
   const data = [
     {
       fieldName: '姓名',
@@ -223,10 +223,10 @@ export const compact = () => {
   const header = ['序號', '名稱']
   return (
     <Page nodivider='false' title={<HeaderPage fontSize='28px'>新增用户</HeaderPage>}>
-      <Table dtype='compact'>
+      <Table type='table condensed'>
         <TableHead>
           <TableRow>
-            <TableCell w='50px'>序號</TableCell>
+            <TableCell>序號</TableCell>
             <TableCell>名稱</TableCell>
             <TableCell>值</TableCell>
           </TableRow>
@@ -236,7 +236,7 @@ export const compact = () => {
             return (
               <>
                 <TableRow>
-                  <TableCell textAlign='center'>{index + 1}</TableCell>
+                  <TableCell>{index + 1}</TableCell>
                   <TableCell>{item.fieldName}</TableCell>
                   <TableCell>{item.describe}</TableCell>
                 </TableRow>
@@ -249,7 +249,7 @@ export const compact = () => {
     </Page>
   )
 }
-export const looseBig = () => {
+export const line = () => {
   const data = [
     {
       fieldName: '姓名',
@@ -279,10 +279,10 @@ export const looseBig = () => {
   const header = ['序號', '名稱']
   return (
     <Page nodivider='false' title={<HeaderPage fontSize='28px'>新增用户</HeaderPage>}>
-      <Table dtype='looseBig'>
+      <Table type='line'>
         <TableHead>
           <TableRow>
-            <TableCell w='50px'>序號</TableCell>
+            <TableCell>序號</TableCell>
             <TableCell>名稱</TableCell>
             <TableCell>值</TableCell>
           </TableRow>
@@ -292,63 +292,7 @@ export const looseBig = () => {
             return (
               <>
                 <TableRow>
-                  <TableCell textAlign='center'>{index + 1}</TableCell>
-                  <TableCell>{item.fieldName}</TableCell>
-                  <TableCell>{item.describe}</TableCell>
-                </TableRow>
-              </>
-            )
-          })}
-
-        </TableBody>
-      </Table>
-    </Page>
-  )
-}
-export const shadow = () => {
-  const data = [
-    {
-      fieldName: '姓名',
-      describe: '必填'
-    },
-    {
-      fieldName: '英文姓名',
-      describe: '選填'
-    },
-    {
-      fieldName: '性別',
-      describe: '選填可'
-    },
-    {
-      fieldName: '學生證號碼',
-      describe: '選填'
-    },
-    {
-      fieldName: '身份證號碼',
-      describe: '選填可留空'
-    },
-    {
-      fieldName: '學校管理員',
-      describe: '學生'
-    }
-  ]
-  const header = ['序號', '名稱']
-  return (
-    <Page nodivider='false' title={<HeaderPage fontSize='28px'>新增用户</HeaderPage>}>
-      <Table dtype='shadow'>
-        <TableHead>
-          <TableRow>
-            <TableCell w='50px'>序號</TableCell>
-            <TableCell>名稱</TableCell>
-            <TableCell>值</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {data.map((item, index) => {
-            return (
-              <>
-                <TableRow>
-                  <TableCell textAlign='center'>{index + 1}</TableCell>
+                  <TableCell>{index + 1}</TableCell>
                   <TableCell>{item.fieldName}</TableCell>
                   <TableCell>{item.describe}</TableCell>
                 </TableRow>
@@ -362,7 +306,7 @@ export const shadow = () => {
   )
 }
 
-export const mouse = () => {
+export const stripe = () => {
   const data = [
     {
       fieldName: '姓名',
@@ -392,10 +336,10 @@ export const mouse = () => {
   const header = ['序號', '名稱']
   return (
     <Page nodivider='false' title={<HeaderPage fontSize='28px'>新增用户</HeaderPage>}>
-      <Table dtype='mouse'>
+      <Table type='stripe'>
         <TableHead>
           <TableRow>
-            <TableCell w='50px'>序號</TableCell>
+            <TableCell>序號</TableCell>
             <TableCell>名稱</TableCell>
             <TableCell>值</TableCell>
           </TableRow>
@@ -405,7 +349,7 @@ export const mouse = () => {
             return (
               <>
                 <TableRow>
-                  <TableCell textAlign='center'>{index + 1}</TableCell>
+                  <TableCell>{index + 1}</TableCell>
                   <TableCell>{item.fieldName}</TableCell>
                   <TableCell>{item.describe}</TableCell>
                 </TableRow>
