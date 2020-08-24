@@ -5,7 +5,7 @@ import {
   Button
 } from '@chakra-ui/core'
 
-const PictureBox = ({ children, ...props }) => {
+const postCardPicture = ({ children, ...props }) => {
   let a = null
   let b = null
   let c = null
@@ -190,4 +190,4 @@ const PictureBox = ({ children, ...props }) => {
   )
 }
 
-export default PictureBox
+export default postCardPicture
