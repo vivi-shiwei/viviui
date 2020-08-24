@@ -54,8 +54,8 @@ export const Picture = () => {
         <PictureBox>
           <Pictures imageURL={MyImage} />
           <Pictures imageURL={MyImage} />
-          {/* <Pictures imageURL={MyImage} />
-          <Pictures imageURL={MyImage} /> */}
+          <Pictures imageURL={MyImage} />
+          <Pictures imageURL={MyImage} />
         </PictureBox>
       </Box>
     </Box>

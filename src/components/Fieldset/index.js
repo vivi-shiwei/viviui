@@ -1,13 +1,12 @@
 import React, { Children } from 'react'
 import {
   Box,
-  Heading,
   Flex,
   useColorMode
 } from '@chakra-ui/core'
 
-import LeftFieldset from './leftFieldsetButton'
-import RightFieldset from './rightFieldsetButton'
+import LeftFieldset from './leftFieldset'
+import RightFieldset from './rightFieldset'
 import FieldsetHeader from './fieldsetHeader'
 
 import Container from '../container'
