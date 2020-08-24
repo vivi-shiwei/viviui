@@ -1,4 +1,4 @@
-## viviui 1.4.8
+## viviui 1.5.0
 ## viviui 1.4.6
 
 - 优化 Table component
