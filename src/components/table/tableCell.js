@@ -13,6 +13,7 @@ const TableCell = ({ label, children, ...props }) => {
   return (
     <Box
       as={Component}
+      border='1px #e6e6e6 solid'
       {...props}
 
     >

@@ -1,3 +1,6 @@
+## viviui 1.5.2
+- 添加了手机版的通告系统 singleAnnouncement component
+
 ## viviui 1.4.6
 
 - 优化 Table component

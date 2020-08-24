@@ -9,7 +9,7 @@ const Fieldset = (props) => {
     <Heading
       // fontSize={{ base: '20px', sm: '25px', md: '35px' }}
       textAlign='center'
-      bg={props.bg || props.background}
+      bg={props.bg || props.background || 'white'}
       color='black'
       zIndex='1'
       lineHeight='40px'

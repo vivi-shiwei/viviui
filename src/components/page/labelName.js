@@ -1,7 +1,6 @@
 import React from 'react'
 import {
   Box,
-  FormLabel,
   Text
 } from '@chakra-ui/core'
 
@@ -9,14 +8,16 @@ import {
 const LabelName = ({ label, text, type, labelProps, children, ...props }) => {
   return (
     <Box as='div' d='flex' lineHeight='40px' {...props}>
-      <FormLabel d='flex' fontWeight='600' {...labelProps}>
-        <Text w='100%' className='textlabel-align-last'>
-          {label}
-        </Text>
+      {!!label && (
+        <Box d='flex' {...labelProps}>
+          <Text w='100%' fontWeight='600' className='textlabel-align-last'>
+            {label}
+          </Text>
           :
-      </FormLabel>
-      <Text>{text}</Text>
-      <Text>{type}</Text>
+        </Box>
+      )}
+      {!!text && (<Text>{text}</Text>)}
+      {!!type && (<Text>{type}</Text>)}
       {children}
       <style>
         {

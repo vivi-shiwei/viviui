@@ -22,8 +22,9 @@ module.exports = {
     '../stories/**/fieldset.[tj]s',
     '../stories/**/breadcrumb.[tj]s',
     '../stories/**/picture.[tj]s',
-    '../stories/**/pictureArrange.[tj]s',
-    '../stories/**/oldPictureGroup.[tj]s'
+    '../stories/**/oldPictureGroup.[tj]s',
+    '../stories/**/singleAnnouncement.[tj]s',
+    '../stories/**/postCardPicture.[tj]s'
   ],
   addons: [
     '@storybook/addon-knobs/register',

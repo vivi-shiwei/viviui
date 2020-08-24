@@ -55,6 +55,7 @@ export const Picture = () => {
           <Pictures imageURL={MyImage} />
           <Pictures imageURL={MyImage} />
           <Pictures imageURL={MyImage} />
+          <Pictures imageURL={MyImage} />
         </PictureBox>
       </Box>
     </Box>
