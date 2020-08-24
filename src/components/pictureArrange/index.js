@@ -11,12 +11,12 @@ const PictureArrange = ({ arrangement, children, ...props }) => { // arrangement
     <Box {...props}>
       <Box>
         {!children.length && (
-          <AspectRatioBox ratio={1} maxW='400px' maxH='400px'>
+          <AspectRatioBox ratio={1}>
             {children}
           </AspectRatioBox>
         )}
         {children.length === 2 && arrangement && (
-          <Box d='flex' justifyContent='space-between' maxW='400px' maxH='400px'>
+          <Box d='flex' justifyContent='space-between'>
             {children.map((c, i) => {
               return (
                 <>
@@ -47,14 +47,14 @@ const PictureArrange = ({ arrangement, children, ...props }) => { // arrangement
                 <>
                   {i === 0 && (
                     <Box as='article' w={['100%', '100%', '100%', '100%']} height='49%'>
-                      <AspectRatioBox ratio={4 / 2}>
+                      <AspectRatioBox ratio={2 / 1}>
                         {c}
                       </AspectRatioBox>
                     </Box>
                   )}
                   {i === 1 && (
                     <Box as='article' w={['100%', '100%', '100%', '100%']} mt='2px'>
-                      <AspectRatioBox ratio={4 / 2}>
+                      <AspectRatioBox ratio={2 / 1}>
                         {c}
                       </AspectRatioBox>
 
@@ -103,7 +103,8 @@ const PictureArrange = ({ arrangement, children, ...props }) => { // arrangement
               {children[0]}
             </AspectRatioBox>
             <Flex justifyContent='space-between' flexDirection='column' width='50%' ml='5px'>
-              <AspectRatioBox width='full' ratio={1}>
+              <Image src={children[1].src} objectFit='cover' />
+              <AspectRatioBox width='full' ratio={4 / 4}>
                 {children[1]}
               </AspectRatioBox>
               <AspectRatioBox width='full' ratio={1} mt='5px'>
@@ -135,8 +136,8 @@ const PictureArrange = ({ arrangement, children, ...props }) => { // arrangement
         )}
 
         {children.length === 5 && (
-          <Flex justifyContent='space-between' flexDirection='row' width='full'>
-            <Flex justifyContent='space-between' flexDirection='column' width='50%' height='50%'>
+          <Flex>
+            <Flex justifyContent='space-between' flexDirection='column' width='75%'>
               <AspectRatioBox width='full' ratio={1}>
                 {children[0]}
               </AspectRatioBox>
@@ -144,7 +145,7 @@ const PictureArrange = ({ arrangement, children, ...props }) => { // arrangement
                 {children[1]}
               </AspectRatioBox>
             </Flex>
-            <Flex justifyContent='space-between' flexDirection='column' width='50%' maxH='full' ml='5px'>
+            <Flex justifyContent='space-between' flexDirection='column' width='49.4%' maxH='full' ml='5px'>
               <AspectRatioBox width='100%' ratio={1}>
                 {children[2]}
               </AspectRatioBox>
@@ -160,8 +161,9 @@ const PictureArrange = ({ arrangement, children, ...props }) => { // arrangement
 
         {children.length > 5 && (
           <>
-            <Flex justifyContent='space-between' flexDirection='row' width='full'>
-              <Flex justifyContent='space-between' flexDirection='column' width='50%' height='50%'>
+
+            <Flex>
+              <Flex justifyContent='space-between' flexDirection='column' width='75%'>
                 <AspectRatioBox width='full' ratio={1}>
                   {children[0]}
                 </AspectRatioBox>
@@ -169,22 +171,21 @@ const PictureArrange = ({ arrangement, children, ...props }) => { // arrangement
                   {children[1]}
                 </AspectRatioBox>
               </Flex>
-              <Flex justifyContent='space-between' flexDirection='column' width='50%' maxH='full' ml='5px'>
-                <AspectRatioBox width='65%' ratio={1}>
+              <Flex justifyContent='space-between' flexDirection='column' width='49.4%' maxH='full' ml='5px'>
+                <AspectRatioBox width='100%' ratio={1}>
                   {children[2]}
                 </AspectRatioBox>
-                <AspectRatioBox width='65%' ratio={1} mt='5px'>
+                <AspectRatioBox width='100%' ratio={1} mt='5px'>
                   {children[3]}
                 </AspectRatioBox>
-
-                <Box pos='relative' width='65%' mt='5px'>
+                <Box pos='relative' width='100%%' mt='5px'>
                   <AspectRatioBox ratio={1} m='1px'>
                     {children[4]}
                   </AspectRatioBox>
                   <Box pos='absolute' left='0' bottom='0' right='0' top='0' bg='rgba(0, 0, 0, .4)'>
                     <Box m='auto' display='table' h='100%' w='100%'>
                       <Box display='table-cell' textAlign='center' verticalAlign='middle' color='white' fontSize={20}>
-                        还有三张
+                        还有{children.length - 5}张
                       </Box>
                     </Box>
                   </Box>
