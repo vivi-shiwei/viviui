@@ -353,3 +353,7 @@ export { default as CrumbLink } from './components/crumb/crumbLink'
 // post
 export { default as Pictures } from './components/postCard/pictures'
 export { default as PictureBox } from './components/postCard/pictureBox'
+
+// phone
+export { default as SingleAnnouncement } from './components/singleAnnouncement'
+export { default as StatusButton } from './components/singleAnnouncement/statusButton'
