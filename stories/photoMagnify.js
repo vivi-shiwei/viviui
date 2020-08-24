@@ -2,6 +2,7 @@ import React from 'react'
 import { Box, useDisclosure, Button } from '@chakra-ui/core'
 
 import PhotoMagnify from '../src/components/photoMagnify'
+import photoViewModal from '../src/components/photoMagnify/photoViewModal'
 
 export default { title: 'PhotoMagnify(hui)' }
 
@@ -12,7 +13,7 @@ const darks = [
   'https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1187213634,3203010965&fm=26&gp=0.jpg',
   'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2407081651,3186896498&fm=26&gp=0.jpg',
   'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=325461855,3402280707&fm=26&gp=0.jpg',
-  'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=325461855,3402280707&fm=26&gp=0.jpg'
+  'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3211597368,1043800129&fm=26&gp=0.jpg'
 ]
 
 export const PhotoMagnifyTest = () => {
@@ -22,9 +23,9 @@ export const PhotoMagnifyTest = () => {
   const show = darks.slice(0, 1)
   return (
     <>
-      <Box width='100%' height='800px' m='0 auto'>
+      <Box>
         <Button onClick={onOpen}>Open Modal</Button>
-        <PhotoMagnify images={darks} indexI={show.length} isOpen={onOpen} onClose={onClose} />
+        <PhotoMagnify images={darks} indexI={darks.length} isOpen={onOpen} onClose={onClose} />
       </Box>
     </>
   )
