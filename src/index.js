@@ -289,6 +289,7 @@ export { default as Card } from './components/group/card'
 export { default as Fieldset } from './components/Fieldset'
 export { default as LeftFieldset } from './components/Fieldset/leftFieldset'
 export { default as RightFieldset } from './components/Fieldset/rightFieldset'
+export { default as FieldsetHeader } from './components/Fieldset/fieldsetHeader'
 
 // CenterSelector
 export { default as ModalSelector } from './components/modalSelector'
