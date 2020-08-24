@@ -1,6 +1,9 @@
 import React from 'react'
 import { Box } from '@chakra-ui/core'
 
+import PhotoMagnify from '../src/components/photoMagnify'
+import ImageViewer from '../src/components/photoMagnify/imageViewer'
+
 export default { title: 'PhotoMagnify(hui)' }
 
 const darks = [
@@ -13,9 +16,13 @@ const darks = [
   'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=325461855,3402280707&fm=26&gp=0.jpg'
 ]
 
-export const PhotoMagnify = () => {
+export const PhotoMagnifyTest = () => {
   const show = darks.slice(0, 1)
   return (
-    <Box>789745</Box>
+    <>
+      <Box>
+        <PhotoMagnify />
+      </Box>
+    </>
   )
 }
