@@ -23,7 +23,8 @@ module.exports = {
     // '../stories/**/breadcrumb.[tj]s',
     // '../stories/**/picture.[tj]s',
     // '../stories/**/oldPictureGroup.[tj]s',
-    '../stories/**/amplificationPicture.[tj]s'
+    '../stories/**/postCardPicture.[tj]s',
+    '../stories/**/photoMagnify.[tj]s'
   ],
   addons: [
     '@storybook/addon-knobs/register',
