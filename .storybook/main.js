@@ -21,8 +21,8 @@ module.exports = {
     // '../stories/**/fullScreenView.[tj]s',
     // '../stories/**/fieldset.[tj]s',
     // '../stories/**/breadcrumb.[tj]s',
-    '../stories/**/picture.[tj]s',
-    '../stories/**/oldPictureGroup.[tj]s',
+    // '../stories/**/picture.[tj]s',
+    // '../stories/**/oldPictureGroup.[tj]s',
     '../stories/**/amplificationPicture.[tj]s'
   ],
   addons: [
