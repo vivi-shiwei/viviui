@@ -38,13 +38,13 @@ const PictureBox = ({ children, ...props }) => {
         )}
 
         {children.length === 2 && (
-          <Box d='flex' maxW='655px' maxH='655px'>
-            <Box as='article' w={['50%', '50%', '50%', '50%']} m='0 0 0 1px' border='1px solid #b7b7b7'>
+          <Box d='flex'>
+            <Box as='article' w={['50%', '50%', '50%', '50%']} m='0 0 0 1px'>
               <AspectRatioBox ratio={1} m='1px 0 0 0' border='1px solid #b7b7b7'>
                 {a}
               </AspectRatioBox>
             </Box>
-            <Box as='article' w={['50%', '50%', '50%', '50%']} m='0 0 0 1px' border='1px solid #b7b7b7'>
+            <Box as='article' w={['50%', '50%', '50%', '50%']} m='0 0 0 1px'>
               <AspectRatioBox ratio={1} m='1px 0 0 0' border='1px solid #b7b7b7'>
                 {b}
               </AspectRatioBox>
