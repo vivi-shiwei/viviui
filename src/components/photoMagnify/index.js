@@ -10,7 +10,6 @@ import {
 
 const photoMagnify = ({ isOpen, onClose, images = [], indexI = 0, children, ...props }) => {
   const [index, setIndex] = useState(indexI)
-
   return (
     <>
       <Modal isOpen={isOpen} onClose={onClose} closeOnOverlayClick={false} size='full' {...props}>

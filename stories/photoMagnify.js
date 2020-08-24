@@ -1,8 +1,7 @@
 import React from 'react'
-import { Box } from '@chakra-ui/core'
+import { Box, useDisclosure, Button } from '@chakra-ui/core'
 
 import PhotoMagnify from '../src/components/photoMagnify'
-import ImageViewer from '../src/components/photoMagnify/imageViewer'
 
 export default { title: 'PhotoMagnify(hui)' }
 
@@ -17,15 +16,15 @@ const darks = [
 ]
 
 export const PhotoMagnifyTest = () => {
-  // open photo view
   // const [isOpenPhotoViewModal, onOpenPhotoViewModal] = useState(null)
   // const onClosePhotoViewModal = () => onOpenPhotoViewModal(null)
-
+  const { isOpen, onOpen, onClose } = useDisclosure()
   const show = darks.slice(0, 1)
   return (
     <>
       <Box width='100%' height='800px' m='0 auto'>
-        <ImageViewer images={darks} indexI={show.length} />
+        <Button onClick={onOpen}>Open Modal</Button>
+        <PhotoMagnify images={darks} indexI={show.length} isOpen={onOpen} onClose={onClose} />
       </Box>
     </>
   )
