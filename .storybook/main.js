@@ -7,7 +7,7 @@ module.exports = {
     // '../stories/**/hero.[tj]s',
     // '../stories/**/footer.[tj]s',
     // '../stories/**/school.[tj]s',
-    // '../stories/**/modalSelector.[tj]s',
+    '../stories/**/modalSelector.[tj]s',
     // '../stories/**/search.[tj]s',
     // '../stories/**/cardDeck.[tj]s',
     // '../stories/**/management.[tj]s',

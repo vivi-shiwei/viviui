@@ -7,7 +7,7 @@ import ImageViewer from '../src/components/photoMagnify/imageViewer'
 export default { title: 'PhotoMagnify(hui)' }
 
 const darks = [
-  'https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3988286801,48626279&fm=26&gp=0.jpg',
+  // 'https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3988286801,48626279&fm=26&gp=0.jpg',
   'https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1947839005,1811220579&fm=26&gp=0.jpg',
   'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3383916863,1183745965&fm=26&gp=0.jpg',
   'https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1187213634,3203010965&fm=26&gp=0.jpg',
@@ -17,11 +17,15 @@ const darks = [
 ]
 
 export const PhotoMagnifyTest = () => {
+  // open photo view
+  // const [isOpenPhotoViewModal, onOpenPhotoViewModal] = useState(null)
+  // const onClosePhotoViewModal = () => onOpenPhotoViewModal(null)
+
   const show = darks.slice(0, 1)
   return (
     <>
-      <Box>
-        <PhotoMagnify />
+      <Box width='100%' height='800px' m='0 auto'>
+        <ImageViewer images={darks} indexI={show.length} />
       </Box>
     </>
   )

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import {
   Box,
   Image,
@@ -8,12 +8,12 @@ import {
   IconButton
 } from '@chakra-ui/core'
 
-const photoMagnify = ({ isOpen, onClose, images = [], indexI = 0, children, ...props }) => {
+const PhotoViewModal = ({ isOpen, onClose, images = [], indexI = 0, children, ...props }) => {
   const [index, setIndex] = useState(indexI)
 
   return (
     <>
-      <Modal isOpen={isOpen} onClose={onClose} closeOnOverlayClick={false} size='full' {...props}>
+      <Modal isOpen={isOpen} onClose={onClose} closeOnOverlayClick={false} size='full'>
         <ModalContent h='100%' my={0} background='rgba(255, 255, 255, 0.9)'>
           <ModalCloseButton size='lg' />
           <Box p={4} d='flex' h='100%' w='100%'>
@@ -58,4 +58,4 @@ const photoMagnify = ({ isOpen, onClose, images = [], indexI = 0, children, ...p
   )
 }
 
-export default photoMagnify
+export default PhotoViewModal
