@@ -43,7 +43,7 @@ export const SearchTest = () => {
         title='圣诞晚会'
         content='发布人：XXX(管理员)'
       >
-        <StatusButton>未读</StatusButton>
+        <StatusButton>未回复读</StatusButton>
       </SingleAnnouncement>
     </Box>
   )
