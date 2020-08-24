@@ -1,9 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react';
 import {
   Box,
   Image,
   Modal,
+  ModalOverlay,
   ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
   ModalCloseButton,
   IconButton,
   Flex,
@@ -12,6 +16,9 @@ import {
 
 const photoMagnify = ({ isOpen, onClose, images = [], indexI = 0, children, ...props }) => {
   const [index, setIndex] = useState(indexI)
+  const flagRef = useRef(index);
+  flagRef.current = index;
+  
   // 左右边界
   if (index < 0) {
     setIndex(0)
@@ -37,7 +44,7 @@ const photoMagnify = ({ isOpen, onClose, images = [], indexI = 0, children, ...p
                 variantColor='teal'
                 icon='chevron-left'
                 borderRadius={9999}
-                onClick={() => { setIndex(index === 0 ? images.length - 1 : index - 1) }}
+                onClick={() => { setIndex(index === 0 ? images.length - 1 : index - 1) ;console.log(flagRef.current)}}
                 visibility={index === 0 ? 'hidden' : 'visible'}
               />
             </Box>
@@ -61,7 +68,7 @@ const photoMagnify = ({ isOpen, onClose, images = [], indexI = 0, children, ...p
                 variantColor='teal'
                 icon='chevron-right'
                 borderRadius={9999}
-                onClick={() => { setIndex(index === images.length - 1 ? 0 : index + 1) }}
+                onClick={() => { setIndex(index === images.length - 1 ? 0 : index + 1);console.log(flagRef.current) }}
                 visibility={index + 1 === images.length ? 'hidden' : 'visible'}
               />
             </Box>
