@@ -2,7 +2,6 @@ import React from 'react'
 import { Box, useDisclosure, Button } from '@chakra-ui/core'
 
 import PhotoMagnify from '../src/components/photoMagnify'
-import photoViewModal from '../src/components/photoMagnify/photoViewModal'
 
 export default { title: 'PhotoMagnify(hui)' }
 
