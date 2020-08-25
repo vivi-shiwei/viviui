@@ -13,20 +13,7 @@ export const Crumbs = () => {
     <Crumb>
       <NextLink href='/test' passHref>
         <a onClick={action('button-click')}>
-          <CrumbLink>vivi
-          </CrumbLink>
-        </a>
-      </NextLink>
-      <NextLink href='/test' passHref>
-        <a onClick={action('button-click')}>
-          <CrumbLink>vivi
-          </CrumbLink>
-        </a>
-      </NextLink>
-      <NextLink href='/test' passHref>
-        <a onClick={action('button-click')}>
-          <CrumbLink>vivi
-          </CrumbLink>
+          <CrumbLink>vivi</CrumbLink>
         </a>
       </NextLink>
     </Crumb>
