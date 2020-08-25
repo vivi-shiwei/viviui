@@ -1,8 +1,8 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import NextLink from 'next/link'
-import LeftGroupButton from '../src/components/Fieldset/leftFieldset'
-import RightGroupButton from '../src/components/Fieldset/rightFieldset'
+import LeftFieldset from '../src/components/Fieldset/leftFieldset'
+import RightFieldset from '../src/components/Fieldset/rightFieldset'
 import FieldsetHeader from '../src/components/Fieldset/fieldsetHeader'
 import Fieldset from '../src/components/Fieldset'
 
@@ -29,15 +29,15 @@ export const Fieldsetsure = () => {
       //   </NextLink>
       // }
       >
-        <LeftGroupButton>新增</LeftGroupButton>
+        <LeftFieldset>新增</LeftFieldset>
         <FieldsetHeader>班级</FieldsetHeader>
-        <RightGroupButton>新增</RightGroupButton>
+        <RightFieldset>新增</RightFieldset>
       </Fieldset>
     </>
   )
 }
 
-export const LeftFieldset = () => {
+export const LeftFieldsest = () => {
   return (
     <>
       <Fieldset
@@ -46,7 +46,7 @@ export const LeftFieldset = () => {
         left={
           <NextLink href='/test' passHref>
             <a onClick={action('button-click')}>
-              <LeftGroupButton>新增</LeftGroupButton>
+              <LeftFieldset>新增</LeftFieldset>
             </a>
           </NextLink>
         }
@@ -55,7 +55,7 @@ export const LeftFieldset = () => {
   )
 }
 
-export const RightFieldset = () => {
+export const RightFieldsets = () => {
   return (
     <>
       <Fieldset
@@ -64,7 +64,7 @@ export const RightFieldset = () => {
         right={
           <NextLink href='/test' passHref>
             <a onClick={action('button-click')}>
-              <RightGroupButton>新增</RightGroupButton>
+              <RightFieldset>新增</RightFieldset>
             </a>
           </NextLink>
         }

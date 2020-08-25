@@ -17,7 +17,7 @@ const Fieldset = ({ children, ...props }) => {
   let right = null
   let title = null
   const chil = []
-
+  console.log(children)
   Children.map(children, (c, i) => {
     switch (c.type) {
       case LeftFieldset:
