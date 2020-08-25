@@ -1,21 +1,30 @@
 import React from 'react'
 import {
   Box,
-  Text
+  Text,
+  PseudoBox
 } from '@chakra-ui/core'
-
-import Container from '../container'
 
 const SingleAnnouncement = ({ content, title, time, children, ...props }) => {
   return (
-    <Container d='flex' justifyContent='space-between' py={2} borderBottom='1px solid #A0AEC0' {...props}>
+    <PseudoBox
+      d='flex'
+      justifyContent='space-between'
+      py={2}
+      borderBottom='1px solid #A0AEC0'
+      width='full'
+      maxWidth='1280px'
+      mx='auto'
+      px={2}
+      {...props}
+    >
       <Box>
         <Text fontSize='12px' color='#A0AEC0'>{time}</Text>
         <Text fontSize='22px' fontWeight='bold'>{title}</Text>
         <Text fontSize='14px' color='#718096'>{content}</Text>
       </Box>
       {children}
-    </Container>
+    </PseudoBox>
   )
 }
 export default SingleAnnouncement

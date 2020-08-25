@@ -11,6 +11,7 @@ export const SearchTest = () => {
   return (
     <Box>
       <SingleAnnouncement
+        onClick={() => console.log('hahah')}
         time='2020-08-10 14:58:25'
         title='圣诞晚会'
         content='发布人：XXX(管理员)'
