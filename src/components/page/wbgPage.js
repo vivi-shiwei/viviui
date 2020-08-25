@@ -6,7 +6,7 @@ import {
 } from '@chakra-ui/core'
 
 // 白板的component，有backurl時，又有children，就會出現白板，沒有children就不會出現白板
-const WbgPage = ({ backurl, title, nodivider, headerPage, children, ...props }) => {
+const WbgPage = ({ title, nodivider, headerPage, children, ...props }) => {
   const { colorMode } = useColorMode()
   return (
     <Box as='main' {...props}>
