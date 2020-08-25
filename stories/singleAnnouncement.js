@@ -11,6 +11,7 @@ import {
 
 import SingleAnnouncement from '../src/components/singleAnnouncement'
 import StatusButton from '../src/components/singleAnnouncement/statusButton'
+import AnnouncementHeader from '../src/components/singleAnnouncement/announcementHeader'
 import Header from '../src/components/header'
 import HeaderLogo from '../src/components/header/headerLogo'
 import HeaderCenter from '../src/components/header/headerCenter'
@@ -90,7 +91,24 @@ export const titytitle = () => {
         </HeaderRight>
       </Header>
       <Page mt='67px'>
-        <Box borderBottom='1px solid #4A5568'>
+        <AnnouncementHeader
+          title='毕业典礼安排'
+          left='2020-8-25 14:54'
+          right='发布人：XXX（管理员）'
+        >
+          <Flex justifyContent='flex-end'>
+            <Text fontSize='20px' color='#00B5DD'>查看附件</Text>
+          </Flex>
+          <Box>
+            <LabelName label='通告内容' />
+            {a.split(' ').map((item, index) => {
+              return (
+                <Text key='index'>{item}</Text>
+              )
+            })}
+          </Box>
+        </AnnouncementHeader>
+        {/* <Box borderBottom='1px solid #4A5568'>
           <Heading as='h1' fontSize='26px' textAlign='center' fontWeight='bold'>毕业典礼安排</Heading>
           <Flex justifyContent='space-between' mx='20px'>
             <Text fontSize='16px' color='#A0AEC0'>2020-8-25 14:54</Text>
@@ -109,7 +127,7 @@ export const titytitle = () => {
               )
             })}
           </Box>
-        </Box>
+        </Box> */}
       </Page>
     </>
   )
