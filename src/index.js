@@ -359,3 +359,4 @@ export { default as PictureBox } from './components/postCard/pictureBox'
 // phone
 export { default as SingleAnnouncement } from './components/singleAnnouncement'
 export { default as StatusButton } from './components/singleAnnouncement/statusButton'
+export { default as AnnouncementHeader } from './components/singleAnnouncement/announcementHeader'
