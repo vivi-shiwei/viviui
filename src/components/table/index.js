@@ -37,7 +37,6 @@ const Table = ({ type, children, ...props }) => {
       as='table'
       className='table'
       w='100%'
-      m='auto'
       letterSpacing='0.05rem'
       {...props}
     >
