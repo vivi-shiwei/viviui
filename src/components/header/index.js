@@ -58,10 +58,10 @@ const Header = ({
   })
 
   return (
-    <HeaderWrapper bg={props.pg || bg[colorMode]} {...props}>
+    <HeaderWrapper bg={props.bg || bg[colorMode]} {...props}>
       <HeaderContainer
         height='4rem'
-        bg={props.pg || bg[colorMode]}
+        bg={props.bg || bg[colorMode]}
         {...containerProps}
       >
         <Flex size='100%' px={{ base: 0, sm: 2, md: 4 }} align='center' w='full' justify='space-between'>
