@@ -61,6 +61,7 @@ const Header = ({
     <HeaderWrapper bg={bg[colorMode]} {...props}>
       <HeaderContainer
         height='4rem'
+        bg={bg[colorMode]}
         {...containerProps}
       >
         <Flex size='100%' px={{ base: 0, sm: 2, md: 4 }} align='center' w='full' justify='space-between'>
