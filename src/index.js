@@ -125,7 +125,8 @@ import {
   useClipboard,
   useDisclosure,
   useTheme,
-  useColorMode
+  useColorMode,
+  CSSReset
 } from '@chakra-ui/core'
 
 export {
@@ -255,7 +256,8 @@ export {
   useClipboard,
   useDisclosure,
   useTheme,
-  useColorMode
+  useColorMode,
+  CSSReset
 }
 
 // export * from '@chakra-ui/core'

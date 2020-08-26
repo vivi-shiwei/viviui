@@ -8,7 +8,8 @@ import {
   DrawerCloseButton,
   DrawerHeader,
   DrawerBody,
-  IconButton
+  IconButton,
+  useColorMode
 } from '@chakra-ui/core'
 import { MdDehaze } from 'react-icons/md'
 
@@ -26,7 +27,9 @@ const Header = ({
   children,
   ...props // 除以上輸入值外都會解構到props裏，props裏可以是外邊框、内邊框、字體顔色、背景顔色、border，傳入chakra能接受的樣式到最外層的Box裏。
 }) => {
+  const { colorMode } = useColorMode()
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const bg = { light: 'white', dark: 'gray.800' }
 
   let logo = null
   let left = null
@@ -55,7 +58,7 @@ const Header = ({
   })
 
   return (
-    <HeaderWrapper {...props}>
+    <HeaderWrapper bg={bg[colorMode]} {...props}>
       <HeaderContainer
         height='4rem'
         {...containerProps}
