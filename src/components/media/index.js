@@ -11,7 +11,7 @@ const Media = ({ children, ...props }) => {
   let left = null
   let center = null
   let right = null
-  let cli = []
+  const chil = []
 
   Children.map(children, (c, i) => {
     switch (c.type) {
@@ -25,7 +25,7 @@ const Media = ({ children, ...props }) => {
         right = c // Header 中間列表
         break
       default:
-        cli.push(c)
+        chil.push(c)
     }
   })
   return (
@@ -35,7 +35,7 @@ const Media = ({ children, ...props }) => {
       {left}
       {center}
       {right}
-      {children}
+      {chil}
     </Flex>
   )
 }
