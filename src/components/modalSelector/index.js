@@ -56,11 +56,21 @@ const ModalSelector = ({
             {!!modalTitle && <ModalHeader>{modalTitle}</ModalHeader>}
             <ModalCloseButton />
             <ModalBody>
+
+              {/* {Children.map(children, (c, i) => {
+                return cloneElement(c, {
+                  // 循環給每一個 children 都給一個為 parent 的值
+                  onChange: onChange,
+                  onClose: onClose,
+                  item: i,
+                  selectValue: value
+                })
+              })} */}
               <ModalContext.Provider
                 value={{
                   value, // 給 Context 組件包住的兒子賦予 value 值
                   onChange, // 給 Context 組件包住的兒子賦予 onChange 值
-                  onClose // 給 Context 組件包住的兒子賦予 onClose 值，關閉
+                  onClose// 給 Context 組件包住的兒子賦予 onClose 值，關閉
                 }}
               >
                 {children}
