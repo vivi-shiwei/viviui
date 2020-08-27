@@ -11,6 +11,7 @@ const Media = ({ children, ...props }) => {
   let left = null
   let center = null
   let right = null
+  let cli = []
 
   Children.map(children, (c, i) => {
     switch (c.type) {
@@ -23,6 +24,8 @@ const Media = ({ children, ...props }) => {
       case MediaRight:
         right = c // Header 中間列表
         break
+      default:
+        cli.push(c)
     }
   })
   return (

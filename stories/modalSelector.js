@@ -9,7 +9,7 @@ import ModalSelectorOption from '../src/components/modalSelector/modalSelectorOp
 export default { title: 'ModalSelector(vivi hui)' }
 
 export const ModalSelectorTest = () => {
-  const [values, setValues] = useState('cdsj6 2019/2020 Dashboard')
+  const [values, setValues] = useState('')
 
   return (
     <ModalSelector
