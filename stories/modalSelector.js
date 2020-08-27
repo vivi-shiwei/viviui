@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import NextLink from 'next/link'
+import { IconButton, Button } from '@chakra-ui/core'
 import { action } from '@storybook/addon-actions'
 
 import ModalSelector from '../src/components/modalSelector/index'
-import AltRoundButton from '../src/components/modalSelector/squareButton'
-import EditButton from '../src/components/modalSelector/editButton'
 import ModalSelectorOption from '../src/components/modalSelector/modalSelectorOption'
 
 export default { title: 'ModalSelector(vivi hui)' }
@@ -20,14 +19,14 @@ export const ModalSelectorTest = () => {
       left={
         <NextLink href='/test' passHref>
           <a onClick={action('button-click')}>
-            <AltRoundButton>新增</AltRoundButton>
+            <Button>新增</Button>
           </a>
         </NextLink>
       }
       right={
         <NextLink href='/test' passHref>
           <a onClick={action('button-click')}>
-            <EditButton icon='edit' />
+            <IconButton icon='edit' />
           </a>
         </NextLink>
       }

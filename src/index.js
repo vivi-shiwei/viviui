@@ -286,8 +286,8 @@ export { default as Featrure } from './components/featureGrid/feature'
 export { default as Footer } from './components/footer'
 
 // Group
-export { default as Group } from './components/group'
-export { default as Card } from './components/group/card'
+export { default as CardGroup } from './components/cardGroup'
+export { default as Card } from './components/cardGroup/card'
 
 // Fieldset
 export { default as Fieldset } from './components/Fieldset'
@@ -298,8 +298,6 @@ export { default as FieldsetHeader } from './components/Fieldset/fieldsetHeader'
 // CenterSelector
 export { default as ModalSelector } from './components/modalSelector'
 export { default as ModalSelectorOption } from './components/modalSelector/modalSelectorOption'
-export { default as SquareButton } from './components/modalSelector/squareButton'
-export { default as EditButton } from './components/modalSelector/editButton'
 
 // Modal
 export { default as NewModal } from './components/newModal'
@@ -362,3 +360,9 @@ export { default as PictureBox } from './components/postCard/pictureBox'
 export { default as SingleAnnouncement } from './components/singleAnnouncement'
 export { default as StatusButton } from './components/singleAnnouncement/statusButton'
 export { default as AnnouncementHeader } from './components/singleAnnouncement/announcementHeader'
+
+// media
+export { default as Media } from './components/media'
+export { default as MediaLeft } from './components/media/mediaLeft'
+export { default as MediaRight } from './components/media/mediaRight'
+export { default as MediaCenter } from './components/media/mediaCenter'

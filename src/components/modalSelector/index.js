@@ -24,8 +24,7 @@ const ModalSelector = ({
 }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
-    <Box display='flex' justifyContent='center' mt='10px' {...props}>
-      {left}
+    <>
       <Button
         as='div'
         maxW='400px'
@@ -41,6 +40,7 @@ const ModalSelector = ({
         whiteSpace='nowrap'
         textOverflow='ellipsis'
         onClick={onOpen}
+        {...props}
       >
         {value}
       </Button>
@@ -79,8 +79,7 @@ const ModalSelector = ({
           </ModalContent>
         </Modal>
       )}
-      {right}
-    </Box>
+    </>
   )
 }
 

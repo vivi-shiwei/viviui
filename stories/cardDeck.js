@@ -4,8 +4,8 @@ import { Box } from '@chakra-ui/core'
 import { action } from '@storybook/addon-actions'
 import NextLink from 'next/link'
 
-import Group from '../src/components/group'
-import Card from '../src/components/group/card'
+import Group from '../src/components/cardGroup'
+import Card from '../src/components/cardGroup/card'
 
 export default { title: 'Group(vivi hui)' }
 
@@ -56,9 +56,7 @@ export const OneGroup = () => {
   const data = ['甲班', '乙班', '丙班', '丁班', '超级班']
   return (
     <>
-      <Group>
-        <Card title='甲班' />
-      </Group>
+      <Card title='甲班' />
     </>
   )
 }
