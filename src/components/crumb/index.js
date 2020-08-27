@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Children } from 'react'
 import {
   Icon,
   Breadcrumb,
@@ -24,7 +24,7 @@ const Crumb = ({ children, crumbProps, ...props }) => (
       {...crumbProps}
     >
       {
-        children.map((breadcrumd, index) => (
+        Children.map(children, (breadcrumd, index) => (
           <BreadcrumbItem key={index}>
             {breadcrumd}
           </BreadcrumbItem>

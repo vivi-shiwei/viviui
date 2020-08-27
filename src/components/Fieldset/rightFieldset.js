@@ -10,6 +10,8 @@ const RightFieldset = (props) => {
   const { colorMode } = useColorMode()
   return (
     <Box
+      bg={colorMode === 'light' ? (props.bg || props.background || '#EDF2F7') : (props.dark || '#1A202C')}
+      zIndex='4'
       position=' absolute'
       top='0'
       right=' 0'

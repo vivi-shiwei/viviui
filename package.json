@@ -1,6 +1,6 @@
 {
   "name": "viviui",
-  "version": "1.4.7",
+  "version": "1.6.4",
   "description": "",
   "main": "dist/index.js",
   "scripts": {

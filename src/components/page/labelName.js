@@ -7,7 +7,7 @@ import {
 // 顯示學校用戶信息的 component ，類型加名字加職業
 const LabelName = ({ label, text, type, labelProps, children, ...props }) => {
   return (
-    <Box as='div' d='flex' lineHeight='40px' {...props}>
+    <Box as='div' d='flex' {...props}>
       {!!label && (
         <Box d='flex' {...labelProps}>
           <Text w='100%' fontWeight='600' className='textlabel-align-last'>

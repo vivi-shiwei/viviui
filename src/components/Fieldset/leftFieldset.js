@@ -10,6 +10,7 @@ const LeftFieldset = (props) => {
   return (
     <Box
       bg={colorMode === 'light' ? (props.bg || props.background || '#EDF2F7') : (props.dark || '#1A202C')}
+      zIndex='4'
       position=' absolute'
       top='0'
       left=' 0'
