@@ -38,7 +38,7 @@ const photoMagnify = ({ isOpen, onClose, images = [], indexI = 0, children, ...p
                 variantColor='teal'
                 icon='chevron-left'
                 borderRadius={9999}
-                onClick={() => { setIndex(index === 0 ? images.length - 1 : index - 1); console.log(flagRef.current) }}
+                onClick={() => { setIndex(index === 0 ? images.length - 1 : index - 1) }}
                 visibility={index === 0 ? 'hidden' : 'visible'}
               />
             </Box>

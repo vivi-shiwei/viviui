@@ -24,7 +24,8 @@ module.exports = {
     '../stories/**/picture.[tj]s',
     '../stories/**/oldPictureGroup.[tj]s',
     '../stories/**/singleAnnouncement.[tj]s',
-    '../stories/**/postCardPicture.[tj]s'
+    '../stories/**/postCardPicture.[tj]s',
+    '../stories/**/photoMagnify.[tj]s'
   ],
   addons: [
     '@storybook/addon-knobs/register',
