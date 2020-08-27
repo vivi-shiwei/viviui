@@ -7,16 +7,16 @@ import MediaCenter from './mediaCenter'
 import MediaLeft from './mediaLeft'
 import MediaRight from './mediaRight'
 
-const Media = ({ children, ...props }) => {
+const Media = ({ center = null, children, ...props }) => {
   let left = null
-  let center = null
+  let mecenter = null
   let right = null
   const chil = []
 
   Children.map(children, (c, i) => {
     switch (c.type) {
       case MediaCenter:
-        center = c // 自定義logo
+        mecenter = c // 自定義logo
         break
       case MediaLeft:
         left = c // Header左邊列表
@@ -33,7 +33,7 @@ const Media = ({ children, ...props }) => {
       {...props}
     >
       {left}
-      {center}
+      {mecenter}
       {right}
       {chil}
     </Flex>
