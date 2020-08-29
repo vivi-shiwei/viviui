@@ -1,24 +1,15 @@
-import React from 'react'
+import React, { memo } from 'react'
 import {
-  Box,
   Flex
 } from '@chakra-ui/core'
 
-const HeaderLeft = ({ logo, text, children, ...props }) => {
+const HeaderLeft = (props) => {
   return (
     <Flex
-      // position='absolute'
-      // top='50%'
-      // left='0'
-      // transform='translate(0, -50%)'
-      float='left'
-      display={{ base: 'none', sm: 'none', md: 'flex' }}
+      justify='flex-start'
+      alignItems='center'
       {...props}
-    >
-      <Box alignItems='center'>
-        {children}
-      </Box>
-    </Flex>
+    />
   )
 }
-export default HeaderLeft
+export default memo(HeaderLeft)

@@ -1,59 +1,97 @@
-import React from 'react'
+import React, { memo, Children } from 'react'
 import {
-  Box,
   Flex,
-  useColorMode,
+  useDisclosure,
   Drawer,
-  DrawerBody,
-  DrawerHeader,
   DrawerOverlay,
   DrawerContent,
-  Button,
-  useDisclosure,
-  DrawerCloseButton
+  DrawerCloseButton,
+  DrawerHeader,
+  DrawerBody,
+  IconButton
 } from '@chakra-ui/core'
-import {
-  Header as HeaderContainer
-} from '../DocsHeaderPage'
-import { Container } from '../containerPage'
-import { FiAlignJustify } from 'react-icons/fi'
+import { MdDehaze } from 'react-icons/md'
+
+import HeaderContainer from '../container'
+
 import HeaderLeft from './headerLeft'
 import HeaderRight from './headerRight'
+import HeaderLogo from './headerLogo'
 import HeaderCenter from './headerCenter'
-import Drawers from './drawers'
+import HeaderWrapper from './headerWrapper'
+import HeaderMobileNav from './headerMobileNav'
 
-const Header = ({ left, right, text, logo, profilePhoto, noColormode = false, MenuTest, children, disclosure, ...props }) => {
-  const { colorMode, toggleColorMode } = useColorMode()
-  const bg = { light: 'white', dark: 'gray.800' }
+const Header = ({
+  containerProps, // 傳入頭部的數據
+  children,
+  ...props // 除以上輸入值外都會解構到props裏，props裏可以是外邊框、内邊框、字體顔色、背景顔色、border，傳入chakra能接受的樣式到最外層的Box裏。
+}) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
+  let logo = null
+  let left = null
+  let center = null
+  let right = null
+  let drawerItems = null
+
+  Children.map(children, (c, i) => {
+    switch (c.type) {
+      case HeaderLogo:
+        logo = c // 自定義logo
+        break
+      case HeaderLeft:
+        left = c // Header左邊列表
+        break
+      case HeaderCenter:
+        center = c // Header 中間列表
+        break
+      case HeaderRight:
+        right = c // Header 右邊列表
+        break
+      case HeaderMobileNav:
+        drawerItems = c.props.children// 選單數據
+        break
+    }
+  })
+
   return (
-    <HeaderContainer bg={bg[colorMode]} {...props}>
-      <Container
-        h='100%'
+    <HeaderWrapper {...props}>
+      <HeaderContainer
         height='4rem'
+        {...containerProps}
       >
-        <Flex size='100%' px={{ base: 0, sm: 2, md: 4 }} align='center' width='full' maxWidth='1280px' position='relative'>
-          {children}
-          <Button variantColor='none' onClick={onOpen} display={{ sm: 'block', md: 'none' }} size='xs' position='absolute' right='0px'>
-            <Box fontSize={{ base: '22px', sm: '28px' }} color={colorMode === 'light' ? 'black' : 'white'} as={FiAlignJustify} />
-          </Button>
-          <Drawer placement='left' onClose={onClose} isOpen={isOpen}>
-            <DrawerOverlay />
-            <DrawerContent>
-              <DrawerCloseButton />
-              <DrawerHeader borderBottomWidth='1px'>選項</DrawerHeader>
-              <DrawerBody fontSize={{ sm: 'xs', md: 'sm' }}>
-                <Drawers />
-                <p>1</p>
-                <p>2</p>
-                <p>3</p>
-              </DrawerBody>
-            </DrawerContent>
-          </Drawer>
+        <Flex size='100%' px={{ base: 0, sm: 2, md: 4 }} align='center' w='full' justify='space-between'>
+          {logo}
+          {left}
+          {center}
+          {right}
+
+          {!!drawerItems && (
+            <Flex justify='flex-end'>
+              <IconButton
+                onClick={onOpen}
+                display={{ sm: 'inline-flex', md: 'none' }}
+                aria-label='Navigation Menu'
+                fontSize='20px'
+                variant='ghost'
+                icon={MdDehaze}
+                marginRight='-16px'
+              />
+              <Drawer placement='left' onClose={onClose} isOpen={isOpen}>
+                <DrawerOverlay />
+                <DrawerContent>
+                  <DrawerCloseButton />
+                  <DrawerHeader borderBottomWidth='1px'>選項</DrawerHeader>
+                  <DrawerBody fontSize={{ sm: 'xs', md: 'sm' }}>
+                    {drawerItems}
+                  </DrawerBody>
+                </DrawerContent>
+              </Drawer>
+            </Flex>
+          )}
         </Flex>
-      </Container>
-    </HeaderContainer>
+      </HeaderContainer>
+    </HeaderWrapper>
   )
 }
-export default Header
+export default memo(Header)

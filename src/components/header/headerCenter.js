@@ -1,20 +1,15 @@
-import React from 'react'
+import React, { memo } from 'react'
 import {
   Flex
 } from '@chakra-ui/core'
 
-const HeaderCenter = ({ children, ...props }) => {
+const HeaderCenter = (props) => {
   return (
     <Flex
-      position='absolute'
-      top='50%'
-      left='50%'
-      transform='translate(-50%, -50%)'
-      display={{ base: 'none', sm: 'none', md: 'flex' }}
+      justify='center'
+      flex='10'
       {...props}
-    >
-      {children}
-    </Flex>
+    />
   )
 }
-export default HeaderCenter
+export default memo(HeaderCenter)

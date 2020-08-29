@@ -1,22 +1,16 @@
-import React from 'react'
+import React, { memo } from 'react'
 import {
   Flex
 } from '@chakra-ui/core'
-const Right = ({ logo, profilePhoto, MenuTest, noColormode = false, disclosure, children, ...props }) => {
+
+const HeaderRight = (props) => {
   return (
-    <>
-      <Flex
-        align='center'
-        position='absolute'
-        top='50%'
-        right='0'
-        transform='translate(0, -50%)'
-        display={{ base: 'none', sm: 'none', md: 'flex' }}
-        {...props}
-      >
-        {children}
-      </Flex>
-    </>
+    <Flex
+      align='center'
+      justify='flex-end'
+      {...props}
+    />
   )
 }
-export default Right
+
+export default memo(HeaderRight)

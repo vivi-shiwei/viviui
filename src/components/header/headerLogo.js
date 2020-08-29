@@ -1,19 +1,16 @@
-import React from 'react'
+import React, { memo } from 'react'
 import {
   Flex
 } from '@chakra-ui/core'
-const HeaderLogo = ({ icon, profilePhoto, MenuTest, noColormode = false, disclosure, children, ...props }) => {
+
+const HeaderLogo = (props) => {
   return (
     <Flex
-      // position='absolute'
       justify='flex-start'
-      // flex='-1'
-      float='left'
+      mx={2}
       {...props}
-    >
-      {icon}
-      {children}
-    </Flex>
+    />
   )
 }
-export default HeaderLogo
+
+export default memo(HeaderLogo)

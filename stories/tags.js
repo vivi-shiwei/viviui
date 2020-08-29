@@ -18,7 +18,7 @@ import { FcLikePlaceholder, FcLike } from 'react-icons/fc'
 
 import MyImage from '../static/QQ20200518181405.jpg'
 export default {
-  title: 'Tag'
+  title: 'Tag(vivi)'
 }
 export const noProfilePhoto = () => {
   return (

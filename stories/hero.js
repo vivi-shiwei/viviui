@@ -1,5 +1,5 @@
 import React from 'react'
-import Hero from '../src/components/home/heroPage'
+import Hero from '../src/components/hero'
 import {
   Box,
   Heading,
@@ -7,7 +7,7 @@ import {
 } from '@chakra-ui/core'
 
 export default {
-  title: 'Hero'
+  title: 'Hero(vivi)'
 }
 
 export const hero = () => {
@@ -131,6 +131,15 @@ export const heroWithButtons = () => {
           GitHub
         </Button>
       }
-    />
+
+    >
+
+      <Button size='lg' as='a' variantColor='teal' m={2}>
+        Get Started
+      </Button>
+      <Button as='a' size='lg' m={2}>
+        GitHub
+      </Button>
+    </Hero>
   )
 }

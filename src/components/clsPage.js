@@ -9,13 +9,13 @@ import {
   Avatar,
   Flex
 } from '@chakra-ui/core'
-import { Container } from './containerPage'
+import HeaderContainer from './container'
 
-const clsPage = ({ classes, clsImage, noDivider = false, title, noTitle = false, left, right, button, PostCard, children, ...rest }) => {
+const ClsPage = ({ classes, clsImage, noDivider = false, title, noTitle = false, left, right, button, PostCard, children, ...rest }) => {
   return (
     <>
       <Box {...rest}>
-        <Container>
+        <HeaderContainer>
           <Box as='header' textAlign='center'>
             {!!classes && (
               <Box d='flex' alignItems='center' justifyContent='center'>
@@ -29,7 +29,7 @@ const clsPage = ({ classes, clsImage, noDivider = false, title, noTitle = false,
               </Box>
             )}
           </Box>
-        </Container>
+        </HeaderContainer>
       </Box>
       <Box py={4}>
         {(!!title || !!left || !!right) && (
@@ -77,4 +77,4 @@ const clsPage = ({ classes, clsImage, noDivider = false, title, noTitle = false,
     </>
   )
 }
-export default clsPage
+export default ClsPage

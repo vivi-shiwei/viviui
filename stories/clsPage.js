@@ -8,13 +8,13 @@ import ClsPage from '../src/components/clsPage'
 import { PostCard } from '../src/components/post'
 import ChartBar from '../src/components/chart/bar'
 import MingChar from '../src/components/chart/ming'
-import { Container } from '../src/components/containerPage'
+import HeaderContainer from '../src/components/container'
 import { ResponsiveBar } from '@nivo/bar'
 import MyImage from '../static/QQ20200518181405.jpg'
 import MyImage6 from '../static/timg.jpg'
 
 export default {
-  title: 'ClsPage'
+  title: 'ClsPage(vivi)'
 }
 export const Cls = () => {
   return (
@@ -412,9 +412,9 @@ export const intelligence = () => {
 
         {/* <Bar height={200} data={scoreData} options={options} /> */}
       </Box>
-      <Container>
+      <HeaderContainer>
         <ChartBar barkeys={barkeys} users={users} max={Math.max(...students.map(student => student.sum), 5)} />
-      </Container>
+      </HeaderContainer>
     </ClsPage>
   )
 }
@@ -545,9 +545,9 @@ export const testNivoCartBar = () => {
   ]
   return (
     <>
-      <Container>
+      <HeaderContainer>
         <MingChar data={dataArray} />
-      </Container>
+      </HeaderContainer>
     </>
   )
 }
