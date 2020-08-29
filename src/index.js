@@ -129,6 +129,8 @@ import {
   CSSReset
 } from '@chakra-ui/core'
 
+import NextLink from 'next/link'
+
 export {
   Box,
   theme,
