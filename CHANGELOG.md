@@ -1,4 +1,11 @@
-## viviui 1.5.6
+## viviui 1.6.5
+## viviui 1.6.4
+
+- 对header featureGrid 和 footer component的修改。
+
+## viviui 1.5.9
+- 增加手机版的通告系统查看通告的 announcementHeader component
+
 ## viviui 1.5.2
 - 添加了手机版的通告系统 singleAnnouncement component
 

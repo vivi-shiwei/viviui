@@ -4,8 +4,6 @@ import NextLink from 'next/link'
 import { action } from '@storybook/addon-actions'
 
 import ModalSelector from '../src/components/modalSelector/index'
-import AltRoundButton from '../src/components/modalSelector/squareButton'
-import EditButton from '../src/components/modalSelector/editButton'
 import ModalSelectorOption from '../src/components/modalSelector/modalSelectorOption'
 import PictureBox from '../src/components/postCard/pictureBox'
 import Pictures from '../src/components/postCard/pictures'

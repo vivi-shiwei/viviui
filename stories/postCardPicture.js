@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box } from '@chakra-ui/core'
 
-import PostCardTwo from '../src/components/postCardPicture'
+import postCardPicture from '../src/components/postCardPicture'
 import Pictures from '../src/components/postCardPicture/pictures'
 
 export default { title: 'postCardPicture(hui)' }
@@ -21,11 +21,11 @@ export const PictureOne = () => {
   return (
     <>
       <Box maxW='500px' m='0 auto'>
-        <PostCardTwo>
+        <postCardPicture>
           {show.map((item, index) => {
             return <Pictures key={index} imageURL={item} />
           })}
-        </PostCardTwo>
+        </postCardPicture>
       </Box>
     </>
   )
@@ -36,11 +36,11 @@ export const PictureTwo = () => {
   return (
     <>
       <Box maxW='500px' m='0 auto'>
-        <PostCardTwo>
+        <postCardPicture>
           {show.map((item, index) => {
             return <Pictures key={index} imageURL={item} />
           })}
-        </PostCardTwo>
+        </postCardPicture>
       </Box>
     </>
   )
@@ -51,11 +51,11 @@ export const PictureThree = () => {
   return (
     <>
       <Box maxW='500px' m='0 auto'>
-        <PostCardTwo>
+        <postCardPicture>
           {show.map((item, index) => {
             return <Pictures key={index} imageURL={item} />
           })}
-        </PostCardTwo>
+        </postCardPicture>
       </Box>
     </>
   )
@@ -65,11 +65,11 @@ export const PictureFour = () => {
   return (
     <>
       <Box maxW='500px' m='0 auto'>
-        <PostCardTwo>
+        <postCardPicture>
           {show.map((item, index) => {
             return <Pictures key={index} imageURL={item} />
           })}
-        </PostCardTwo>
+        </postCardPicture>
       </Box>
     </>
   )
@@ -79,11 +79,11 @@ export const PictureFive = () => {
   return (
     <>
       <Box maxW='500px' m='0 auto'>
-        <PostCardTwo>
+        <postCardPicture>
           {show.map((item, index) => {
             return <Pictures key={index} imageURL={item} />
           })}
-        </PostCardTwo>
+        </postCardPicture>
       </Box>
     </>
   )
@@ -92,11 +92,11 @@ export const PictureMore = () => {
   return (
     <>
       <Box maxW='500px' m='0 auto'>
-        <PostCardTwo>
+        <postCardPicture>
           {darks.map((item, index) => {
             return <Pictures key={index} imageURL={item} />
           })}
-        </PostCardTwo>
+        </postCardPicture>
       </Box>
     </>
   )
