@@ -18,9 +18,19 @@ const SingleAnnouncement = ({ content, title, time, children, ...props }) => {
       px={2}
       {...props}
     >
-      <Box>
+      <Box w='82%'>
         <Text fontSize='12px' color='#A0AEC0'>{time}</Text>
-        <Text fontSize='22px' fontWeight='bold'>{title}</Text>
+        <Text
+          fontSize='22px'
+          fontWeight='bold'
+          overflow='hidden'
+          width='90%'
+          textOverflow='ellipsis'
+          whiteSpace='nowrap'
+          wordBreak='break-word'
+        >
+          {title}
+        </Text>
         <Text fontSize='14px' color='#718096'>{content}</Text>
       </Box>
       {children}

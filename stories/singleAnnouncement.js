@@ -59,7 +59,7 @@ export const SearchTest = () => {
       </SingleAnnouncement>
       <SingleAnnouncement
         time='2020-08-10 14:58:25'
-        title='圣诞晚会'
+        title='圣诞晚会dfdsfgdsgdfghhtfgjhfghghfgyhfgh'
         content='发布人：XXX(管理员)'
       >
         <StatusButton>未回复读</StatusButton>
