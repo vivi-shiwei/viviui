@@ -3,7 +3,7 @@ const path = require('path')
 module.exports = {
   // stories: ['../stories/**/*.[tj]s'],
   stories: [
-    // '../stories/**/header.[tj]s',
+    '../stories/**/header.[tj]s',
     // '../stories/**/hero.[tj]s',
     // '../stories/**/footer.[tj]s',
     // '../stories/**/school.[tj]s',

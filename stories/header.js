@@ -46,35 +46,35 @@ export const header = () => {
 
       <HeaderLeft>
         <NextLink href='/test' passHref>
-          <a onClick={action('button-click')}>
-            <HeaderButton icon={MdAccessibility} title='左邊按鈕' href='https://www.baidu.com' />
-          </a>
+          {/* <a onClick={action('button-click')}> */}
+          <HeaderButton ref='/test' icon={MdAccessibility} title='左邊按鈕' href='https://www.baidu.com' />
+          {/* </a> */}
         </NextLink>
         <NextLink href='/test' passHref>
-          <a onClick={action('button-click')}>
-            <HeaderButton icon={MdAccessibility} title='左邊按鈕' href='https://www.baidu.com' />
-          </a>
+          {/* <a onClick={action('button-click')}> */}
+          <HeaderButton ref='/test' icon={MdAccessibility} title='左邊按鈕' href='https://www.baidu.com' />
+          {/* </a> */}
         </NextLink>
         <NextLink href='/test' passHref>
-          <a onClick={action('button-click')}>
-            <HeaderButton icon={MdAccessibility} title='左邊按鈕' href='https://www.baidu.com' />
-          </a>
+          {/* <a onClick={action('button-click')}> */}
+          <HeaderButton ref='/test' icon={MdAccessibility} title='左邊按鈕' href='https://www.baidu.com' />
+          {/* </a> */}
         </NextLink>
       </HeaderLeft>
 
       <HeaderCenter>
         <NextLink href='/test' passHref>
-          <a onClick={action('button-click')}>
-            <HeaderButton icon={MdAccessibility} title='中间按鈕' href='https://www.baidu.com' />
-          </a>
+          {/* <a onClick={action('button-click')}> */}
+          <HeaderButton ref='/test' icon={MdAccessibility} title='中间按鈕' href='https://www.baidu.com' />
+          {/* </a> */}
         </NextLink>
       </HeaderCenter>
 
       <HeaderRight>
         <NextLink href='/test' passHref>
-          <a onClick={action('button-click')}>
-            <HeaderButton title='右邊按鈕' icon={MdAccessibility} href='https://www.baidu.com' />
-          </a>
+          {/* <a onClick={action('button-click')}> */}
+          <HeaderButton ref='/test' title='右邊按鈕' icon={MdAccessibility} href='https://www.baidu.com' />
+          {/* </a> */}
         </NextLink>
         <Menu placement='bottom-end'>
           <HeaderMenuButton display={{ base: 'none', sm: 'none', md: 'flex' }}>

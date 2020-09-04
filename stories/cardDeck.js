@@ -15,22 +15,22 @@ export const GroupTest = () => {
     <>
       <Group>
         <NextLink href='/test' passHref>
-          <a onClick={action('button-click')}>
-            <Card title='乙班' />
-          </a>
+          {/* <a onClick={action('button-click')}> */}
+          <Card title='乙班' />
+          {/* </a> */}
         </NextLink>
         <NextLink href='/test' passHref>
-          <a onClick={action('button-click')}>
-            <Card title='乙班' />
-          </a>
+          {/* <a onClick={action('button-click')}> */}
+          <Card title='乙班' />
+          {/* </a> */}
         </NextLink>
         {
           data.map((item, index) => (
             <>
-              <NextLink href='/test' passHref>
-                <a onClick={action('button-click')}>
-                  <Card key={index} title={item} />
-                </a>
+              <NextLink href='/test' key={index} passHref>
+                {/* <a onClick={action('button-click')}> */}
+                <Card title={item} />
+                {/* </a> */}
               </NextLink>
             </>
           ))
@@ -40,10 +40,10 @@ export const GroupTest = () => {
         {
           data.map((item, index) => (
             <>
-              <NextLink href='/test' passHref>
-                <a onClick={action('button-click')}>
-                  <Card key={index} title={item} />
-                </a>
+              <NextLink href='/test' key={index} passHref>
+                {/* <a onClick={action('button-click')}> */}
+                <Card title={item} />
+                {/* </a> */}
               </NextLink>
             </>
           ))

@@ -2,11 +2,10 @@ import React from 'react';
 
 import { addDecorator } from '@storybook/react'
 import { withNextRouter } from 'storybook-addon-next-router';
-// import { RouterContext } from 'next/dist/next-server/lib/router-context'
+import { RouterContext } from 'next/dist/next-server/lib/router-context'
 
-// import { withKnobs } from '@storybook/addon-knobs'
-// import { action } from '@storybook/addon-actions'
-// import { withNextRouter } from 'storybook-addon-next-router';
+import { withKnobs } from '@storybook/addon-knobs'
+import { action } from '@storybook/addon-actions'
 
 import App from '../App'
 

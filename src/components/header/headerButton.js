@@ -3,7 +3,7 @@ import {
   Box,
   Button
 } from '@chakra-ui/core'
-const HeaderButton = ({ title, icon, children, ...props }) => {
+const HeaderButton = React.forwardRef((props, ref) => {
   return (
     <Button
       as='div'
@@ -13,16 +13,17 @@ const HeaderButton = ({ title, icon, children, ...props }) => {
       display={{ base: 'none', sm: 'none', md: 'flex' }}
       variant='ghost'
       color='gray.500'
+      forwardedRef={ref}
       {...props}
     >
-      {!!icon && (
+      {!!props.icon && (
         <Box m={0} ml={{ base: 0, md: 1 }} mr={{ base: 0, md: 1 }}>
-          {<Box as={icon} size='1.5em' />}
+          {<Box as={props.icon} size='1.5em' />}
         </Box>
       )}
-      {title}
-      {children}
+      {props.title}
+      {props.children}
     </Button>
   )
-}
+})
 export default memo(HeaderButton)
