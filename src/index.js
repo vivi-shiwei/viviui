@@ -129,6 +129,8 @@ import {
   CSSReset
 } from '@chakra-ui/core'
 
+import NextLink from 'next/link'
+
 export {
   Box,
   theme,
@@ -347,10 +349,6 @@ export { default as RedButton } from './components/fullScreenView/redButton'
 export { default as BlueButton } from './components/fullScreenView/blueButton'
 export { default as ButtonGrid } from './components/fullScreenView/buttonGrid'
 export { default as LargeTitle } from './components/fullScreenView/largeTitle'
-
-// 面包屑
-export { default as Crumb } from './components/crumb'
-export { default as CrumbLink } from './components/crumb/crumbLink'
 
 // post
 export { default as Pictures } from './components/postCard/pictures'
