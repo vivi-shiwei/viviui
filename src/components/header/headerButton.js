@@ -1,33 +1,37 @@
 import React, { memo } from 'react'
 import {
   Box,
-  Button
+  Button,
+  PseudoBox
 } from '@chakra-ui/core'
-const HeaderButton = React.forwardRef((props, ref) => {
+const HeaderButton = React.forwardRef(({ title, icon, children, ...props }, ref) => {
   return (
-    <Button
-      as='div'
+    <PseudoBox
+      // as='button'
       align='center'
       fontSize={{ base: 'xs', sm: 'md', md: 'lg' }}
+      px={2}
+      py={1}
       mx={{ base: 1, sm: 2 }}
       display={{ base: 'none', sm: 'none', md: 'flex' }}
-      variant='ghost'
+      // variant='ghost'
       color='gray.500'
+      _hover={{ bg: '#EDF2F7' }}
       forwardedRef={ref}
-      _focus={{
-        boxShadow:
-          'none'
+      _active={{
+        background: '#E2E8F0'
       }}
+      _focus={{ background: 'none', color: 'black' }}
       {...props}
     >
-      {!!props.icon && (
+      {!!icon && (
         <Box m={0} ml={{ base: 0, md: 1 }} mr={{ base: 0, md: 1 }}>
-          {<Box as={props.icon} size='1.5em' />}
+          {<Box as={icon} size='1.5em' />}
         </Box>
       )}
-      {props.title}
-      {props.children}
-    </Button>
+      {title}
+      {children}
+    </PseudoBox>
   )
 })
 export default memo(HeaderButton)
