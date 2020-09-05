@@ -47,17 +47,17 @@ export const header = () => {
       <HeaderLeft>
         <NextLink href='/test' passHref>
           {/* <a onClick={action('button-click')}> */}
-          <HeaderButton ref='/test' icon={MdAccessibility} title='左邊按鈕' href='https://www.baidu.com' />
+          <HeaderButton icon={MdAccessibility} title='左邊按鈕' href='https://www.baidu.com' />
           {/* </a> */}
         </NextLink>
         <NextLink href='/test' passHref>
           {/* <a onClick={action('button-click')}> */}
-          <HeaderButton ref='/test' icon={MdAccessibility} title='左邊按鈕' href='https://www.baidu.com' />
+          <HeaderButton icon={MdAccessibility} title='左邊按鈕' href='https://www.baidu.com' />
           {/* </a> */}
         </NextLink>
         <NextLink href='/test' passHref>
           {/* <a onClick={action('button-click')}> */}
-          <HeaderButton ref='/test' icon={MdAccessibility} title='左邊按鈕' href='https://www.baidu.com' />
+          <HeaderButton icon={MdAccessibility} title='左邊按鈕' href='https://www.baidu.com' />
           {/* </a> */}
         </NextLink>
       </HeaderLeft>
@@ -65,7 +65,7 @@ export const header = () => {
       <HeaderCenter>
         <NextLink href='/test' passHref>
           {/* <a onClick={action('button-click')}> */}
-          <HeaderButton ref='/test' icon={MdAccessibility} title='中间按鈕' href='https://www.baidu.com' />
+          <HeaderButton icon={MdAccessibility} title='中间按鈕' href='https://www.baidu.com' />
           {/* </a> */}
         </NextLink>
       </HeaderCenter>

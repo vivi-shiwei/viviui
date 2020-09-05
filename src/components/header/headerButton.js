@@ -14,6 +14,10 @@ const HeaderButton = React.forwardRef((props, ref) => {
       variant='ghost'
       color='gray.500'
       forwardedRef={ref}
+      _focus={{
+        boxShadow:
+          'none'
+      }}
       {...props}
     >
       {!!props.icon && (
