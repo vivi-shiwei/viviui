@@ -1,27 +1,19 @@
-import React, { memo } from 'react'
+import React, { memo, forwardRef } from 'react'
 import {
   Box,
-  Button,
-  PseudoBox
+  Button
 } from '@chakra-ui/core'
-const HeaderButton = React.forwardRef(({ title, icon, children, ...props }, ref) => {
+const HeaderButton = forwardRef(({ title, icon, children, ...props }, ref) => {
   return (
-    <PseudoBox
-      // as='button'
+    <Button
+      as='div'
       align='center'
       fontSize={{ base: 'xs', sm: 'md', md: 'lg' }}
-      px={2}
-      py={1}
       mx={{ base: 1, sm: 2 }}
       display={{ base: 'none', sm: 'none', md: 'flex' }}
-      cursor='pointer'
+      variant='ghost'
       color='gray.500'
-      _hover={{ bg: '#EDF2F7' }}
       forwardedRef={ref}
-      _active={{
-        background: '#E2E8F0'
-      }}
-      _focus={{ background: 'none', color: 'black' }}
       {...props}
     >
       {!!icon && (
@@ -31,7 +23,7 @@ const HeaderButton = React.forwardRef(({ title, icon, children, ...props }, ref)
       )}
       {title}
       {children}
-    </PseudoBox>
+    </Button>
   )
 })
 export default memo(HeaderButton)

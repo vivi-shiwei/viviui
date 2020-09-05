@@ -1,10 +1,10 @@
-import React, { memo } from 'react'
+import React, { memo, forwardRef } from 'react'
 import {
   Box,
   Button
 } from '@chakra-ui/core'
 
-const DrawerItemButton = ({ title, icon, children, ...props }) => {
+const DrawerItemButton = forwardRef(({ title, icon, children, ...props }, ref) => {
   return (
     <Button
       as='div'
@@ -12,6 +12,7 @@ const DrawerItemButton = ({ title, icon, children, ...props }) => {
       width='100%'
       justifyContent='flex-start'
       _hover={{ ml: '2px', background: '#CEEDFF' }}
+      forwardedRef={ref}
       {...props}
     >
       {!!icon && (
@@ -23,5 +24,5 @@ const DrawerItemButton = ({ title, icon, children, ...props }) => {
       {children}
     </Button>
   )
-}
+})
 export default memo(DrawerItemButton)
