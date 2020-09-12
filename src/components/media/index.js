@@ -3,15 +3,14 @@ import {
   Flex
 } from '@chakra-ui/core'
 
-import MediaCenter from './mediaCenter'
+import MediaCenter from './mediaContent'
 import MediaLeft from './mediaLeft'
 import MediaRight from './mediaRight'
 
-const Media = ({ center = null, children, ...props }) => {
-  let left = null
+const Media = ({ center = null, left = null, right = null, children, ...props }) => {
+  let meleft = null
   let mecenter = null
-  let right = null
-  const chil = []
+  let meright = null
 
   Children.map(children, (c, i) => {
     switch (c.type) {
@@ -19,25 +18,62 @@ const Media = ({ center = null, children, ...props }) => {
         mecenter = c // 自定義logo
         break
       case MediaLeft:
-        left = c // Header左邊列表
+        meleft = c // Header左邊列表
         break
       case MediaRight:
-        right = c // Header 中間列表
+        meright = c // Header 中間列表
         break
-      default:
-        chil.push(c)
     }
   })
   return (
-    <Flex
-      {...props}
-    >
-      {left}
-      {mecenter}
-      {right}
-      {chil}
-    </Flex>
+    <>
+      {(!center && !left && !right) && (
+        <Flex
+          {...props}
+        >
+          {meleft}
+          {mecenter}
+          {meright}
+        </Flex>
+      )}
+      {
+        center && (
+          <Flex
+            mx='auto'
+            {...props}
+          >
+            {meleft}
+            {mecenter}
+            {meright}
+          </Flex>
+        )
+      }
+      {
+        left && (
+          <Flex
+            mr='auto'
+            {...props}
+          >
+            {meleft}
+            {mecenter}
+            {meright}
+          </Flex>
+        )
+      }
+      {
+        right && (
+          <Flex
+            ml='auto'
+            {...props}
+          >
+            {meleft}
+            {mecenter}
+            {meright}
+          </Flex>
+        )
+      }
+    </>
   )
 }
 
-export default memo(Media)
+export default Media
