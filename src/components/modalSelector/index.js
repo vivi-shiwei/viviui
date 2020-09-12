@@ -29,7 +29,6 @@ const ModalSelector = ({
         as='div'
         maxW='400px'
         lineHeight='40px'
-        width='35%'
         textAlign='center'
         mx={3}
         borderColor='#CBD5E0'
@@ -56,16 +55,6 @@ const ModalSelector = ({
             {!!modalTitle && <ModalHeader>{modalTitle}</ModalHeader>}
             <ModalCloseButton />
             <ModalBody>
-
-              {/* {Children.map(children, (c, i) => {
-                return cloneElement(c, {
-                  // 循環給每一個 children 都給一個為 parent 的值
-                  onChange: onChange,
-                  onClose: onClose,
-                  item: i,
-                  selectValue: value
-                })
-              })} */}
               <ModalContext.Provider
                 value={{
                   value, // 給 Context 組件包住的兒子賦予 value 值
