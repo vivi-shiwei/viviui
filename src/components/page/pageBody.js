@@ -3,14 +3,16 @@ import {
   Box
 } from '@chakra-ui/core'
 
-const PageHeader = (props) => {
+const PageBody = ({ children, ...props }) => {
   return (
     <Box
+      as='section'
       w='100%'
-      borderBottomWidth='1px'
       {...props}
-    />
+    >
+      {children}
+    </Box>
   )
 }
 
-export default PageHeader
+export default PageBody
