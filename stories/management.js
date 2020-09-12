@@ -7,12 +7,13 @@ import {
 import { FaSchool, FaUserEdit } from 'react-icons/fa'
 import { AiTwotoneSetting } from 'react-icons/ai'
 import { GoTrashcan } from 'react-icons/go'
-import LinkNext from 'next/link'
+import NextLink from 'next/link'
+import { action } from '@storybook/addon-actions'
 
 import Management from '../src/components/page/manageMent'
 import ColumnLine from '../src/components/page/columnIconText'
 import Page from '../src/components/page'
-import HeaderPage from '../src/components/page/pageHeader'
+import HeaderPage from '../src/components/page/pageTitle'
 
 export default {
   title: 'Management(hui)'
@@ -42,16 +43,16 @@ export const ManagementTest = () => {
           {
             data.map((item, index) =>
               <ListItem key={index}>
-                <LinkNext href='#' as='a'>
-                  <Link
-                    _hover={{
-                      textDecoration: 'none'
-                    }}
-                    color='#316bc3'
-                  >
-                    <ColumnLine icon={item.icon}>{item.name}</ColumnLine>
-                  </Link>
-                </LinkNext>
+                <NextLink
+                  href='/test' passHref
+                  _hover={{
+                    textDecoration: 'none'
+                  }}
+                >
+                  <a onClick={action('button-click')}>
+                    <ColumnLine icon={item.icon} color='#316bc3'>{item.name}</ColumnLine>
+                  </a>
+                </NextLink>
               </ListItem>)
           }
         </List>

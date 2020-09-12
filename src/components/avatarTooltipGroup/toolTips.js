@@ -6,7 +6,7 @@ import {
 
 import { AvatarTooltipContext } from './avatarTooltipContext'
 
-const Tooltips = ({ name, profilePhoto, children, toolTipProps, avatarProps, ...props }) => {
+const Tooltips = ({ name, profilePhoto, children, hasArrow = false, toolTipProps, avatarProps, ...props }) => {
   return (
     <Tooltip hasArrow label={name} placement='auto-start' {...toolTipProps}>
       <Box as='span' d='inline-block'>

@@ -24,13 +24,11 @@ const ModalSelector = ({
 }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
-    <Box display='flex' justifyContent='center' mt='10px' {...props}>
-      {left}
+    <>
       <Button
         as='div'
         maxW='400px'
         lineHeight='40px'
-        width='35%'
         textAlign='center'
         mx={3}
         borderColor='#CBD5E0'
@@ -41,6 +39,7 @@ const ModalSelector = ({
         whiteSpace='nowrap'
         textOverflow='ellipsis'
         onClick={onOpen}
+        {...props}
       >
         {value}
       </Button>
@@ -60,7 +59,7 @@ const ModalSelector = ({
                 value={{
                   value, // 給 Context 組件包住的兒子賦予 value 值
                   onChange, // 給 Context 組件包住的兒子賦予 onChange 值
-                  onClose // 給 Context 組件包住的兒子賦予 onClose 值，關閉
+                  onClose// 給 Context 組件包住的兒子賦予 onClose 值，關閉
                 }}
               >
                 {children}
@@ -69,8 +68,7 @@ const ModalSelector = ({
           </ModalContent>
         </Modal>
       )}
-      {right}
-    </Box>
+    </>
   )
 }
 

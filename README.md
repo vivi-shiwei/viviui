@@ -1701,3 +1701,331 @@ TableRow 的 props
         </Table>
       )
     }
+
+## FullScreenView
+相关组件
+
+
+- FullScreenView：为其子级提供上下文的包装器。
+- RedButton：红色并且四个角都是弧度为最大的弧度。
+- BlueButton：菜单列表的触发器。
+- ButtonGrid：选单的头部文字。
+- LargeTitle：选单的线。
+
+
+    import{
+      FullScreenView,
+      RedButton,
+      BlueButton,
+      BUttonGrid,
+      LargeTitle
+    } from 'viviui'
+
+用法
+
+RedButton 的 component 用法
+
+RedButton 能传入的参数
+
+
+| 名称        | 描述                                    |
+| --------- | ------------------------------------- |
+| leftIcon  | 接收左边的自定义 icon                         |
+| rightIcon | 接收右边的自定义icon                          |
+| children  | Button的子集                             |
+| ...props  | 能接收到 chakra  的 Button 样式到 RedButton 里 |
+
+
+RedButton 里的 props
+
+
+| 名称           | 默认                             | 描述                       |
+| ------------ | ------------------------------ | ------------------------ |
+| size         | lg                             | chakra 的 Button 宽度       |
+| bg           | #E53E3E                        | 背景颜色为红色                  |
+| w            | {{ base: '98%', sm: '340px' }} | 宽度当最小屏时为98%              |
+| variant      | solid                          | variant 是 Button 显示颜色的类型 |
+| borderRadius | 9999px                         | 弧度为 9999px               |
+| color        | #fff                           | 字体颜色为#fff                |
+| _hover       | background: ‘#C53030’          | 鼠标移上去，背景颜色是#C53030       |
+| _active      | background: ‘#9B2C2C'          | 鼠标点击的那瞬间背景颜色是#9B2C2C     |
+
+
+
+- 按钮左边放icon
+
+
+![](https://paper-attachments.dropbox.com/s_5C95C1431E8EE271575B06E0F01DCCD326973A3B62300F7E5C22D65DB3E79990_1597044017278_image.png)
+
+
+
+    <RedButton
+      leftIcon={
+        <AiFillGoogleSquare
+          size='24px'
+        />
+      }
+    >
+      这是一个红色按钮
+    </RedButton>
+
+
+- 按钮右边放icon
+
+
+![](https://paper-attachments.dropbox.com/s_5C95C1431E8EE271575B06E0F01DCCD326973A3B62300F7E5C22D65DB3E79990_1597044001131_image.png)
+
+
+
+    <RedButton
+      rightIcon={
+        <AiFillGoogleSquare
+          size='24px'
+        />
+      }
+    >
+      这是一个红色按钮
+    </RedButton>
+
+ BlueButton 的 component 用法
+
+BlueButton 能传入的参数
+
+
+| 名称        | 描述                                    |
+| --------- | ------------------------------------- |
+| leftIcon  | 接收左边的自定义 icon                         |
+| rightIcon | 接收右边的自定义icon                          |
+| children  | Button的子集                             |
+| ...props  | 能接收到 chakra  的 Button 样式到 RedButton 里 |
+
+
+BlueButton 里的 props
+
+
+| 名称           | 默认                             | 描述                       |
+| ------------ | ------------------------------ | ------------------------ |
+| size         | lg                             | chakra 的 Button 宽度       |
+| w            | {{ base: '98%', sm: '340px' }} | 宽度当最小屏时为98%              |
+| variantColor | blue                           | variant 是 Button 显示颜色的类型 |
+| borderRadius | 9999px                         | 弧度为 9999px               |
+
+
+
+- 按钮左边放icon
+
+
+![](https://paper-attachments.dropbox.com/s_5C95C1431E8EE271575B06E0F01DCCD326973A3B62300F7E5C22D65DB3E79990_1597045684220_image.png)
+
+
+
+    <BlueButton leftIcon={<AiFillGoogleSquare size='24px' />}>
+      这是一个蓝色按钮
+    </BlueButton>
+
+
+- 按钮右边放icon
+
+
+![](https://paper-attachments.dropbox.com/s_5C95C1431E8EE271575B06E0F01DCCD326973A3B62300F7E5C22D65DB3E79990_1597045714729_image.png)
+
+
+
+    <BlueButton rightIcon={<AiFillGoogleSquare size='24px' />}>
+      这是一个蓝色按钮
+    </BlueButton>
+
+
+ButtonGrid 的 component 用法
+
+
+- 包裹着按钮的一个组件
+
+ButtonGrid 能传入的参数
+
+
+| 名称    | 描述                                                 |
+| ----- | -------------------------------------------------- |
+| props | 能接收 children 和 chakra 的  SimpleGrid 样式到 ButtonGrid |
+
+
+ButtonGrid 里的 props
+
+
+| 名称      | 默认                              | 描述           |
+| ------- | ------------------------------- | ------------ |
+| columns | 1                               | 一行只显示一个      |
+| spacing | 16px                            | 两个子集之间的距离    |
+| py      | 16px                            | 在Y轴的外边距宽度    |
+| w       | {{ base: '100%', sm: '340px' }} | 宽度在最小屏时为100% |
+
+
+
+![](https://paper-attachments.dropbox.com/s_5C95C1431E8EE271575B06E0F01DCCD326973A3B62300F7E5C22D65DB3E79990_1597046543639_image.png)
+
+
+
+    <ButtonGrid>
+      <RedButton leftIcon={<AiFillGoogleSquare size='24px' />}>
+        这是一个红色按钮
+      </RedButton>
+      <RedButton rightIcon={<AiFillGoogleSquare size='24px' />}>
+        这是一个红色按钮
+      </RedButton>
+      <BlueButton leftIcon={<AiFillGoogleSquare size='24px' />}>
+        这是一个蓝色按钮
+      </BlueButton>
+      <BlueButton rightIcon={<AiFillGoogleSquare size='24px' />}>
+        这是一个蓝色按钮
+      </BlueButton>
+    </ButtonGrid>
+
+
+LargeTitle 的 component 用法
+
+LargeTitle 能传入的参数
+
+
+| 名称    | 说明                                 |
+| ----- | ---------------------------------- |
+| props | 能接收 children 和 chakra 的 Heading 样式 |
+
+
+LargeTitle 里的 props
+
+
+| 名称        | 默认     | 描述         |
+| --------- | ------ | ---------- |
+| size      | 2xl    | 字体大小       |
+| w         | 100%   | 宽度为100%    |
+| mb        | 16px   | 底部内边距为16px |
+| textAlign | center | 字体居中       |
+
+
+
+![](https://paper-attachments.dropbox.com/s_5C95C1431E8EE271575B06E0F01DCCD326973A3B62300F7E5C22D65DB3E79990_1597047773023_image.png)
+
+
+
+    <LargeTitle>这是一个标题</LargeTitle>
+
+
+FullScreenView 的 component 用法
+
+FullScreenView 能传入的参数
+
+
+| 名称        | 描述                                  |
+| --------- | ----------------------------------- |
+| closePath | 点击右上角关闭按钮后要返回的路径                    |
+| children  | FullScreenView 的子集                  |
+| ...props  | 接收 chakra的 Box 样式到 FullScreenView 里 |
+
+
+FullScreenView 的 props
+
+
+| 名称             | 默认         | 描述                   |
+| -------------- | ---------- | -------------------- |
+| pos            | fixed      | 固定定位                 |
+| top            | 0          | 离上方0                 |
+| left           | 0          | 离左边0                 |
+| right          | 0          | 离右边0                 |
+| bottom         | 0          | 离下边0                 |
+| w              | 100%       | 宽 100%               |
+| h              | 100%       | 高100%                |
+| d              | flex       | display 为 flex       |
+| alignItems     | center     | 字体垂直居中               |
+| justifyContent | flex-start | 内容从 start 开始排列       |
+| flexDirection  | column     | flexDirection 从上到下排列 |
+| zIndex         | 4000       | zIndex为4000          |
+| overflowY      | auto       | 滚动条为auto             |
+
+
+
+![](https://paper-attachments.dropbox.com/s_5C95C1431E8EE271575B06E0F01DCCD326973A3B62300F7E5C22D65DB3E79990_1597048614920_image.png)
+
+
+
+    <FullScreenView closePath='/'>
+      <LargeTitle>登入</LargeTitle>
+      <ButtonGrid>
+        <RedButton leftIcon={<AiFillGoogleSquare size='24px' />}>
+          使用google登入
+        </RedButton>
+        <RedButton leftIcon={<AiFillGoogleSquare size='24px' />}>
+          使用google登入
+        </RedButton>
+        <RedButton leftIcon={<AiFillGoogleSquare size='24px' />}>
+          使用google登入
+        </RedButton>
+        <RedButton leftIcon={<AiFillGoogleSquare size='24px' />}>
+          使用google登入
+        </RedButton>
+      </ButtonGrid>
+    </FullScreenView>
+
+
+
+## Crumb
+
+相关组件
+
+
+- Crumb
+- CrumbLink：Breadcrumb的 link 元素。
+
+
+    import{
+      Crumb,
+      CrumbLink
+    } from 'viviui'
+
+
+- Crumb 和 CrumbLink 需要一起使用
+
+Crumb 能传入的参数
+
+
+| 名称       | 描述                                     |
+| -------- | -------------------------------------- |
+| children | Crumb 的儿子                             |
+| ...props | 接受chakra 的 Breadcrumb 样式到 Crumb 里 |
+
+
+Crumb 的 Props
+
+
+| 名称        | 默认                            | 描述        |
+| --------- | ----------------------------- | --------- |
+| spacing   | 8px                           | 子集之间的距离   |
+| separator | <Icon name='chevron-right' /> | 子集之间的icon |
+
+
+CrumbLink 能传入的参数
+
+
+| 名称    | 描述                                                 |
+| ----- | -------------------------------------------------- |
+| props | 能接受 children chakra 的 BreadcrumbLink 到 CrumbLink 里 |
+
+
+CrumbLink 的 Props
+
+
+| 名称         | 默认      | 描述   |
+| ---------- | ------- | ---- |
+| color      | #1b6ac9 | 字体颜色 |
+| fontWeight | bold    | 字体加粗 |
+
+
+
+![](https://paper-attachments.dropbox.com/s_5C95C1431E8EE271575B06E0F01DCCD326973A3B62300F7E5C22D65DB3E79990_1597056325075_image.png)
+
+
+
+    <Crumb>
+        <CrumbLink>vivi</CrumbLink>
+        <CrumbLink>vivi</CrumbLink>
+        <CrumbLink>vivi</CrumbLink>
+    </Crumb>

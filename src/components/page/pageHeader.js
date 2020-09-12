@@ -1,20 +1,16 @@
 import React from 'react'
 import {
-  Heading
+  Box
 } from '@chakra-ui/core'
 
-// 白板標題
-const HeaderPage = (props) => {
+const PageHeader = (props) => {
   return (
-    <Heading
-      as='div'
-      textAlign='center'
-      // overflow='hidden'
-      // textOverflow='ellipsis'
-      // whiteSpace='nowrap'
+    <Box
+      w='100%'
+      borderBottomWidth='1px'
       {...props}
     />
   )
 }
 
-export default HeaderPage
+export default PageHeader

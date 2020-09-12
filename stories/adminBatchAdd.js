@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { useRouter } from 'next/router'
+import { action } from '@storybook/addon-actions'
 import NextLink from 'next/link'
-import { Box, Link, Button } from '@chakra-ui/core'
 
 import ButtonGrid from '../src/components/fullScreenView/buttonGrid'
-// import AddminBatchAdd from '../src/components/adminBatchAdd'
-import { BlueButton } from '../src/index'
-import { FullScreenView } from '../src/index'
+import { BlueButton, FullScreenView } from '../src/index'
 
 export default { title: 'showLing(hui)' }
 
@@ -41,7 +38,11 @@ export const SearchTest = () => {
           data.map((item, index) => {
             return (
               <>
-                <BlueButton>{item.name}</BlueButton>
+                <NextLink href='/test' passHref>
+                  <a onClick={action('button-click')}>
+                    <BlueButton>{item.name}</BlueButton>
+                  </a>
+                </NextLink>
               </>
             )
           })

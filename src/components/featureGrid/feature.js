@@ -9,7 +9,6 @@ import {
 const Feature = ({
   title, // 傳入title
   icon, // 傳入icon
-  subtitle, // 傳入subtitle
   children, // 它的子孫
   ...props // 傳入chakra能接受的樣式到Box裏
 }) => {
@@ -30,9 +29,6 @@ const Feature = ({
         <Heading as='h2' size='md' fontWeight='semibold' mt='1em' mb='0.5em'>
           {title}
         </Heading>
-      )}
-      {!!subtitle && (
-        <Text>{subtitle}</Text>
       )}
       {children}
     </Box>

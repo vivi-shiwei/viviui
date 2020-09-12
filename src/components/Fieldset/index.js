@@ -1,15 +1,38 @@
-import React from 'react'
+import React, { Children } from 'react'
 import {
   Box,
-  Heading,
   Flex,
   useColorMode
 } from '@chakra-ui/core'
 
+import LeftFieldset from './leftFieldset'
+import RightFieldset from './rightFieldset'
+import FieldsetHeader from './fieldsetHeader'
+
 import Container from '../container'
 // 學校專業的 title 底綫模塊
-const Fieldset = ({ title, left, right, children, ...props }) => {
+const Fieldset = ({ children, ...props }) => {
   const { colorMode } = useColorMode()
+  let left = null
+  let right = null
+  let title = null
+  const chil = []
+  console.log(children)
+  Children.map(children, (c, i) => {
+    switch (c.type) {
+      case LeftFieldset:
+        left = c // 自定义左边数据
+        break
+      case RightFieldset:
+        right = c // 自定义右边数据
+        break
+      case FieldsetHeader:
+        title = c // 自定义右边数据
+        break
+      default:
+        chil.push(c)
+    }
+  })
   return (
     <Container
       pb={4}
@@ -25,18 +48,13 @@ const Fieldset = ({ title, left, right, children, ...props }) => {
         bg={colorMode === 'light' ? (props.bg || props.background) : (props.dark || '#1A202C')}
       // {...props}
       >
-        <Box
-          position=' absolute'
-          top='0'
-          left=' 0'
-        >
-          {left}
-        </Box>
+        {left}
         <Flex justify='center' align='center'>
-          {(!!children || !!title) && (
-            <>
-              <Box borderBottom={`1px solid ${colorMode === 'light' ? '#aaa6a6' : 'white'}`} w='100%' position='absolute' zIndex='0' />
-              <Heading
+          <>
+            <Box borderBottom={`1px solid ${colorMode === 'light' ? '#aaa6a6' : 'white'}`} w='100%' position='absolute' zIndex='0' />
+            {title}
+            {chil}
+            {/* <Heading
                 fontSize={{ base: '20px', sm: '25px', md: '35px' }}
                 textAlign='center'
                 bg={colorMode === 'light' ? (props.bg || props.background) : (props.dark || '#1A202C')}
@@ -47,17 +65,10 @@ const Fieldset = ({ title, left, right, children, ...props }) => {
               >
                 {title}
                 {children}
-              </Heading>
-            </>
-          )}
+              </Heading> */}
+          </>
         </Flex>
-        <Box
-          position=' absolute'
-          top='0'
-          right=' 0'
-        >
-          {right}
-        </Box>
+        {right}
       </Box>
     </Container>
   )

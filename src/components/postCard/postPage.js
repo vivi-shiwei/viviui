@@ -2,7 +2,7 @@ import React from 'react'
 import {
   Box
 } from '@chakra-ui/core'
-export const PostPage = props => (
+const PostPage = props => (
   <Box
     rounded={{ base: 0, md: 6 }}
     mx='auto'
@@ -12,3 +12,4 @@ export const PostPage = props => (
     {...props}
   />
 )
+export default PostPage

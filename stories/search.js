@@ -1,4 +1,5 @@
 import React from 'react'
+import { action } from '@storybook/addon-actions'
 
 import Search from '../src/components/search/index'
 import Container from '../src/components/container'
@@ -13,7 +14,7 @@ export const SearchTest = () => {
     <Container mt='30px'>
       <Search
         left={<SearchBox placeholder='活动名称、特长' />}
-        right={<SearchButton>搜索</SearchButton>}
+        right={<SearchButton onClick={action('button-click')}>搜索</SearchButton>}
       >
         <SearchResult display='block'>無數據</SearchResult>
       </Search>
