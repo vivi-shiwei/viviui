@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions'
 import ModalSelector from '../src/components/modalSelector/index'
 import ModalSelectorOption from '../src/components/modalSelector/modalSelectorOption'
 import Media from '../src/components/media'
-import MediaCenter from '../src/components/media/mediaCenter'
+import MediaCenter from '../src/components/media/mediaContent'
 import MediaLeft from '../src/components/media/mediaLeft'
 import MediaRight from '../src/components/media/mediaRight'
 
@@ -16,7 +16,7 @@ export const ModalSelectorTest = () => {
   const [values, setValues] = useState('cdsj6 2019/2020 Dashboard')
 
   return (
-    <Media center>
+    <Media maxW='500px' center>
       <MediaLeft>
         <NextLink href='/test' passHref>
           <a onClick={action('button-click')}>
@@ -26,6 +26,7 @@ export const ModalSelectorTest = () => {
       </MediaLeft>
       <MediaCenter>
         <ModalSelector
+          w='100%'
           modalTitle='Dashboard 選擇'
           value={values}
           onChange={setValues}

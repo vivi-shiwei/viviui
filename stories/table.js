@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Page from '../src/components/page'
-import HeaderPage from '../src/components/page/pageHeader'
+import HeaderPage from '../src/components/page/pageTitle'
 import Table from '../src/components/table'
 import TableHead from '../src/components/table/tableHead'
 import TableBody from '../src/components/table/tableBody'

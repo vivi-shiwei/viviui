@@ -13,7 +13,7 @@ import { action } from '@storybook/addon-actions'
 import Management from '../src/components/page/manageMent'
 import ColumnLine from '../src/components/page/columnIconText'
 import Page from '../src/components/page'
-import HeaderPage from '../src/components/page/pageHeader'
+import HeaderPage from '../src/components/page/pageTitle'
 
 export default {
   title: 'Management(hui)'
