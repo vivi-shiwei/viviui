@@ -24,11 +24,7 @@ Trace:
 npm manifest: 
   {
     "name": "viviui",
-  <<<<<<< HEAD
-    "version": "1.1.35",
-  =======
     "version": "1.1.43",
-  >>>>>>> 0441d2b776557c7bbb36e274da36c4241ae03216
     "description": "",
     "main": "dist/index.js",
     "scripts": {

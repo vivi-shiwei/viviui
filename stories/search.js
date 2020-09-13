@@ -14,8 +14,9 @@ export const SearchTest = () => {
     <Container mt='30px'>
       <Search
         left={<SearchBox placeholder='活动名称、特长' />}
-        right={<SearchButton onClick={action('button-click')}>搜索</SearchButton>}
+        right={<SearchButton>搜索</SearchButton>}
       >
+
         <SearchResult display='block'>無數據</SearchResult>
       </Search>
     </Container>
